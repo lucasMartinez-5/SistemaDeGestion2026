@@ -83,6 +83,7 @@
     <Compile Include="FRMSplash.Designer.cs">
       <DependentUpon>FRMSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="MetodosGenerales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FRMPersona_Lista.resx">
@@ -168,6 +169,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_persona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

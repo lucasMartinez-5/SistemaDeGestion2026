@@ -148,6 +148,9 @@
   <data name="ic_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ic_persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BannerTiendaDeRopa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BannerTiendaDeRopa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,7 +160,7 @@
   <data name="ic_camara_tomar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_camara_tomar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="no_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\no_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
