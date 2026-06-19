@@ -39,6 +39,19 @@ namespace SistemaDeGestion2026
             foreach (aperson a in lista_personas)
             {
                 DTGLista.Rows.Add();
+
+                if (a.capsestper)
+                {
+                    if (DTGLista.Rows.Count %2==0)
+                    {
+                        DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightSkyBlue;
+                    }
+                }
+                else
+                {
+                    DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Salmon;
+                }
+
                 DTGLista[0, DTGLista.Rows.Count - 1].Value = a.papscodper;
                 DTGLista[1, DTGLista.Rows.Count - 1].Value = a.capsestper;
                 DTGLista[2, DTGLista.Rows.Count - 1].Value = a.capsnumcid;
@@ -117,6 +130,92 @@ namespace SistemaDeGestion2026
         {
             ActualizarGrid();
         }
+
+
         #endregion
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                FRMPersona_Registrar F1 = new FRMPersona_Registrar();
+                F1.modificar = true;
+                F1.codPerMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                F1.ShowDialog();
+                if (F1.actualizar)
+                {
+                    ActualizarGrid();
+                }
+            }
+        }
+
+        private void DTGLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void inhabilitarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                persona.papscodper= DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (persona.ObtenerDatos())
+                {
+                    persona.capsestper = false;
+                    if (persona.Modificar())
+                    {
+                        MessageBox.Show("Persona Inhabilitada correctamente");
+                        ActualizarGrid();
+                    }
+                }
+                
+            }
+        }
+
+        private void CMSMenu_Opening(object sender, CancelEventArgs e)
+        {
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                persona.papscodper = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (persona.ObtenerDatos())
+                {
+                    
+                    if (persona.capsestper)
+                    {
+                        CMSMenu.Items[2].Visible = false;
+                        CMSMenu.Items[1].Visible = true;
+                    }
+                    else
+                    {
+                        CMSMenu.Items[2].Visible = true;
+                        CMSMenu.Items[1].Visible = false;
+                    }
+                }
+
+            }
+        }
+
+        private void habilitarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                persona.papscodper = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (persona.ObtenerDatos())
+                {
+                    persona.capsestper = true;
+                    if (persona.Modificar())
+                    {
+                        MessageBox.Show("Persona Habilitada correctamente");
+                        ActualizarGrid();
+                    }
+                }
+
+            }
+        }
+
+        private void TXTFiltrar_Enter(object sender, EventArgs e)
+        {
+            TXTFiltrar.SelectAll();
+        }
     }
 }
