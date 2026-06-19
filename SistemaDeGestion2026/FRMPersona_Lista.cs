@@ -24,7 +24,7 @@ namespace SistemaDeGestion2026
             InitializeComponent();
         }
         #endregion
-
+        // Comentario prubea
         #region Métodos
         private void ActualizarGrid()
         {
