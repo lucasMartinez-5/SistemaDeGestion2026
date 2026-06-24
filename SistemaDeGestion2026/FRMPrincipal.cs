@@ -34,5 +34,10 @@ namespace SistemaDeGestion2026
             a.MdiParent = this;
             a.Show();
         }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

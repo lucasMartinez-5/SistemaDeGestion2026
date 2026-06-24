@@ -42,6 +42,7 @@ namespace SistemaDeGestion2026
         private bool VerificarIntegridad()
         {
             bool respuesta = true;
+            persona.capsnumcid = TXTCI.Text;
 
             if (TXTCI.Text.Replace(" ", "") == "")
             {
@@ -49,13 +50,19 @@ namespace SistemaDeGestion2026
                 TXTCI.Focus();
                 respuesta = false;
             }
-            else if (DTINacimiento.Value>DateTime.Now)
+            else if (persona.ObtenerDatosCI()&&!modificar)
+            {
+                MessageBox.Show("Ya existe una persona con ese CI", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TXTCI.Focus();
+                respuesta = false;
+            }
+            else if (DTINacimiento.Value > DateTime.Now)
             {
                 MessageBox.Show("Introduzca FECHA DE NACIMIENTO válida de la persona", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 DTINacimiento.Focus();
                 respuesta = false;
             }
-            else if ((TXTApellidoPaterno.Text.Replace(" ", "") == "")&&
+            else if ((TXTApellidoPaterno.Text.Replace(" ", "") == "") &&
                      (TXTApellidoMaterno.Text.Replace(" ", "") == ""))
             {
                 MessageBox.Show("Introduzca uno de los APELLIDOS de la persona", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -74,7 +81,7 @@ namespace SistemaDeGestion2026
                 TXTCelular.Focus();
                 respuesta = false;
             }
-            else if (TXTCorreoElectronico.Text.Replace(" ", "") == "") 
+            else if (TXTCorreoElectronico.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca un CORREO VÁLIDO de la persona", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTCorreoElectronico.Focus();

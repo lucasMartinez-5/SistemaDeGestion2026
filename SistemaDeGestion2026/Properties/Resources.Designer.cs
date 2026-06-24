@@ -63,6 +63,16 @@ namespace SistemaDeGestion2026.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregar {
+            get {
+                object obj = ResourceManager.GetObject("agregar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap banner_proyecto_ropa_0 {
             get {
                 object obj = ResourceManager.GetObject("banner_proyecto_ropa_0", resourceCulture);
@@ -196,6 +206,46 @@ namespace SistemaDeGestion2026.Properties {
         internal static System.Drawing.Bitmap ic_salir {
             get {
                 object obj = ResourceManager.GetObject("ic_salir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_usuario {
+            get {
+                object obj = ResourceManager.GetObject("ic_usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_usuario_modificar {
+            get {
+                object obj = ResourceManager.GetObject("ic_usuario_modificar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_usuario_registrar {
+            get {
+                object obj = ResourceManager.GetObject("ic_usuario_registrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_usuario_reporte {
+            get {
+                object obj = ResourceManager.GetObject("ic_usuario_reporte", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

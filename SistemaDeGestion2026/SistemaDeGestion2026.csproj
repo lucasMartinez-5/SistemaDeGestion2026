@@ -83,6 +83,18 @@
     <Compile Include="FRMSplash.Designer.cs">
       <DependentUpon>FRMSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMUsuario_Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMUsuario_Lista.Designer.cs">
+      <DependentUpon>FRMUsuario_Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMUsuario_Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMUsuario_Registrar.Designer.cs">
+      <DependentUpon>FRMUsuario_Registrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="MetodosGenerales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMSplash.resx">
       <DependentUpon>FRMSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMUsuario_Lista.resx">
+      <DependentUpon>FRMUsuario_Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMUsuario_Registrar.resx">
+      <DependentUpon>FRMUsuario_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -172,6 +190,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\no_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_usuario_modificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_usuario_registrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_usuario_reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
