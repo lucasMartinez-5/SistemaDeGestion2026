@@ -223,6 +223,16 @@ namespace SistemaDeGestion2026.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_usuario_cambiar_password {
+            get {
+                object obj = ResourceManager.GetObject("ic_usuario_cambiar_password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_usuario_modificar {
             get {
                 object obj = ResourceManager.GetObject("ic_usuario_modificar", resourceCulture);
@@ -246,6 +256,16 @@ namespace SistemaDeGestion2026.Properties {
         internal static System.Drawing.Bitmap ic_usuario_reporte {
             get {
                 object obj = ResourceManager.GetObject("ic_usuario_reporte", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_usuario_reporte1 {
+            get {
+                object obj = ResourceManager.GetObject("ic_usuario_reporte1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

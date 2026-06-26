@@ -16,5 +16,10 @@ namespace SistemaDeGestion2026
         {
             InitializeComponent();
         }
+
+        private void BTNGrabar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

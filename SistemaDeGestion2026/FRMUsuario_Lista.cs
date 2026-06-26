@@ -16,5 +16,15 @@ namespace SistemaDeGestion2026
         {
             InitializeComponent();
         }
+
+        private void BTNReporte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNRegistrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
