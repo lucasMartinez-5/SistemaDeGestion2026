@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="aperson.cs" />
     <Compile Include="AppConfWriter.cs" />
+    <Compile Include="aususis.cs" />
+    <Compile Include="lususis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="xgeneral.cs" />
     <Compile Include="xnumcor.cs" />
