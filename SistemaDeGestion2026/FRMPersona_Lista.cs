@@ -151,7 +151,7 @@ namespace SistemaDeGestion2026
 
         private void DTGLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            ActualizarGrid();
         }
 
         private void inhabilitarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -216,6 +216,16 @@ namespace SistemaDeGestion2026
         private void TXTFiltrar_Enter(object sender, EventArgs e)
         {
             TXTFiltrar.SelectAll();
+        }
+
+        private void TXTFiltrar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IINFilas_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

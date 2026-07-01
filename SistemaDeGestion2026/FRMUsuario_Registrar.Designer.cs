@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMUsuario_Registrar));
             this.GPPanelPrincipal = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.axDPFPEnrollmentControl1 = new AxDPFPCtlXLib.AxDPFPEnrollmentControl();
             this.TXTNombreLogin = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.BTNAgregarUsuario = new DevComponents.DotNetBar.ButtonX();
             this.BTNBuscarUsuario = new DevComponents.DotNetBar.ButtonX();
@@ -39,7 +40,6 @@
             this.TXTCI = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTNombres = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SWBEstado = new DevComponents.DotNetBar.Controls.SwitchButton();
-            this.axDPFPEnrollmentControl1 = new AxDPFPCtlXLib.AxDPFPEnrollmentControl();
             this.GPPanelPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axDPFPEnrollmentControl1)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,15 @@
             this.GPPanelPrincipal.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.GPPanelPrincipal.TabIndex = 1;
             this.GPPanelPrincipal.Text = "Persona";
+            // 
+            // axDPFPEnrollmentControl1
+            // 
+            this.axDPFPEnrollmentControl1.Enabled = true;
+            this.axDPFPEnrollmentControl1.Location = new System.Drawing.Point(3, 92);
+            this.axDPFPEnrollmentControl1.Name = "axDPFPEnrollmentControl1";
+            this.axDPFPEnrollmentControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axDPFPEnrollmentControl1.OcxState")));
+            this.axDPFPEnrollmentControl1.Size = new System.Drawing.Size(495, 314);
+            this.axDPFPEnrollmentControl1.TabIndex = 17;
             // 
             // TXTNombreLogin
             // 
@@ -235,15 +244,6 @@
             this.SWBEstado.TabIndex = 9;
             this.SWBEstado.Value = true;
             this.SWBEstado.ValueObject = "Y";
-            // 
-            // axDPFPEnrollmentControl1
-            // 
-            this.axDPFPEnrollmentControl1.Enabled = true;
-            this.axDPFPEnrollmentControl1.Location = new System.Drawing.Point(3, 92);
-            this.axDPFPEnrollmentControl1.Name = "axDPFPEnrollmentControl1";
-            this.axDPFPEnrollmentControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axDPFPEnrollmentControl1.OcxState")));
-            this.axDPFPEnrollmentControl1.Size = new System.Drawing.Size(495, 314);
-            this.axDPFPEnrollmentControl1.TabIndex = 17;
             // 
             // FRMUsuario_Registrar
             // 

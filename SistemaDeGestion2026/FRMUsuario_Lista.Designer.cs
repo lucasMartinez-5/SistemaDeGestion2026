@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DTGLista = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
@@ -39,18 +40,23 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EPNFiltrar = new DevComponents.DotNetBar.ExpandablePanel();
+            this.BTNFiltrar = new DevComponents.DotNetBar.ButtonX();
             this.TXTFiltrar = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.IINFilas = new DevComponents.Editors.IntegerInput();
             this.EPNOpciones = new DevComponents.DotNetBar.ExpandablePanel();
-            this.BTNFiltrar = new DevComponents.DotNetBar.ButtonX();
             this.BTN = new DevComponents.DotNetBar.ButtonX();
             this.BTNReporte = new DevComponents.DotNetBar.ButtonX();
             this.BTNModificar = new DevComponents.DotNetBar.ButtonX();
             this.BTNRegistrar = new DevComponents.DotNetBar.ButtonX();
+            this.CMSMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inhabilitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.habilitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).BeginInit();
             this.EPNFiltrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IINFilas)).BeginInit();
             this.EPNOpciones.SuspendLayout();
+            this.CMSMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // DTGLista
@@ -58,14 +64,14 @@
             this.DTGLista.AllowUserToAddRows = false;
             this.DTGLista.AllowUserToDeleteRows = false;
             this.DTGLista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DTGLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DTGLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.DTGLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DTGLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -73,14 +79,14 @@
             this.Column3,
             this.Column6,
             this.Login});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DTGLista.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DTGLista.DefaultCellStyle = dataGridViewCellStyle15;
             this.DTGLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGLista.EnableHeadersVisualStyles = false;
             this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
@@ -88,19 +94,21 @@
             this.DTGLista.MultiSelect = false;
             this.DTGLista.Name = "DTGLista";
             this.DTGLista.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DTGLista.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DTGLista.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.DTGLista.RowHeadersWidth = 51;
             this.DTGLista.RowTemplate.Height = 24;
             this.DTGLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DTGLista.Size = new System.Drawing.Size(567, 481);
             this.DTGLista.TabIndex = 17;
+            this.DTGLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DTGLista_CellContentClick_1);
+            this.DTGLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DTGLista_CellDoubleClick_1);
             // 
             // Column1
             // 
@@ -116,8 +124,8 @@
             this.Column2.Checked = true;
             this.Column2.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.Column2.CheckValue = "N";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column2.HeaderText = "Est.";
             this.Column2.MinimumWidth = 60;
             this.Column2.Name = "Column2";
@@ -173,6 +181,19 @@
             this.EPNFiltrar.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.EPNFiltrar.TitleStyle.GradientAngle = 90;
             this.EPNFiltrar.TitleText = "Filtrar";
+            // 
+            // BTNFiltrar
+            // 
+            this.BTNFiltrar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNFiltrar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNFiltrar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
+            this.BTNFiltrar.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNFiltrar.Location = new System.Drawing.Point(295, 41);
+            this.BTNFiltrar.Name = "BTNFiltrar";
+            this.BTNFiltrar.Size = new System.Drawing.Size(27, 26);
+            this.BTNFiltrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNFiltrar.TabIndex = 6;
+            this.BTNFiltrar.Click += new System.EventHandler(this.BTNFiltrar_Click_1);
             // 
             // TXTFiltrar
             // 
@@ -241,18 +262,6 @@
             this.EPNOpciones.TitleStyle.GradientAngle = 90;
             this.EPNOpciones.TitleText = "Menú";
             // 
-            // BTNFiltrar
-            // 
-            this.BTNFiltrar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNFiltrar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNFiltrar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
-            this.BTNFiltrar.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNFiltrar.Location = new System.Drawing.Point(295, 41);
-            this.BTNFiltrar.Name = "BTNFiltrar";
-            this.BTNFiltrar.Size = new System.Drawing.Size(27, 26);
-            this.BTNFiltrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNFiltrar.TabIndex = 6;
-            // 
             // BTN
             // 
             this.BTN.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -282,7 +291,7 @@
             this.BTNReporte.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNReporte.TabIndex = 6;
             this.BTNReporte.Text = "&Reporte";
-            this.BTNReporte.Click += new System.EventHandler(this.BTNReporte_Click);
+            this.BTNReporte.Click += new System.EventHandler(this.BTNReporte_Click_1);
             // 
             // BTNModificar
             // 
@@ -298,6 +307,7 @@
             this.BTNModificar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNModificar.TabIndex = 5;
             this.BTNModificar.Text = "&Modificar";
+            this.BTNModificar.Click += new System.EventHandler(this.BTNModificar_Click_1);
             // 
             // BTNRegistrar
             // 
@@ -313,7 +323,37 @@
             this.BTNRegistrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNRegistrar.TabIndex = 4;
             this.BTNRegistrar.Text = "&Registrar";
-            this.BTNRegistrar.Click += new System.EventHandler(this.BTNRegistrar_Click);
+            this.BTNRegistrar.Click += new System.EventHandler(this.BTNRegistrar_Click_1);
+            // 
+            // CMSMenu
+            // 
+            this.CMSMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modificarToolStripMenuItem,
+            this.inhabilitarToolStripMenuItem,
+            this.habilitarToolStripMenuItem});
+            this.CMSMenu.Name = "CMSMenu";
+            this.CMSMenu.Size = new System.Drawing.Size(181, 92);
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarToolStripMenuItem.Text = "&Modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click_1);
+            // 
+            // inhabilitarToolStripMenuItem
+            // 
+            this.inhabilitarToolStripMenuItem.Name = "inhabilitarToolStripMenuItem";
+            this.inhabilitarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inhabilitarToolStripMenuItem.Text = "&Inhabilitar";
+            this.inhabilitarToolStripMenuItem.Click += new System.EventHandler(this.inhabilitarToolStripMenuItem_Click_1);
+            // 
+            // habilitarToolStripMenuItem
+            // 
+            this.habilitarToolStripMenuItem.Name = "habilitarToolStripMenuItem";
+            this.habilitarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.habilitarToolStripMenuItem.Text = "&Habilitar";
+            this.habilitarToolStripMenuItem.Click += new System.EventHandler(this.habilitarToolStripMenuItem_Click_1);
             // 
             // FRMUsuario_Lista
             // 
@@ -332,6 +372,7 @@
             this.EPNFiltrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IINFilas)).EndInit();
             this.EPNOpciones.ResumeLayout(false);
+            this.CMSMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -353,5 +394,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Login;
         private DevComponents.DotNetBar.ButtonX BTN;
+        private System.Windows.Forms.ContextMenuStrip CMSMenu;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inhabilitarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem habilitarToolStripMenuItem;
     }
 }
