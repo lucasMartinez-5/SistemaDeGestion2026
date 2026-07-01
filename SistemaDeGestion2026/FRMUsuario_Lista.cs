@@ -195,7 +195,7 @@ namespace SistemaDeGestion2026
                 }
             }
         }
-
+        //d
         private void BTNFiltrar_Click_1(object sender, EventArgs e)
         {
             ActualizarGrid();
