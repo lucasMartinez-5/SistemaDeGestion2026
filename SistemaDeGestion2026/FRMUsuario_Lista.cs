@@ -19,7 +19,7 @@ namespace SistemaDeGestion2026
         private List<lususis> lista_usuarios = new List<lususis>();
         #endregion
 
-
+        //a
 
         public FRMUsuario_Lista()
         {
@@ -90,7 +90,7 @@ namespace SistemaDeGestion2026
             {
                 FRMUsuario_Registrar F1 = new FRMUsuario_Registrar();
                 F1.modificar = true;
-                F1.codPerMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                F1.codUsuMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
                 F1.ShowDialog();
                 if (F1.actualizar)
                 {
@@ -107,7 +107,7 @@ namespace SistemaDeGestion2026
                 {
                     FRMUsuario_Registrar F1 = new FRMUsuario_Registrar();
                     F1.modificar = true;
-                    F1.codPerMod = DTGLista[0, e.RowIndex].Value.ToString();
+                    F1.codUsuMod = DTGLista[0, e.RowIndex].Value.ToString();
                     F1.ShowDialog();
                     if (F1.actualizar)
                     {
@@ -186,7 +186,7 @@ namespace SistemaDeGestion2026
                 {
                     FRMUsuario_Registrar F1 = new FRMUsuario_Registrar();
                     F1.modificar = true;
-                    F1.codPerMod = DTGLista[0, e.RowIndex].Value.ToString();
+                    F1.codUsuMod = DTGLista[0, e.RowIndex].Value.ToString();
                     F1.ShowDialog();
                     if (F1.actualizar)
                     {
@@ -217,7 +217,7 @@ namespace SistemaDeGestion2026
             {
                 FRMUsuario_Registrar F1 = new FRMUsuario_Registrar();
                 F1.modificar = true;
-                F1.codPerMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                F1.codUsuMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
                 F1.ShowDialog();
                 if (F1.actualizar)
                 {

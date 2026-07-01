@@ -15,11 +15,11 @@ namespace SistemaDeGestion2026
     public partial class FRMUsuario_Registrar : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
-        //private aperson usuario = new aperson();
-        //private xnumcor correlativo = new xnumcor();
-        //public bool modificar = false;
-        //public String codPerMod = "";
-        //public bool actualizar = false;
+        private aususis usuario = new aususis();
+        private xnumcor correlativo = new xnumcor();
+        public bool modificar = false;
+        public String codUsuMod = "";
+        public bool actualizar = false;
         //Variables para la camara
         //private FilterInfoCollection CaptureDevice; // list of webcam
         //private VideoCaptureDevice FinalFrame;
