@@ -19,7 +19,7 @@ namespace SistemaDeGestion2026
         private List<lususis> lista_usuarios = new List<lususis>();
         #endregion
 
-        //a
+        //as
 
         public FRMUsuario_Lista()
         {
