@@ -13,6 +13,7 @@ namespace SistemaDeGestion2026
 {
     public partial class FRMUsuario_Lista : DevComponents.DotNetBar.Office2007Form
     {
+        //prueba de comentario
         #region Variables
         private lususis lusuario = new lususis();
         private aususis ausuario = new aususis();
