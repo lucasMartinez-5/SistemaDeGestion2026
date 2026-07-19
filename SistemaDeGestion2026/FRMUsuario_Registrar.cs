@@ -54,7 +54,7 @@ namespace SistemaDeGestion2026
                 MessageBox.Show("Introduzca el LOGIN del usuario", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTNombreLogin.Focus();
                 respuesta = false;
-            }//condicion para retringir LOGIN ajeno
+            }// condicion para retringir LOGIN ajeno al modificar o registrar
             else if (usuario2.ObtenerDatosLogin(modificar, usuario.causnomlog))
             {
                 MessageBox.Show("Ya existe una persona con ese LOGIN", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
