@@ -44,8 +44,8 @@ namespace SistemaDeGestion2026
             bool respuesta = true;
             aperson persona2 = new aperson();
             persona2.capsnumcid = TXTCI.Text;
-            string cianterior = persona.capsnumcid;                           
-            persona.capsnumcid = TXTCI.Text;
+            //string cianterior = persona.capsnumcid;                           
+            //persona.capsnumcid = TXTCI.Text;
 
             if (TXTCI.Text.Replace(" ", "") == "")
             {

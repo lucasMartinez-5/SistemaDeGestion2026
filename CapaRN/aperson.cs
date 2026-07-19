@@ -179,10 +179,10 @@ namespace CapaRN
                              "where "+
                                     "capsnumcid = @capsnumcid";
 
-            if (modificar)
-            {
-                sql += " and capsnumcid!='" + ci +"'";
-            }
+                if (modificar)
+                {
+                    sql += " and capsnumcid!='" + ci +"'";
+                }
 
                 this.Conexion.PrepararComando(sql);
 

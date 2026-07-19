@@ -238,8 +238,8 @@ namespace CapaRN
                                  "capsfotper," +
                                  "capsnumcid," +
                                  "capsapepat " +
-                         "from aususis, aperson " +
-                         "where papscodper = fauscodper ";
+                         "from aususis,aperson " +
+                         "where papscodper=fauscodper ";
 
             if (where.Replace(" ", "") != "")
             {

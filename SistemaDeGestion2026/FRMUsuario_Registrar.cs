@@ -38,10 +38,33 @@ namespace SistemaDeGestion2026
         {
             bool respuesta = true;
 
-            if (TXTNombreLogin.Text.Replace(" ", "") == "")
+            aususis usuario2 = new aususis();
+            usuario2.causnomlog = TXTNombreLogin.Text;
+            aperson persona2 = new aperson();
+            persona2.capsnumcid = TXTCI.Text;
+
+            if (TXTCI.Text.Replace(" ", "") == "")
+            {
+                MessageBox.Show("Introduzca el CI de la persona", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TXTCI.Focus();
+                respuesta = false;
+            }
+            else if (TXTNombreLogin.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el LOGIN del usuario", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTNombreLogin.Focus();
+                respuesta = false;
+            }//condicion para retringir LOGIN ajeno
+            else if (usuario2.ObtenerDatosLogin(modificar, usuario.causnomlog))
+            {
+                MessageBox.Show("Ya existe una persona con ese LOGIN", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TXTNombreLogin.Focus();
+                respuesta = false;
+            }
+            else if (TXTNombres.Text.Replace(" ", "") == "")
+            {
+                MessageBox.Show("Introduzca el nombre completo de la persona", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TXTNombres.Focus();
                 respuesta = false;
             }
 
@@ -63,9 +86,10 @@ namespace SistemaDeGestion2026
             persona.papscodper = usuario.fauscodper;
             persona.ObtenerDatos();
             SWBEstado.Value = usuario.causestusu;
-            TXTCI.Text = persona.capsapepat + " " +
-                         persona.capsapemat + " " +
-                         persona.capsnomper;
+            TXTCI.Text = persona.capsnumcid;
+            TXTNombres.Text = persona.capsapepat + " " +
+                                persona.capsapemat + " " +
+                                persona.capsnomper;
             DPECHuellas.EnrolledFingerMask = usuario.causmashue;
             TXTNombreLogin.Text = usuario.causnomlog;
         }

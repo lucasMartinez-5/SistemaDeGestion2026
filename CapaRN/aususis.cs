@@ -186,7 +186,69 @@ namespace CapaRN
                     return false;
                 }
             }
-            public bool VerificarExistencia()
+            //metodo para obtener el campo login para verificar integridad de login
+            public bool ObtenerDatosLogin(bool modificar, string login)
+            {
+                this.Conexion.Conectar();
+                string sql = "select " +
+                                     "causnumhu3," +
+                                     "causnumhu4," +
+                                     "causestusu," +
+                                     "causactpas," +
+                                     "causmashue," +
+                                     "causnumhu1," +
+                                     "causnumhu2," +
+                                     "pauscodusu," +
+                                     "fauscodper," +
+                                     "causnomlog," +
+                                     "causpasswo," +
+                                     "causcodhu1," +
+                                     "causcodhu2," +
+                                     "causcodhu3," +
+                                     "causcodhu4 " +
+                             "from aususis " +
+                             "where " +
+                                    "causnomlog = @causnomlog";
+
+                if (modificar)
+                {
+                    sql += " and causnomlog!='" + login + "'";
+                }
+
+            this.Conexion.PrepararComando(sql);
+            this.Conexion.AsignarParametroCadena("@causnomlog", this._causnomlog);
+
+            DbDataReader ResultadoConsulta = Conexion.EjecutarConsulta();
+
+            if (ResultadoConsulta.Read())
+            {
+                this._causnumhu3 = ResultadoConsulta.GetInt32(0);
+                this._causnumhu4 = ResultadoConsulta.GetInt32(1);
+                this._causestusu = ResultadoConsulta.GetBoolean(2);
+                this._causactpas = ResultadoConsulta.GetBoolean(3);
+                this._causmashue = ResultadoConsulta.GetInt32(4);
+                this._causnumhu1 = ResultadoConsulta.GetInt32(5);
+                this._causnumhu2 = ResultadoConsulta.GetInt32(6);
+                this._pauscodusu = ResultadoConsulta.GetString(7);
+                this._fauscodper = ResultadoConsulta.GetString(8);
+                this._causnomlog = ResultadoConsulta.GetString(9);
+                this._causpasswo = ResultadoConsulta.GetString(10);
+                this._causcodhu1 = ResultadoConsulta.GetString(11);
+                this._causcodhu2 = ResultadoConsulta.GetString(12);
+                this._causcodhu3 = ResultadoConsulta.GetString(13);
+                this._causcodhu4 = ResultadoConsulta.GetString(14);
+                this.Conexion.Desconectar();
+
+                return true;
+            }
+            else
+            {
+                this.Conexion.Desconectar();
+                return false;
+            }
+        }
+
+        public bool VerificarExistencia()
             { 
                 this.Conexion.Conectar(); 
 			    string sql = "select " + 
