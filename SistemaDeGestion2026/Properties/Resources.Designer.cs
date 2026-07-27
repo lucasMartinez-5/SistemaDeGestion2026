@@ -103,6 +103,16 @@ namespace SistemaDeGestion2026.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_actualizar_password {
+            get {
+                object obj = ResourceManager.GetObject("ic_actualizar_password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_buscar {
             get {
                 object obj = ResourceManager.GetObject("ic_buscar", resourceCulture);
@@ -143,9 +153,49 @@ namespace SistemaDeGestion2026.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_cerrar_sesion {
+            get {
+                object obj = ResourceManager.GetObject("ic_cerrar_sesion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_configurar {
+            get {
+                object obj = ResourceManager.GetObject("ic_configurar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_guardar {
             get {
                 object obj = ResourceManager.GetObject("ic_guardar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_ingresar {
+            get {
+                object obj = ResourceManager.GetObject("ic_ingresar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_iniciar_sesion {
+            get {
+                object obj = ResourceManager.GetObject("ic_iniciar_sesion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +273,16 @@ namespace SistemaDeGestion2026.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_salir_app {
+            get {
+                object obj = ResourceManager.GetObject("ic_salir_app", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_usuario {
             get {
                 object obj = ResourceManager.GetObject("ic_usuario", resourceCulture);
@@ -276,6 +336,16 @@ namespace SistemaDeGestion2026.Properties {
         internal static System.Drawing.Bitmap ic_usuario_reporte1 {
             get {
                 object obj = ResourceManager.GetObject("ic_usuario_reporte1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_ver_password {
+            get {
+                object obj = ResourceManager.GetObject("ic_ver_password", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

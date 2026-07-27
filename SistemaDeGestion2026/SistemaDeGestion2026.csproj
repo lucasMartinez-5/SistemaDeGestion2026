@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FRMIniciar_Sesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMIniciar_Sesion.Designer.cs">
+      <DependentUpon>FRMIniciar_Sesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMPersona_Buscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     <Compile Include="MetodosGenerales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FRMIniciar_Sesion.resx">
+      <DependentUpon>FRMIniciar_Sesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMPersona_Buscar.resx">
       <DependentUpon>FRMPersona_Buscar.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +260,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_configurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_salir_app.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_cerrar_sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_actualizar_password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_iniciar_sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_ingresar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_ver_password.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

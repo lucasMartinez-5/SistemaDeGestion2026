@@ -45,5 +45,16 @@ namespace SistemaDeGestion2026
             a.MdiParent = this;
             a.Show();
         }
+
+        private void applicationButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNLogin_Click(object sender, EventArgs e)
+        {
+            FRMIniciar_Sesion sesion = new FRMIniciar_Sesion();
+            sesion.ShowDialog();
+        }
     }
 }
