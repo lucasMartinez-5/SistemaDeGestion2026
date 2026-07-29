@@ -1,6 +1,6 @@
 ﻿namespace SistemaDeGestion2026
 {
-    partial class FRMIniciar_Sesion
+    partial class FRMModificarPassword
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.GPPanelPrincipal = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.BTNMostrarPassword = new DevComponents.DotNetBar.ButtonX();
+            this.LBLMensaje = new DevComponents.DotNetBar.LabelX();
+            this.TXTConfirmarPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.BTNConfirmarPassword = new DevComponents.DotNetBar.ButtonX();
             this.BTNCancelar = new DevComponents.DotNetBar.ButtonX();
             this.BTNIngresar = new DevComponents.DotNetBar.ButtonX();
             this.TXTNombreLogin = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
-            this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
-            this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
             this.TXTPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.BTNPassword = new DevComponents.DotNetBar.ButtonX();
             this.GPPanelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,19 +46,20 @@
             this.GPPanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GPPanelPrincipal.CanvasColor = System.Drawing.SystemColors.Control;
             this.GPPanelPrincipal.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.GPPanelPrincipal.Controls.Add(this.BTNMostrarPassword);
+            this.GPPanelPrincipal.Controls.Add(this.BTNPassword);
+            this.GPPanelPrincipal.Controls.Add(this.LBLMensaje);
+            this.GPPanelPrincipal.Controls.Add(this.TXTConfirmarPassword);
+            this.GPPanelPrincipal.Controls.Add(this.BTNConfirmarPassword);
             this.GPPanelPrincipal.Controls.Add(this.BTNCancelar);
             this.GPPanelPrincipal.Controls.Add(this.BTNIngresar);
             this.GPPanelPrincipal.Controls.Add(this.TXTNombreLogin);
             this.GPPanelPrincipal.Controls.Add(this.BTNSalir);
-            this.GPPanelPrincipal.Controls.Add(this.BTNLimpiar);
-            this.GPPanelPrincipal.Controls.Add(this.BTNGrabar);
             this.GPPanelPrincipal.Controls.Add(this.TXTPassword);
             this.GPPanelPrincipal.DisabledBackColor = System.Drawing.Color.Empty;
             this.GPPanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GPPanelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.GPPanelPrincipal.Name = "GPPanelPrincipal";
-            this.GPPanelPrincipal.Size = new System.Drawing.Size(460, 435);
+            this.GPPanelPrincipal.Size = new System.Drawing.Size(350, 231);
             // 
             // 
             // 
@@ -86,21 +88,51 @@
             // 
             // 
             this.GPPanelPrincipal.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.GPPanelPrincipal.TabIndex = 2;
+            this.GPPanelPrincipal.TabIndex = 3;
             this.GPPanelPrincipal.Text = "Usuario";
             // 
-            // BTNMostrarPassword
+            // LBLMensaje
             // 
-            this.BTNMostrarPassword.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNMostrarPassword.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNMostrarPassword.Image = global::SistemaDeGestion2026.Properties.Resources.ic_ver_password;
-            this.BTNMostrarPassword.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNMostrarPassword.Location = new System.Drawing.Point(231, 35);
-            this.BTNMostrarPassword.Name = "BTNMostrarPassword";
-            this.BTNMostrarPassword.Size = new System.Drawing.Size(26, 23);
-            this.BTNMostrarPassword.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNMostrarPassword.TabIndex = 19;
-            this.BTNMostrarPassword.Click += new System.EventHandler(this.BTNMostrarPassword_Click);
+            // 
+            // 
+            // 
+            this.LBLMensaje.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLMensaje.Location = new System.Drawing.Point(9, 94);
+            this.LBLMensaje.Name = "LBLMensaje";
+            this.LBLMensaje.Size = new System.Drawing.Size(248, 47);
+            this.LBLMensaje.TabIndex = 21;
+            this.LBLMensaje.Text = "labelX1";
+            // 
+            // TXTConfirmarPassword
+            // 
+            this.TXTConfirmarPassword.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.TXTConfirmarPassword.Border.Class = "TextBoxBorder";
+            this.TXTConfirmarPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTConfirmarPassword.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTConfirmarPassword.ForeColor = System.Drawing.Color.Black;
+            this.TXTConfirmarPassword.Location = new System.Drawing.Point(9, 64);
+            this.TXTConfirmarPassword.Name = "TXTConfirmarPassword";
+            this.TXTConfirmarPassword.PasswordChar = '*';
+            this.TXTConfirmarPassword.PreventEnterBeep = true;
+            this.TXTConfirmarPassword.Size = new System.Drawing.Size(216, 23);
+            this.TXTConfirmarPassword.TabIndex = 20;
+            this.TXTConfirmarPassword.WatermarkText = "Confirmar Password";
+            // 
+            // BTNConfirmarPassword
+            // 
+            this.BTNConfirmarPassword.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNConfirmarPassword.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNConfirmarPassword.Image = global::SistemaDeGestion2026.Properties.Resources.ic_ver_password;
+            this.BTNConfirmarPassword.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNConfirmarPassword.Location = new System.Drawing.Point(231, 64);
+            this.BTNConfirmarPassword.Name = "BTNConfirmarPassword";
+            this.BTNConfirmarPassword.Size = new System.Drawing.Size(26, 23);
+            this.BTNConfirmarPassword.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNConfirmarPassword.TabIndex = 19;
+            this.BTNConfirmarPassword.Click += new System.EventHandler(this.BTNConfirmarPassword_Click);
             // 
             // BTNCancelar
             // 
@@ -109,7 +141,7 @@
             this.BTNCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTNCancelar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir_app;
             this.BTNCancelar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNCancelar.Location = new System.Drawing.Point(136, 64);
+            this.BTNCancelar.Location = new System.Drawing.Point(136, 147);
             this.BTNCancelar.Name = "BTNCancelar";
             this.BTNCancelar.Size = new System.Drawing.Size(121, 51);
             this.BTNCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -123,13 +155,12 @@
             this.BTNIngresar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNIngresar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_ingresar;
             this.BTNIngresar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNIngresar.Location = new System.Drawing.Point(9, 64);
+            this.BTNIngresar.Location = new System.Drawing.Point(9, 147);
             this.BTNIngresar.Name = "BTNIngresar";
             this.BTNIngresar.Size = new System.Drawing.Size(121, 51);
             this.BTNIngresar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNIngresar.TabIndex = 17;
             this.BTNIngresar.Text = "&Ingresar";
-            this.BTNIngresar.Click += new System.EventHandler(this.BTNIngresar_Click);
             // 
             // TXTNombreLogin
             // 
@@ -141,6 +172,7 @@
             this.TXTNombreLogin.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TXTNombreLogin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTNombreLogin.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTNombreLogin.Enabled = false;
             this.TXTNombreLogin.ForeColor = System.Drawing.Color.Black;
             this.TXTNombreLogin.Location = new System.Drawing.Point(9, 3);
             this.TXTNombreLogin.Name = "TXTNombreLogin";
@@ -163,32 +195,6 @@
             this.BTNSalir.TabIndex = 13;
             this.BTNSalir.Text = "&Salir";
             // 
-            // BTNLimpiar
-            // 
-            this.BTNLimpiar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNLimpiar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNLimpiar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_limpiar;
-            this.BTNLimpiar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNLimpiar.Location = new System.Drawing.Point(192, 412);
-            this.BTNLimpiar.Name = "BTNLimpiar";
-            this.BTNLimpiar.Size = new System.Drawing.Size(121, 51);
-            this.BTNLimpiar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNLimpiar.TabIndex = 12;
-            this.BTNLimpiar.Text = "&Limpiar";
-            // 
-            // BTNGrabar
-            // 
-            this.BTNGrabar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNGrabar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNGrabar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_guardar;
-            this.BTNGrabar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNGrabar.Location = new System.Drawing.Point(3, 412);
-            this.BTNGrabar.Name = "BTNGrabar";
-            this.BTNGrabar.Size = new System.Drawing.Size(121, 51);
-            this.BTNGrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNGrabar.TabIndex = 11;
-            this.BTNGrabar.Text = "&Grabar";
-            // 
             // TXTPassword
             // 
             this.TXTPassword.BackColor = System.Drawing.Color.White;
@@ -207,21 +213,31 @@
             this.TXTPassword.TabIndex = 4;
             this.TXTPassword.WatermarkText = "Password";
             // 
-            // FRMIniciar_Sesion
+            // BTNPassword
             // 
-            this.AcceptButton = this.BTNIngresar;
+            this.BTNPassword.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNPassword.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNPassword.Image = global::SistemaDeGestion2026.Properties.Resources.ic_ver_password;
+            this.BTNPassword.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNPassword.Location = new System.Drawing.Point(231, 35);
+            this.BTNPassword.Name = "BTNPassword";
+            this.BTNPassword.Size = new System.Drawing.Size(26, 23);
+            this.BTNPassword.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNPassword.TabIndex = 22;
+            this.BTNPassword.Click += new System.EventHandler(this.BTNPassword_Click);
+            // 
+            // FRMModificarPassword
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.BTNCancelar;
-            this.ClientSize = new System.Drawing.Size(460, 435);
+            this.ClientSize = new System.Drawing.Size(350, 231);
             this.Controls.Add(this.GPPanelPrincipal);
-            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FRMIniciar_Sesion";
+            this.Name = "FRMModificarPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Iniciar_Sesion";
+            this.Text = "Modificar Password";
             this.GPPanelPrincipal.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -230,13 +246,14 @@
         #endregion
 
         private DevComponents.DotNetBar.Controls.GroupPanel GPPanelPrincipal;
-        private DevComponents.DotNetBar.Controls.TextBoxX TXTNombreLogin;
-        private DevComponents.DotNetBar.ButtonX BTNSalir;
-        private DevComponents.DotNetBar.ButtonX BTNLimpiar;
-        private DevComponents.DotNetBar.ButtonX BTNGrabar;
-        private DevComponents.DotNetBar.Controls.TextBoxX TXTPassword;
-        private DevComponents.DotNetBar.ButtonX BTNMostrarPassword;
+        private DevComponents.DotNetBar.ButtonX BTNConfirmarPassword;
         private DevComponents.DotNetBar.ButtonX BTNCancelar;
         private DevComponents.DotNetBar.ButtonX BTNIngresar;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTNombreLogin;
+        private DevComponents.DotNetBar.ButtonX BTNSalir;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTPassword;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTConfirmarPassword;
+        private DevComponents.DotNetBar.LabelX LBLMensaje;
+        private DevComponents.DotNetBar.ButtonX BTNPassword;
     }
 }

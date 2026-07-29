@@ -14,7 +14,9 @@ namespace SistemaDeGestion2026
     public partial class FRMIniciar_Sesion : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
-        aususis usuario = new aususis();
+        public aususis usuario = new aususis();
+        public aperson persona = new aperson();
+        public bool loginExitoso = false;
         #endregion
 
         #region Constructor
@@ -24,8 +26,30 @@ namespace SistemaDeGestion2026
         }
         #endregion
 
+        #region Metodos
+        private bool VerificarIntegridad()
+        {
+            bool respuesta = true;
+
+            if (TXTNombreLogin.Text.Replace(" ", "") == "")
+            {
+                MessageBox.Show("Introduzca el LOGIN del usuario", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TXTNombreLogin.Focus();
+                respuesta = false;
+            }
+            else if (TXTPassword.Text.Replace(" ", "") == "")
+            {
+                MessageBox.Show("Introduzca el PASSWORD del usuario", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TXTPassword.Focus();
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
+        #endregion
+
         #region Eventos
-        
+
         private void BTNCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -44,5 +68,41 @@ namespace SistemaDeGestion2026
         }
 
         #endregion
+
+        private void BTNIngresar_Click(object sender, EventArgs e)
+        {
+            if (VerificarIntegridad())
+            {
+                usuario.causnomlog = TXTNombreLogin.Text;
+                usuario.ObtenerDatosLogin(false, TXTNombreLogin.Text);
+                persona.papscodper = usuario.fauscodper;
+                persona.ObtenerDatos();
+
+                if (usuario.causactpas)
+                {
+                    if (TXTPassword.Text == persona.capsnumcid)
+                    {
+                        MessageBox.Show("Bienvenido " + persona.capsnomper + " " +
+                                                        persona.capsapepat + " " +
+                                                        persona.capsapemat,
+                                        "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loginExitoso = true;
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    if (TXTPassword.Text == usuario.causpasswo)
+                    {
+                        MessageBox.Show("Bienvenido " + persona.capsnomper + " " +
+                                                        persona.capsapepat + " " +
+                                                        persona.capsapemat,
+                                        "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loginExitoso = true;
+                        this.Close();
+                    }
+                }
+            }
+        }
     }
 }

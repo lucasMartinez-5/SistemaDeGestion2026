@@ -74,6 +74,12 @@
     <Compile Include="FRMIniciar_Sesion.Designer.cs">
       <DependentUpon>FRMIniciar_Sesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMModificarPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMModificarPassword.Designer.cs">
+      <DependentUpon>FRMModificarPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMPersona_Buscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FRMIniciar_Sesion.resx">
       <DependentUpon>FRMIniciar_Sesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMModificarPassword.resx">
+      <DependentUpon>FRMModificarPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMPersona_Buscar.resx">
       <DependentUpon>FRMPersona_Buscar.cs</DependentUpon>
