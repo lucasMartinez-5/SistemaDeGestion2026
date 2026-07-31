@@ -53,8 +53,19 @@ namespace SistemaDeGestion2026
 
         private void BTNLogin_Click(object sender, EventArgs e)
         {
-            FRMIniciar_Sesion sesion = new FRMIniciar_Sesion();
-            sesion.ShowDialog();
+            FRMIniciar_Sesion a = new FRMIniciar_Sesion();
+            a.ShowDialog();
+            if(a.actualizarPassword)
+            {
+                FRMModificarPassword b= new FRMModificarPassword();
+                b.usuario = a.usuario;
+                b.persona = a.persona;
+                b.ShowDialog();
+            }
+            if (a.loginExitoso)
+            {
+                MessageBox.Show("Bienvenido al sistema");
+            }
         }
 
         private void BTNActualizarPassword_Click(object sender, EventArgs e)

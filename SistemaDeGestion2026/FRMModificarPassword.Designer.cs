@@ -34,7 +34,7 @@
             this.TXTConfirmarPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.BTNConfirmarPassword = new DevComponents.DotNetBar.ButtonX();
             this.BTNCancelar = new DevComponents.DotNetBar.ButtonX();
-            this.BTNIngresar = new DevComponents.DotNetBar.ButtonX();
+            this.BTNGuardar = new DevComponents.DotNetBar.ButtonX();
             this.TXTNombreLogin = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
             this.TXTPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -51,7 +51,7 @@
             this.GPPanelPrincipal.Controls.Add(this.TXTConfirmarPassword);
             this.GPPanelPrincipal.Controls.Add(this.BTNConfirmarPassword);
             this.GPPanelPrincipal.Controls.Add(this.BTNCancelar);
-            this.GPPanelPrincipal.Controls.Add(this.BTNIngresar);
+            this.GPPanelPrincipal.Controls.Add(this.BTNGuardar);
             this.GPPanelPrincipal.Controls.Add(this.TXTNombreLogin);
             this.GPPanelPrincipal.Controls.Add(this.BTNSalir);
             this.GPPanelPrincipal.Controls.Add(this.TXTPassword);
@@ -163,18 +163,19 @@
             this.BTNCancelar.Text = "&Cancelar";
             this.BTNCancelar.Click += new System.EventHandler(this.BTNCancelar_Click);
             // 
-            // BTNIngresar
+            // BTNGuardar
             // 
-            this.BTNIngresar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNIngresar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNIngresar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_ingresar;
-            this.BTNIngresar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNIngresar.Location = new System.Drawing.Point(9, 147);
-            this.BTNIngresar.Name = "BTNIngresar";
-            this.BTNIngresar.Size = new System.Drawing.Size(121, 51);
-            this.BTNIngresar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNIngresar.TabIndex = 17;
-            this.BTNIngresar.Text = "&Ingresar";
+            this.BTNGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNGuardar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNGuardar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_ingresar;
+            this.BTNGuardar.ImageFixedSize = new System.Drawing.Size(40, 40);
+            this.BTNGuardar.Location = new System.Drawing.Point(9, 147);
+            this.BTNGuardar.Name = "BTNGuardar";
+            this.BTNGuardar.Size = new System.Drawing.Size(121, 51);
+            this.BTNGuardar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNGuardar.TabIndex = 17;
+            this.BTNGuardar.Text = "&Guardar";
+            this.BTNGuardar.Click += new System.EventHandler(this.BTNGuardar_Click);
             // 
             // TXTNombreLogin
             // 
@@ -253,7 +254,7 @@
         private DevComponents.DotNetBar.Controls.GroupPanel GPPanelPrincipal;
         private DevComponents.DotNetBar.ButtonX BTNConfirmarPassword;
         private DevComponents.DotNetBar.ButtonX BTNCancelar;
-        private DevComponents.DotNetBar.ButtonX BTNIngresar;
+        private DevComponents.DotNetBar.ButtonX BTNGuardar;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTNombreLogin;
         private DevComponents.DotNetBar.ButtonX BTNSalir;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTPassword;

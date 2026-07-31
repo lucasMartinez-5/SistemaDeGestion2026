@@ -91,6 +91,8 @@ namespace SistemaDeGestion2026
 
         private void FRMModificarPassword_Load(object sender, EventArgs e)
         {
+            TXTNombreLogin.Text = usuario.causnomlog;
+
             // Forzar al label a mantener sus dimensiones fijas asignadas en el diseñador
             LBLMensaje.AutoSize = false;
 
@@ -105,7 +107,7 @@ namespace SistemaDeGestion2026
             if (this.modificar)
             {
                 JalarDatos();
-                BTNIngresar.Text = "&Modificar";
+                BTNGuardar.Text = "&Modificar";
                 this.Text = "Modificar Usuario";
                 GPPanelPrincipal.Text = "Modificar Usuario";
                 TXTNombreLogin.Focus();
@@ -170,6 +172,39 @@ namespace SistemaDeGestion2026
                     LBLMensaje.ForeColor = Color.White;
                     LBLMensaje.Text = "Seguridad Baja";
                     break;
+            }
+        }
+
+        private void BTNGuardar_Click(object sender, EventArgs e)
+        {
+            aususis usuario = new aususis();
+            string pass = TXTPassword.Text;
+            int nivelSeguridad = MetodosGenerales.ValidadPassword(pass);
+
+            if (TXTPassword.Text == TXTConfirmarPassword.Text)
+            {
+                if (nivelSeguridad == 2)
+                {
+                    usuario.causactpas = false;
+                    usuario.causpasswo = TXTPassword.Text;
+                    if (usuario.Modificar())
+                    {
+                        MessageBox.Show("Password modificado correctamente", "Validación");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar el password", "Validación");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El nivel de seguridad de la contraseña no es segura", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Password no coincide", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
