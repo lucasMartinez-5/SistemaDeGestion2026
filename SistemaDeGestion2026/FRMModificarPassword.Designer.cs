@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.GPPanelPrincipal = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.BTNPassword = new DevComponents.DotNetBar.ButtonX();
             this.LBLMensaje = new DevComponents.DotNetBar.LabelX();
             this.TXTConfirmarPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.BTNConfirmarPassword = new DevComponents.DotNetBar.ButtonX();
@@ -37,7 +38,6 @@
             this.TXTNombreLogin = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
             this.TXTPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.BTNPassword = new DevComponents.DotNetBar.ButtonX();
             this.GPPanelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,8 +91,22 @@
             this.GPPanelPrincipal.TabIndex = 3;
             this.GPPanelPrincipal.Text = "Usuario";
             // 
+            // BTNPassword
+            // 
+            this.BTNPassword.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNPassword.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNPassword.Image = global::SistemaDeGestion2026.Properties.Resources.ic_ver_password;
+            this.BTNPassword.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNPassword.Location = new System.Drawing.Point(231, 35);
+            this.BTNPassword.Name = "BTNPassword";
+            this.BTNPassword.Size = new System.Drawing.Size(26, 23);
+            this.BTNPassword.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNPassword.TabIndex = 22;
+            this.BTNPassword.Click += new System.EventHandler(this.BTNPassword_Click);
+            // 
             // LBLMensaje
             // 
+            this.LBLMensaje.BackColor = System.Drawing.Color.Silver;
             // 
             // 
             // 
@@ -101,7 +115,7 @@
             this.LBLMensaje.Name = "LBLMensaje";
             this.LBLMensaje.Size = new System.Drawing.Size(248, 47);
             this.LBLMensaje.TabIndex = 21;
-            this.LBLMensaje.Text = "labelX1";
+            this.LBLMensaje.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // TXTConfirmarPassword
             // 
@@ -180,6 +194,7 @@
             this.TXTNombreLogin.Size = new System.Drawing.Size(248, 23);
             this.TXTNombreLogin.TabIndex = 16;
             this.TXTNombreLogin.WatermarkText = "Login";
+            this.TXTNombreLogin.TextChanged += new System.EventHandler(this.TXTNombreLogin_TextChanged);
             // 
             // BTNSalir
             // 
@@ -212,19 +227,7 @@
             this.TXTPassword.Size = new System.Drawing.Size(216, 23);
             this.TXTPassword.TabIndex = 4;
             this.TXTPassword.WatermarkText = "Password";
-            // 
-            // BTNPassword
-            // 
-            this.BTNPassword.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNPassword.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNPassword.Image = global::SistemaDeGestion2026.Properties.Resources.ic_ver_password;
-            this.BTNPassword.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNPassword.Location = new System.Drawing.Point(231, 35);
-            this.BTNPassword.Name = "BTNPassword";
-            this.BTNPassword.Size = new System.Drawing.Size(26, 23);
-            this.BTNPassword.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNPassword.TabIndex = 22;
-            this.BTNPassword.Click += new System.EventHandler(this.BTNPassword_Click);
+            this.TXTPassword.TextChanged += new System.EventHandler(this.TXTPassword_TextChanged);
             // 
             // FRMModificarPassword
             // 
@@ -232,12 +235,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 231);
             this.Controls.Add(this.GPPanelPrincipal);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRMModificarPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Password";
+            this.Load += new System.EventHandler(this.FRMModificarPassword_Load);
             this.GPPanelPrincipal.ResumeLayout(false);
             this.ResumeLayout(false);
 

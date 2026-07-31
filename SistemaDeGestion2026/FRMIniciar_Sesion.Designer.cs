@@ -222,6 +222,7 @@
             this.Name = "FRMIniciar_Sesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar_Sesion";
+            this.Load += new System.EventHandler(this.FRMIniciar_Sesion_Load);
             this.GPPanelPrincipal.ResumeLayout(false);
             this.ResumeLayout(false);
 

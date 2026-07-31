@@ -104,5 +104,10 @@ namespace SistemaDeGestion2026
                 }
             }
         }
+
+        private void FRMIniciar_Sesion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

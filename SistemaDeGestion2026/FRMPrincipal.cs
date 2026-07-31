@@ -56,5 +56,10 @@ namespace SistemaDeGestion2026
             FRMIniciar_Sesion sesion = new FRMIniciar_Sesion();
             sesion.ShowDialog();
         }
+
+        private void BTNActualizarPassword_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

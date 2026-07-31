@@ -89,7 +89,8 @@
             // 
             this.GPPanelPrincipal.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.GPPanelPrincipal.TabIndex = 1;
-            this.GPPanelPrincipal.Text = "Persona";
+            this.GPPanelPrincipal.Text = "Usuario";
+            this.GPPanelPrincipal.Click += new System.EventHandler(this.GPPanelPrincipal_Click);
             // 
             // DPECHuellas
             // 
