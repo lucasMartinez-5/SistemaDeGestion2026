@@ -1,4 +1,5 @@
 ﻿using CapaRN;
+using DevComponents.DotNetBar.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace SistemaDeGestion2026
         public bool modificar = false;
         public bool actualizar = false;
         public String codUsuMod = "";
+        public int nivelSeguridad = 0;
         public bool loginExitoso = false;
         #endregion
 
@@ -94,7 +96,7 @@ namespace SistemaDeGestion2026
             TXTNombreLogin.Text = usuario.causnomlog;
 
             // Forzar al label a mantener sus dimensiones fijas asignadas en el diseñador
-            LBLMensaje.AutoSize = false;
+            /*LBLMensaje.AutoSize = false;
 
             // Centrar el texto tanto horizontal como verticalmente
             //LBLMensaje.Text = ContentAlignment.MiddleCenter;
@@ -111,7 +113,7 @@ namespace SistemaDeGestion2026
                 this.Text = "Modificar Usuario";
                 GPPanelPrincipal.Text = "Modificar Usuario";
                 TXTNombreLogin.Focus();
-            }
+            }*/
         }
 
         private void TXTNombreLogin_TextChanged(object sender, EventArgs e)
@@ -121,45 +123,68 @@ namespace SistemaDeGestion2026
 
         private void TXTPassword_TextChanged(object sender, EventArgs e)
         {
-            string pass = TXTPassword.Text;
+            
+            /*nivelSeguridad = MetodosGenerales.ValidarPassword(TXTPassword.Text);
+            if (nivelSeguridad == 0)
+            {
+                LBLMensaje.Text = "Password inadmisible";
+                LBLMensaje.BackColor = Color.Salmon;
+            }
+            else if (nivelSeguridad == 1)
+            {
+                LBLMensaje.Text = "Seguridad Baja";
+                LBLMensaje.BackColor = Color.SandyBrown;
+            }
+            else if (nivelSeguridad == 2)
+            {
+                LBLMensaje.Text = "Seguridad Media";
+                LBLMensaje.BackColor = Color.LightYellow;
+            }
+            else if (nivelSeguridad == 3)
+            {
+                LBLMensaje.Text = "Seguridad Alta";
+                LBLMensaje.BackColor = Color.LightGreen;
+            }
+            */
 
             // Estado inicial: Si el campo está completamente vacío, se queda gris neutral
-            if (string.IsNullOrEmpty(pass))
+            if (string.IsNullOrEmpty(TXTPassword.Text))
             {
                 LBLMensaje.BackColor = Color.LightGray;
                 LBLMensaje.Text = "Ingrese una contraseña";
                 LBLMensaje.ForeColor = Color.Black;
+                TXTPassword.Focus();
                 return;
             }
 
             // Invocamos la función estática desde el archivo externo "MetodosGenerales"
-            int nivelSeguridad = MetodosGenerales.ValidadPassword(pass);
+            nivelSeguridad = MetodosGenerales.ValidarPassword(TXTPassword.Text);
 
             // Mapeo exacto de las 4 condiciones de tu función
             switch (nivelSeguridad)
             {
-                case -1:
+                case 0:
                     // CONDICIÓN 1: Menos de 8 caracteres (Inadmisible)
                     LBLMensaje.BackColor = Color.LightGray; // Mantiene el gris solicitado
                     LBLMensaje.ForeColor = Color.Black;
                     LBLMensaje.Text = "Inadmisible (Mínimo 8 caracteres)";
                     break;
 
-                case 0:
+                case 1:
                     // CONDICIÓN 2: Mayor o igual a 8 caracteres, pero solo letras (Seguridad Baja)
                     LBLMensaje.BackColor = Color.Red; // Rojo
                     LBLMensaje.ForeColor = Color.White;
                     LBLMensaje.Text = "Seguridad Baja";
                     break;
 
-                case 1:
+                case 2:
                     // CONDICIÓN 3: Incluye letras y números, sin caracteres especiales (Seguridad Media)
                     LBLMensaje.BackColor = Color.Yellow; // Amarillo
                     LBLMensaje.ForeColor = Color.Black; // Texto negro para mejor legibilidad en fondo amarillo
                     LBLMensaje.Text = "Seguridad Media";
                     break;
 
-                case 2:
+                case 3:
                     // CONDICIÓN 4: Cumple las 4 condiciones y tiene 8+ caracteres (Alta y Admisible)
                     LBLMensaje.BackColor = Color.Green; // Verde
                     LBLMensaje.ForeColor = Color.White;
@@ -177,35 +202,49 @@ namespace SistemaDeGestion2026
 
         private void BTNGuardar_Click(object sender, EventArgs e)
         {
-            aususis usuario = new aususis();
-            string pass = TXTPassword.Text;
-            int nivelSeguridad = MetodosGenerales.ValidadPassword(pass);
 
             if (TXTPassword.Text == TXTConfirmarPassword.Text)
             {
-                if (nivelSeguridad == 2)
+                if (nivelSeguridad == 3)
                 {
                     usuario.causactpas = false;
                     usuario.causpasswo = TXTPassword.Text;
                     if (usuario.Modificar())
                     {
-                        MessageBox.Show("Password modificado correctamente", "Validación");
+                        MessageBox.Show("Password modificado correctamente", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Error al modificar el password", "Validación");
+                        MessageBox.Show("Error al modificar el password", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El nivel de seguridad de la contraseña no es segura", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (string.IsNullOrEmpty(TXTPassword.Text))
+                    {
+                        MessageBox.Show("Por favor, ingrese una contraseña", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        TXTPassword.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nivel de seguridad de la contraseña no es suficiente", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        TXTPassword.Focus();
+                    }
+                    
                 }
             }
             else
             {
-                MessageBox.Show("Password no coincide", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Password no coincide", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TXTPassword.Focus();
             }
+        }
+
+        private void TXTPassword_Enter(object sender, EventArgs e)
+        {
+            TextBoxX a = (TextBoxX)sender;
+            a.SelectAll();
         }
     }
 }

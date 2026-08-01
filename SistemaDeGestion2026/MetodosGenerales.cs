@@ -207,45 +207,86 @@ namespace SistemaDeGestion2026
         #endregion
 
         #region Validacion de contraseña
-        public static int ValidadPassword(string password)
+        public static int ValidarPassword(string password)
         {
+            /*if (password.Length >= 8)
+            {
+
+
+                bool numero = password.Any(char.IsDigit);
+                bool mayuscula = password.Any(char.IsUpper);
+                bool minuscula = password.Any(char.IsLower);
+                bool caracterEspecial = password.Any(c => !char.IsLetterOrDigit(c));
+
+                int cont = 0;
+
+                bool[] vec = { numero, mayuscula, minuscula, caracterEspecial };
+
+                foreach (bool a in vec)
+                {
+                    if (a)
+                    {
+                        cont++;
+                    }
+                }
+
+                if (cont == 4)
+                {
+                    return 3;
+                }
+                else
+                {
+                    if (cont >= 2)
+                    {
+                        return 2;
+                    }
+                    else
+                    {
+                        return 1;
+                    }
+                }
+
+            }
+            else
+            {
+                return 0;
+            }
+            */
+            
+
             // CONDICIÓN 1: Si no tiene mínimo 8 caracteres, no es admisible
             if (string.IsNullOrEmpty(password) || password.Length < 8)
             {
-                return -1; // No admisible (Largo incorrecto)
+                return 0; // No admisible (Largo incorrecto)
             }
 
             // Evaluamos la presencia de los 4 elementos obligatorios
             bool tieneMayuscula = Regex.IsMatch(password, @"[A-Z]");
             bool tieneMinuscula = Regex.IsMatch(password, @"[a-z]");
             bool tieneNumero = Regex.IsMatch(password, @"[0-9]");
-            bool tieneEspecial = Regex.IsMatch(password, @"[@$!%*?&_^.+/ç·#-]");
+            bool tieneEspecial = Regex.IsMatch(password, @"[@$!%*?&_^.+/ç·#]");
 
             // CONDICIÓN 4: Si tiene 8 caracteres y cumple las 4 condiciones, es admisible/válido
             if (tieneMayuscula && tieneMinuscula && tieneNumero && tieneEspecial)
             {
-                return 2; // Admisible / Válido (Seguridad Alta)
+                return 3; // Admisible / Válido (Seguridad Alta)
             }
 
             // CONDICIÓN 2: Si no tiene número ni carácter especial (solo letras), es seguridad baja
             if (!tieneNumero && !tieneEspecial)
             {
-                return 0; // Seguridad Baja
+                return 1; // Seguridad Baja
             }
 
             // CONDICIÓN 3: Si incluye letras y números, pero no tiene carácter especial, es seguridad media
-            if (tieneMayuscula && tieneMinuscula && tieneNumero && !tieneEspecial)
+            if ((tieneMayuscula && tieneMinuscula && tieneNumero && !tieneEspecial) || (tieneMayuscula && tieneMinuscula && !tieneNumero && tieneEspecial))
             {
-                return 1; // Seguridad Media
+                return 2; // Seguridad Media
             }
-            // CONDICIÓN 3: Si incluye letras y caracteres especuales, pero no tiene números, es seguridad media
-            if (tieneMayuscula && tieneMinuscula && !tieneNumero && tieneEspecial)
-            {
-                return 1; // Seguridad Media
-            }
-
+            
             // Caso por defecto: Si no cae en ninguna regla anterior pero tiene 8 caracteres
-            return 0; // Seguridad Baja por precaución
+            return 1; // Seguridad Baja por precaución
+            
         }
         #endregion
 

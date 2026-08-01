@@ -229,6 +229,7 @@
             this.TXTPassword.TabIndex = 4;
             this.TXTPassword.WatermarkText = "Password";
             this.TXTPassword.TextChanged += new System.EventHandler(this.TXTPassword_TextChanged);
+            this.TXTPassword.Enter += new System.EventHandler(this.TXTPassword_Enter);
             // 
             // FRMModificarPassword
             // 

@@ -99,6 +99,12 @@ namespace SistemaDeGestion2026
                 }
                 else
                 {
+                    if ((TXTPassword.Text == persona.capsnumcid) || (TXTPassword.Text != usuario.causpasswo))
+                    {
+                        MessageBox.Show("Contraseña incorrecta", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        TXTPassword.Focus();
+                    }
+
                     if (TXTPassword.Text == usuario.causpasswo)
                     {
                         MessageBox.Show("Bienvenido " + persona.capsnomper + " " +
@@ -106,6 +112,7 @@ namespace SistemaDeGestion2026
                                                         persona.capsapemat,
                                         "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         loginExitoso = true;
+                        actualizarPassword = false;
                         this.Close();
                     }
                 }

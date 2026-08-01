@@ -277,7 +277,6 @@
             this.BTNCambiarPassword.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNCambiarPassword.TabIndex = 7;
             this.BTNCambiarPassword.Text = "&Cambiar Password";
-            this.BTNCambiarPassword.Click += new System.EventHandler(this.BTNCambiarPassword_Click);
             // 
             // BTNReporte
             // 

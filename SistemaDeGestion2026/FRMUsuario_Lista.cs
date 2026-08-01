@@ -225,19 +225,6 @@ namespace SistemaDeGestion2026
             }
         }
 
-        private void BTNCambiarPassword_Click(object sender, EventArgs e)
-        {
-            if (DTGLista.SelectedRows.Count > 0)
-            {
-                FRMModificarPassword F1 = new FRMModificarPassword();
-                F1.modificar = true;
-                F1.codUsuMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                F1.ShowDialog();
-                if (F1.actualizar)
-                {
-                    ActualizarGrid();
-                }
-            }
-        }
+        
     }
 }
