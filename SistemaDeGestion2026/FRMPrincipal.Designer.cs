@@ -31,25 +31,26 @@
             this.components = new System.ComponentModel.Container();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
-            this.BTNUsuarios = new DevComponents.DotNetBar.ButtonX();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
-            this.BTNPersonas = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.applicationButton1 = new DevComponents.DotNetBar.ApplicationButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer3 = new DevComponents.DotNetBar.ItemContainer();
-            this.BTNLogin = new DevComponents.DotNetBar.ButtonItem();
-            this.BTNActualizarPassword = new DevComponents.DotNetBar.ButtonItem();
-            this.BTNCerrarSesion = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer4 = new DevComponents.DotNetBar.ItemContainer();
-            this.BTNConfigurar = new DevComponents.DotNetBar.ButtonItem();
-            this.BTNSalir = new DevComponents.DotNetBar.ButtonItem();
             this.RTBAdministracion = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.BTNUsuarios = new DevComponents.DotNetBar.ButtonX();
+            this.BTNPersonas = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNLogin = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNLoginHuella = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNActualizarPassword = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNCerrarSesion = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNConfigurar = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNSalir = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -123,21 +124,6 @@
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
             // 
-            // BTNUsuarios
-            // 
-            this.BTNUsuarios.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNUsuarios.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNUsuarios.Image = global::SistemaDeGestion2026.Properties.Resources.ic_usuario;
-            this.BTNUsuarios.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.BTNUsuarios.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.BTNUsuarios.Location = new System.Drawing.Point(83, 3);
-            this.BTNUsuarios.Name = "BTNUsuarios";
-            this.BTNUsuarios.Size = new System.Drawing.Size(75, 74);
-            this.BTNUsuarios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNUsuarios.TabIndex = 1;
-            this.BTNUsuarios.Text = "Usuarios";
-            this.BTNUsuarios.Click += new System.EventHandler(this.BTNUsuarios_Click);
-            // 
             // ribbonBar1
             // 
             this.ribbonBar1.AutoOverflowEnabled = true;
@@ -169,16 +155,6 @@
             // 
             // 
             this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // BTNPersonas
-            // 
-            this.BTNPersonas.Image = global::SistemaDeGestion2026.Properties.Resources.ic_persona;
-            this.BTNPersonas.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.BTNPersonas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.BTNPersonas.Name = "BTNPersonas";
-            this.BTNPersonas.SubItemsExpandWidth = 14;
-            this.BTNPersonas.Text = "Personas";
-            this.BTNPersonas.Click += new System.EventHandler(this.BTNPersonas_Click);
             // 
             // ribbonPanel2
             // 
@@ -264,41 +240,13 @@
             this.itemContainer3.Name = "itemContainer3";
             this.itemContainer3.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.BTNLogin,
+            this.BTNLoginHuella,
             this.BTNActualizarPassword,
             this.BTNCerrarSesion});
             // 
             // 
             // 
             this.itemContainer3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // BTNLogin
-            // 
-            this.BTNLogin.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.BTNLogin.Image = global::SistemaDeGestion2026.Properties.Resources.ic_iniciar_sesion;
-            this.BTNLogin.ImageFixedSize = new System.Drawing.Size(30, 30);
-            this.BTNLogin.Name = "BTNLogin";
-            this.BTNLogin.SubItemsExpandWidth = 24;
-            this.BTNLogin.Text = "&Iniciar Sesion";
-            this.BTNLogin.Click += new System.EventHandler(this.BTNLogin_Click);
-            // 
-            // BTNActualizarPassword
-            // 
-            this.BTNActualizarPassword.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.BTNActualizarPassword.Image = global::SistemaDeGestion2026.Properties.Resources.ic_actualizar_password;
-            this.BTNActualizarPassword.ImageFixedSize = new System.Drawing.Size(30, 30);
-            this.BTNActualizarPassword.Name = "BTNActualizarPassword";
-            this.BTNActualizarPassword.SubItemsExpandWidth = 24;
-            this.BTNActualizarPassword.Text = "&Actualizar Password";
-            this.BTNActualizarPassword.Click += new System.EventHandler(this.BTNActualizarPassword_Click);
-            // 
-            // BTNCerrarSesion
-            // 
-            this.BTNCerrarSesion.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.BTNCerrarSesion.Image = global::SistemaDeGestion2026.Properties.Resources.ic_cerrar_sesion;
-            this.BTNCerrarSesion.ImageFixedSize = new System.Drawing.Size(30, 30);
-            this.BTNCerrarSesion.Name = "BTNCerrarSesion";
-            this.BTNCerrarSesion.SubItemsExpandWidth = 24;
-            this.BTNCerrarSesion.Text = "&Cerrar Sesion";
             // 
             // itemContainer4
             // 
@@ -316,26 +264,6 @@
             // 
             // 
             this.itemContainer4.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // BTNConfigurar
-            // 
-            this.BTNConfigurar.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.BTNConfigurar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNConfigurar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_configurar;
-            this.BTNConfigurar.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNConfigurar.Name = "BTNConfigurar";
-            this.BTNConfigurar.SubItemsExpandWidth = 24;
-            this.BTNConfigurar.Text = "Config&urar";
-            // 
-            // BTNSalir
-            // 
-            this.BTNSalir.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.BTNSalir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNSalir.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir_app;
-            this.BTNSalir.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNSalir.Name = "BTNSalir";
-            this.BTNSalir.SubItemsExpandWidth = 24;
-            this.BTNSalir.Text = "&Salir";
             // 
             // RTBAdministracion
             // 
@@ -365,11 +293,95 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.VisualStudio2012Light;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204))))));
             // 
+            // BTNUsuarios
+            // 
+            this.BTNUsuarios.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNUsuarios.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNUsuarios.Image = global::SistemaDeGestion2026.Properties.Resources.ic_usuario;
+            this.BTNUsuarios.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.BTNUsuarios.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.BTNUsuarios.Location = new System.Drawing.Point(83, 3);
+            this.BTNUsuarios.Name = "BTNUsuarios";
+            this.BTNUsuarios.Size = new System.Drawing.Size(75, 74);
+            this.BTNUsuarios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNUsuarios.TabIndex = 1;
+            this.BTNUsuarios.Text = "Usuarios";
+            this.BTNUsuarios.Click += new System.EventHandler(this.BTNUsuarios_Click);
+            // 
+            // BTNPersonas
+            // 
+            this.BTNPersonas.Image = global::SistemaDeGestion2026.Properties.Resources.ic_persona;
+            this.BTNPersonas.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.BTNPersonas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.BTNPersonas.Name = "BTNPersonas";
+            this.BTNPersonas.SubItemsExpandWidth = 14;
+            this.BTNPersonas.Text = "Personas";
+            this.BTNPersonas.Click += new System.EventHandler(this.BTNPersonas_Click);
+            // 
+            // BTNLogin
+            // 
+            this.BTNLogin.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BTNLogin.Image = global::SistemaDeGestion2026.Properties.Resources.ic_iniciar_sesion;
+            this.BTNLogin.ImageFixedSize = new System.Drawing.Size(30, 30);
+            this.BTNLogin.Name = "BTNLogin";
+            this.BTNLogin.SubItemsExpandWidth = 24;
+            this.BTNLogin.Text = "&Iniciar Sesion";
+            this.BTNLogin.Click += new System.EventHandler(this.BTNLogin_Click);
+            // 
+            // BTNLoginHuella
+            // 
+            this.BTNLoginHuella.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BTNLoginHuella.Image = global::SistemaDeGestion2026.Properties.Resources.ic_login_huella;
+            this.BTNLoginHuella.ImageFixedSize = new System.Drawing.Size(30, 30);
+            this.BTNLoginHuella.Name = "BTNLoginHuella";
+            this.BTNLoginHuella.SubItemsExpandWidth = 24;
+            this.BTNLoginHuella.Text = "&Iniciar Sesion2";
+            this.BTNLoginHuella.Click += new System.EventHandler(this.BTNLoginHuella_Click);
+            // 
+            // BTNActualizarPassword
+            // 
+            this.BTNActualizarPassword.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BTNActualizarPassword.Image = global::SistemaDeGestion2026.Properties.Resources.ic_actualizar_password;
+            this.BTNActualizarPassword.ImageFixedSize = new System.Drawing.Size(30, 30);
+            this.BTNActualizarPassword.Name = "BTNActualizarPassword";
+            this.BTNActualizarPassword.SubItemsExpandWidth = 24;
+            this.BTNActualizarPassword.Text = "&Actualizar Password";
+            this.BTNActualizarPassword.Click += new System.EventHandler(this.BTNActualizarPassword_Click);
+            // 
+            // BTNCerrarSesion
+            // 
+            this.BTNCerrarSesion.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BTNCerrarSesion.Image = global::SistemaDeGestion2026.Properties.Resources.ic_cerrar_sesion;
+            this.BTNCerrarSesion.ImageFixedSize = new System.Drawing.Size(30, 30);
+            this.BTNCerrarSesion.Name = "BTNCerrarSesion";
+            this.BTNCerrarSesion.SubItemsExpandWidth = 24;
+            this.BTNCerrarSesion.Text = "&Cerrar Sesion";
+            // 
+            // BTNConfigurar
+            // 
+            this.BTNConfigurar.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BTNConfigurar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNConfigurar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_configurar;
+            this.BTNConfigurar.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNConfigurar.Name = "BTNConfigurar";
+            this.BTNConfigurar.SubItemsExpandWidth = 24;
+            this.BTNConfigurar.Text = "Config&urar";
+            // 
+            // BTNSalir
+            // 
+            this.BTNSalir.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BTNSalir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNSalir.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir_app;
+            this.BTNSalir.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNSalir.Name = "BTNSalir";
+            this.BTNSalir.SubItemsExpandWidth = 24;
+            this.BTNSalir.Text = "&Salir";
+            // 
             // FRMPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 277);
+            this.ClientSize = new System.Drawing.Size(670, 273);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -408,6 +420,7 @@
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private DevComponents.DotNetBar.ButtonItem BTNPersonas;
         private DevComponents.DotNetBar.ButtonX BTNUsuarios;
+        private DevComponents.DotNetBar.ButtonItem BTNLoginHuella;
     }
 }
 

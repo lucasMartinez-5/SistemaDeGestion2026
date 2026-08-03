@@ -72,5 +72,11 @@ namespace SistemaDeGestion2026
         {
             
         }
+
+        private void BTNLoginHuella_Click(object sender, EventArgs e)
+        {
+            FRMIniciar_Sesion_Huella a = new FRMIniciar_Sesion_Huella();
+            a.ShowDialog();
+        }
     }
 }
