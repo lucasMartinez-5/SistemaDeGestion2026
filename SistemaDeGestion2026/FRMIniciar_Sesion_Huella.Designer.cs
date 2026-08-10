@@ -179,6 +179,7 @@
             this.Name = "FRMIniciar_Sesion_Huella";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMIniciar_Sesion_Huella";
+            this.Load += new System.EventHandler(this.FRMIniciar_Sesion_Huella_Load);
             this.GPPanelPrincipal.ResumeLayout(false);
             this.GPPanelPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LBLMensaje)).EndInit();
