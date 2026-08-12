@@ -66,7 +66,7 @@
             this.LBLUsuario.Location = new System.Drawing.Point(0, 0);
             this.LBLUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LBLUsuario.Name = "LBLUsuario";
-            this.LBLUsuario.PaddingRight = 10;
+            this.LBLUsuario.PaddingLeft = 10;
             this.LBLUsuario.Size = new System.Drawing.Size(327, 48);
             this.LBLUsuario.TabIndex = 0;
             this.LBLUsuario.Text = "Usuario";
@@ -81,7 +81,7 @@
             this.LBLFecha.Location = new System.Drawing.Point(448, 0);
             this.LBLFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LBLFecha.Name = "LBLFecha";
-            this.LBLFecha.PaddingLeft = 10;
+            this.LBLFecha.PaddingRight = 10;
             this.LBLFecha.Size = new System.Drawing.Size(319, 48);
             this.LBLFecha.TabIndex = 1;
             this.LBLFecha.Text = "Bermejo 12 de Agosto de 2026 14:02:10";

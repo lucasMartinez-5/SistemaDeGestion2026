@@ -43,8 +43,9 @@
             this.LBLTitulo.Name = "LBLTitulo";
             this.LBLTitulo.Size = new System.Drawing.Size(800, 450);
             this.LBLTitulo.TabIndex = 0;
-            this.LBLTitulo.Text = "<b>SISTEMA DE \r\nINVENTARIO 2026</b>";
+            this.LBLTitulo.Text = "SISTEMA DE INVENTARIO 2026";
             this.LBLTitulo.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.LBLTitulo.Click += new System.EventHandler(this.LBLTitulo_Click);
             // 
             // FRMFondo1
             // 
