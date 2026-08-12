@@ -72,6 +72,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FRMFondo1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMFondo1.Designer.cs">
+      <DependentUpon>FRMFondo1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMFondo2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMFondo2.Designer.cs">
+      <DependentUpon>FRMFondo2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMIniciar_Sesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,12 @@
     <Compile Include="MetodosGenerales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FRMFondo1.resx">
+      <DependentUpon>FRMFondo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMFondo2.resx">
+      <DependentUpon>FRMFondo2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMIniciar_Sesion.resx">
       <DependentUpon>FRMIniciar_Sesion.cs</DependentUpon>
     </EmbeddedResource>

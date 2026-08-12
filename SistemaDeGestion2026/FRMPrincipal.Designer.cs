@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.RBPAdministracion = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.applicationButton1 = new DevComponents.DotNetBar.ApplicationButton();
@@ -40,7 +40,6 @@
             this.itemContainer4 = new DevComponents.DotNetBar.ItemContainer();
             this.RTBAdministracion = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.BTNUsuarios = new DevComponents.DotNetBar.ButtonX();
@@ -51,8 +50,9 @@
             this.BTNCerrarSesion = new DevComponents.DotNetBar.ButtonItem();
             this.BTNConfigurar = new DevComponents.DotNetBar.ButtonItem();
             this.BTNSalir = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
-            this.ribbonPanel1.SuspendLayout();
+            this.RBPAdministracion.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -63,7 +63,7 @@
             // 
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.RBPAdministracion);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.ForeColor = System.Drawing.Color.Black;
@@ -76,7 +76,6 @@
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(2);
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem1,
             this.qatCustomizeItem1});
             this.ribbonControl1.Size = new System.Drawing.Size(660, 146);
             this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -98,31 +97,32 @@
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "ribbonControl1";
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
-            // ribbonPanel1
+            // RBPAdministracion
             // 
-            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel1.Controls.Add(this.BTNUsuarios);
-            this.ribbonPanel1.Controls.Add(this.ribbonBar1);
-            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 54);
-            this.ribbonPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(2, 0, 2, 2);
-            this.ribbonPanel1.Size = new System.Drawing.Size(660, 92);
-            // 
-            // 
-            // 
-            this.ribbonPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RBPAdministracion.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RBPAdministracion.Controls.Add(this.BTNUsuarios);
+            this.RBPAdministracion.Controls.Add(this.ribbonBar1);
+            this.RBPAdministracion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RBPAdministracion.Location = new System.Drawing.Point(0, 54);
+            this.RBPAdministracion.Margin = new System.Windows.Forms.Padding(2);
+            this.RBPAdministracion.Name = "RBPAdministracion";
+            this.RBPAdministracion.Padding = new System.Windows.Forms.Padding(2, 0, 2, 2);
+            this.RBPAdministracion.Size = new System.Drawing.Size(660, 92);
             // 
             // 
             // 
-            this.ribbonPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RBPAdministracion.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel1.TabIndex = 1;
+            this.RBPAdministracion.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RBPAdministracion.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RBPAdministracion.TabIndex = 1;
             // 
             // ribbonBar1
             // 
@@ -269,7 +269,9 @@
             // 
             this.RTBAdministracion.Checked = true;
             this.RTBAdministracion.Name = "RTBAdministracion";
-            this.RTBAdministracion.Panel = this.ribbonPanel1;
+            this.RTBAdministracion.Panel = this.RBPAdministracion;
+            this.RTBAdministracion.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem1});
             this.RTBAdministracion.Text = "&Administración";
             // 
             // ribbonTabItem2
@@ -277,11 +279,6 @@
             this.ribbonTabItem2.Name = "ribbonTabItem2";
             this.ribbonTabItem2.Panel = this.ribbonPanel2;
             this.ribbonTabItem2.Text = "ribbonTabItem2";
-            // 
-            // buttonItem1
-            // 
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.Text = "buttonItem1";
             // 
             // qatCustomizeItem1
             // 
@@ -356,6 +353,7 @@
             this.BTNCerrarSesion.Name = "BTNCerrarSesion";
             this.BTNCerrarSesion.SubItemsExpandWidth = 24;
             this.BTNCerrarSesion.Text = "&Cerrar Sesion";
+            this.BTNCerrarSesion.Click += new System.EventHandler(this.BTNCerrarSesion_Click);
             // 
             // BTNConfigurar
             // 
@@ -377,11 +375,16 @@
             this.BTNSalir.SubItemsExpandWidth = 24;
             this.BTNSalir.Text = "&Salir";
             // 
+            // buttonItem1
+            // 
+            this.buttonItem1.Name = "buttonItem1";
+            this.buttonItem1.Text = "buttonItem1";
+            // 
             // FRMPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 273);
+            this.ClientSize = new System.Drawing.Size(670, 335);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -392,7 +395,7 @@
             this.Load += new System.EventHandler(this.FRMPrincipal_Load);
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
-            this.ribbonPanel1.ResumeLayout(false);
+            this.RBPAdministracion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -400,7 +403,7 @@
         #endregion
 
         private DevComponents.DotNetBar.RibbonControl ribbonControl1;
-        private DevComponents.DotNetBar.RibbonPanel ribbonPanel1;
+        private DevComponents.DotNetBar.RibbonPanel RBPAdministracion;
         private DevComponents.DotNetBar.RibbonBar ribbonBar1;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel2;
         private DevComponents.DotNetBar.ApplicationButton applicationButton1;
@@ -415,12 +418,12 @@
         private DevComponents.DotNetBar.ButtonItem BTNSalir;
         private DevComponents.DotNetBar.RibbonTabItem RTBAdministracion;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem2;
-        private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.QatCustomizeItem qatCustomizeItem1;
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private DevComponents.DotNetBar.ButtonItem BTNPersonas;
         private DevComponents.DotNetBar.ButtonX BTNUsuarios;
         private DevComponents.DotNetBar.ButtonItem BTNLoginHuella;
+        private DevComponents.DotNetBar.ButtonItem buttonItem1;
     }
 }
 
