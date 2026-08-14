@@ -58,7 +58,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPVerNET.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -120,11 +122,23 @@
     <Compile Include="FRMPersona_Registrar.Designer.cs">
       <DependentUpon>FRMPersona_Registrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMPorducto_Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMPorducto_Lista.Designer.cs">
+      <DependentUpon>FRMPorducto_Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRMPrincipal.Designer.cs">
       <DependentUpon>FRMPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMProducto_Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMProducto_Registrar.Designer.cs">
+      <DependentUpon>FRMProducto_Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMSplash.cs">
       <SubType>Form</SubType>
@@ -171,8 +185,14 @@
     <EmbeddedResource Include="FRMPersona_Registrar.resx">
       <DependentUpon>FRMPersona_Registrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMPorducto_Lista.resx">
+      <DependentUpon>FRMPorducto_Lista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMPrincipal.resx">
       <DependentUpon>FRMPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMProducto_Registrar.resx">
+      <DependentUpon>FRMProducto_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMSplash.resx">
       <DependentUpon>FRMSplash.cs</DependentUpon>
