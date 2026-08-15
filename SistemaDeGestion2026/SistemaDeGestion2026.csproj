@@ -54,7 +54,9 @@
     <Reference Include="DPFPShrXTypeLibNET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
