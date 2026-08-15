@@ -30,28 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
-            this.BTNUsuarios = new DevComponents.DotNetBar.ButtonX();
+            this.RBPAdministracion = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
-            this.BTNPersonas = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.applicationButton1 = new DevComponents.DotNetBar.ApplicationButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer3 = new DevComponents.DotNetBar.ItemContainer();
-            this.BTNLogin = new DevComponents.DotNetBar.ButtonItem();
-            this.BTNActualizarPassword = new DevComponents.DotNetBar.ButtonItem();
-            this.BTNCerrarSesion = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer4 = new DevComponents.DotNetBar.ItemContainer();
-            this.BTNConfigurar = new DevComponents.DotNetBar.ButtonItem();
-            this.BTNSalir = new DevComponents.DotNetBar.ButtonItem();
             this.RTBAdministracion = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.BTNUsuarios = new DevComponents.DotNetBar.ButtonX();
+            this.BTNPersonas = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNLogin = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNLoginHuella = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNActualizarPassword = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNCerrarSesion = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNConfigurar = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNSalir = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
-            this.ribbonPanel1.SuspendLayout();
+            this.RBPAdministracion.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -62,7 +63,7 @@
             // 
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.RBPAdministracion);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.ForeColor = System.Drawing.Color.Black;
@@ -75,7 +76,6 @@
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(2);
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem1,
             this.qatCustomizeItem1});
             this.ribbonControl1.Size = new System.Drawing.Size(660, 146);
             this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -97,46 +97,32 @@
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "ribbonControl1";
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
-            // ribbonPanel1
+            // RBPAdministracion
             // 
-            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel1.Controls.Add(this.BTNUsuarios);
-            this.ribbonPanel1.Controls.Add(this.ribbonBar1);
-            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 54);
-            this.ribbonPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(2, 0, 2, 2);
-            this.ribbonPanel1.Size = new System.Drawing.Size(660, 92);
-            // 
-            // 
-            // 
-            this.ribbonPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RBPAdministracion.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RBPAdministracion.Controls.Add(this.BTNUsuarios);
+            this.RBPAdministracion.Controls.Add(this.ribbonBar1);
+            this.RBPAdministracion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RBPAdministracion.Location = new System.Drawing.Point(0, 54);
+            this.RBPAdministracion.Margin = new System.Windows.Forms.Padding(2);
+            this.RBPAdministracion.Name = "RBPAdministracion";
+            this.RBPAdministracion.Padding = new System.Windows.Forms.Padding(2, 0, 2, 2);
+            this.RBPAdministracion.Size = new System.Drawing.Size(660, 92);
             // 
             // 
             // 
-            this.ribbonPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RBPAdministracion.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel1.TabIndex = 1;
+            this.RBPAdministracion.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // BTNUsuarios
             // 
-            this.BTNUsuarios.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNUsuarios.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNUsuarios.Image = global::SistemaDeGestion2026.Properties.Resources.ic_usuario;
-            this.BTNUsuarios.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.BTNUsuarios.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.BTNUsuarios.Location = new System.Drawing.Point(83, 3);
-            this.BTNUsuarios.Name = "BTNUsuarios";
-            this.BTNUsuarios.Size = new System.Drawing.Size(75, 74);
-            this.BTNUsuarios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNUsuarios.TabIndex = 1;
-            this.BTNUsuarios.Text = "Usuarios";
-            this.BTNUsuarios.Click += new System.EventHandler(this.BTNUsuarios_Click);
+            // 
+            this.RBPAdministracion.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RBPAdministracion.TabIndex = 1;
             // 
             // ribbonBar1
             // 
@@ -169,16 +155,6 @@
             // 
             // 
             this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // BTNPersonas
-            // 
-            this.BTNPersonas.Image = global::SistemaDeGestion2026.Properties.Resources.ic_persona;
-            this.BTNPersonas.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.BTNPersonas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.BTNPersonas.Name = "BTNPersonas";
-            this.BTNPersonas.SubItemsExpandWidth = 14;
-            this.BTNPersonas.Text = "Personas";
-            this.BTNPersonas.Click += new System.EventHandler(this.BTNPersonas_Click);
             // 
             // ribbonPanel2
             // 
@@ -264,12 +240,80 @@
             this.itemContainer3.Name = "itemContainer3";
             this.itemContainer3.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.BTNLogin,
+            this.BTNLoginHuella,
             this.BTNActualizarPassword,
             this.BTNCerrarSesion});
             // 
             // 
             // 
             this.itemContainer3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // itemContainer4
+            // 
+            // 
+            // 
+            // 
+            this.itemContainer4.BackgroundStyle.Class = "RibbonFileMenuBottomContainer";
+            this.itemContainer4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemContainer4.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Right;
+            this.itemContainer4.Name = "itemContainer4";
+            this.itemContainer4.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.BTNConfigurar,
+            this.BTNSalir});
+            // 
+            // 
+            // 
+            this.itemContainer4.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // RTBAdministracion
+            // 
+            this.RTBAdministracion.Checked = true;
+            this.RTBAdministracion.Name = "RTBAdministracion";
+            this.RTBAdministracion.Panel = this.RBPAdministracion;
+            this.RTBAdministracion.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem1});
+            this.RTBAdministracion.Text = "&Administración";
+            // 
+            // ribbonTabItem2
+            // 
+            this.ribbonTabItem2.Name = "ribbonTabItem2";
+            this.ribbonTabItem2.Panel = this.ribbonPanel2;
+            this.ribbonTabItem2.Text = "ribbonTabItem2";
+            // 
+            // qatCustomizeItem1
+            // 
+            this.qatCustomizeItem1.Name = "qatCustomizeItem1";
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerColorTint = System.Drawing.Color.DodgerBlue;
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.VisualStudio2012Light;
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204))))));
+            // 
+            // BTNUsuarios
+            // 
+            this.BTNUsuarios.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNUsuarios.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNUsuarios.Image = global::SistemaDeGestion2026.Properties.Resources.ic_usuario;
+            this.BTNUsuarios.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.BTNUsuarios.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.BTNUsuarios.Location = new System.Drawing.Point(83, 3);
+            this.BTNUsuarios.Name = "BTNUsuarios";
+            this.BTNUsuarios.Size = new System.Drawing.Size(75, 74);
+            this.BTNUsuarios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNUsuarios.TabIndex = 1;
+            this.BTNUsuarios.Text = "Usuarios";
+            this.BTNUsuarios.Click += new System.EventHandler(this.BTNUsuarios_Click);
+            // 
+            // BTNPersonas
+            // 
+            this.BTNPersonas.Image = global::SistemaDeGestion2026.Properties.Resources.ic_persona;
+            this.BTNPersonas.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.BTNPersonas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.BTNPersonas.Name = "BTNPersonas";
+            this.BTNPersonas.SubItemsExpandWidth = 14;
+            this.BTNPersonas.Text = "Personas";
+            this.BTNPersonas.Click += new System.EventHandler(this.BTNPersonas_Click);
             // 
             // BTNLogin
             // 
@@ -280,6 +324,16 @@
             this.BTNLogin.SubItemsExpandWidth = 24;
             this.BTNLogin.Text = "&Iniciar Sesion";
             this.BTNLogin.Click += new System.EventHandler(this.BTNLogin_Click);
+            // 
+            // BTNLoginHuella
+            // 
+            this.BTNLoginHuella.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BTNLoginHuella.Image = global::SistemaDeGestion2026.Properties.Resources.ic_login_huella;
+            this.BTNLoginHuella.ImageFixedSize = new System.Drawing.Size(30, 30);
+            this.BTNLoginHuella.Name = "BTNLoginHuella";
+            this.BTNLoginHuella.SubItemsExpandWidth = 24;
+            this.BTNLoginHuella.Text = "&Iniciar Sesion2";
+            this.BTNLoginHuella.Click += new System.EventHandler(this.BTNLoginHuella_Click);
             // 
             // BTNActualizarPassword
             // 
@@ -299,23 +353,7 @@
             this.BTNCerrarSesion.Name = "BTNCerrarSesion";
             this.BTNCerrarSesion.SubItemsExpandWidth = 24;
             this.BTNCerrarSesion.Text = "&Cerrar Sesion";
-            // 
-            // itemContainer4
-            // 
-            // 
-            // 
-            // 
-            this.itemContainer4.BackgroundStyle.Class = "RibbonFileMenuBottomContainer";
-            this.itemContainer4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.itemContainer4.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Right;
-            this.itemContainer4.Name = "itemContainer4";
-            this.itemContainer4.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.BTNConfigurar,
-            this.BTNSalir});
-            // 
-            // 
-            // 
-            this.itemContainer4.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.BTNCerrarSesion.Click += new System.EventHandler(this.BTNCerrarSesion_Click);
             // 
             // BTNConfigurar
             // 
@@ -337,39 +375,16 @@
             this.BTNSalir.SubItemsExpandWidth = 24;
             this.BTNSalir.Text = "&Salir";
             // 
-            // RTBAdministracion
-            // 
-            this.RTBAdministracion.Checked = true;
-            this.RTBAdministracion.Name = "RTBAdministracion";
-            this.RTBAdministracion.Panel = this.ribbonPanel1;
-            this.RTBAdministracion.Text = "&Administración";
-            // 
-            // ribbonTabItem2
-            // 
-            this.ribbonTabItem2.Name = "ribbonTabItem2";
-            this.ribbonTabItem2.Panel = this.ribbonPanel2;
-            this.ribbonTabItem2.Text = "ribbonTabItem2";
-            // 
             // buttonItem1
             // 
             this.buttonItem1.Name = "buttonItem1";
             this.buttonItem1.Text = "buttonItem1";
             // 
-            // qatCustomizeItem1
-            // 
-            this.qatCustomizeItem1.Name = "qatCustomizeItem1";
-            // 
-            // styleManager1
-            // 
-            this.styleManager1.ManagerColorTint = System.Drawing.Color.DodgerBlue;
-            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.VisualStudio2012Light;
-            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204))))));
-            // 
             // FRMPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 277);
+            this.ClientSize = new System.Drawing.Size(670, 335);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -380,7 +395,7 @@
             this.Load += new System.EventHandler(this.FRMPrincipal_Load);
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
-            this.ribbonPanel1.ResumeLayout(false);
+            this.RBPAdministracion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -388,7 +403,7 @@
         #endregion
 
         private DevComponents.DotNetBar.RibbonControl ribbonControl1;
-        private DevComponents.DotNetBar.RibbonPanel ribbonPanel1;
+        private DevComponents.DotNetBar.RibbonPanel RBPAdministracion;
         private DevComponents.DotNetBar.RibbonBar ribbonBar1;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel2;
         private DevComponents.DotNetBar.ApplicationButton applicationButton1;
@@ -403,11 +418,12 @@
         private DevComponents.DotNetBar.ButtonItem BTNSalir;
         private DevComponents.DotNetBar.RibbonTabItem RTBAdministracion;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem2;
-        private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.QatCustomizeItem qatCustomizeItem1;
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private DevComponents.DotNetBar.ButtonItem BTNPersonas;
         private DevComponents.DotNetBar.ButtonX BTNUsuarios;
+        private DevComponents.DotNetBar.ButtonItem BTNLoginHuella;
+        private DevComponents.DotNetBar.ButtonItem buttonItem1;
     }
 }
 

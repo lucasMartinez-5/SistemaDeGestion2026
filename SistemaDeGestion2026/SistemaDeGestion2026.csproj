@@ -54,6 +54,13 @@
     <Reference Include="DPFPShrXTypeLibNET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="DPFPVerNET, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4de0a9c4dcc83984, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPVerNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
@@ -70,11 +77,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FRMFondo1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMFondo1.Designer.cs">
+      <DependentUpon>FRMFondo1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMFondo2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMFondo2.Designer.cs">
+      <DependentUpon>FRMFondo2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMIniciar_Sesion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRMIniciar_Sesion.Designer.cs">
       <DependentUpon>FRMIniciar_Sesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMIniciar_Sesion_Huella.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMIniciar_Sesion_Huella.Designer.cs">
+      <DependentUpon>FRMIniciar_Sesion_Huella.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMModificarPassword.cs">
       <SubType>Form</SubType>
@@ -100,11 +125,23 @@
     <Compile Include="FRMPersona_Registrar.Designer.cs">
       <DependentUpon>FRMPersona_Registrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMPorducto_Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMPorducto_Lista.Designer.cs">
+      <DependentUpon>FRMPorducto_Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRMPrincipal.Designer.cs">
       <DependentUpon>FRMPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMProducto_Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMProducto_Registrar.Designer.cs">
+      <DependentUpon>FRMProducto_Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMSplash.cs">
       <SubType>Form</SubType>
@@ -127,8 +164,17 @@
     <Compile Include="MetodosGenerales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FRMFondo1.resx">
+      <DependentUpon>FRMFondo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMFondo2.resx">
+      <DependentUpon>FRMFondo2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMIniciar_Sesion.resx">
       <DependentUpon>FRMIniciar_Sesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMIniciar_Sesion_Huella.resx">
+      <DependentUpon>FRMIniciar_Sesion_Huella.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMModificarPassword.resx">
       <DependentUpon>FRMModificarPassword.cs</DependentUpon>
@@ -142,8 +188,14 @@
     <EmbeddedResource Include="FRMPersona_Registrar.resx">
       <DependentUpon>FRMPersona_Registrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMPorducto_Lista.resx">
+      <DependentUpon>FRMPorducto_Lista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMPrincipal.resx">
       <DependentUpon>FRMPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMProducto_Registrar.resx">
+      <DependentUpon>FRMProducto_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMSplash.resx">
       <DependentUpon>FRMSplash.cs</DependentUpon>
@@ -292,6 +344,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_ver_password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_login_huella.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

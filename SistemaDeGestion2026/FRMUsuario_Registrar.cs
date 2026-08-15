@@ -1,4 +1,5 @@
-﻿using AForge.Video.DirectShow;
+﻿
+using AForge.Video.DirectShow;
 using CapaRN;
 using DevComponents.DotNetBar.Controls;
 using SistemaDeGestion2026.Properties;
@@ -203,16 +204,17 @@ namespace SistemaDeGestion2026
                 }
                 else
                 {
-                    usuario.pauscodusu = this.codUsuMod;
+                    usuario.causestusu = SWBEstado.Value;
                 }
                 usuario.causactpas = false;
                 usuario.causnomlog = TXTNombreLogin.Text;
+
                 if (!modificar)
                 {
-                    usuario.causactpas = false;
-                    usuario.causmashue = DPECHuellas.EnrolledFingerMask;
-                    usuario.fauscodper = persona.papscodper;
+                    usuario.causactpas = true;
                 }
+                usuario.causmashue = DPECHuellas.EnrolledFingerMask;
+                usuario.fauscodper = persona.papscodper;
 
                 if (!this.modificar)
                 {

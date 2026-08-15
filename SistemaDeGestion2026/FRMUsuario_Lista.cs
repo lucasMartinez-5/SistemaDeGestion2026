@@ -225,6 +225,34 @@ namespace SistemaDeGestion2026
             }
         }
 
-        
+        private void BTNActualizarPassword_Click(object sender, EventArgs e)
+        {
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("Estas seguro que desea resetear el password del usuario " +
+                    DTGLista[3, DTGLista.SelectedRows[0].Index].Value.ToString() + "?",
+                    "Confirmación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    ausuario.pauscodusu = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                    ausuario.ObtenerDatos();
+                    ausuario.causactpas = true;
+                    if (ausuario.Modificar())
+                    {
+                        MessageBox.Show("Password reseatdo correctamente. El usuario deberá cambiar su password en el proximo inicio de sesion. Al loguear debe colocar como password su numero de documento.",
+                        "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al resetear el password del usuario", "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+        }
     }
 }
