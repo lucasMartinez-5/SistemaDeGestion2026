@@ -160,9 +160,9 @@ namespace SistemaDeGestion2026
                 e.Cancel = true;
             }            
             else
-                {
-                    ApagarCamara();
-                }
+            {
+                ApagarCamara();
+            }
         }
 
         private void TXTCI_Enter(object sender, EventArgs e)
@@ -440,6 +440,21 @@ namespace SistemaDeGestion2026
         {
             PCBFotografia.Image = PCBCamara.Image;
             TieneFoto=true;
+        }
+
+        private void TXTNombres_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTApellidoMaterno_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

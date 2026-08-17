@@ -37,10 +37,12 @@ namespace SistemaDeGestion2026
             a.Show();
             BTNActualizarPassword.Enabled = false;
             BTNCerrarSesion.Enabled = false;
-            RBPAdministracion.Enabled = false;
-            RTBAdministracion.Enabled = false;
             BTNLogin.Enabled = true;
             BTNLoginHuella.Enabled = true;
+            RBPAdministracion.Enabled = false;
+            RTBAdministracion.Enabled = false;
+            RBPInventario.Enabled = false;
+            RTBInventario.Enabled = false;
         }
         private void Estado_2()
         {
@@ -59,6 +61,8 @@ namespace SistemaDeGestion2026
             BTNLoginHuella.Enabled = false;
             RBPAdministracion.Enabled = true;
             RTBAdministracion.Enabled = true;
+            RBPInventario.Enabled = true;
+            RTBInventario.Enabled = true;
         }
         #endregion
 
@@ -151,6 +155,17 @@ namespace SistemaDeGestion2026
         private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BTNProductos_Click(object sender, EventArgs e)
+        {
+            foreach (Form s in this.MdiChildren)
+            {
+                s.Close();
+            }
+            FRMProducto_Lista a = new FRMProducto_Lista();
+            a.MdiParent = this;
+            a.Show();
         }
     }
 }

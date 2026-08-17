@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMProducto_Registrar));
             this.GPPanelPrincipal = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.TXTProductoDescripcion = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TXTProductoCodigoDeBarra = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TXTProductoMarca = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TXTProductoModelo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TXTProductoMaterial = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.DTIProductoFechaModificacion = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.TXTProductoStock = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TXTProductoGenero = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GPFotografia = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.PCBFotografia = new System.Windows.Forms.PictureBox();
             this.BTNAbrirFoto = new DevComponents.DotNetBar.ButtonX();
@@ -42,22 +50,19 @@
             this.TXTProductoCodigo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTProductoColor = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTProductoCategoria = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.TXTCorreoElectronico = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TXTProductoPrecioMinimo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTProductoPrecioVenta = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTProductoNombre = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTProductoTalla = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.DTIProductoFechaCreacion = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.SWBSexo = new DevComponents.DotNetBar.Controls.SwitchButton();
             this.SWBProductoEstadoStock = new DevComponents.DotNetBar.Controls.SwitchButton();
-            this.TXTProductoGenero = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.TXTProductoStock = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.DTIProductoFechaModificacion = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.OFDElegirImagen = new System.Windows.Forms.OpenFileDialog();
             this.GPPanelPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DTIProductoFechaModificacion)).BeginInit();
             this.GPFotografia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PCBFotografia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCBCamara)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DTIProductoFechaCreacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DTIProductoFechaModificacion)).BeginInit();
             this.SuspendLayout();
             // 
             // GPPanelPrincipal
@@ -65,6 +70,11 @@
             this.GPPanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GPPanelPrincipal.CanvasColor = System.Drawing.SystemColors.Control;
             this.GPPanelPrincipal.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.GPPanelPrincipal.Controls.Add(this.TXTProductoDescripcion);
+            this.GPPanelPrincipal.Controls.Add(this.TXTProductoCodigoDeBarra);
+            this.GPPanelPrincipal.Controls.Add(this.TXTProductoMarca);
+            this.GPPanelPrincipal.Controls.Add(this.TXTProductoModelo);
+            this.GPPanelPrincipal.Controls.Add(this.TXTProductoMaterial);
             this.GPPanelPrincipal.Controls.Add(this.DTIProductoFechaModificacion);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoStock);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoGenero);
@@ -75,18 +85,17 @@
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoCodigo);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoColor);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoCategoria);
-            this.GPPanelPrincipal.Controls.Add(this.TXTCorreoElectronico);
+            this.GPPanelPrincipal.Controls.Add(this.TXTProductoPrecioMinimo);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoPrecioVenta);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoNombre);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoTalla);
             this.GPPanelPrincipal.Controls.Add(this.DTIProductoFechaCreacion);
-            this.GPPanelPrincipal.Controls.Add(this.SWBSexo);
             this.GPPanelPrincipal.Controls.Add(this.SWBProductoEstadoStock);
             this.GPPanelPrincipal.DisabledBackColor = System.Drawing.Color.Empty;
             this.GPPanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GPPanelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.GPPanelPrincipal.Name = "GPPanelPrincipal";
-            this.GPPanelPrincipal.Size = new System.Drawing.Size(702, 554);
+            this.GPPanelPrincipal.Size = new System.Drawing.Size(702, 392);
             // 
             // 
             // 
@@ -115,8 +124,186 @@
             // 
             // 
             this.GPPanelPrincipal.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.GPPanelPrincipal.TabIndex = 1;
+            this.GPPanelPrincipal.TabIndex = 0;
             this.GPPanelPrincipal.Text = "Producto";
+            // 
+            // TXTProductoDescripcion
+            // 
+            this.TXTProductoDescripcion.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.TXTProductoDescripcion.Border.Class = "TextBoxBorder";
+            this.TXTProductoDescripcion.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTProductoDescripcion.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTProductoDescripcion.ForeColor = System.Drawing.Color.Black;
+            this.TXTProductoDescripcion.Location = new System.Drawing.Point(328, 253);
+            this.TXTProductoDescripcion.Multiline = true;
+            this.TXTProductoDescripcion.Name = "TXTProductoDescripcion";
+            this.TXTProductoDescripcion.PreventEnterBeep = true;
+            this.TXTProductoDescripcion.Size = new System.Drawing.Size(361, 82);
+            this.TXTProductoDescripcion.TabIndex = 14;
+            this.TXTProductoDescripcion.WatermarkText = "Descripcion del Producto";
+            this.TXTProductoDescripcion.TextChanged += new System.EventHandler(this.TXTProductoDescripcion_TextChanged);
+            // 
+            // TXTProductoCodigoDeBarra
+            // 
+            this.TXTProductoCodigoDeBarra.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.TXTProductoCodigoDeBarra.Border.Class = "TextBoxBorder";
+            this.TXTProductoCodigoDeBarra.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTProductoCodigoDeBarra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTProductoCodigoDeBarra.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTProductoCodigoDeBarra.ForeColor = System.Drawing.Color.Black;
+            this.TXTProductoCodigoDeBarra.Location = new System.Drawing.Point(9, 194);
+            this.TXTProductoCodigoDeBarra.Name = "TXTProductoCodigoDeBarra";
+            this.TXTProductoCodigoDeBarra.PreventEnterBeep = true;
+            this.TXTProductoCodigoDeBarra.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoCodigoDeBarra.TabIndex = 9;
+            this.TXTProductoCodigoDeBarra.WatermarkText = "Codigo de Barra";
+            this.TXTProductoCodigoDeBarra.TextChanged += new System.EventHandler(this.TXTProductoCodigoDeBarra_TextChanged);
+            this.TXTProductoCodigoDeBarra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoCodigoDeBarra_KeyDown);
+            // 
+            // TXTProductoMarca
+            // 
+            this.TXTProductoMarca.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.TXTProductoMarca.Border.Class = "TextBoxBorder";
+            this.TXTProductoMarca.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTProductoMarca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTProductoMarca.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTProductoMarca.ForeColor = System.Drawing.Color.Black;
+            this.TXTProductoMarca.Location = new System.Drawing.Point(10, 107);
+            this.TXTProductoMarca.Name = "TXTProductoMarca";
+            this.TXTProductoMarca.PreventEnterBeep = true;
+            this.TXTProductoMarca.Size = new System.Drawing.Size(148, 23);
+            this.TXTProductoMarca.TabIndex = 3;
+            this.TXTProductoMarca.WatermarkText = "Marca";
+            this.TXTProductoMarca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoMarca_KeyDown);
+            // 
+            // TXTProductoModelo
+            // 
+            this.TXTProductoModelo.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.TXTProductoModelo.Border.Class = "TextBoxBorder";
+            this.TXTProductoModelo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTProductoModelo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTProductoModelo.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTProductoModelo.ForeColor = System.Drawing.Color.Black;
+            this.TXTProductoModelo.Location = new System.Drawing.Point(9, 165);
+            this.TXTProductoModelo.Name = "TXTProductoModelo";
+            this.TXTProductoModelo.PreventEnterBeep = true;
+            this.TXTProductoModelo.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoModelo.TabIndex = 7;
+            this.TXTProductoModelo.WatermarkText = "Modelo";
+            // 
+            // TXTProductoMaterial
+            // 
+            this.TXTProductoMaterial.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.TXTProductoMaterial.Border.Class = "TextBoxBorder";
+            this.TXTProductoMaterial.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTProductoMaterial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTProductoMaterial.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTProductoMaterial.ForeColor = System.Drawing.Color.Black;
+            this.TXTProductoMaterial.Location = new System.Drawing.Point(164, 136);
+            this.TXTProductoMaterial.Name = "TXTProductoMaterial";
+            this.TXTProductoMaterial.PreventEnterBeep = true;
+            this.TXTProductoMaterial.Size = new System.Drawing.Size(148, 23);
+            this.TXTProductoMaterial.TabIndex = 6;
+            this.TXTProductoMaterial.WatermarkText = "Material";
+            this.TXTProductoMaterial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoMaterial_KeyDown);
+            // 
+            // DTIProductoFechaModificacion
+            // 
+            // 
+            // 
+            // 
+            this.DTIProductoFechaModificacion.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.DTIProductoFechaModificacion.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DTIProductoFechaModificacion.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.DTIProductoFechaModificacion.ButtonDropDown.Visible = true;
+            this.DTIProductoFechaModificacion.IsPopupCalendarOpen = false;
+            this.DTIProductoFechaModificacion.Location = new System.Drawing.Point(164, 78);
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.DTIProductoFechaModificacion.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DTIProductoFechaModificacion.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.DTIProductoFechaModificacion.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DTIProductoFechaModificacion.MonthCalendar.DisplayMonth = new System.DateTime(2026, 5, 1, 0, 0, 0, 0);
+            this.DTIProductoFechaModificacion.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
+            // 
+            // 
+            // 
+            this.DTIProductoFechaModificacion.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.DTIProductoFechaModificacion.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.DTIProductoFechaModificacion.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.DTIProductoFechaModificacion.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DTIProductoFechaModificacion.MonthCalendar.TodayButtonVisible = true;
+            this.DTIProductoFechaModificacion.Name = "DTIProductoFechaModificacion";
+            this.DTIProductoFechaModificacion.Size = new System.Drawing.Size(149, 23);
+            this.DTIProductoFechaModificacion.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.DTIProductoFechaModificacion.TabIndex = 2;
+            this.DTIProductoFechaModificacion.WatermarkText = "Fecha de Modificacion";
+            // 
+            // TXTProductoStock
+            // 
+            this.TXTProductoStock.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.TXTProductoStock.Border.Class = "TextBoxBorder";
+            this.TXTProductoStock.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTProductoStock.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTProductoStock.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTProductoStock.ForeColor = System.Drawing.Color.Black;
+            this.TXTProductoStock.Location = new System.Drawing.Point(164, 194);
+            this.TXTProductoStock.Name = "TXTProductoStock";
+            this.TXTProductoStock.PreventEnterBeep = true;
+            this.TXTProductoStock.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoStock.TabIndex = 10;
+            this.TXTProductoStock.WatermarkText = "Stock";
+            this.TXTProductoStock.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoStock_KeyDown);
+            // 
+            // TXTProductoGenero
+            // 
+            this.TXTProductoGenero.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.TXTProductoGenero.Border.Class = "TextBoxBorder";
+            this.TXTProductoGenero.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTProductoGenero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTProductoGenero.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTProductoGenero.ForeColor = System.Drawing.Color.Black;
+            this.TXTProductoGenero.Location = new System.Drawing.Point(163, 165);
+            this.TXTProductoGenero.Name = "TXTProductoGenero";
+            this.TXTProductoGenero.PreventEnterBeep = true;
+            this.TXTProductoGenero.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoGenero.TabIndex = 8;
+            this.TXTProductoGenero.WatermarkText = "Genero de Persona";
             // 
             // GPFotografia
             // 
@@ -160,7 +347,7 @@
             // 
             // 
             this.GPFotografia.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.GPFotografia.TabIndex = 8;
+            this.GPFotografia.TabIndex = 15;
             this.GPFotografia.Text = "Fotografía";
             // 
             // PCBFotografia
@@ -186,6 +373,7 @@
             this.BTNAbrirFoto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNAbrirFoto.TabIndex = 2;
             this.BTNAbrirFoto.Text = "&Abrir";
+            this.BTNAbrirFoto.Click += new System.EventHandler(this.BTNAbrirFoto_Click);
             // 
             // BTNLimpiarFoto
             // 
@@ -199,6 +387,7 @@
             this.BTNLimpiarFoto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNLimpiarFoto.TabIndex = 1;
             this.BTNLimpiarFoto.Text = "L&impiar";
+            this.BTNLimpiarFoto.Click += new System.EventHandler(this.BTNLimpiarFoto_Click);
             // 
             // BTNCapturarFoto
             // 
@@ -212,6 +401,7 @@
             this.BTNCapturarFoto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNCapturarFoto.TabIndex = 0;
             this.BTNCapturarFoto.Text = "&Capturar";
+            this.BTNCapturarFoto.Click += new System.EventHandler(this.BTNCapturarFoto_Click);
             // 
             // PCBCamara
             // 
@@ -231,12 +421,13 @@
             this.BTNSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTNSalir.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir;
             this.BTNSalir.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNSalir.Location = new System.Drawing.Point(383, 253);
+            this.BTNSalir.Location = new System.Drawing.Point(220, 284);
             this.BTNSalir.Name = "BTNSalir";
-            this.BTNSalir.Size = new System.Drawing.Size(121, 51);
+            this.BTNSalir.Size = new System.Drawing.Size(92, 51);
             this.BTNSalir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNSalir.TabIndex = 13;
+            this.BTNSalir.TabIndex = 20;
             this.BTNSalir.Text = "&Salir";
+            this.BTNSalir.Click += new System.EventHandler(this.BTNSalir_Click);
             // 
             // BTNLimpiar
             // 
@@ -244,11 +435,11 @@
             this.BTNLimpiar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNLimpiar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_limpiar;
             this.BTNLimpiar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNLimpiar.Location = new System.Drawing.Point(256, 253);
+            this.BTNLimpiar.Location = new System.Drawing.Point(112, 284);
             this.BTNLimpiar.Name = "BTNLimpiar";
-            this.BTNLimpiar.Size = new System.Drawing.Size(121, 51);
+            this.BTNLimpiar.Size = new System.Drawing.Size(102, 51);
             this.BTNLimpiar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNLimpiar.TabIndex = 12;
+            this.BTNLimpiar.TabIndex = 19;
             this.BTNLimpiar.Text = "&Limpiar";
             // 
             // BTNGrabar
@@ -257,12 +448,13 @@
             this.BTNGrabar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNGrabar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_guardar;
             this.BTNGrabar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNGrabar.Location = new System.Drawing.Point(129, 253);
+            this.BTNGrabar.Location = new System.Drawing.Point(9, 284);
             this.BTNGrabar.Name = "BTNGrabar";
-            this.BTNGrabar.Size = new System.Drawing.Size(121, 51);
+            this.BTNGrabar.Size = new System.Drawing.Size(97, 51);
             this.BTNGrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNGrabar.TabIndex = 11;
+            this.BTNGrabar.TabIndex = 18;
             this.BTNGrabar.Text = "&Grabar";
+            this.BTNGrabar.Click += new System.EventHandler(this.BTNGrabar_Click);
             // 
             // TXTProductoCodigo
             // 
@@ -274,13 +466,15 @@
             this.TXTProductoCodigo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TXTProductoCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoCodigo.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTProductoCodigo.Enabled = false;
             this.TXTProductoCodigo.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoCodigo.Location = new System.Drawing.Point(9, 46);
+            this.TXTProductoCodigo.Location = new System.Drawing.Point(164, 14);
             this.TXTProductoCodigo.Name = "TXTProductoCodigo";
             this.TXTProductoCodigo.PreventEnterBeep = true;
             this.TXTProductoCodigo.Size = new System.Drawing.Size(149, 23);
-            this.TXTProductoCodigo.TabIndex = 0;
+            this.TXTProductoCodigo.TabIndex = 17;
             this.TXTProductoCodigo.WatermarkText = "Codigo del Producto";
+            this.TXTProductoCodigo.Enter += new System.EventHandler(this.TXTProductoCodigo_Enter);
             // 
             // TXTProductoColor
             // 
@@ -293,12 +487,13 @@
             this.TXTProductoColor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoColor.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoColor.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoColor.Location = new System.Drawing.Point(9, 78);
+            this.TXTProductoColor.Location = new System.Drawing.Point(164, 107);
             this.TXTProductoColor.Name = "TXTProductoColor";
             this.TXTProductoColor.PreventEnterBeep = true;
             this.TXTProductoColor.Size = new System.Drawing.Size(149, 23);
-            this.TXTProductoColor.TabIndex = 2;
+            this.TXTProductoColor.TabIndex = 4;
             this.TXTProductoColor.WatermarkText = "Color";
+            this.TXTProductoColor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoColor_KeyDown);
             // 
             // TXTProductoCategoria
             // 
@@ -311,30 +506,31 @@
             this.TXTProductoCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoCategoria.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoCategoria.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoCategoria.Location = new System.Drawing.Point(9, 174);
+            this.TXTProductoCategoria.Location = new System.Drawing.Point(8, 253);
             this.TXTProductoCategoria.Multiline = true;
             this.TXTProductoCategoria.Name = "TXTProductoCategoria";
             this.TXTProductoCategoria.PreventEnterBeep = true;
             this.TXTProductoCategoria.Size = new System.Drawing.Size(304, 25);
-            this.TXTProductoCategoria.TabIndex = 7;
-            this.TXTProductoCategoria.WatermarkText = "Categoria del Poryecto";
+            this.TXTProductoCategoria.TabIndex = 13;
+            this.TXTProductoCategoria.WatermarkText = "Categoria del Producto";
+            this.TXTProductoCategoria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoCategoria_KeyDown);
             // 
-            // TXTCorreoElectronico
+            // TXTProductoPrecioMinimo
             // 
-            this.TXTCorreoElectronico.BackColor = System.Drawing.Color.White;
+            this.TXTProductoPrecioMinimo.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.TXTCorreoElectronico.Border.Class = "TextBoxBorder";
-            this.TXTCorreoElectronico.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTCorreoElectronico.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTCorreoElectronico.ForeColor = System.Drawing.Color.Black;
-            this.TXTCorreoElectronico.Location = new System.Drawing.Point(98, 142);
-            this.TXTCorreoElectronico.Name = "TXTCorreoElectronico";
-            this.TXTCorreoElectronico.PreventEnterBeep = true;
-            this.TXTCorreoElectronico.Size = new System.Drawing.Size(215, 23);
-            this.TXTCorreoElectronico.TabIndex = 6;
-            this.TXTCorreoElectronico.WatermarkText = "Precio Minimo";
+            this.TXTProductoPrecioMinimo.Border.Class = "TextBoxBorder";
+            this.TXTProductoPrecioMinimo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTProductoPrecioMinimo.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTProductoPrecioMinimo.ForeColor = System.Drawing.Color.Black;
+            this.TXTProductoPrecioMinimo.Location = new System.Drawing.Point(10, 223);
+            this.TXTProductoPrecioMinimo.Name = "TXTProductoPrecioMinimo";
+            this.TXTProductoPrecioMinimo.PreventEnterBeep = true;
+            this.TXTProductoPrecioMinimo.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoPrecioMinimo.TabIndex = 11;
+            this.TXTProductoPrecioMinimo.WatermarkText = "Precio Minimo";
             // 
             // TXTProductoPrecioVenta
             // 
@@ -347,11 +543,11 @@
             this.TXTProductoPrecioVenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoPrecioVenta.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoPrecioVenta.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoPrecioVenta.Location = new System.Drawing.Point(10, 142);
+            this.TXTProductoPrecioVenta.Location = new System.Drawing.Point(163, 223);
             this.TXTProductoPrecioVenta.Name = "TXTProductoPrecioVenta";
             this.TXTProductoPrecioVenta.PreventEnterBeep = true;
-            this.TXTProductoPrecioVenta.Size = new System.Drawing.Size(82, 23);
-            this.TXTProductoPrecioVenta.TabIndex = 5;
+            this.TXTProductoPrecioVenta.Size = new System.Drawing.Size(150, 23);
+            this.TXTProductoPrecioVenta.TabIndex = 12;
             this.TXTProductoPrecioVenta.WatermarkText = "Precio Venta";
             // 
             // TXTProductoNombre
@@ -365,13 +561,14 @@
             this.TXTProductoNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoNombre.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoNombre.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoNombre.Location = new System.Drawing.Point(9, 110);
+            this.TXTProductoNombre.Location = new System.Drawing.Point(9, 46);
             this.TXTProductoNombre.Name = "TXTProductoNombre";
             this.TXTProductoNombre.PreventEnterBeep = true;
             this.TXTProductoNombre.Size = new System.Drawing.Size(304, 23);
-            this.TXTProductoNombre.TabIndex = 4;
+            this.TXTProductoNombre.TabIndex = 0;
             this.TXTProductoNombre.WatermarkText = "Nombre del Producto";
-            this.TXTProductoNombre.TextChanged += new System.EventHandler(this.TXTNombres_TextChanged);
+            this.TXTProductoNombre.TextChanged += new System.EventHandler(this.TXTProductoNombre_TextChanged);
+            this.TXTProductoNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoNombre_KeyDown);
             // 
             // TXTProductoTalla
             // 
@@ -384,11 +581,11 @@
             this.TXTProductoTalla.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoTalla.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoTalla.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoTalla.Location = new System.Drawing.Point(164, 78);
+            this.TXTProductoTalla.Location = new System.Drawing.Point(9, 136);
             this.TXTProductoTalla.Name = "TXTProductoTalla";
             this.TXTProductoTalla.PreventEnterBeep = true;
             this.TXTProductoTalla.Size = new System.Drawing.Size(149, 23);
-            this.TXTProductoTalla.TabIndex = 3;
+            this.TXTProductoTalla.TabIndex = 5;
             this.TXTProductoTalla.WatermarkText = "Talla";
             // 
             // DTIProductoFechaCreacion
@@ -401,7 +598,7 @@
             this.DTIProductoFechaCreacion.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.DTIProductoFechaCreacion.ButtonDropDown.Visible = true;
             this.DTIProductoFechaCreacion.IsPopupCalendarOpen = false;
-            this.DTIProductoFechaCreacion.Location = new System.Drawing.Point(164, 46);
+            this.DTIProductoFechaCreacion.Location = new System.Drawing.Point(9, 78);
             // 
             // 
             // 
@@ -437,26 +634,6 @@
             this.DTIProductoFechaCreacion.TabIndex = 1;
             this.DTIProductoFechaCreacion.WatermarkText = "Fecha de Creacion";
             // 
-            // SWBSexo
-            // 
-            // 
-            // 
-            // 
-            this.SWBSexo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.SWBSexo.Location = new System.Drawing.Point(164, 14);
-            this.SWBSexo.Name = "SWBSexo";
-            this.SWBSexo.OffBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.SWBSexo.OffText = "Femenino";
-            this.SWBSexo.OffTextColor = System.Drawing.Color.White;
-            this.SWBSexo.OnBackColor = System.Drawing.Color.DodgerBlue;
-            this.SWBSexo.OnText = "Masculino";
-            this.SWBSexo.OnTextColor = System.Drawing.Color.White;
-            this.SWBSexo.Size = new System.Drawing.Size(149, 26);
-            this.SWBSexo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.SWBSexo.TabIndex = 10;
-            this.SWBSexo.Value = true;
-            this.SWBSexo.ValueObject = "Y";
-            // 
             // SWBProductoEstadoStock
             // 
             // 
@@ -471,112 +648,38 @@
             this.SWBProductoEstadoStock.OnBackColor = System.Drawing.Color.LimeGreen;
             this.SWBProductoEstadoStock.OnText = "Habilitado";
             this.SWBProductoEstadoStock.OnTextColor = System.Drawing.Color.White;
-            this.SWBProductoEstadoStock.Size = new System.Drawing.Size(149, 26);
+            this.SWBProductoEstadoStock.Size = new System.Drawing.Size(149, 23);
             this.SWBProductoEstadoStock.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.SWBProductoEstadoStock.TabIndex = 9;
+            this.SWBProductoEstadoStock.TabIndex = 16;
             this.SWBProductoEstadoStock.Value = true;
             this.SWBProductoEstadoStock.ValueObject = "Y";
+            this.SWBProductoEstadoStock.ValueChanged += new System.EventHandler(this.SWBProductoEstadoStock_ValueChanged);
             // 
-            // TXTProductoGenero
+            // OFDElegirImagen
             // 
-            this.TXTProductoGenero.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.TXTProductoGenero.Border.Class = "TextBoxBorder";
-            this.TXTProductoGenero.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTProductoGenero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTProductoGenero.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTProductoGenero.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoGenero.Location = new System.Drawing.Point(10, 209);
-            this.TXTProductoGenero.Name = "TXTProductoGenero";
-            this.TXTProductoGenero.PreventEnterBeep = true;
-            this.TXTProductoGenero.Size = new System.Drawing.Size(149, 23);
-            this.TXTProductoGenero.TabIndex = 14;
-            this.TXTProductoGenero.WatermarkText = "Genero de Persona";
-            // 
-            // TXTProductoStock
-            // 
-            this.TXTProductoStock.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.TXTProductoStock.Border.Class = "TextBoxBorder";
-            this.TXTProductoStock.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTProductoStock.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTProductoStock.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTProductoStock.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoStock.Location = new System.Drawing.Point(9, 238);
-            this.TXTProductoStock.Name = "TXTProductoStock";
-            this.TXTProductoStock.PreventEnterBeep = true;
-            this.TXTProductoStock.Size = new System.Drawing.Size(82, 23);
-            this.TXTProductoStock.TabIndex = 15;
-            this.TXTProductoStock.WatermarkText = "Stock";
-            // 
-            // DTIProductoFechaModificacion
-            // 
-            // 
-            // 
-            // 
-            this.DTIProductoFechaModificacion.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.DTIProductoFechaModificacion.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.DTIProductoFechaModificacion.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.DTIProductoFechaModificacion.ButtonDropDown.Visible = true;
-            this.DTIProductoFechaModificacion.IsPopupCalendarOpen = false;
-            this.DTIProductoFechaModificacion.Location = new System.Drawing.Point(164, 205);
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.DTIProductoFechaModificacion.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.DTIProductoFechaModificacion.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.DTIProductoFechaModificacion.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.DTIProductoFechaModificacion.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.DTIProductoFechaModificacion.MonthCalendar.DisplayMonth = new System.DateTime(2026, 5, 1, 0, 0, 0, 0);
-            this.DTIProductoFechaModificacion.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
-            // 
-            // 
-            // 
-            this.DTIProductoFechaModificacion.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.DTIProductoFechaModificacion.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.DTIProductoFechaModificacion.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.DTIProductoFechaModificacion.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.DTIProductoFechaModificacion.MonthCalendar.TodayButtonVisible = true;
-            this.DTIProductoFechaModificacion.Name = "DTIProductoFechaModificacion";
-            this.DTIProductoFechaModificacion.Size = new System.Drawing.Size(149, 23);
-            this.DTIProductoFechaModificacion.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.DTIProductoFechaModificacion.TabIndex = 16;
-            this.DTIProductoFechaModificacion.WatermarkText = "Fecha de Modificacion";
-            this.DTIProductoFechaModificacion.Click += new System.EventHandler(this.DTIProductoFechaModificacion_Click);
+            this.OFDElegirImagen.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png";
+            this.OFDElegirImagen.Title = "Elegir fotografía";
             // 
             // FRMProducto_Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 554);
+            this.ClientSize = new System.Drawing.Size(702, 392);
             this.Controls.Add(this.GPPanelPrincipal);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRMProducto_Registrar";
-            this.Text = "FRMProducto_Registrar";
+            this.Text = "1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRMProducto_Registrar_FormClosing);
+            this.Load += new System.EventHandler(this.FRMProducto_Registrar_Load);
             this.GPPanelPrincipal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DTIProductoFechaModificacion)).EndInit();
             this.GPFotografia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PCBFotografia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCBCamara)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DTIProductoFechaCreacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DTIProductoFechaModificacion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -596,15 +699,20 @@
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoCodigo;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoColor;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoCategoria;
-        private DevComponents.DotNetBar.Controls.TextBoxX TXTCorreoElectronico;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoPrecioMinimo;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoPrecioVenta;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoNombre;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoTalla;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput DTIProductoFechaCreacion;
-        private DevComponents.DotNetBar.Controls.SwitchButton SWBSexo;
         private DevComponents.DotNetBar.Controls.SwitchButton SWBProductoEstadoStock;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoGenero;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoStock;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput DTIProductoFechaModificacion;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoMaterial;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoMarca;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoModelo;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoCodigoDeBarra;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoDescripcion;
+        private System.Windows.Forms.OpenFileDialog OFDElegirImagen;
     }
 }

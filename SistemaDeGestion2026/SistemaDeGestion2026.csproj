@@ -125,11 +125,11 @@
     <Compile Include="FRMPersona_Registrar.Designer.cs">
       <DependentUpon>FRMPersona_Registrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMPorducto_Lista.cs">
+    <Compile Include="FRMProducto_Lista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMPorducto_Lista.Designer.cs">
-      <DependentUpon>FRMPorducto_Lista.cs</DependentUpon>
+    <Compile Include="FRMProducto_Lista.Designer.cs">
+      <DependentUpon>FRMProducto_Lista.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMPrincipal.cs">
       <SubType>Form</SubType>
@@ -188,8 +188,8 @@
     <EmbeddedResource Include="FRMPersona_Registrar.resx">
       <DependentUpon>FRMPersona_Registrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMPorducto_Lista.resx">
-      <DependentUpon>FRMPorducto_Lista.cs</DependentUpon>
+    <EmbeddedResource Include="FRMProducto_Lista.resx">
+      <DependentUpon>FRMProducto_Lista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMPrincipal.resx">
       <DependentUpon>FRMPrincipal.cs</DependentUpon>
@@ -347,6 +347,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_login_huella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_producto_modificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_producto_nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_producto_reporte.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

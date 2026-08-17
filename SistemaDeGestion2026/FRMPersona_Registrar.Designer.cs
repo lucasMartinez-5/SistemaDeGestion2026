@@ -249,6 +249,7 @@
             this.BTNLimpiar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNLimpiar.TabIndex = 12;
             this.BTNLimpiar.Text = "&Limpiar";
+            this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
             // 
             // BTNGrabar
             // 
@@ -392,6 +393,7 @@
             this.TXTNombres.Size = new System.Drawing.Size(304, 23);
             this.TXTNombres.TabIndex = 4;
             this.TXTNombres.WatermarkText = "Nombres";
+            this.TXTNombres.TextChanged += new System.EventHandler(this.TXTNombres_TextChanged);
             this.TXTNombres.Enter += new System.EventHandler(this.TXTCI_Enter);
             this.TXTNombres.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTApellidoPaterno_KeyDown);
             // 
@@ -414,6 +416,7 @@
             this.TXTApellidoMaterno.Size = new System.Drawing.Size(149, 23);
             this.TXTApellidoMaterno.TabIndex = 3;
             this.TXTApellidoMaterno.WatermarkText = "Apellido Materno";
+            this.TXTApellidoMaterno.TextChanged += new System.EventHandler(this.TXTApellidoMaterno_TextChanged);
             this.TXTApellidoMaterno.Enter += new System.EventHandler(this.TXTCI_Enter);
             this.TXTApellidoMaterno.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTApellidoPaterno_KeyDown);
             // 

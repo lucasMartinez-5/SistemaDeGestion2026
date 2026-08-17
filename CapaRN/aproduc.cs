@@ -15,20 +15,20 @@ namespace CapaRN
             private decimal _capdpreven;//
             private decimal _capdpremin;//
             private bool _capdestpro;//
-            private DateTime _capdfeccre;
-            private DateTime _capdfecmod;
-            private string _capdmatpro;
+            private DateTime _capdfeccre;//
+            private DateTime _capdfecmod;//
+            private string _capdmatpro;//
             private string _capdcolpro;//
             private string _papdcodpro;//
             private string _capdtalpro;//
-            private string _capddespro;
+            private string _capddespro;//
             private string _capdfotpro;//
             private string _capdgenpro;//
             private string _capdcatpro;//
-            private string _capdcodbar;
-            private string _capdmodpro;
+            private string _capdcodbar;//
+            private string _capdmodpro;//
             private string _capdnompro;//
-            private string _capdmarpro;
+            private string _capdmarpro;//
             //Instancia para conexion a PostgreSQL 8.2
             private CLConexionPGSQL Conexion;
 		#endregion 
@@ -151,10 +151,10 @@ namespace CapaRN
         #endregion
 
         #region Metodos
-            public bool ObtenerDatos() 
-            { 
-                this.Conexion.Conectar();
-			    string sql = "select " +
+        public bool ObtenerDatos() 
+        { 
+            this.Conexion.Conectar();
+			string sql = "select " +
                                      "capdstopro," +
                                      "capdpreven," +
                                      "capdpremin," +
@@ -183,37 +183,104 @@ namespace CapaRN
 
                 DbDataReader ResultadoConsulta = Conexion.EjecutarConsulta();
 
-                if (ResultadoConsulta.Read())
-                {
-                    this._capdstopro=ResultadoConsulta.GetInt32(0);
-                    this._capdpreven=ResultadoConsulta.GetDecimal(1);
-                    this._capdpremin=ResultadoConsulta.GetDecimal(2);
-                    this._capdestpro=ResultadoConsulta.GetBoolean(3);
-                    this._capdfeccre=ResultadoConsulta.GetDateTime(4);
-                    this._capdfecmod=ResultadoConsulta.GetDateTime(5);
-                    this._capdmatpro=ResultadoConsulta.GetString(6);
-                    this._capdcolpro=ResultadoConsulta.GetString(7);
-                    this._papdcodpro=ResultadoConsulta.GetString(8);
-                    this._capdtalpro=ResultadoConsulta.GetString(9);
-                    this._capddespro=ResultadoConsulta.GetString(10);
-                    this._capdfotpro=ResultadoConsulta.GetString(11);
-                    this._capdgenpro=ResultadoConsulta.GetString(12);
-                    this._capdcatpro=ResultadoConsulta.GetString(13);
-                    this._capdcodbar=ResultadoConsulta.GetString(14);
-                    this._capdmodpro=ResultadoConsulta.GetString(15);
-                    this._capdnompro=ResultadoConsulta.GetString(16);
-                    this._capdmarpro=ResultadoConsulta.GetString(17);
-                    this.Conexion.Desconectar();
+            if (ResultadoConsulta.Read())
+            {
+                this._capdstopro=ResultadoConsulta.GetInt32(0);
+                this._capdpreven=ResultadoConsulta.GetDecimal(1);
+                this._capdpremin=ResultadoConsulta.GetDecimal(2);
+                this._capdestpro=ResultadoConsulta.GetBoolean(3);
+                this._capdfeccre=ResultadoConsulta.GetDateTime(4);
+                this._capdfecmod=ResultadoConsulta.GetDateTime(5);
+                this._capdmatpro=ResultadoConsulta.GetString(6);
+                this._capdcolpro=ResultadoConsulta.GetString(7);
+                this._papdcodpro=ResultadoConsulta.GetString(8);
+                this._capdtalpro=ResultadoConsulta.GetString(9);
+                this._capddespro=ResultadoConsulta.GetString(10);
+                this._capdfotpro=ResultadoConsulta.GetString(11);
+                this._capdgenpro=ResultadoConsulta.GetString(12);
+                this._capdcatpro=ResultadoConsulta.GetString(13);
+                this._capdcodbar=ResultadoConsulta.GetString(14);
+                this._capdmodpro=ResultadoConsulta.GetString(15);
+                this._capdnompro=ResultadoConsulta.GetString(16);
+                this._capdmarpro=ResultadoConsulta.GetString(17);
+                this.Conexion.Desconectar();
 
-                    return true;
-                }
-                else
-                {
-                    this.Conexion.Desconectar();
-                    return false;
-                }
+                return true;
             }
-            public bool VerificarExistencia()
+            else
+            {
+                this.Conexion.Desconectar();
+                return false;
+            }
+        }
+        public bool ObtenerDatosCodBarra(bool modificar, string codbarr)
+        {
+            this.Conexion.Conectar();
+            string sql = "select " +
+                                     "capdstopro," +
+                                     "capdpreven," +
+                                     "capdpremin," +
+                                     "capdestpro," +
+                                     "capdfeccre," +
+                                     "capdfecmod," +
+                                     "capdmatpro," +
+                                     "capdcolpro," +
+                                     "papdcodpro," +
+                                     "capdtalpro," +
+                                     "capddespro," +
+                                     "capdfotpro," +
+                                     "capdgenpro," +
+                                     "capdcatpro," +
+                                     "capdcodbar," +
+                                     "capdmodpro," +
+                                     "capdnompro," +
+                                     "capdmarpro " +
+                             "from aproduc " +
+                             "where " +
+                                "capdcodbar = @capdcodbar";
+
+            if (modificar)
+            {
+                sql += " and capdcodbar!='" + codbarr + "'";
+            }
+
+            this.Conexion.PrepararComando(sql);
+
+            this.Conexion.AsignarParametroCadena("@capdcodbar", this._capdcodbar);
+
+            DbDataReader ResultadoConsulta = Conexion.EjecutarConsulta();
+
+            if (ResultadoConsulta.Read())
+            {
+                this._capdstopro = ResultadoConsulta.GetInt32(0);
+                this._capdpreven = ResultadoConsulta.GetDecimal(1);
+                this._capdpremin = ResultadoConsulta.GetDecimal(2);
+                this._capdestpro = ResultadoConsulta.GetBoolean(3);
+                this._capdfeccre = ResultadoConsulta.GetDateTime(4);
+                this._capdfecmod = ResultadoConsulta.GetDateTime(5);
+                this._capdmatpro = ResultadoConsulta.GetString(6);
+                this._capdcolpro = ResultadoConsulta.GetString(7);
+                this._papdcodpro = ResultadoConsulta.GetString(8);
+                this._capdtalpro = ResultadoConsulta.GetString(9);
+                this._capddespro = ResultadoConsulta.GetString(10);
+                this._capdfotpro = ResultadoConsulta.GetString(11);
+                this._capdgenpro = ResultadoConsulta.GetString(12);
+                this._capdcatpro = ResultadoConsulta.GetString(13);
+                this._capdcodbar = ResultadoConsulta.GetString(14);
+                this._capdmodpro = ResultadoConsulta.GetString(15);
+                this._capdnompro = ResultadoConsulta.GetString(16);
+                this._capdmarpro = ResultadoConsulta.GetString(17);
+                this.Conexion.Desconectar();
+
+                return true;
+            }
+            else
+            {
+                this.Conexion.Desconectar();
+                return false;
+            }
+        }
+        public bool VerificarExistencia()
             { 
                 this.Conexion.Conectar(); 
 			    string sql = "select " + 
