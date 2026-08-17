@@ -112,7 +112,7 @@ namespace SistemaDeGestion2026
                 TXTProductoGenero.Focus();
                 respuesta = false;
             }
-            else if (TXTProductoCodigoDeBarra.Text.Replace(" ", "") == "")
+            /*else if (TXTProductoCodigoDeBarra.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el CÓDIGO DE BARRA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTProductoCodigoDeBarra.Focus();
@@ -123,7 +123,7 @@ namespace SistemaDeGestion2026
                 MessageBox.Show("Ya existe un producto con ese código de barras", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTProductoCodigoDeBarra.Focus();
                 respuesta = false;
-            }
+            }*/
             else if (TXTProductoStock.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el STOCK del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
