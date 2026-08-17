@@ -135,5 +135,83 @@ namespace SistemaDeGestion2026
         {
             TXTFiltrar.SelectAll();
         }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                FRMProducto_Registrar F1 = new FRMProducto_Registrar();
+                F1.modificar = true;
+                F1.codProMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                F1.ShowDialog();
+                if (F1.actualizar)
+                {
+                    ActualizarGrid();
+                }
+            }
+        }
+
+        private void inhabilitarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                producto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (producto.ObtenerDatos())
+                {
+                    producto.capdestpro = false;
+                    if (producto.Modificar())
+                    {
+                        MessageBox.Show("Producto Inhabilitado correctamente");
+                        ActualizarGrid();
+                    }
+                }
+            }
+        }
+
+        private void habilitarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                producto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (producto.ObtenerDatos())
+                {
+                    producto.capdestpro = true;
+                    if (producto.Modificar())
+                    {
+                        MessageBox.Show("Producto Habilitado correctamente");
+                        ActualizarGrid();
+                    }
+                }
+
+            }
+        }
+
+        private void CMSMenu_Opening(object sender, CancelEventArgs e)
+        {
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                producto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (producto.ObtenerDatos())
+                {
+
+                    if (producto.capdestpro)
+                    {
+                        CMSMenu.Items[2].Visible = false;
+                        CMSMenu.Items[1].Visible = true;
+                    }
+                    else
+                    {
+                        CMSMenu.Items[2].Visible = true;
+                        CMSMenu.Items[1].Visible = false;
+                    }
+                }
+
+            }
+        }
+
+        private void BTNFiltrar_Click(object sender, EventArgs e)
+        {
+            ActualizarGrid();
+        }
     }
 }

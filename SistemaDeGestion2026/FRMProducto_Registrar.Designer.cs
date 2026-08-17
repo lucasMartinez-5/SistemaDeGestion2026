@@ -95,7 +95,7 @@
             this.GPPanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GPPanelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.GPPanelPrincipal.Name = "GPPanelPrincipal";
-            this.GPPanelPrincipal.Size = new System.Drawing.Size(702, 392);
+            this.GPPanelPrincipal.Size = new System.Drawing.Size(746, 392);
             // 
             // 
             // 
@@ -137,7 +137,7 @@
             this.TXTProductoDescripcion.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.TXTProductoDescripcion.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoDescripcion.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoDescripcion.Location = new System.Drawing.Point(328, 253);
+            this.TXTProductoDescripcion.Location = new System.Drawing.Point(370, 253);
             this.TXTProductoDescripcion.Multiline = true;
             this.TXTProductoDescripcion.Name = "TXTProductoDescripcion";
             this.TXTProductoDescripcion.PreventEnterBeep = true;
@@ -160,7 +160,7 @@
             this.TXTProductoCodigoDeBarra.Location = new System.Drawing.Point(9, 194);
             this.TXTProductoCodigoDeBarra.Name = "TXTProductoCodigoDeBarra";
             this.TXTProductoCodigoDeBarra.PreventEnterBeep = true;
-            this.TXTProductoCodigoDeBarra.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoCodigoDeBarra.Size = new System.Drawing.Size(175, 23);
             this.TXTProductoCodigoDeBarra.TabIndex = 9;
             this.TXTProductoCodigoDeBarra.WatermarkText = "Codigo de Barra";
             this.TXTProductoCodigoDeBarra.TextChanged += new System.EventHandler(this.TXTProductoCodigoDeBarra_TextChanged);
@@ -180,7 +180,7 @@
             this.TXTProductoMarca.Location = new System.Drawing.Point(10, 107);
             this.TXTProductoMarca.Name = "TXTProductoMarca";
             this.TXTProductoMarca.PreventEnterBeep = true;
-            this.TXTProductoMarca.Size = new System.Drawing.Size(148, 23);
+            this.TXTProductoMarca.Size = new System.Drawing.Size(174, 23);
             this.TXTProductoMarca.TabIndex = 3;
             this.TXTProductoMarca.WatermarkText = "Marca";
             this.TXTProductoMarca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoMarca_KeyDown);
@@ -199,7 +199,7 @@
             this.TXTProductoModelo.Location = new System.Drawing.Point(9, 165);
             this.TXTProductoModelo.Name = "TXTProductoModelo";
             this.TXTProductoModelo.PreventEnterBeep = true;
-            this.TXTProductoModelo.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoModelo.Size = new System.Drawing.Size(175, 23);
             this.TXTProductoModelo.TabIndex = 7;
             this.TXTProductoModelo.WatermarkText = "Modelo";
             // 
@@ -214,10 +214,10 @@
             this.TXTProductoMaterial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoMaterial.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoMaterial.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoMaterial.Location = new System.Drawing.Point(164, 136);
+            this.TXTProductoMaterial.Location = new System.Drawing.Point(190, 136);
             this.TXTProductoMaterial.Name = "TXTProductoMaterial";
             this.TXTProductoMaterial.PreventEnterBeep = true;
-            this.TXTProductoMaterial.Size = new System.Drawing.Size(148, 23);
+            this.TXTProductoMaterial.Size = new System.Drawing.Size(171, 23);
             this.TXTProductoMaterial.TabIndex = 6;
             this.TXTProductoMaterial.WatermarkText = "Material";
             this.TXTProductoMaterial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoMaterial_KeyDown);
@@ -232,7 +232,7 @@
             this.DTIProductoFechaModificacion.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.DTIProductoFechaModificacion.ButtonDropDown.Visible = true;
             this.DTIProductoFechaModificacion.IsPopupCalendarOpen = false;
-            this.DTIProductoFechaModificacion.Location = new System.Drawing.Point(164, 78);
+            this.DTIProductoFechaModificacion.Location = new System.Drawing.Point(190, 78);
             // 
             // 
             // 
@@ -263,7 +263,7 @@
             this.DTIProductoFechaModificacion.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.DTIProductoFechaModificacion.MonthCalendar.TodayButtonVisible = true;
             this.DTIProductoFechaModificacion.Name = "DTIProductoFechaModificacion";
-            this.DTIProductoFechaModificacion.Size = new System.Drawing.Size(149, 23);
+            this.DTIProductoFechaModificacion.Size = new System.Drawing.Size(171, 23);
             this.DTIProductoFechaModificacion.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.DTIProductoFechaModificacion.TabIndex = 2;
             this.DTIProductoFechaModificacion.WatermarkText = "Fecha de Modificacion";
@@ -279,12 +279,13 @@
             this.TXTProductoStock.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoStock.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoStock.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoStock.Location = new System.Drawing.Point(164, 194);
+            this.TXTProductoStock.Location = new System.Drawing.Point(190, 194);
             this.TXTProductoStock.Name = "TXTProductoStock";
             this.TXTProductoStock.PreventEnterBeep = true;
-            this.TXTProductoStock.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoStock.Size = new System.Drawing.Size(171, 23);
             this.TXTProductoStock.TabIndex = 10;
             this.TXTProductoStock.WatermarkText = "Stock";
+            this.TXTProductoStock.TextChanged += new System.EventHandler(this.TXTProductoStock_TextChanged);
             this.TXTProductoStock.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoStock_KeyDown);
             // 
             // TXTProductoGenero
@@ -298,12 +299,13 @@
             this.TXTProductoGenero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoGenero.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoGenero.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoGenero.Location = new System.Drawing.Point(163, 165);
+            this.TXTProductoGenero.Location = new System.Drawing.Point(190, 165);
             this.TXTProductoGenero.Name = "TXTProductoGenero";
             this.TXTProductoGenero.PreventEnterBeep = true;
-            this.TXTProductoGenero.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoGenero.Size = new System.Drawing.Size(171, 23);
             this.TXTProductoGenero.TabIndex = 8;
             this.TXTProductoGenero.WatermarkText = "Genero de Persona";
+            this.TXTProductoGenero.TextChanged += new System.EventHandler(this.TXTProductoGenero_TextChanged);
             // 
             // GPFotografia
             // 
@@ -316,7 +318,7 @@
             this.GPFotografia.Controls.Add(this.BTNCapturarFoto);
             this.GPFotografia.Controls.Add(this.PCBCamara);
             this.GPFotografia.DisabledBackColor = System.Drawing.Color.Empty;
-            this.GPFotografia.Location = new System.Drawing.Point(328, 14);
+            this.GPFotografia.Location = new System.Drawing.Point(370, 14);
             this.GPFotografia.Name = "GPFotografia";
             this.GPFotografia.Size = new System.Drawing.Size(361, 233);
             // 
@@ -421,9 +423,9 @@
             this.BTNSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTNSalir.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir;
             this.BTNSalir.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNSalir.Location = new System.Drawing.Point(220, 284);
+            this.BTNSalir.Location = new System.Drawing.Point(251, 284);
             this.BTNSalir.Name = "BTNSalir";
-            this.BTNSalir.Size = new System.Drawing.Size(92, 51);
+            this.BTNSalir.Size = new System.Drawing.Size(110, 51);
             this.BTNSalir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNSalir.TabIndex = 20;
             this.BTNSalir.Text = "&Salir";
@@ -435,9 +437,9 @@
             this.BTNLimpiar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNLimpiar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_limpiar;
             this.BTNLimpiar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNLimpiar.Location = new System.Drawing.Point(112, 284);
+            this.BTNLimpiar.Location = new System.Drawing.Point(126, 284);
             this.BTNLimpiar.Name = "BTNLimpiar";
-            this.BTNLimpiar.Size = new System.Drawing.Size(102, 51);
+            this.BTNLimpiar.Size = new System.Drawing.Size(119, 51);
             this.BTNLimpiar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNLimpiar.TabIndex = 19;
             this.BTNLimpiar.Text = "&Limpiar";
@@ -450,7 +452,7 @@
             this.BTNGrabar.ImageFixedSize = new System.Drawing.Size(40, 40);
             this.BTNGrabar.Location = new System.Drawing.Point(9, 284);
             this.BTNGrabar.Name = "BTNGrabar";
-            this.BTNGrabar.Size = new System.Drawing.Size(97, 51);
+            this.BTNGrabar.Size = new System.Drawing.Size(111, 51);
             this.BTNGrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNGrabar.TabIndex = 18;
             this.BTNGrabar.Text = "&Grabar";
@@ -468,10 +470,10 @@
             this.TXTProductoCodigo.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoCodigo.Enabled = false;
             this.TXTProductoCodigo.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoCodigo.Location = new System.Drawing.Point(164, 14);
+            this.TXTProductoCodigo.Location = new System.Drawing.Point(177, 14);
             this.TXTProductoCodigo.Name = "TXTProductoCodigo";
             this.TXTProductoCodigo.PreventEnterBeep = true;
-            this.TXTProductoCodigo.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoCodigo.Size = new System.Drawing.Size(184, 23);
             this.TXTProductoCodigo.TabIndex = 17;
             this.TXTProductoCodigo.WatermarkText = "Codigo del Producto";
             this.TXTProductoCodigo.Enter += new System.EventHandler(this.TXTProductoCodigo_Enter);
@@ -487,12 +489,13 @@
             this.TXTProductoColor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoColor.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoColor.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoColor.Location = new System.Drawing.Point(164, 107);
+            this.TXTProductoColor.Location = new System.Drawing.Point(190, 107);
             this.TXTProductoColor.Name = "TXTProductoColor";
             this.TXTProductoColor.PreventEnterBeep = true;
-            this.TXTProductoColor.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoColor.Size = new System.Drawing.Size(171, 23);
             this.TXTProductoColor.TabIndex = 4;
             this.TXTProductoColor.WatermarkText = "Color";
+            this.TXTProductoColor.TextChanged += new System.EventHandler(this.TXTProductoColor_TextChanged);
             this.TXTProductoColor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoColor_KeyDown);
             // 
             // TXTProductoCategoria
@@ -510,7 +513,7 @@
             this.TXTProductoCategoria.Multiline = true;
             this.TXTProductoCategoria.Name = "TXTProductoCategoria";
             this.TXTProductoCategoria.PreventEnterBeep = true;
-            this.TXTProductoCategoria.Size = new System.Drawing.Size(304, 25);
+            this.TXTProductoCategoria.Size = new System.Drawing.Size(353, 25);
             this.TXTProductoCategoria.TabIndex = 13;
             this.TXTProductoCategoria.WatermarkText = "Categoria del Producto";
             this.TXTProductoCategoria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoCategoria_KeyDown);
@@ -528,7 +531,7 @@
             this.TXTProductoPrecioMinimo.Location = new System.Drawing.Point(10, 223);
             this.TXTProductoPrecioMinimo.Name = "TXTProductoPrecioMinimo";
             this.TXTProductoPrecioMinimo.PreventEnterBeep = true;
-            this.TXTProductoPrecioMinimo.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoPrecioMinimo.Size = new System.Drawing.Size(174, 23);
             this.TXTProductoPrecioMinimo.TabIndex = 11;
             this.TXTProductoPrecioMinimo.WatermarkText = "Precio Minimo";
             // 
@@ -543,12 +546,13 @@
             this.TXTProductoPrecioVenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTProductoPrecioVenta.DisabledBackColor = System.Drawing.Color.White;
             this.TXTProductoPrecioVenta.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoPrecioVenta.Location = new System.Drawing.Point(163, 223);
+            this.TXTProductoPrecioVenta.Location = new System.Drawing.Point(190, 224);
             this.TXTProductoPrecioVenta.Name = "TXTProductoPrecioVenta";
             this.TXTProductoPrecioVenta.PreventEnterBeep = true;
-            this.TXTProductoPrecioVenta.Size = new System.Drawing.Size(150, 23);
+            this.TXTProductoPrecioVenta.Size = new System.Drawing.Size(171, 23);
             this.TXTProductoPrecioVenta.TabIndex = 12;
             this.TXTProductoPrecioVenta.WatermarkText = "Precio Venta";
+            this.TXTProductoPrecioVenta.TextChanged += new System.EventHandler(this.TXTProductoPrecioVenta_TextChanged);
             // 
             // TXTProductoNombre
             // 
@@ -564,7 +568,7 @@
             this.TXTProductoNombre.Location = new System.Drawing.Point(9, 46);
             this.TXTProductoNombre.Name = "TXTProductoNombre";
             this.TXTProductoNombre.PreventEnterBeep = true;
-            this.TXTProductoNombre.Size = new System.Drawing.Size(304, 23);
+            this.TXTProductoNombre.Size = new System.Drawing.Size(352, 23);
             this.TXTProductoNombre.TabIndex = 0;
             this.TXTProductoNombre.WatermarkText = "Nombre del Producto";
             this.TXTProductoNombre.TextChanged += new System.EventHandler(this.TXTProductoNombre_TextChanged);
@@ -584,7 +588,7 @@
             this.TXTProductoTalla.Location = new System.Drawing.Point(9, 136);
             this.TXTProductoTalla.Name = "TXTProductoTalla";
             this.TXTProductoTalla.PreventEnterBeep = true;
-            this.TXTProductoTalla.Size = new System.Drawing.Size(149, 23);
+            this.TXTProductoTalla.Size = new System.Drawing.Size(175, 23);
             this.TXTProductoTalla.TabIndex = 5;
             this.TXTProductoTalla.WatermarkText = "Talla";
             // 
@@ -629,7 +633,7 @@
             this.DTIProductoFechaCreacion.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.DTIProductoFechaCreacion.MonthCalendar.TodayButtonVisible = true;
             this.DTIProductoFechaCreacion.Name = "DTIProductoFechaCreacion";
-            this.DTIProductoFechaCreacion.Size = new System.Drawing.Size(149, 23);
+            this.DTIProductoFechaCreacion.Size = new System.Drawing.Size(175, 23);
             this.DTIProductoFechaCreacion.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.DTIProductoFechaCreacion.TabIndex = 1;
             this.DTIProductoFechaCreacion.WatermarkText = "Fecha de Creacion";
@@ -662,16 +666,17 @@
             // 
             // FRMProducto_Registrar
             // 
+            this.AcceptButton = this.BTNGrabar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 392);
+            this.ClientSize = new System.Drawing.Size(746, 392);
             this.Controls.Add(this.GPPanelPrincipal);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRMProducto_Registrar";
-            this.Text = "1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FRMProducto_Registrar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRMProducto_Registrar_FormClosing);
             this.Load += new System.EventHandler(this.FRMProducto_Registrar_Load);
             this.GPPanelPrincipal.ResumeLayout(false);

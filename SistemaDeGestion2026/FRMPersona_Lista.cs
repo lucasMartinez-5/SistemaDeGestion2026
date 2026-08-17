@@ -227,10 +227,5 @@ namespace SistemaDeGestion2026
         {
 
         }
-
-        private void EPNFiltrar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

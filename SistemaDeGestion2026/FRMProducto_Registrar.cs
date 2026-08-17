@@ -112,18 +112,18 @@ namespace SistemaDeGestion2026
                 TXTProductoGenero.Focus();
                 respuesta = false;
             }
-            /*else if (TXTProductoCodigoDeBarra.Text.Replace(" ", "") == "")
+            else if (TXTProductoCodigoDeBarra.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el CÓDIGO DE BARRA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTProductoCodigoDeBarra.Focus();
                 respuesta = false;
             }
-            if (producto.ObtenerDatosCodBarra(modificar,producto.capdcodbar))
+            else if (producto.ObtenerDatosCodBarra(modificar,producto.capdcodbar))
             {
                 MessageBox.Show("Ya existe un producto con ese código de barras", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTProductoCodigoDeBarra.Focus();
                 respuesta = false;
-            }*/
+            }
             else if (TXTProductoStock.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el STOCK del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -148,29 +148,6 @@ namespace SistemaDeGestion2026
                 TXTProductoCategoria.Focus();
                 respuesta = false;
             }
-
-            /*else if ((TXTApellidoPaterno.Text.Replace(" ", "") == "") &&
-                     (TXTApellidoMaterno.Text.Replace(" ", "") == ""))
-            {
-                MessageBox.Show("Introduzca uno de los APELLIDOS de la persona", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTApellidoPaterno.Focus();
-                respuesta = false;
-            }
-
-            else if (TXTProductoPrecioMinimo.Text.Replace(" ", "") == "")
-            {
-                MessageBox.Show("Introduzca un CORREO VÁLIDO de la persona", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoPrecioMinimo.Focus();
-                respuesta = false;
-            }
-            else if (!xgeneral.emailIsValid(TXTProductoPrecioMinimo.Text))
-            {
-                MessageBox.Show("Introduzca un CORREO VÁLIDO de la persona", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoPrecioMinimo.Focus();
-                respuesta = false;
-            }*/
-
-
             return respuesta;
         }
         private void LimpiarCasillas()
@@ -580,6 +557,26 @@ namespace SistemaDeGestion2026
         }
 
         private void TXTProductoDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTProductoStock_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTProductoColor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTProductoGenero_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTProductoPrecioVenta_TextChanged(object sender, EventArgs e)
         {
 
         }

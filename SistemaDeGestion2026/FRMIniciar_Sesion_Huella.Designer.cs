@@ -159,7 +159,7 @@
             this.BTNGrabar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNGrabar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_guardar;
             this.BTNGrabar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNGrabar.Location = new System.Drawing.Point(4, 507);
+            this.BTNGrabar.Location = new System.Drawing.Point(24, 507);
             this.BTNGrabar.Margin = new System.Windows.Forms.Padding(4);
             this.BTNGrabar.Name = "BTNGrabar";
             this.BTNGrabar.Size = new System.Drawing.Size(161, 63);

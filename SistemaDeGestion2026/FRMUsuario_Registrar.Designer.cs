@@ -247,6 +247,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRMUsuario_Registrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMUsuario_Registrar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRMUsuario_Registrar_FormClosing);
             this.Load += new System.EventHandler(this.FRMUsuario_Registrar_Load);

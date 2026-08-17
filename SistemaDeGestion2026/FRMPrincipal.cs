@@ -35,14 +35,14 @@ namespace SistemaDeGestion2026
             FRMFondo1 a = new FRMFondo1();
             a.MdiParent = this;
             a.Show();
-            //BTNActualizarPassword.Enabled = false;
-            //BTNCerrarSesion.Enabled = false;
+            BTNActualizarPassword.Enabled = false;
+            BTNCerrarSesion.Enabled = false;
             BTNLogin.Enabled = true;
             BTNLoginHuella.Enabled = true;
-            //RBPAdministracion.Enabled = false;
-            //RTBAdministracion.Enabled = false;
-            //RBPInventario.Enabled = false;
-            //RTBInventario.Enabled = false;
+            RBPAdministracion.Enabled = false;
+            RTBAdministracion.Enabled = false;
+            RBPInventario.Enabled = false;
+            RTBInventario.Enabled = false;
         }
         private void Estado_2()
         {
@@ -55,14 +55,14 @@ namespace SistemaDeGestion2026
             a.persona = this.persona;
             a.usuario = this.usuario;
             a.Show();
-            //BTNActualizarPassword.Enabled = true;
-            //BTNCerrarSesion.Enabled = true;
-            //BTNLogin.Enabled = false;
-            //BTNLoginHuella.Enabled = false;
-            //RBPAdministracion.Enabled = true;
-            //RTBAdministracion.Enabled = true;
-            //RBPInventario.Enabled = true;
-            //RTBInventario.Enabled = true;
+            BTNActualizarPassword.Enabled = true;
+            BTNCerrarSesion.Enabled = true;
+            BTNLogin.Enabled = false;
+            BTNLoginHuella.Enabled = false;
+            RBPAdministracion.Enabled = true;
+            RTBAdministracion.Enabled = true;
+            RBPInventario.Enabled = true;
+            RTBInventario.Enabled = true;
         }
         #endregion
 
