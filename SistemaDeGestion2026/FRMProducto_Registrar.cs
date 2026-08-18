@@ -118,7 +118,7 @@ namespace SistemaDeGestion2026
                 TXTProductoCodigoDeBarra.Focus();
                 respuesta = false;
             }
-            else if (producto.ObtenerDatosCodBarra(modificar,producto.capdcodbar))
+            else if (producto2.ObtenerDatosCodBarra(modificar,producto.capdcodbar))
             {
                 MessageBox.Show("Ya existe un producto con ese código de barras", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTProductoCodigoDeBarra.Focus();

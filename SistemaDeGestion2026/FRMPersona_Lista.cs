@@ -86,6 +86,10 @@ namespace SistemaDeGestion2026
         {
             FRMPersona_Registrar a = new FRMPersona_Registrar();
             a.ShowDialog();
+            if (a.actualizar)
+            {
+                ActualizarGrid();
+            }
         }        
 
         private void BTNReporte_Click(object sender, EventArgs e)

@@ -142,8 +142,7 @@ namespace SistemaDeGestion2026
 
         #endregion
 
-        #region Eventos
-            
+        #region Eventos            
         private void BTNSalir_Click(object sender, EventArgs e)
         {
             this.Close();

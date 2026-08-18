@@ -26,8 +26,13 @@ namespace SistemaDeGestion2026
         {
             DTGLista.Rows.Clear();
             lista_productos.Clear();
-            lista_productos = producto.Lista("papdcodpro like '%" + TXTFiltrar.Text + "%' or " +
+            lista_productos = producto.Lista("capdtalpro like '%" + TXTFiltrar.Text + "%' or " +
                                            "capdmarpro like '%" + TXTFiltrar.Text + "%' or " +
+                                           "capdcolpro like '%" + TXTFiltrar.Text + "%' or " +
+                                           "capdmodpro like '%" + TXTFiltrar.Text + "%' or " +
+                                           "capdmatpro like '%" + TXTFiltrar.Text + "%' or " +
+                                           
+                                           "capdcatpro like '%" + TXTFiltrar.Text + "%' or " +
                                            "capddespro like '%" + TXTFiltrar.Text + "%' or " +
                                            "capdnompro like '%" + TXTFiltrar.Text + "%' limit " +
                                            IINFilas.Value.ToString()
@@ -90,6 +95,10 @@ namespace SistemaDeGestion2026
         {
             FRMProducto_Registrar a = new FRMProducto_Registrar();
             a.ShowDialog();
+            if (a.actualizar)
+            {
+                ActualizarGrid();
+            }
         }
 
         private void FRMProducto_Lista_Load(object sender, EventArgs e)
