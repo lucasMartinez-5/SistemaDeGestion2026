@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FRMCategoria_Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMCategoria_Lista.Designer.cs">
+      <DependentUpon>FRMCategoria_Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMFondo1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     <Compile Include="MetodosGenerales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FRMCategoria_Lista.resx">
+      <DependentUpon>FRMCategoria_Lista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMFondo1.resx">
       <DependentUpon>FRMFondo1.cs</DependentUpon>
     </EmbeddedResource>
