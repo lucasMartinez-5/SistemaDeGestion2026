@@ -172,7 +172,6 @@ namespace SistemaDeGestion2026
                         ActualizarGrid();
                     }
                 }
-                
             }
         }
 
@@ -213,7 +212,6 @@ namespace SistemaDeGestion2026
                         ActualizarGrid();
                     }
                 }
-
             }
         }
 

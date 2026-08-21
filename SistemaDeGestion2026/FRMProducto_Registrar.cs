@@ -254,7 +254,7 @@ namespace SistemaDeGestion2026
                     if (correlativo.ObtenerSiguiente())
                     {
                         producto.papdcodpro = correlativo.pxnctipcor + "-" +
-                                               correlativo.cxncnumcor.ToString("D4");
+                                               correlativo.cxncnumcor.ToString("D12");
                     }
                 }
                 else
@@ -553,7 +553,7 @@ namespace SistemaDeGestion2026
 
         private void SWBProductoEstadoStock_ValueChanged(object sender, EventArgs e)
         {
-            if (TXTProductoStock.Text == "0") TXTProductoStock.Enabled = false; else TXTProductoStock.Enabled = true;
+            if (TXTProductoStock.Text == "0") SWBProductoEstadoStock.Enabled = false; else SWBProductoEstadoStock.Enabled = true;
         }
 
         private void TXTProductoDescripcion_TextChanged(object sender, EventArgs e)
@@ -579,6 +579,11 @@ namespace SistemaDeGestion2026
         private void TXTProductoPrecioVenta_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BTNLimpiar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

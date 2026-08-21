@@ -57,6 +57,7 @@
             this.DTIProductoFechaCreacion = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.SWBProductoEstadoStock = new DevComponents.DotNetBar.Controls.SwitchButton();
             this.OFDElegirImagen = new System.Windows.Forms.OpenFileDialog();
+            this.BLTAyuda = new DevComponents.DotNetBar.BalloonTip();
             this.GPPanelPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DTIProductoFechaModificacion)).BeginInit();
             this.GPFotografia.SuspendLayout();
@@ -130,6 +131,8 @@
             // TXTProductoDescripcion
             // 
             this.TXTProductoDescripcion.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoDescripcion, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoDescripcion, "Descripción breve del producto (Detalles)");
             // 
             // 
             // 
@@ -149,6 +152,8 @@
             // TXTProductoCodigoDeBarra
             // 
             this.TXTProductoCodigoDeBarra.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoCodigoDeBarra, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoCodigoDeBarra, "Codigo de barra del producto");
             // 
             // 
             // 
@@ -169,6 +174,8 @@
             // TXTProductoMarca
             // 
             this.TXTProductoMarca.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoMarca, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoMarca, "Marca del producto");
             // 
             // 
             // 
@@ -188,6 +195,8 @@
             // TXTProductoModelo
             // 
             this.TXTProductoModelo.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoModelo, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoModelo, "Modelo o Confeccion del producto");
             // 
             // 
             // 
@@ -206,6 +215,8 @@
             // TXTProductoMaterial
             // 
             this.TXTProductoMaterial.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoMaterial, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoMaterial, "Material de Tela del producto");
             // 
             // 
             // 
@@ -229,6 +240,8 @@
             // 
             this.DTIProductoFechaModificacion.BackgroundStyle.Class = "DateTimeInputBackground";
             this.DTIProductoFechaModificacion.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.BLTAyuda.SetBalloonCaption(this.DTIProductoFechaModificacion, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.DTIProductoFechaModificacion, "Fecha de Ingreso o entrada del producto");
             this.DTIProductoFechaModificacion.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.DTIProductoFechaModificacion.ButtonDropDown.Visible = true;
             this.DTIProductoFechaModificacion.IsPopupCalendarOpen = false;
@@ -271,6 +284,8 @@
             // TXTProductoStock
             // 
             this.TXTProductoStock.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoStock, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoStock, "Stock o Cantidad total existente del producto");
             // 
             // 
             // 
@@ -291,6 +306,9 @@
             // TXTProductoGenero
             // 
             this.TXTProductoGenero.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoGenero, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoGenero, "Genero de sexo de la persona, solo se aceptan Heterosexuales - Masulino(M) o Feme" +
+        "nino(F) , no se aceptan Therians, ni otro tipo de género. Por favor");
             // 
             // 
             // 
@@ -354,6 +372,8 @@
             // 
             // PCBFotografia
             // 
+            this.BLTAyuda.SetBalloonCaption(this.PCBFotografia, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.PCBFotografia, "Foto registrado del producto");
             this.PCBFotografia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PCBFotografia.Image = ((System.Drawing.Image)(resources.GetObject("PCBFotografia.Image")));
             this.PCBFotografia.Location = new System.Drawing.Point(179, 8);
@@ -407,6 +427,8 @@
             // 
             // PCBCamara
             // 
+            this.BLTAyuda.SetBalloonCaption(this.PCBCamara, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.PCBCamara, "Cámara para ingresar foto del producto");
             this.PCBCamara.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PCBCamara.Image = ((System.Drawing.Image)(resources.GetObject("PCBCamara.Image")));
             this.PCBCamara.Location = new System.Drawing.Point(3, 8);
@@ -443,6 +465,7 @@
             this.BTNLimpiar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNLimpiar.TabIndex = 19;
             this.BTNLimpiar.Text = "&Limpiar";
+            this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
             // 
             // BTNGrabar
             // 
@@ -481,6 +504,8 @@
             // TXTProductoColor
             // 
             this.TXTProductoColor.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoColor, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoColor, "Color del producto");
             // 
             // 
             // 
@@ -501,6 +526,8 @@
             // TXTProductoCategoria
             // 
             this.TXTProductoCategoria.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoCategoria, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoCategoria, "Categoría o Tipo de producto");
             // 
             // 
             // 
@@ -521,6 +548,8 @@
             // TXTProductoPrecioMinimo
             // 
             this.TXTProductoPrecioMinimo.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoPrecioMinimo, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoPrecioMinimo, "Precio Mínimo o de Rebaja (descuento)");
             // 
             // 
             // 
@@ -538,6 +567,8 @@
             // TXTProductoPrecioVenta
             // 
             this.TXTProductoPrecioVenta.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoPrecioVenta, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoPrecioVenta, "Precio de Venta normal (sin ningún descuento)");
             // 
             // 
             // 
@@ -557,6 +588,8 @@
             // TXTProductoNombre
             // 
             this.TXTProductoNombre.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoNombre, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoNombre, "Nombre del producto");
             // 
             // 
             // 
@@ -577,6 +610,8 @@
             // TXTProductoTalla
             // 
             this.TXTProductoTalla.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTProductoTalla, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoTalla, "Talla o Medida del producto");
             // 
             // 
             // 
@@ -599,6 +634,8 @@
             // 
             this.DTIProductoFechaCreacion.BackgroundStyle.Class = "DateTimeInputBackground";
             this.DTIProductoFechaCreacion.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.BLTAyuda.SetBalloonCaption(this.DTIProductoFechaCreacion, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.DTIProductoFechaCreacion, "Fecha de Ingreso o entrada del producto");
             this.DTIProductoFechaCreacion.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.DTIProductoFechaCreacion.ButtonDropDown.Visible = true;
             this.DTIProductoFechaCreacion.IsPopupCalendarOpen = false;
@@ -719,5 +756,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoCodigoDeBarra;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoDescripcion;
         private System.Windows.Forms.OpenFileDialog OFDElegirImagen;
+        private DevComponents.DotNetBar.BalloonTip BLTAyuda;
     }
 }

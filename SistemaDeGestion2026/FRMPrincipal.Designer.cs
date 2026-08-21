@@ -53,6 +53,7 @@
             this.RTBInventario = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.BTNCategorias = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.RBPInventario.SuspendLayout();
             this.RBPAdministracion.SuspendLayout();
@@ -141,10 +142,11 @@
             this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar2.DragDropSupport = true;
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.BTNCategorias,
             this.BTNProductos});
             this.ribbonBar2.Location = new System.Drawing.Point(2, 0);
             this.ribbonBar2.Name = "ribbonBar2";
-            this.ribbonBar2.Size = new System.Drawing.Size(75, 90);
+            this.ribbonBar2.Size = new System.Drawing.Size(128, 90);
             this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar2.TabIndex = 0;
             this.ribbonBar2.Text = "ribbonBar2";
@@ -425,11 +427,21 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.VisualStudio2012Light;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204))))));
             // 
+            // BTNCategorias
+            // 
+            this.BTNCategorias.Image = global::SistemaDeGestion2026.Properties.Resources.ic_categoria;
+            this.BTNCategorias.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.BTNCategorias.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.BTNCategorias.Name = "BTNCategorias";
+            this.BTNCategorias.SubItemsExpandWidth = 14;
+            this.BTNCategorias.Text = "Categorias";
+            this.BTNCategorias.Click += new System.EventHandler(this.BTNCategorias_Click);
+            // 
             // FRMPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 505);
+            this.ClientSize = new System.Drawing.Size(670, 503);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -472,6 +484,7 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.RibbonBar ribbonBar2;
         private DevComponents.DotNetBar.ButtonItem BTNProductos;
+        private DevComponents.DotNetBar.ButtonItem BTNCategorias;
     }
 }
 

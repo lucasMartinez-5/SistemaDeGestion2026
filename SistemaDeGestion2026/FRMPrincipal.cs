@@ -43,6 +43,7 @@ namespace SistemaDeGestion2026
             RTBAdministracion.Enabled = false;
             RBPInventario.Enabled = false;
             RTBInventario.Enabled = false;
+            
         }
         private void Estado_2()
         {
@@ -164,6 +165,17 @@ namespace SistemaDeGestion2026
                 s.Close();
             }
             FRMProducto_Lista a = new FRMProducto_Lista();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void BTNCategorias_Click(object sender, EventArgs e)
+        {
+            foreach (Form s in this.MdiChildren)
+            {
+                s.Close();
+            }
+            FRMCategoria_Lista a = new FRMCategoria_Lista();
             a.MdiParent = this;
             a.Show();
         }

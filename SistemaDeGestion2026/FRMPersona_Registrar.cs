@@ -448,7 +448,7 @@ namespace SistemaDeGestion2026
 
         private void BTNLimpiar_Click(object sender, EventArgs e)
         {
-
+            LimpiarCasillas();
         }
 
         private void TXTApellidoMaterno_TextChanged(object sender, EventArgs e)
