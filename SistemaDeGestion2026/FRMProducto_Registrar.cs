@@ -154,6 +154,23 @@ namespace SistemaDeGestion2026
         {
             SWBProductoEstadoStock.Value = true;
             TXTProductoCodigoDeBarra.Text = "";
+            /*
+            TXTProductoNombre.Text = "";
+            DTIProductoFechaCreacion.Text = "";
+            DTIProductoFechaCreacion.Text = "";
+            DTIProductoFechaModificacion.Text = "";
+            TXTProductoMarca.Text = "";
+            TXTProductoColor.Text = "";
+            TXTProductoTalla.Text = "";
+            TXTProductoMaterial.Text = "";
+            TXTProductoModelo.Text = "";
+            TXTProductoGenero.Text = "";
+            TXTProductoStock.Text = "";
+            TXTProductoPrecioVenta.Text = "";
+            TXTProductoPrecioMinimo.Text = "";
+            TXTProductoCategoria.Text = "";
+            TXTProductoDescripcion.Text = "";
+            */
         }
 
         private void JalarDatos()
@@ -583,7 +600,7 @@ namespace SistemaDeGestion2026
 
         private void BTNLimpiar_Click(object sender, EventArgs e)
         {
-            
+            LimpiarCasillas();
         }
     }
 }

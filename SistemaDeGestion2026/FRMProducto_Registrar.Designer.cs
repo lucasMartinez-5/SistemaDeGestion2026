@@ -307,8 +307,7 @@
             // 
             this.TXTProductoGenero.BackColor = System.Drawing.Color.White;
             this.BLTAyuda.SetBalloonCaption(this.TXTProductoGenero, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TXTProductoGenero, "Genero de sexo de la persona, solo se aceptan Heterosexuales - Masulino(M) o Feme" +
-        "nino(F) , no se aceptan Therians, ni otro tipo de género. Por favor");
+            this.BLTAyuda.SetBalloonText(this.TXTProductoGenero, "Genero de sexo de la persona, Masculino (M) o Femenino(F)");
             // 
             // 
             // 
@@ -706,6 +705,7 @@
             this.AcceptButton = this.BTNGrabar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BTNSalir;
             this.ClientSize = new System.Drawing.Size(746, 392);
             this.Controls.Add(this.GPPanelPrincipal);
             this.DoubleBuffered = true;

@@ -191,8 +191,10 @@
             // 
             // FRMCategoria_Registrar
             // 
+            this.AcceptButton = this.BTNGrabar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BTNSalir;
             this.ClientSize = new System.Drawing.Size(383, 198);
             this.Controls.Add(this.GPPanelPrincipal);
             this.DoubleBuffered = true;
