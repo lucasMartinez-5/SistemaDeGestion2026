@@ -271,7 +271,7 @@ namespace SistemaDeGestion2026
                     if (correlativo.ObtenerSiguiente())
                     {
                         producto.papdcodpro = correlativo.pxnctipcor + "-" +
-                                               correlativo.cxncnumcor.ToString("D5");
+                                               correlativo.cxncnumcor.ToString("D12");
                     }
                 }
                 else
