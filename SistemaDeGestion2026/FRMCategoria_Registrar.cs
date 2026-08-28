@@ -82,7 +82,7 @@ namespace SistemaDeGestion2026
                     if (correlativo.ObtenerSiguiente())
                     {
                         categoria.pacpcodcat = correlativo.pxnctipcor + "-" +
-                                                correlativo.cxncnumcor.ToString("D12");
+                                                correlativo.cxncnumcor.ToString("D5");
                     }
                 }
                 else
