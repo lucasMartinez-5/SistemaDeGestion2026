@@ -54,9 +54,8 @@ namespace SistemaDeGestion2026
                 DTGLista[1, DTGLista.Rows.Count - 1].Value = a.caprestpro;
                 DTGLista[2, DTGLista.Rows.Count - 1].Value = a.caprnitpro;
                 DTGLista[3, DTGLista.Rows.Count - 1].Value = a.caprsocpro;
-                DTGLista[4, DTGLista.Rows.Count - 1].Value = a.caprdirpro;
-                DTGLista[5, DTGLista.Rows.Count - 1].Value = a.caprnumcel;
-                DTGLista[6, DTGLista.Rows.Count - 1].Value = a.caprsocpro;
+                DTGLista[4, DTGLista.Rows.Count - 1].Value = a.caprnumcel;
+                
             }
         }
         #endregion

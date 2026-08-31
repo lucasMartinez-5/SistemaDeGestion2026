@@ -19,14 +19,11 @@ namespace SistemaDeGestion2026
         #region Variables
         private aproved proveedor = new aproved();
         private aperson persona = new aperson();
+        private bool personaOk = false;
         private xnumcor correlativo = new xnumcor();
         public bool modificar = false;
         public String codPveMod = "";
         public bool actualizar = false;
-        //Variables para la camara
-        private FilterInfoCollection CaptureDevice; // list of webcam
-        private VideoCaptureDevice FinalFrame;
-        private bool TieneFoto = false;
         #endregion
 
         #region Constructor
@@ -57,12 +54,6 @@ namespace SistemaDeGestion2026
             {
                 MessageBox.Show("Ya existe un proveedor con ese NIT", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTNIT.Focus();
-                respuesta = false;
-            }
-            else if (TXTContacto.Text.Replace(" ", "") == "")
-            {
-                MessageBox.Show("Introduzca el contacto del proveedor", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTContacto.Focus();
                 respuesta = false;
             }
             else if (TXTRazonSocial.Text.Replace(" ", "") == "")
@@ -102,7 +93,6 @@ namespace SistemaDeGestion2026
             TXTNIT.Text = proveedor.caprnitpro;
             TXTRazonSocial.Text = proveedor.caprsocpro;
             TXTCelular.Text = proveedor.caprnumcel;
-            TXTContacto.Text = proveedor.faprcntpro;
             TXTDireccion.Text = proveedor.caprdirpro;
 
             //METODO PARA CARGAR LA FOTO DEL PROVEEDOR
@@ -253,21 +243,13 @@ namespace SistemaDeGestion2026
                 {
                     proveedor.paprcodpro = this.codPveMod;
                 }
+                
                 proveedor.caprestpro = SWBEstado.Value;
                 proveedor.caprnitpro = TXTNIT.Text;
                 proveedor.caprsocpro = TXTRazonSocial.Text;
                 proveedor.caprnumcel = TXTCelular.Text;
                 proveedor.caprdirpro = TXTDireccion.Text;
-
-                //Fotografia del producto
-                /*if (TieneFoto)
-                {
-                    proveedor.capsfotpro = MetodosGenerales.ConvertImageToBase64String(PCBFotografia.Image);
-                }
-                else
-                {
-                    proveedor.capsfotpro = "";
-                } */
+                proveedor.faprcntpro = persona.papscodper;
 
                 if (!this.modificar)
                 {
@@ -321,5 +303,29 @@ namespace SistemaDeGestion2026
             LimpiarCasillas();
         }
         #endregion
+
+        private void BTNBuscarProveedor_Click(object sender, EventArgs e)
+        {
+            FRMPersona_Buscar a = new FRMPersona_Buscar();
+            a.ShowDialog();
+            if (a.seleccionadoOk)
+            {
+                this.persona = a.persona;
+                this.personaOk = true;
+                TXTCelular.Text = persona.capsnumcel;
+                TXTDireccion.Text = persona.capsdirper;
+                /*TXTContacto.Text = persona.capsapepat + " " +
+                                  persona.capsapemat + " " +
+                                  persona.capsnomper;
+                */
+            }
+            else
+            {
+                this.personaOk = false;
+                TXTCelular.Text = "";
+                TXTDireccion.Text = "";
+                //TXTContacto.Text = "Contacto";
+            }
+        }
     }
 }

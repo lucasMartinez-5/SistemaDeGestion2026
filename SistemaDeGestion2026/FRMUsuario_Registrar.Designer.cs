@@ -197,6 +197,7 @@
             this.TXTCI.Size = new System.Drawing.Size(149, 23);
             this.TXTCI.TabIndex = 0;
             this.TXTCI.WatermarkText = "CI";
+            this.TXTCI.TextChanged += new System.EventHandler(this.TXTCI_TextChanged);
             this.TXTCI.Enter += new System.EventHandler(this.TXTCI_Enter);
             // 
             // TXTNombres

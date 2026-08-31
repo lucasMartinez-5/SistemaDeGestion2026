@@ -92,6 +92,12 @@
     <Compile Include="FRMCategoria_Registrar.Designer.cs">
       <DependentUpon>FRMCategoria_Registrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMCliente_Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMCliente_Lista.Designer.cs">
+      <DependentUpon>FRMCliente_Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMFondo1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMCategoria_Registrar.resx">
       <DependentUpon>FRMCategoria_Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMCliente_Lista.resx">
+      <DependentUpon>FRMCliente_Lista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMFondo1.resx">
       <DependentUpon>FRMFondo1.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace SistemaDeGestion2026
 {
-    partial class FRMProveedor_Lista
+    partial class FRMCliente_Lista
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,15 +46,10 @@
             this.BTNReporte = new DevComponents.DotNetBar.ButtonX();
             this.BTNModificar = new DevComponents.DotNetBar.ButtonX();
             this.BTNRegistrar = new DevComponents.DotNetBar.ButtonX();
-            this.CMSMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inhabilitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.habilitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).BeginInit();
             this.EPNFiltrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IINFilas)).BeginInit();
             this.EPNOpciones.SuspendLayout();
-            this.CMSMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // DTGLista
@@ -86,9 +80,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DTGLista.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DTGLista.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DTGLista.Dock = System.Windows.Forms.DockStyle.Left;
             this.DTGLista.EnableHeadersVisualStyles = false;
-            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DTGLista.Location = new System.Drawing.Point(94, 73);
             this.DTGLista.MultiSelect = false;
             this.DTGLista.Name = "DTGLista";
@@ -104,10 +98,8 @@
             this.DTGLista.RowHeadersWidth = 51;
             this.DTGLista.RowTemplate.Height = 24;
             this.DTGLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DTGLista.Size = new System.Drawing.Size(971, 375);
-            this.DTGLista.TabIndex = 17;
-            this.DTGLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DTGLista_CellContentClick);
-            this.DTGLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DTGLista_CellDoubleClick);
+            this.DTGLista.Size = new System.Drawing.Size(970, 344);
+            this.DTGLista.TabIndex = 26;
             // 
             // Column1
             // 
@@ -167,13 +159,13 @@
             this.EPNFiltrar.HideControlsWhenCollapsed = true;
             this.EPNFiltrar.Location = new System.Drawing.Point(94, 0);
             this.EPNFiltrar.Name = "EPNFiltrar";
-            this.EPNFiltrar.Size = new System.Drawing.Size(971, 73);
+            this.EPNFiltrar.Size = new System.Drawing.Size(970, 73);
             this.EPNFiltrar.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.EPNFiltrar.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.EPNFiltrar.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.EPNFiltrar.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.EPNFiltrar.Style.GradientAngle = 90;
-            this.EPNFiltrar.TabIndex = 16;
+            this.EPNFiltrar.TabIndex = 25;
             this.EPNFiltrar.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
             this.EPNFiltrar.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.EPNFiltrar.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
@@ -193,7 +185,6 @@
             this.BTNFiltrar.Size = new System.Drawing.Size(27, 26);
             this.BTNFiltrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNFiltrar.TabIndex = 6;
-            this.BTNFiltrar.Click += new System.EventHandler(this.BTNFiltrar_Click);
             // 
             // TXTFiltrar
             // 
@@ -212,7 +203,6 @@
             this.TXTFiltrar.Size = new System.Drawing.Size(196, 23);
             this.TXTFiltrar.TabIndex = 5;
             this.TXTFiltrar.WatermarkText = "Datos a buscar...";
-            this.TXTFiltrar.Enter += new System.EventHandler(this.TXTFiltrar_Enter);
             // 
             // IINFilas
             // 
@@ -246,13 +236,13 @@
             this.EPNOpciones.Location = new System.Drawing.Point(0, 0);
             this.EPNOpciones.Margin = new System.Windows.Forms.Padding(4);
             this.EPNOpciones.Name = "EPNOpciones";
-            this.EPNOpciones.Size = new System.Drawing.Size(94, 452);
+            this.EPNOpciones.Size = new System.Drawing.Size(94, 417);
             this.EPNOpciones.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.EPNOpciones.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.EPNOpciones.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.EPNOpciones.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.EPNOpciones.Style.GradientAngle = 90;
-            this.EPNOpciones.TabIndex = 15;
+            this.EPNOpciones.TabIndex = 24;
             this.EPNOpciones.TitleHeight = 32;
             this.EPNOpciones.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
             this.EPNOpciones.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
@@ -291,7 +281,6 @@
             this.BTNModificar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNModificar.TabIndex = 5;
             this.BTNModificar.Text = "&Modificar";
-            this.BTNModificar.Click += new System.EventHandler(this.BTNModificar_Click);
             // 
             // BTNRegistrar
             // 
@@ -307,59 +296,24 @@
             this.BTNRegistrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNRegistrar.TabIndex = 4;
             this.BTNRegistrar.Text = "&Registrar";
-            this.BTNRegistrar.Click += new System.EventHandler(this.BTNRegistrar_Click);
             // 
-            // CMSMenu
-            // 
-            this.CMSMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modificarToolStripMenuItem,
-            this.inhabilitarToolStripMenuItem,
-            this.habilitarToolStripMenuItem});
-            this.CMSMenu.Name = "CMSMenu";
-            this.CMSMenu.Size = new System.Drawing.Size(128, 70);
-            this.CMSMenu.Opening += new System.ComponentModel.CancelEventHandler(this.CMSMenu_Opening);
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.modificarToolStripMenuItem.Text = "&Modificar";
-            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
-            // 
-            // inhabilitarToolStripMenuItem
-            // 
-            this.inhabilitarToolStripMenuItem.Name = "inhabilitarToolStripMenuItem";
-            this.inhabilitarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.inhabilitarToolStripMenuItem.Text = "&Inhabilitar";
-            this.inhabilitarToolStripMenuItem.Click += new System.EventHandler(this.inhabilitarToolStripMenuItem_Click);
-            // 
-            // habilitarToolStripMenuItem
-            // 
-            this.habilitarToolStripMenuItem.Name = "habilitarToolStripMenuItem";
-            this.habilitarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.habilitarToolStripMenuItem.Text = "&Habilitar";
-            this.habilitarToolStripMenuItem.Click += new System.EventHandler(this.habilitarToolStripMenuItem_Click);
-            // 
-            // FRMProveedor_Lista
+            // FRMCliente_Lista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 452);
-            this.ContextMenuStrip = this.CMSMenu;
+            this.ClientSize = new System.Drawing.Size(1064, 417);
             this.Controls.Add(this.DTGLista);
             this.Controls.Add(this.EPNFiltrar);
             this.Controls.Add(this.EPNOpciones);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FRMProveedor_Lista";
-            this.Text = "FRMProveedor_Lista";
-            this.Load += new System.EventHandler(this.FRMProveedor_Lista_Load);
+            this.Name = "FRMCliente_Lista";
+            this.Text = "FRMCliente_Lista";
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).EndInit();
             this.EPNFiltrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IINFilas)).EndInit();
             this.EPNOpciones.ResumeLayout(false);
-            this.CMSMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -367,6 +321,11 @@
         #endregion
 
         private DevComponents.DotNetBar.Controls.DataGridViewX DTGLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private DevComponents.DotNetBar.ExpandablePanel EPNFiltrar;
         private DevComponents.DotNetBar.ButtonX BTNFiltrar;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTFiltrar;
@@ -375,14 +334,5 @@
         private DevComponents.DotNetBar.ButtonX BTNReporte;
         private DevComponents.DotNetBar.ButtonX BTNModificar;
         private DevComponents.DotNetBar.ButtonX BTNRegistrar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.ContextMenuStrip CMSMenu;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inhabilitarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem habilitarToolStripMenuItem;
     }
 }

@@ -307,5 +307,10 @@ namespace SistemaDeGestion2026
         {
 
         }
+
+        private void TXTCI_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
