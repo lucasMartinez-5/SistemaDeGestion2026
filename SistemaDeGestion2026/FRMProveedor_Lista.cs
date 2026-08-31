@@ -11,38 +11,36 @@ using System.Windows.Forms;
 
 namespace SistemaDeGestion2026
 {
-    public partial class FRMPersona_Lista : DevComponents.DotNetBar.Office2007Form
+    public partial class FRMProveedor_Lista : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
-        private aperson persona = new aperson();
-        private List<aperson> lista_personas = new List<aperson>();
+        private aproved proveedor = new aproved();
+        private List<aproved> lista_proveedores = new List<aproved>();
         #endregion
 
         #region Constructor
-        public FRMPersona_Lista()
+        public FRMProveedor_Lista()
         {
             InitializeComponent();
         }
         #endregion
-        // Comentario prubea
+
         #region Métodos
         private void ActualizarGrid()
         {
             DTGLista.Rows.Clear();
-            lista_personas.Clear();
-            lista_personas = persona.Lista("capsnumcid like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capsapepat like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capsapemat like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capsnomper like '%" + TXTFiltrar.Text + "%' limit " +
+            lista_proveedores.Clear();
+            lista_proveedores = proveedor.Lista("caprnitpro like '%" + TXTFiltrar.Text + "%' or " +
+                                                "caprsocpro like '%" + TXTFiltrar.Text + "%' limit " +
                                            IINFilas.Value.ToString()
                                            );
-            foreach (aperson a in lista_personas)
+            foreach (aproved a in lista_proveedores)
             {
                 DTGLista.Rows.Add();
 
-                if (a.capsestper)
+                if (a.caprestpro)
                 {
-                    if (DTGLista.Rows.Count %2==0)
+                    if (DTGLista.Rows.Count % 2 == 0)
                     {
                         DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightSkyBlue;
                     }
@@ -52,31 +50,18 @@ namespace SistemaDeGestion2026
                     DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Salmon;
                 }
 
-                DTGLista[0, DTGLista.Rows.Count - 1].Value = a.papscodper;
-                DTGLista[1, DTGLista.Rows.Count - 1].Value = a.capsestper;
-                DTGLista[2, DTGLista.Rows.Count - 1].Value = a.capsnumcid;
-                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.capsapepat;
-                DTGLista[4, DTGLista.Rows.Count - 1].Value = a.capsapemat;
-                DTGLista[5, DTGLista.Rows.Count - 1].Value = a.capsnomper;
-                DTGLista[6, DTGLista.Rows.Count - 1].Value = a.capsfecnac;
-                if (a.capssexper)
-                {
-                    DTGLista[7, DTGLista.Rows.Count - 1].Value = "M";
-                }
-                else
-                {
-                    DTGLista[7, DTGLista.Rows.Count - 1].Value = "F";
-                }
-
-                DTGLista[8, DTGLista.Rows.Count - 1].Value = a.capsnumcel;
-
+                DTGLista[0, DTGLista.Rows.Count - 1].Value = a.paprcodpro;
+                DTGLista[1, DTGLista.Rows.Count - 1].Value = a.caprestpro;
+                DTGLista[2, DTGLista.Rows.Count - 1].Value = a.caprnitpro;
+                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.caprsocpro;
+                DTGLista[4, DTGLista.Rows.Count - 1].Value = a.caprdirpro;
+                DTGLista[5, DTGLista.Rows.Count - 1].Value = a.caprnumcel;
+                DTGLista[6, DTGLista.Rows.Count - 1].Value = a.caprsocpro;
             }
-
         }
         #endregion
 
-        #region Eventos
-        private void FRMPersona_Lista_Load(object sender, EventArgs e)
+        private void FRMProveedor_Lista_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             ActualizarGrid();
@@ -84,26 +69,21 @@ namespace SistemaDeGestion2026
 
         private void BTNRegistrar_Click(object sender, EventArgs e)
         {
-            FRMPersona_Registrar a = new FRMPersona_Registrar();
+            FRMProveedor_Registrar a = new FRMProveedor_Registrar();
             a.ShowDialog();
             if (a.actualizar)
             {
                 ActualizarGrid();
             }
-        }        
-
-        private void BTNReporte_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void BTNModificar_Click(object sender, EventArgs e)
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                FRMPersona_Registrar F1 = new FRMPersona_Registrar();
+                FRMProveedor_Registrar F1 = new FRMProveedor_Registrar();
                 F1.modificar = true;
-                F1.codPerMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                F1.codPveMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
                 F1.ShowDialog();
                 if (F1.actualizar)
                 {
@@ -118,9 +98,9 @@ namespace SistemaDeGestion2026
             {
                 if (DTGLista.SelectedRows.Count > 0)
                 {
-                    FRMPersona_Registrar F1 = new FRMPersona_Registrar();
+                    FRMProveedor_Registrar F1 = new FRMProveedor_Registrar();
                     F1.modificar = true;
-                    F1.codPerMod = DTGLista[0, e.RowIndex].Value.ToString();
+                    F1.codPveMod = DTGLista[0, e.RowIndex].Value.ToString();
                     F1.ShowDialog();
                     if (F1.actualizar)
                     {
@@ -135,16 +115,13 @@ namespace SistemaDeGestion2026
             ActualizarGrid();
         }
 
-
-        #endregion
-
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                FRMPersona_Registrar F1 = new FRMPersona_Registrar();
+                FRMProveedor_Registrar F1 = new FRMProveedor_Registrar();
                 F1.modificar = true;
-                F1.codPerMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                F1.codPveMod = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
                 F1.ShowDialog();
                 if (F1.actualizar)
                 {
@@ -162,13 +139,13 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                persona.papscodper= DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (persona.ObtenerDatos())
+                proveedor.paprcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (proveedor.ObtenerDatos())
                 {
-                    persona.capsestper = false;
-                    if (persona.Modificar())
+                    proveedor.caprestpro = false;
+                    if (proveedor.Modificar())
                     {
-                        MessageBox.Show("Persona Inhabilitada correctamente");
+                        MessageBox.Show("Proveedor Inhabilitado correctamente");
                         ActualizarGrid();
                     }
                 }
@@ -179,11 +156,11 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                persona.papscodper = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (persona.ObtenerDatos())
+                proveedor.paprcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (proveedor.ObtenerDatos())
                 {
-                    
-                    if (persona.capsestper)
+
+                    if (proveedor.caprestpro)
                     {
                         CMSMenu.Items[2].Visible = false;
                         CMSMenu.Items[1].Visible = true;
@@ -201,13 +178,13 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                persona.papscodper = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (persona.ObtenerDatos())
+                proveedor.paprcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (proveedor.ObtenerDatos())
                 {
-                    persona.capsestper = true;
-                    if (persona.Modificar())
+                    proveedor.caprestpro = true;
+                    if (proveedor.Modificar())
                     {
-                        MessageBox.Show("Persona Habilitada correctamente");
+                        MessageBox.Show("Proveedor Habilitado correctamente");
                         ActualizarGrid();
                     }
                 }
@@ -217,16 +194,6 @@ namespace SistemaDeGestion2026
         private void TXTFiltrar_Enter(object sender, EventArgs e)
         {
             TXTFiltrar.SelectAll();
-        }
-
-        private void TXTFiltrar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void IINFilas_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

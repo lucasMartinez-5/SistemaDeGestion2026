@@ -158,6 +158,18 @@
     <Compile Include="FRMProducto_Registrar.Designer.cs">
       <DependentUpon>FRMProducto_Registrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMProveedor_Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMProveedor_Lista.Designer.cs">
+      <DependentUpon>FRMProveedor_Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMProveedor_Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMProveedor_Registrar.Designer.cs">
+      <DependentUpon>FRMProveedor_Registrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +229,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMProducto_Registrar.resx">
       <DependentUpon>FRMProducto_Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMProveedor_Lista.resx">
+      <DependentUpon>FRMProveedor_Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMProveedor_Registrar.resx">
+      <DependentUpon>FRMProveedor_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMSplash.resx">
       <DependentUpon>FRMSplash.cs</DependentUpon>
@@ -392,6 +410,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_categoria_reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_proveedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_proveedor_modificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_proveedor_nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_proveedor_reporte.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

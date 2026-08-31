@@ -179,5 +179,16 @@ namespace SistemaDeGestion2026
             a.MdiParent = this;
             a.Show();
         }
+
+        private void BTNProveedores_Click(object sender, EventArgs e)
+        {
+            foreach (Form s in this.MdiChildren)
+            {
+                s.Close();
+            }
+            FRMProveedor_Lista a = new FRMProveedor_Lista();
+            a.MdiParent = this;
+            a.Show();
+        }
     }
 }

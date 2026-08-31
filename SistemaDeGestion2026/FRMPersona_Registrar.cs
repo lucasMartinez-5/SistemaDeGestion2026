@@ -139,7 +139,6 @@ namespace SistemaDeGestion2026
                 PCBFotografia.Image = MetodosGenerales.ConvertBase64StringToImage(persona.capsfotper);
             }
         }
-
         #endregion
 
         #region Eventos            

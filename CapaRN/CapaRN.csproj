@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="acatpro.cs" />
+    <Compile Include="aclient.cs" />
     <Compile Include="aperson.cs" />
     <Compile Include="AppConfWriter.cs" />
     <Compile Include="aproduc.cs" />
+    <Compile Include="aproved.cs" />
     <Compile Include="aususis.cs" />
     <Compile Include="lususis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
