@@ -94,7 +94,6 @@ namespace SistemaDeGestion2026
             DPECHuellas.EnrolledFingerMask = usuario.causmashue;
             TXTNombreLogin.Text = usuario.causnomlog;
         }
-
         #endregion
 
         #region Eventos

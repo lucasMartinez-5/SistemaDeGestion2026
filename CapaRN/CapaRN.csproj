@@ -50,6 +50,8 @@
     <Compile Include="aproduc.cs" />
     <Compile Include="aproved.cs" />
     <Compile Include="aususis.cs" />
+    <Compile Include="lclient.cs" />
+    <Compile Include="lproved.cs" />
     <Compile Include="lususis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="xgeneral.cs" />

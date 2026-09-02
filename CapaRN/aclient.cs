@@ -114,7 +114,53 @@ namespace CapaRN
                     return false;
                 }
             }
-            public bool VerificarExistencia()
+
+            public bool ObtenerDatosNIT(bool modificar, string login)
+            {
+                this.Conexion.Conectar();
+                string sql = "select " +
+                                 "caclestcli," +
+                                     "caclnumcel," +
+                                     "paclcodcli," +
+                                     "caclnitcli," +
+                                     "caclsoccli," +
+                                     "faclcntcli," +
+                                     "cacldircli " +
+                         "from aclient " +
+                         "where " +
+                                "caclnitcli = @caclnitcli";
+
+            if (modificar)
+            {
+                sql += " and caclnitcli!='" + login + "'";
+            }
+
+                this.Conexion.PrepararComando(sql);
+                this.Conexion.AsignarParametroCadena("@caclnitcli", this._caclnitcli);
+
+                DbDataReader ResultadoConsulta = Conexion.EjecutarConsulta();
+
+            if (ResultadoConsulta.Read())
+            {
+                this._caclestcli = ResultadoConsulta.GetBoolean(0);
+                this._caclnumcel = ResultadoConsulta.GetString(1);
+                this._paclcodcli = ResultadoConsulta.GetString(2);
+                this._caclnitcli = ResultadoConsulta.GetString(3);
+                this._caclsoccli = ResultadoConsulta.GetString(4);
+                this._faclcntcli = ResultadoConsulta.GetString(5);
+                this._cacldircli = ResultadoConsulta.GetString(6);
+                this.Conexion.Desconectar();
+
+                return true;
+            }
+            else
+            {
+                this.Conexion.Desconectar();
+                return false;
+            }
+        }
+
+        public bool VerificarExistencia()
             { 
                 this.Conexion.Conectar(); 
 			    string sql = "select " + 
