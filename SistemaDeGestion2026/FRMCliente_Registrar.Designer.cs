@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.GPPanelPrincipal = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.BTNBuscarCliente = new DevComponents.DotNetBar.ButtonX();
             this.TXTRazonSocial = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
+            this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
+            this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
             this.TXTNIT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTDireccion = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTCelular = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SWBEstado = new DevComponents.DotNetBar.Controls.SwitchButton();
-            this.BTNBuscarCliente = new DevComponents.DotNetBar.ButtonX();
-            this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
-            this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
-            this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
+            this.BLTAyuda = new DevComponents.DotNetBar.BalloonTip();
             this.GPPanelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,102 +92,6 @@
             this.GPPanelPrincipal.TabIndex = 3;
             this.GPPanelPrincipal.Text = "Proveedor";
             // 
-            // TXTRazonSocial
-            // 
-            this.TXTRazonSocial.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.TXTRazonSocial.Border.Class = "TextBoxBorder";
-            this.TXTRazonSocial.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTRazonSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTRazonSocial.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTRazonSocial.ForeColor = System.Drawing.Color.Black;
-            this.TXTRazonSocial.Location = new System.Drawing.Point(324, 35);
-            this.TXTRazonSocial.Name = "TXTRazonSocial";
-            this.TXTRazonSocial.PreventEnterBeep = true;
-            this.TXTRazonSocial.Size = new System.Drawing.Size(374, 23);
-            this.TXTRazonSocial.TabIndex = 14;
-            this.TXTRazonSocial.WatermarkText = "Razon Social";
-            this.TXTRazonSocial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTRazonSocial_KeyDown);
-            // 
-            // TXTNIT
-            // 
-            this.TXTNIT.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.TXTNIT.Border.Class = "TextBoxBorder";
-            this.TXTNIT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTNIT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTNIT.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTNIT.ForeColor = System.Drawing.Color.Black;
-            this.TXTNIT.Location = new System.Drawing.Point(324, 6);
-            this.TXTNIT.Name = "TXTNIT";
-            this.TXTNIT.PreventEnterBeep = true;
-            this.TXTNIT.Size = new System.Drawing.Size(142, 23);
-            this.TXTNIT.TabIndex = 0;
-            this.TXTNIT.WatermarkText = "NIT";
-            this.TXTNIT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTNIT_KeyDown);
-            // 
-            // TXTDireccion
-            // 
-            this.TXTDireccion.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.TXTDireccion.Border.Class = "TextBoxBorder";
-            this.TXTDireccion.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTDireccion.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTDireccion.ForeColor = System.Drawing.Color.Black;
-            this.TXTDireccion.Location = new System.Drawing.Point(9, 35);
-            this.TXTDireccion.Multiline = true;
-            this.TXTDireccion.Name = "TXTDireccion";
-            this.TXTDireccion.PreventEnterBeep = true;
-            this.TXTDireccion.Size = new System.Drawing.Size(304, 92);
-            this.TXTDireccion.TabIndex = 7;
-            this.TXTDireccion.WatermarkText = "Dirección";
-            // 
-            // TXTCelular
-            // 
-            this.TXTCelular.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.TXTCelular.Border.Class = "TextBoxBorder";
-            this.TXTCelular.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTCelular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTCelular.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTCelular.ForeColor = System.Drawing.Color.Black;
-            this.TXTCelular.Location = new System.Drawing.Point(164, 6);
-            this.TXTCelular.Name = "TXTCelular";
-            this.TXTCelular.PreventEnterBeep = true;
-            this.TXTCelular.Size = new System.Drawing.Size(149, 23);
-            this.TXTCelular.TabIndex = 5;
-            this.TXTCelular.WatermarkText = "Celular";
-            this.TXTCelular.Enter += new System.EventHandler(this.TXTCelular_Enter);
-            // 
-            // SWBEstado
-            // 
-            // 
-            // 
-            // 
-            this.SWBEstado.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.SWBEstado.Location = new System.Drawing.Point(9, 3);
-            this.SWBEstado.Name = "SWBEstado";
-            this.SWBEstado.OffBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.SWBEstado.OffText = "Inhabilitado";
-            this.SWBEstado.OffTextColor = System.Drawing.Color.White;
-            this.SWBEstado.OnBackColor = System.Drawing.Color.LimeGreen;
-            this.SWBEstado.OnText = "Habilitado";
-            this.SWBEstado.OnTextColor = System.Drawing.Color.White;
-            this.SWBEstado.Size = new System.Drawing.Size(149, 26);
-            this.SWBEstado.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.SWBEstado.TabIndex = 9;
-            this.SWBEstado.Value = true;
-            this.SWBEstado.ValueObject = "Y";
-            // 
             // BTNBuscarCliente
             // 
             this.BTNBuscarCliente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -199,6 +104,27 @@
             this.BTNBuscarCliente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNBuscarCliente.TabIndex = 15;
             this.BTNBuscarCliente.Click += new System.EventHandler(this.BTNBuscarCliente_Click);
+            // 
+            // TXTRazonSocial
+            // 
+            this.TXTRazonSocial.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTRazonSocial, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTRazonSocial, "Nombre Completo de la persona");
+            // 
+            // 
+            // 
+            this.TXTRazonSocial.Border.Class = "TextBoxBorder";
+            this.TXTRazonSocial.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTRazonSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTRazonSocial.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTRazonSocial.ForeColor = System.Drawing.Color.Black;
+            this.TXTRazonSocial.Location = new System.Drawing.Point(324, 35);
+            this.TXTRazonSocial.Name = "TXTRazonSocial";
+            this.TXTRazonSocial.PreventEnterBeep = true;
+            this.TXTRazonSocial.Size = new System.Drawing.Size(374, 20);
+            this.TXTRazonSocial.TabIndex = 14;
+            this.TXTRazonSocial.WatermarkText = "Razon Social";
+            this.TXTRazonSocial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTRazonSocial_KeyDown);
             // 
             // BTNSalir
             // 
@@ -243,6 +169,89 @@
             this.BTNGrabar.Text = "&Grabar";
             this.BTNGrabar.Click += new System.EventHandler(this.BTNGrabar_Click);
             // 
+            // TXTNIT
+            // 
+            this.TXTNIT.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTNIT, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTNIT, "Numero de Identificación Tributaria");
+            // 
+            // 
+            // 
+            this.TXTNIT.Border.Class = "TextBoxBorder";
+            this.TXTNIT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTNIT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTNIT.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTNIT.ForeColor = System.Drawing.Color.Black;
+            this.TXTNIT.Location = new System.Drawing.Point(324, 6);
+            this.TXTNIT.Name = "TXTNIT";
+            this.TXTNIT.PreventEnterBeep = true;
+            this.TXTNIT.Size = new System.Drawing.Size(142, 20);
+            this.TXTNIT.TabIndex = 0;
+            this.TXTNIT.WatermarkText = "NIT";
+            this.TXTNIT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTNIT_KeyDown);
+            // 
+            // TXTDireccion
+            // 
+            this.TXTDireccion.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTDireccion, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTDireccion, "Direccion del lugar donde vive");
+            // 
+            // 
+            // 
+            this.TXTDireccion.Border.Class = "TextBoxBorder";
+            this.TXTDireccion.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTDireccion.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTDireccion.ForeColor = System.Drawing.Color.Black;
+            this.TXTDireccion.Location = new System.Drawing.Point(9, 35);
+            this.TXTDireccion.Multiline = true;
+            this.TXTDireccion.Name = "TXTDireccion";
+            this.TXTDireccion.PreventEnterBeep = true;
+            this.TXTDireccion.Size = new System.Drawing.Size(304, 92);
+            this.TXTDireccion.TabIndex = 7;
+            this.TXTDireccion.WatermarkText = "Dirección";
+            // 
+            // TXTCelular
+            // 
+            this.TXTCelular.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTCelular, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTCelular, "Número de Celular");
+            // 
+            // 
+            // 
+            this.TXTCelular.Border.Class = "TextBoxBorder";
+            this.TXTCelular.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTCelular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTCelular.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTCelular.ForeColor = System.Drawing.Color.Black;
+            this.TXTCelular.Location = new System.Drawing.Point(164, 6);
+            this.TXTCelular.Name = "TXTCelular";
+            this.TXTCelular.PreventEnterBeep = true;
+            this.TXTCelular.Size = new System.Drawing.Size(149, 20);
+            this.TXTCelular.TabIndex = 5;
+            this.TXTCelular.WatermarkText = "Celular";
+            this.TXTCelular.Enter += new System.EventHandler(this.TXTCelular_Enter);
+            // 
+            // SWBEstado
+            // 
+            // 
+            // 
+            // 
+            this.SWBEstado.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.SWBEstado.Location = new System.Drawing.Point(9, 3);
+            this.SWBEstado.Name = "SWBEstado";
+            this.SWBEstado.OffBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.SWBEstado.OffText = "Inhabilitado";
+            this.SWBEstado.OffTextColor = System.Drawing.Color.White;
+            this.SWBEstado.OnBackColor = System.Drawing.Color.LimeGreen;
+            this.SWBEstado.OnText = "Habilitado";
+            this.SWBEstado.OnTextColor = System.Drawing.Color.White;
+            this.SWBEstado.Size = new System.Drawing.Size(149, 26);
+            this.SWBEstado.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.SWBEstado.TabIndex = 9;
+            this.SWBEstado.Value = true;
+            this.SWBEstado.ValueObject = "Y";
+            // 
             // FRMCliente_Registrar
             // 
             this.AcceptButton = this.BTNGrabar;
@@ -273,5 +282,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX TXTDireccion;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTCelular;
         private DevComponents.DotNetBar.Controls.SwitchButton SWBEstado;
+        private DevComponents.DotNetBar.BalloonTip BLTAyuda;
     }
 }

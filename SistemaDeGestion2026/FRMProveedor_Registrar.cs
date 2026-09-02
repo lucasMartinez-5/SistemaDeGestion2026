@@ -41,15 +41,23 @@ namespace SistemaDeGestion2026
             bool respuesta = true;
             aproved proveedor2 = new aproved();
             proveedor2.caprnitpro = TXTNIT.Text;
+            aperson persona2 = new aperson();
+            persona2.capsnumcel = TXTCelular.Text;
             //string cianterior = persona.capsnumcid;                           
             //persona.capsnumcid = TXTCI.Text;
 
-            if (TXTNIT.Text.Replace(" ", "") == "")
+            if (TXTCelular.Text.Replace(" ", "") == "")
+            {
+                MessageBox.Show("Introduzca el celular de la proveedor", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TXTCelular.Focus();
+                respuesta = false;
+            }
+            else if (TXTNIT.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el NIT del proveedor", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTNIT.Focus();
                 respuesta = false;
-            }
+            }// condicion para retringir NIT ajeno al modificar o registrar
             else if (proveedor2.ObtenerDatosNIT(modificar, proveedor.caprnitpro))
             {
                 MessageBox.Show("Ya existe un proveedor con ese NIT", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -58,23 +66,16 @@ namespace SistemaDeGestion2026
             }
             else if (TXTRazonSocial.Text.Replace(" ", "") == "")
             {
-                MessageBox.Show("Introduzca la RAZON SOCIAL del proveedor", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Introduzca el nombre completo del proveedor", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTRazonSocial.Focus();
-                respuesta = false;
-            }
-            else if (TXTCelular.Text.Replace(" ", "") == "")
-            {
-                MessageBox.Show("Introduzca el CELULAR del proveedor", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTCelular.Focus();
                 respuesta = false;
             }
             else if (TXTDireccion.Text.Replace(" ", "") == "")
             {
-                MessageBox.Show("Introduzca la DIRECCIÓN del proveedor", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Introduzca la Direccion del proveedor", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TXTDireccion.Focus();
                 respuesta = false;
             }
-
 
             return respuesta;
         }
@@ -82,19 +83,25 @@ namespace SistemaDeGestion2026
         private void LimpiarCasillas()
         {
             SWBEstado.Value = true;
+            TXTCelular.Text = "";
+            TXTRazonSocial.Text = "";
             TXTNIT.Text = "";
+            TXTNIT.Focus();
         }
 
         private void JalarDatos()
         {
             proveedor.paprcodpro = this.codPveMod;
             proveedor.ObtenerDatos();
+            persona.papscodper = proveedor.faprcntpro;
+            persona.ObtenerDatos();
             SWBEstado.Value = proveedor.caprestpro;
+            TXTCelular.Text = persona.capsnumcel;
+            TXTRazonSocial.Text = persona.capsapepat + " " +
+                                    persona.capsapemat + " " +
+                                    persona.capsnomper;
             TXTNIT.Text = proveedor.caprnitpro;
-            TXTRazonSocial.Text = proveedor.caprsocpro;
-            TXTCelular.Text = proveedor.caprnumcel;
-            TXTDireccion.Text = proveedor.caprdirpro;
-
+            TXTDireccion.Text = persona.capsdirper;
             //METODO PARA CARGAR LA FOTO DEL PROVEEDOR
             /*if (proveedor.caprfotpro == "")
             {
@@ -227,7 +234,6 @@ namespace SistemaDeGestion2026
         {
             if (VerificarIntegridad())
             {
-                proveedor = new aproved();
 
                 if (!this.modificar)
                 {
@@ -241,14 +247,15 @@ namespace SistemaDeGestion2026
                 }
                 else
                 {
-                    proveedor.paprcodpro = this.codPveMod;
+                    proveedor.caprestpro = SWBEstado.Value;
                 }
-                
-                proveedor.caprestpro = SWBEstado.Value;
                 proveedor.caprnitpro = TXTNIT.Text;
-                proveedor.caprsocpro = TXTRazonSocial.Text;
-                proveedor.caprnumcel = TXTCelular.Text;
-                proveedor.caprdirpro = TXTDireccion.Text;
+
+                if (!modificar)
+                {
+                    //.causactpas = true;
+                }
+                //usuario.causmashue = DPECHuellas.EnrolledFingerMask;
                 proveedor.faprcntpro = persona.papscodper;
 
                 if (!this.modificar)
@@ -312,7 +319,10 @@ namespace SistemaDeGestion2026
             {
                 this.persona = a.persona;
                 this.personaOk = true;
-                TXTCelular.Text = persona.capsnumcel;
+                TXTCelular.Text = persona.capsnumcid;
+                TXTRazonSocial.Text = persona.capsapepat + " " +
+                                  persona.capsapemat + " " +
+                                  persona.capsnomper;
                 TXTDireccion.Text = persona.capsdirper;
                 /*TXTContacto.Text = persona.capsapepat + " " +
                                   persona.capsapemat + " " +
@@ -323,7 +333,8 @@ namespace SistemaDeGestion2026
             {
                 this.personaOk = false;
                 TXTCelular.Text = "";
-                TXTDireccion.Text = "";
+                TXTRazonSocial.Text = "Nombre Completo";
+                TXTDireccion.Text = "Dirección";
                 //TXTContacto.Text = "Contacto";
             }
         }

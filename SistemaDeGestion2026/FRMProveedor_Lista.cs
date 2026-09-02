@@ -14,8 +14,9 @@ namespace SistemaDeGestion2026
     public partial class FRMProveedor_Lista : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
-        private aproved proveedor = new aproved();
-        private List<aproved> lista_proveedores = new List<aproved>();
+        private lproved lproveedor = new lproved();
+        private aproved aproveedor = new aproved();
+        private List<lproved> lista_proveedores = new List<lproved>();
         #endregion
 
         #region Constructor
@@ -30,11 +31,13 @@ namespace SistemaDeGestion2026
         {
             DTGLista.Rows.Clear();
             lista_proveedores.Clear();
-            lista_proveedores = proveedor.Lista("caprnitpro like '%" + TXTFiltrar.Text + "%' or " +
-                                                "caprsocpro like '%" + TXTFiltrar.Text + "%' limit " +
+            lista_proveedores = lproveedor.Lista("(capsnumcid like '%" + TXTFiltrar.Text + "%' or " +
+                                           "capsapepat like '%" + TXTFiltrar.Text + "%' or " +
+                                           "capsapemat like '%" + TXTFiltrar.Text + "%' or " +
+                                           "capsnomper like '%" + TXTFiltrar.Text + "%') limit " +
                                            IINFilas.Value.ToString()
                                            );
-            foreach (aproved a in lista_proveedores)
+            foreach (lproved a in lista_proveedores)
             {
                 DTGLista.Rows.Add();
 
@@ -53,9 +56,11 @@ namespace SistemaDeGestion2026
                 DTGLista[0, DTGLista.Rows.Count - 1].Value = a.paprcodpro;
                 DTGLista[1, DTGLista.Rows.Count - 1].Value = a.caprestpro;
                 DTGLista[2, DTGLista.Rows.Count - 1].Value = a.caprnitpro;
-                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.caprsocpro;
-                DTGLista[4, DTGLista.Rows.Count - 1].Value = a.caprnumcel;
-                
+                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.capsapepat + " " +
+                                                             a.capsapemat + " " +
+                                                             a.capsnomper;
+                DTGLista[4, DTGLista.Rows.Count - 1].Value = a.capsnumcel;
+
             }
         }
         #endregion
@@ -138,11 +143,11 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                proveedor.paprcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (proveedor.ObtenerDatos())
+                aproveedor.paprcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (aproveedor.ObtenerDatos())
                 {
-                    proveedor.caprestpro = false;
-                    if (proveedor.Modificar())
+                    aproveedor.caprestpro = false;
+                    if (aproveedor.Modificar())
                     {
                         MessageBox.Show("Proveedor Inhabilitado correctamente");
                         ActualizarGrid();
@@ -155,11 +160,11 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                proveedor.paprcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (proveedor.ObtenerDatos())
+                aproveedor.paprcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (aproveedor.ObtenerDatos())
                 {
 
-                    if (proveedor.caprestpro)
+                    if (aproveedor.caprestpro)
                     {
                         CMSMenu.Items[2].Visible = false;
                         CMSMenu.Items[1].Visible = true;
@@ -177,11 +182,11 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                proveedor.paprcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (proveedor.ObtenerDatos())
+                aproveedor.paprcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (aproveedor.ObtenerDatos())
                 {
-                    proveedor.caprestpro = true;
-                    if (proveedor.Modificar())
+                    aproveedor.caprestpro = true;
+                    if (aproveedor.Modificar())
                     {
                         MessageBox.Show("Proveedor Habilitado correctamente");
                         ActualizarGrid();

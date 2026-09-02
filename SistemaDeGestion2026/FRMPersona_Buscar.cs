@@ -31,8 +31,8 @@ namespace SistemaDeGestion2026
         {
             DTGLista.Rows.Clear();
             lista_personas.Clear();
-            String soloSinUsuariProveedor= "papscodper not in (select papscodper from aperson, aususis where papscodper = fauscodper order by papscodper)";
-            lista_personas = persona.Lista(soloSinUsuariProveedor + " AND papscodper not in (select papscodper from aperson, aproved where papscodper = faprcntpro order by papscodper) " +
+            String soloSinUsuariProveedorCliente= "papscodper not in (select papscodper from aperson, aususis where papscodper = fauscodper order by papscodper)";
+            lista_personas = persona.Lista(soloSinUsuariProveedorCliente + " AND papscodper not in (select papscodper from aperson, aproved where papscodper = faprcntpro order by papscodper) " + " AND papscodper not in (select papscodper from aperson, aclient where papscodper = faclcntcli order by papscodper) " +
                                            "and (capsnumcid like '%" + TXTFiltrar.Text + "%' or " +
                                            "capsapepat like '%" + TXTFiltrar.Text + "%' or " +
                                            "capsapemat like '%" + TXTFiltrar.Text + "%' or " +

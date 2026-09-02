@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.GPPanelPrincipal = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.BTNBuscarProveedor = new DevComponents.DotNetBar.ButtonX();
             this.TXTRazonSocial = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
+            this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
+            this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
             this.TXTNIT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTDireccion = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTCelular = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SWBEstado = new DevComponents.DotNetBar.Controls.SwitchButton();
-            this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
-            this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
-            this.BTNBuscarProveedor = new DevComponents.DotNetBar.ButtonX();
-            this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
+            this.BLTAyuda = new DevComponents.DotNetBar.BalloonTip();
             this.GPPanelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,9 +92,24 @@
             this.GPPanelPrincipal.TabIndex = 2;
             this.GPPanelPrincipal.Text = "Proveedor";
             // 
+            // BTNBuscarProveedor
+            // 
+            this.BTNBuscarProveedor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNBuscarProveedor.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNBuscarProveedor.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
+            this.BTNBuscarProveedor.ImageFixedSize = new System.Drawing.Size(15, 15);
+            this.BTNBuscarProveedor.Location = new System.Drawing.Point(472, 6);
+            this.BTNBuscarProveedor.Name = "BTNBuscarProveedor";
+            this.BTNBuscarProveedor.Size = new System.Drawing.Size(23, 23);
+            this.BTNBuscarProveedor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNBuscarProveedor.TabIndex = 15;
+            this.BTNBuscarProveedor.Click += new System.EventHandler(this.BTNBuscarProveedor_Click);
+            // 
             // TXTRazonSocial
             // 
             this.TXTRazonSocial.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTRazonSocial, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTRazonSocial, "Nombre Completo de la persona o Nombre de la Empresa/Marca ");
             // 
             // 
             // 
@@ -110,9 +126,54 @@
             this.TXTRazonSocial.WatermarkText = "Razon Social";
             this.TXTRazonSocial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTRazonSocial_KeyDown);
             // 
+            // BTNSalir
+            // 
+            this.BTNSalir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNSalir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BTNSalir.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir;
+            this.BTNSalir.ImageFixedSize = new System.Drawing.Size(40, 40);
+            this.BTNSalir.Location = new System.Drawing.Point(578, 76);
+            this.BTNSalir.Name = "BTNSalir";
+            this.BTNSalir.Size = new System.Drawing.Size(121, 51);
+            this.BTNSalir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNSalir.TabIndex = 13;
+            this.BTNSalir.Text = "&Salir";
+            this.BTNSalir.Click += new System.EventHandler(this.BTNSalir_Click);
+            // 
+            // BTNLimpiar
+            // 
+            this.BTNLimpiar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNLimpiar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNLimpiar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_limpiar;
+            this.BTNLimpiar.ImageFixedSize = new System.Drawing.Size(40, 40);
+            this.BTNLimpiar.Location = new System.Drawing.Point(451, 76);
+            this.BTNLimpiar.Name = "BTNLimpiar";
+            this.BTNLimpiar.Size = new System.Drawing.Size(121, 51);
+            this.BTNLimpiar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNLimpiar.TabIndex = 12;
+            this.BTNLimpiar.Text = "&Limpiar";
+            this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
+            // 
+            // BTNGrabar
+            // 
+            this.BTNGrabar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNGrabar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNGrabar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_guardar;
+            this.BTNGrabar.ImageFixedSize = new System.Drawing.Size(40, 40);
+            this.BTNGrabar.Location = new System.Drawing.Point(324, 76);
+            this.BTNGrabar.Name = "BTNGrabar";
+            this.BTNGrabar.Size = new System.Drawing.Size(121, 51);
+            this.BTNGrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNGrabar.TabIndex = 11;
+            this.BTNGrabar.Text = "&Grabar";
+            this.BTNGrabar.Click += new System.EventHandler(this.BTNGrabar_Click);
+            // 
             // TXTNIT
             // 
             this.TXTNIT.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTNIT, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTNIT, "Numero de Identificación Tributaria");
             // 
             // 
             // 
@@ -133,6 +194,8 @@
             // TXTDireccion
             // 
             this.TXTDireccion.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTDireccion, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTDireccion, "Direccion del lugar donde vive");
             // 
             // 
             // 
@@ -152,6 +215,8 @@
             // TXTCelular
             // 
             this.TXTCelular.BackColor = System.Drawing.Color.White;
+            this.BLTAyuda.SetBalloonCaption(this.TXTCelular, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TXTCelular, "Número de Celular");
             // 
             // 
             // 
@@ -188,62 +253,6 @@
             this.SWBEstado.Value = true;
             this.SWBEstado.ValueObject = "Y";
             // 
-            // BTNGrabar
-            // 
-            this.BTNGrabar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNGrabar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNGrabar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_guardar;
-            this.BTNGrabar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNGrabar.Location = new System.Drawing.Point(324, 76);
-            this.BTNGrabar.Name = "BTNGrabar";
-            this.BTNGrabar.Size = new System.Drawing.Size(121, 51);
-            this.BTNGrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNGrabar.TabIndex = 11;
-            this.BTNGrabar.Text = "&Grabar";
-            this.BTNGrabar.Click += new System.EventHandler(this.BTNGrabar_Click);
-            // 
-            // BTNSalir
-            // 
-            this.BTNSalir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNSalir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTNSalir.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir;
-            this.BTNSalir.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNSalir.Location = new System.Drawing.Point(578, 76);
-            this.BTNSalir.Name = "BTNSalir";
-            this.BTNSalir.Size = new System.Drawing.Size(121, 51);
-            this.BTNSalir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNSalir.TabIndex = 13;
-            this.BTNSalir.Text = "&Salir";
-            this.BTNSalir.Click += new System.EventHandler(this.BTNSalir_Click);
-            // 
-            // BTNBuscarProveedor
-            // 
-            this.BTNBuscarProveedor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNBuscarProveedor.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNBuscarProveedor.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
-            this.BTNBuscarProveedor.ImageFixedSize = new System.Drawing.Size(15, 15);
-            this.BTNBuscarProveedor.Location = new System.Drawing.Point(472, 6);
-            this.BTNBuscarProveedor.Name = "BTNBuscarProveedor";
-            this.BTNBuscarProveedor.Size = new System.Drawing.Size(23, 23);
-            this.BTNBuscarProveedor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNBuscarProveedor.TabIndex = 15;
-            this.BTNBuscarProveedor.Click += new System.EventHandler(this.BTNBuscarProveedor_Click);
-            // 
-            // BTNLimpiar
-            // 
-            this.BTNLimpiar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNLimpiar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNLimpiar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_limpiar;
-            this.BTNLimpiar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNLimpiar.Location = new System.Drawing.Point(451, 76);
-            this.BTNLimpiar.Name = "BTNLimpiar";
-            this.BTNLimpiar.Size = new System.Drawing.Size(121, 51);
-            this.BTNLimpiar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNLimpiar.TabIndex = 12;
-            this.BTNLimpiar.Text = "&Limpiar";
-            this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
-            // 
             // FRMProveedor_Registrar
             // 
             this.AcceptButton = this.BTNGrabar;
@@ -276,5 +285,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX TXTCelular;
         private DevComponents.DotNetBar.Controls.SwitchButton SWBEstado;
         private DevComponents.DotNetBar.ButtonX BTNBuscarProveedor;
+        private DevComponents.DotNetBar.BalloonTip BLTAyuda;
     }
 }

@@ -52,7 +52,7 @@ namespace SistemaDeGestion2026
                 {
                     DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Salmon;
                 }
-
+                //
                 DTGLista[0, DTGLista.Rows.Count - 1].Value = a.paclcodcli;
                 DTGLista[1, DTGLista.Rows.Count - 1].Value = a.caclestcli;
                 DTGLista[2, DTGLista.Rows.Count - 1].Value = a.caclnitcli;
