@@ -30,8 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMProducto_Registrar));
             this.GPPanelPrincipal = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.LBLCodigoDeBarras = new DevComponents.DotNetBar.LabelX();
+            this.LBLPrecioMinVenta = new DevComponents.DotNetBar.LabelX();
+            this.LBLPrecioVenta = new DevComponents.DotNetBar.LabelX();
+            this.LBLStockActual = new DevComponents.DotNetBar.LabelX();
+            this.BTNCodigoDeBarras = new DevComponents.DotNetBar.ButtonX();
+            this.NUDStockActual = new System.Windows.Forms.NumericUpDown();
+            this.NUDPrecioVenta = new System.Windows.Forms.NumericUpDown();
+            this.NUDPrecioMinVenta = new System.Windows.Forms.NumericUpDown();
+            this.TBDProductoTalla = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
+            this.TBDProductoColor = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
+            this.TBDProductoMaterial = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
+            this.TBDProductoMarca = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
+            this.TBDProductoNombre = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
+            this.TBDProductoCategoria = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
+            this.TBDProductoGenero = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
             this.TXTProductoDescripcion = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.TXTProductoCodigoDeBarra = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTProductoModelo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GPFotografia = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.PCBFotografia = new System.Windows.Forms.PictureBox();
@@ -45,24 +59,13 @@
             this.SWBProductoEstadoStock = new DevComponents.DotNetBar.Controls.SwitchButton();
             this.OFDElegirImagen = new System.Windows.Forms.OpenFileDialog();
             this.BLTAyuda = new DevComponents.DotNetBar.BalloonTip();
-            this.TBDProductoGenero = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
-            this.TBDProductoCategoria = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
-            this.TBDProductoNombre = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
-            this.TBDProductoMarca = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
-            this.TBDProductoMaterial = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
-            this.TBDProductoColor = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
-            this.TBDProductoTalla = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
-            this.NUDPrecioMinVenta = new System.Windows.Forms.NumericUpDown();
-            this.NUDPrecioVenta = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.GPPanelPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDStockActual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDPrecioVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDPrecioMinVenta)).BeginInit();
             this.GPFotografia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PCBFotografia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCBCamara)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDPrecioMinVenta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDPrecioVenta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // GPPanelPrincipal
@@ -70,8 +73,12 @@
             this.GPPanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GPPanelPrincipal.CanvasColor = System.Drawing.SystemColors.Control;
             this.GPPanelPrincipal.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.GPPanelPrincipal.Controls.Add(this.buttonX1);
-            this.GPPanelPrincipal.Controls.Add(this.numericUpDown1);
+            this.GPPanelPrincipal.Controls.Add(this.LBLCodigoDeBarras);
+            this.GPPanelPrincipal.Controls.Add(this.LBLPrecioMinVenta);
+            this.GPPanelPrincipal.Controls.Add(this.LBLPrecioVenta);
+            this.GPPanelPrincipal.Controls.Add(this.LBLStockActual);
+            this.GPPanelPrincipal.Controls.Add(this.BTNCodigoDeBarras);
+            this.GPPanelPrincipal.Controls.Add(this.NUDStockActual);
             this.GPPanelPrincipal.Controls.Add(this.NUDPrecioVenta);
             this.GPPanelPrincipal.Controls.Add(this.NUDPrecioMinVenta);
             this.GPPanelPrincipal.Controls.Add(this.TBDProductoTalla);
@@ -82,7 +89,6 @@
             this.GPPanelPrincipal.Controls.Add(this.TBDProductoCategoria);
             this.GPPanelPrincipal.Controls.Add(this.TBDProductoGenero);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoDescripcion);
-            this.GPPanelPrincipal.Controls.Add(this.TXTProductoCodigoDeBarra);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoModelo);
             this.GPPanelPrincipal.Controls.Add(this.GPFotografia);
             this.GPPanelPrincipal.Controls.Add(this.BTNSalir);
@@ -125,6 +131,231 @@
             this.GPPanelPrincipal.TabIndex = 0;
             this.GPPanelPrincipal.Text = "Producto";
             // 
+            // LBLCodigoDeBarras
+            // 
+            this.LBLCodigoDeBarras.BackColor = System.Drawing.Color.LightGreen;
+            // 
+            // 
+            // 
+            this.LBLCodigoDeBarras.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLCodigoDeBarras.Location = new System.Drawing.Point(190, 15);
+            this.LBLCodigoDeBarras.Name = "LBLCodigoDeBarras";
+            this.LBLCodigoDeBarras.Size = new System.Drawing.Size(143, 23);
+            this.LBLCodigoDeBarras.TabIndex = 35;
+            this.LBLCodigoDeBarras.Text = "Sin codigo";
+            // 
+            // LBLPrecioMinVenta
+            // 
+            // 
+            // 
+            // 
+            this.LBLPrecioMinVenta.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLPrecioMinVenta.Location = new System.Drawing.Point(10, 320);
+            this.LBLPrecioMinVenta.Name = "LBLPrecioMinVenta";
+            this.LBLPrecioMinVenta.Size = new System.Drawing.Size(174, 23);
+            this.LBLPrecioMinVenta.TabIndex = 34;
+            this.LBLPrecioMinVenta.Text = "Precio Min. Venta:";
+            // 
+            // LBLPrecioVenta
+            // 
+            // 
+            // 
+            // 
+            this.LBLPrecioVenta.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLPrecioVenta.Location = new System.Drawing.Point(10, 349);
+            this.LBLPrecioVenta.Name = "LBLPrecioVenta";
+            this.LBLPrecioVenta.Size = new System.Drawing.Size(172, 23);
+            this.LBLPrecioVenta.TabIndex = 33;
+            this.LBLPrecioVenta.Text = "Precio Venta:";
+            // 
+            // LBLStockActual
+            // 
+            // 
+            // 
+            // 
+            this.LBLStockActual.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLStockActual.Location = new System.Drawing.Point(9, 291);
+            this.LBLStockActual.Name = "LBLStockActual";
+            this.LBLStockActual.Size = new System.Drawing.Size(174, 22);
+            this.LBLStockActual.TabIndex = 32;
+            this.LBLStockActual.Text = "Stock Actual:";
+            // 
+            // BTNCodigoDeBarras
+            // 
+            this.BTNCodigoDeBarras.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNCodigoDeBarras.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNCodigoDeBarras.Location = new System.Drawing.Point(339, 14);
+            this.BTNCodigoDeBarras.Name = "BTNCodigoDeBarras";
+            this.BTNCodigoDeBarras.Size = new System.Drawing.Size(25, 23);
+            this.BTNCodigoDeBarras.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNCodigoDeBarras.TabIndex = 31;
+            this.BTNCodigoDeBarras.Click += new System.EventHandler(this.BTNCodigoDeBarras_Click);
+            // 
+            // NUDStockActual
+            // 
+            this.NUDStockActual.DecimalPlaces = 2;
+            this.NUDStockActual.Location = new System.Drawing.Point(190, 291);
+            this.NUDStockActual.Name = "NUDStockActual";
+            this.NUDStockActual.Size = new System.Drawing.Size(174, 23);
+            this.NUDStockActual.TabIndex = 30;
+            this.NUDStockActual.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // NUDPrecioVenta
+            // 
+            this.NUDPrecioVenta.DecimalPlaces = 2;
+            this.NUDPrecioVenta.Location = new System.Drawing.Point(190, 349);
+            this.NUDPrecioVenta.Name = "NUDPrecioVenta";
+            this.NUDPrecioVenta.Size = new System.Drawing.Size(174, 23);
+            this.NUDPrecioVenta.TabIndex = 29;
+            this.NUDPrecioVenta.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // NUDPrecioMinVenta
+            // 
+            this.NUDPrecioMinVenta.DecimalPlaces = 2;
+            this.NUDPrecioMinVenta.Location = new System.Drawing.Point(190, 320);
+            this.NUDPrecioMinVenta.Name = "NUDPrecioMinVenta";
+            this.NUDPrecioMinVenta.Size = new System.Drawing.Size(174, 23);
+            this.NUDPrecioMinVenta.TabIndex = 28;
+            this.NUDPrecioMinVenta.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // TBDProductoTalla
+            // 
+            // 
+            // 
+            // 
+            this.TBDProductoTalla.BackgroundStyle.Class = "TextBoxBorder";
+            this.TBDProductoTalla.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.BLTAyuda.SetBalloonCaption(this.TBDProductoTalla, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TBDProductoTalla, "Talla o Medida del producto");
+            this.TBDProductoTalla.ButtonDropDown.Visible = true;
+            this.TBDProductoTalla.Location = new System.Drawing.Point(190, 184);
+            this.TBDProductoTalla.Name = "TBDProductoTalla";
+            this.TBDProductoTalla.Size = new System.Drawing.Size(174, 22);
+            this.TBDProductoTalla.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TBDProductoTalla.TabIndex = 27;
+            this.TBDProductoTalla.Text = "";
+            this.TBDProductoTalla.WatermarkText = "Talla";
+            // 
+            // TBDProductoColor
+            // 
+            // 
+            // 
+            // 
+            this.TBDProductoColor.BackgroundStyle.Class = "TextBoxBorder";
+            this.TBDProductoColor.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.BLTAyuda.SetBalloonCaption(this.TBDProductoColor, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TBDProductoColor, "Color del producto");
+            this.TBDProductoColor.ButtonDropDown.Visible = true;
+            this.TBDProductoColor.Location = new System.Drawing.Point(9, 184);
+            this.TBDProductoColor.Name = "TBDProductoColor";
+            this.TBDProductoColor.Size = new System.Drawing.Size(174, 22);
+            this.TBDProductoColor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TBDProductoColor.TabIndex = 26;
+            this.TBDProductoColor.Text = "";
+            this.TBDProductoColor.WatermarkText = "Color";
+            // 
+            // TBDProductoMaterial
+            // 
+            // 
+            // 
+            // 
+            this.TBDProductoMaterial.BackgroundStyle.Class = "TextBoxBorder";
+            this.TBDProductoMaterial.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.BLTAyuda.SetBalloonCaption(this.TBDProductoMaterial, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TBDProductoMaterial, "Material del producto");
+            this.TBDProductoMaterial.ButtonDropDown.Visible = true;
+            this.TBDProductoMaterial.Location = new System.Drawing.Point(10, 156);
+            this.TBDProductoMaterial.Name = "TBDProductoMaterial";
+            this.TBDProductoMaterial.Size = new System.Drawing.Size(354, 22);
+            this.TBDProductoMaterial.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TBDProductoMaterial.TabIndex = 25;
+            this.TBDProductoMaterial.Text = "";
+            this.TBDProductoMaterial.WatermarkText = "Material";
+            // 
+            // TBDProductoMarca
+            // 
+            // 
+            // 
+            // 
+            this.TBDProductoMarca.BackgroundStyle.Class = "TextBoxBorder";
+            this.TBDProductoMarca.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.BLTAyuda.SetBalloonCaption(this.TBDProductoMarca, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TBDProductoMarca, "Marca del producto");
+            this.TBDProductoMarca.ButtonDropDown.Visible = true;
+            this.TBDProductoMarca.Location = new System.Drawing.Point(10, 128);
+            this.TBDProductoMarca.Name = "TBDProductoMarca";
+            this.TBDProductoMarca.Size = new System.Drawing.Size(354, 22);
+            this.TBDProductoMarca.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TBDProductoMarca.TabIndex = 24;
+            this.TBDProductoMarca.Text = "";
+            this.TBDProductoMarca.WatermarkText = "Marca";
+            // 
+            // TBDProductoNombre
+            // 
+            // 
+            // 
+            // 
+            this.TBDProductoNombre.BackgroundStyle.Class = "TextBoxBorder";
+            this.TBDProductoNombre.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.BLTAyuda.SetBalloonCaption(this.TBDProductoNombre, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TBDProductoNombre, "Nombre del producto");
+            this.TBDProductoNombre.ButtonDropDown.Visible = true;
+            this.TBDProductoNombre.Location = new System.Drawing.Point(10, 100);
+            this.TBDProductoNombre.Name = "TBDProductoNombre";
+            this.TBDProductoNombre.Size = new System.Drawing.Size(354, 22);
+            this.TBDProductoNombre.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TBDProductoNombre.TabIndex = 23;
+            this.TBDProductoNombre.Text = "";
+            this.TBDProductoNombre.WatermarkText = "Nombre del Producto";
+            // 
+            // TBDProductoCategoria
+            // 
+            // 
+            // 
+            // 
+            this.TBDProductoCategoria.BackgroundStyle.Class = "TextBoxBorder";
+            this.TBDProductoCategoria.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.BLTAyuda.SetBalloonCaption(this.TBDProductoCategoria, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TBDProductoCategoria, "Tipo de Producto");
+            this.TBDProductoCategoria.ButtonDropDown.Visible = true;
+            this.TBDProductoCategoria.Location = new System.Drawing.Point(10, 72);
+            this.TBDProductoCategoria.Name = "TBDProductoCategoria";
+            this.TBDProductoCategoria.Size = new System.Drawing.Size(354, 22);
+            this.TBDProductoCategoria.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TBDProductoCategoria.TabIndex = 22;
+            this.TBDProductoCategoria.Text = "";
+            this.TBDProductoCategoria.WatermarkText = "Categoría";
+            // 
+            // TBDProductoGenero
+            // 
+            // 
+            // 
+            // 
+            this.TBDProductoGenero.BackgroundStyle.Class = "TextBoxBorder";
+            this.TBDProductoGenero.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.BLTAyuda.SetBalloonCaption(this.TBDProductoGenero, "Ayuda");
+            this.BLTAyuda.SetBalloonText(this.TBDProductoGenero, "Genero de Persona");
+            this.TBDProductoGenero.ButtonDropDown.Visible = true;
+            this.TBDProductoGenero.Location = new System.Drawing.Point(190, 44);
+            this.TBDProductoGenero.Name = "TBDProductoGenero";
+            this.TBDProductoGenero.Size = new System.Drawing.Size(174, 22);
+            this.TBDProductoGenero.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.TBDProductoGenero.TabIndex = 21;
+            this.TBDProductoGenero.Text = "";
+            this.TBDProductoGenero.WatermarkText = "Género";
+            // 
             // TXTProductoDescripcion
             // 
             this.TXTProductoDescripcion.BackColor = System.Drawing.Color.White;
@@ -145,28 +376,6 @@
             this.TXTProductoDescripcion.TabIndex = 14;
             this.TXTProductoDescripcion.WatermarkText = "Descripcion del Producto";
             this.TXTProductoDescripcion.TextChanged += new System.EventHandler(this.TXTProductoDescripcion_TextChanged);
-            // 
-            // TXTProductoCodigoDeBarra
-            // 
-            this.TXTProductoCodigoDeBarra.BackColor = System.Drawing.Color.White;
-            this.BLTAyuda.SetBalloonCaption(this.TXTProductoCodigoDeBarra, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TXTProductoCodigoDeBarra, "Codigo de barra del producto");
-            // 
-            // 
-            // 
-            this.TXTProductoCodigoDeBarra.Border.Class = "TextBoxBorder";
-            this.TXTProductoCodigoDeBarra.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTProductoCodigoDeBarra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTProductoCodigoDeBarra.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTProductoCodigoDeBarra.ForeColor = System.Drawing.Color.Black;
-            this.TXTProductoCodigoDeBarra.Location = new System.Drawing.Point(190, 14);
-            this.TXTProductoCodigoDeBarra.Name = "TXTProductoCodigoDeBarra";
-            this.TXTProductoCodigoDeBarra.PreventEnterBeep = true;
-            this.TXTProductoCodigoDeBarra.Size = new System.Drawing.Size(143, 23);
-            this.TXTProductoCodigoDeBarra.TabIndex = 9;
-            this.TXTProductoCodigoDeBarra.WatermarkText = "Codigo de Barra";
-            this.TXTProductoCodigoDeBarra.TextChanged += new System.EventHandler(this.TXTProductoCodigoDeBarra_TextChanged);
-            this.TXTProductoCodigoDeBarra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTProductoCodigoDeBarra_KeyDown);
             // 
             // TXTProductoModelo
             // 
@@ -367,181 +576,6 @@
             this.OFDElegirImagen.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png";
             this.OFDElegirImagen.Title = "Elegir fotografía";
             // 
-            // TBDProductoGenero
-            // 
-            // 
-            // 
-            // 
-            this.TBDProductoGenero.BackgroundStyle.Class = "TextBoxBorder";
-            this.TBDProductoGenero.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.BLTAyuda.SetBalloonCaption(this.TBDProductoGenero, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TBDProductoGenero, "Genero de Persona");
-            this.TBDProductoGenero.ButtonDropDown.Visible = true;
-            this.TBDProductoGenero.Location = new System.Drawing.Point(190, 44);
-            this.TBDProductoGenero.Name = "TBDProductoGenero";
-            this.TBDProductoGenero.Size = new System.Drawing.Size(174, 22);
-            this.TBDProductoGenero.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.TBDProductoGenero.TabIndex = 21;
-            this.TBDProductoGenero.Text = "";
-            this.TBDProductoGenero.WatermarkText = "Género";
-            // 
-            // TBDProductoCategoria
-            // 
-            // 
-            // 
-            // 
-            this.TBDProductoCategoria.BackgroundStyle.Class = "TextBoxBorder";
-            this.TBDProductoCategoria.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.BLTAyuda.SetBalloonCaption(this.TBDProductoCategoria, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TBDProductoCategoria, "Tipo de Producto");
-            this.TBDProductoCategoria.ButtonDropDown.Visible = true;
-            this.TBDProductoCategoria.Location = new System.Drawing.Point(10, 72);
-            this.TBDProductoCategoria.Name = "TBDProductoCategoria";
-            this.TBDProductoCategoria.Size = new System.Drawing.Size(354, 22);
-            this.TBDProductoCategoria.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.TBDProductoCategoria.TabIndex = 22;
-            this.TBDProductoCategoria.Text = "";
-            this.TBDProductoCategoria.WatermarkText = "Categoría";
-            // 
-            // TBDProductoNombre
-            // 
-            // 
-            // 
-            // 
-            this.TBDProductoNombre.BackgroundStyle.Class = "TextBoxBorder";
-            this.TBDProductoNombre.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.BLTAyuda.SetBalloonCaption(this.TBDProductoNombre, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TBDProductoNombre, "Nombre del producto");
-            this.TBDProductoNombre.ButtonDropDown.Visible = true;
-            this.TBDProductoNombre.Location = new System.Drawing.Point(10, 100);
-            this.TBDProductoNombre.Name = "TBDProductoNombre";
-            this.TBDProductoNombre.Size = new System.Drawing.Size(354, 22);
-            this.TBDProductoNombre.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.TBDProductoNombre.TabIndex = 23;
-            this.TBDProductoNombre.Text = "";
-            this.TBDProductoNombre.WatermarkText = "Nombre del Producto";
-            // 
-            // TBDProductoMarca
-            // 
-            // 
-            // 
-            // 
-            this.TBDProductoMarca.BackgroundStyle.Class = "TextBoxBorder";
-            this.TBDProductoMarca.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.BLTAyuda.SetBalloonCaption(this.TBDProductoMarca, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TBDProductoMarca, "Marca del producto");
-            this.TBDProductoMarca.ButtonDropDown.Visible = true;
-            this.TBDProductoMarca.Location = new System.Drawing.Point(10, 128);
-            this.TBDProductoMarca.Name = "TBDProductoMarca";
-            this.TBDProductoMarca.Size = new System.Drawing.Size(354, 22);
-            this.TBDProductoMarca.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.TBDProductoMarca.TabIndex = 24;
-            this.TBDProductoMarca.Text = "";
-            this.TBDProductoMarca.WatermarkText = "Marca";
-            // 
-            // TBDProductoMaterial
-            // 
-            // 
-            // 
-            // 
-            this.TBDProductoMaterial.BackgroundStyle.Class = "TextBoxBorder";
-            this.TBDProductoMaterial.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.BLTAyuda.SetBalloonCaption(this.TBDProductoMaterial, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TBDProductoMaterial, "Material del producto");
-            this.TBDProductoMaterial.ButtonDropDown.Visible = true;
-            this.TBDProductoMaterial.Location = new System.Drawing.Point(10, 156);
-            this.TBDProductoMaterial.Name = "TBDProductoMaterial";
-            this.TBDProductoMaterial.Size = new System.Drawing.Size(354, 22);
-            this.TBDProductoMaterial.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.TBDProductoMaterial.TabIndex = 25;
-            this.TBDProductoMaterial.Text = "";
-            this.TBDProductoMaterial.WatermarkText = "Material";
-            // 
-            // TBDProductoColor
-            // 
-            // 
-            // 
-            // 
-            this.TBDProductoColor.BackgroundStyle.Class = "TextBoxBorder";
-            this.TBDProductoColor.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.BLTAyuda.SetBalloonCaption(this.TBDProductoColor, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TBDProductoColor, "Color del producto");
-            this.TBDProductoColor.ButtonDropDown.Visible = true;
-            this.TBDProductoColor.Location = new System.Drawing.Point(9, 184);
-            this.TBDProductoColor.Name = "TBDProductoColor";
-            this.TBDProductoColor.Size = new System.Drawing.Size(174, 22);
-            this.TBDProductoColor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.TBDProductoColor.TabIndex = 26;
-            this.TBDProductoColor.Text = "";
-            this.TBDProductoColor.WatermarkText = "Color";
-            // 
-            // TBDProductoTalla
-            // 
-            // 
-            // 
-            // 
-            this.TBDProductoTalla.BackgroundStyle.Class = "TextBoxBorder";
-            this.TBDProductoTalla.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.BLTAyuda.SetBalloonCaption(this.TBDProductoTalla, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TBDProductoTalla, "Talla o Medida del producto");
-            this.TBDProductoTalla.ButtonDropDown.Visible = true;
-            this.TBDProductoTalla.Location = new System.Drawing.Point(190, 184);
-            this.TBDProductoTalla.Name = "TBDProductoTalla";
-            this.TBDProductoTalla.Size = new System.Drawing.Size(174, 22);
-            this.TBDProductoTalla.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.TBDProductoTalla.TabIndex = 27;
-            this.TBDProductoTalla.Text = "";
-            this.TBDProductoTalla.WatermarkText = "Talla";
-            // 
-            // NUDPrecioMinVenta
-            // 
-            this.NUDPrecioMinVenta.DecimalPlaces = 2;
-            this.NUDPrecioMinVenta.Location = new System.Drawing.Point(190, 320);
-            this.NUDPrecioMinVenta.Name = "NUDPrecioMinVenta";
-            this.NUDPrecioMinVenta.Size = new System.Drawing.Size(174, 23);
-            this.NUDPrecioMinVenta.TabIndex = 28;
-            this.NUDPrecioMinVenta.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // NUDPrecioVenta
-            // 
-            this.NUDPrecioVenta.DecimalPlaces = 2;
-            this.NUDPrecioVenta.Location = new System.Drawing.Point(190, 349);
-            this.NUDPrecioVenta.Name = "NUDPrecioVenta";
-            this.NUDPrecioVenta.Size = new System.Drawing.Size(174, 23);
-            this.NUDPrecioVenta.TabIndex = 29;
-            this.NUDPrecioVenta.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(190, 291);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(174, 23);
-            this.numericUpDown1.TabIndex = 30;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(339, 14);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(25, 23);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 31;
-            // 
             // FRMProducto_Registrar
             // 
             this.AcceptButton = this.BTNGrabar;
@@ -559,12 +593,12 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRMProducto_Registrar_FormClosing);
             this.Load += new System.EventHandler(this.FRMProducto_Registrar_Load);
             this.GPPanelPrincipal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.NUDStockActual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDPrecioVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDPrecioMinVenta)).EndInit();
             this.GPFotografia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PCBFotografia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCBCamara)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDPrecioMinVenta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDPrecioVenta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -583,7 +617,6 @@
         private DevComponents.DotNetBar.ButtonX BTNGrabar;
         private DevComponents.DotNetBar.Controls.SwitchButton SWBProductoEstadoStock;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoModelo;
-        private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoCodigoDeBarra;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoDescripcion;
         private System.Windows.Forms.OpenFileDialog OFDElegirImagen;
         private DevComponents.DotNetBar.BalloonTip BLTAyuda;
@@ -595,8 +628,12 @@
         private DevComponents.DotNetBar.Controls.TextBoxDropDown TBDProductoColor;
         private DevComponents.DotNetBar.Controls.TextBoxDropDown TBDProductoMaterial;
         private System.Windows.Forms.NumericUpDown NUDPrecioMinVenta;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown NUDStockActual;
         private System.Windows.Forms.NumericUpDown NUDPrecioVenta;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX BTNCodigoDeBarras;
+        private DevComponents.DotNetBar.LabelX LBLCodigoDeBarras;
+        private DevComponents.DotNetBar.LabelX LBLPrecioMinVenta;
+        private DevComponents.DotNetBar.LabelX LBLPrecioVenta;
+        private DevComponents.DotNetBar.LabelX LBLStockActual;
     }
 }

@@ -18,12 +18,14 @@ namespace SistemaDeGestion2026
     public partial class FRMProducto_Registrar : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
+        private bool lectorCBHabilitado = false;
+
         private aproduc producto = new aproduc();
         private xnumcor correlativo = new xnumcor();
         public bool modificar = false;
         public String codProMod = "";
         public bool actualizar = false;
-        //Variables para la camara
+        //Variables para la camara*/
         private FilterInfoCollection CaptureDevice; // list of webcam
         private VideoCaptureDevice FinalFrame;
         private bool TieneFoto = false;
@@ -42,7 +44,7 @@ namespace SistemaDeGestion2026
         {
             bool respuesta = true;
             aproduc producto2 = new aproduc();
-            producto2.capdcodbar = TXTProductoCodigoDeBarra.Text;
+            producto2.capdcodbar = LBLCodigoDeBarras.Text;
             //string cianterior = persona.capdnumcid;                           
             //persona.capdnumcid = TXTCI.Text;
 
@@ -58,13 +60,13 @@ namespace SistemaDeGestion2026
                 TXTProductoCodigo.Focus();
                 respuesta = false;
             }*/
-            if (TXTProductoNombre.Text.Replace(" ", "") == "")
+            if (TBDProductoNombre.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el NOMBRE del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoNombre.Focus();
+                TBDProductoNombre.Focus();
                 respuesta = false;
             }
-            else if (DTIProductoFechaCreacion.Value > DateTime.Now)
+            /*else if (DTIProductoFechaCreacion.Value > DateTime.Now)
             {
                 MessageBox.Show("Introduzca FECHA DE CREACION válido del prductp", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 DTIProductoFechaCreacion.Focus();
@@ -75,29 +77,29 @@ namespace SistemaDeGestion2026
                 MessageBox.Show("Introduzca FECHA DE MODIFICACION válido del prducto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 DTIProductoFechaModificacion.Focus();
                 respuesta = false;
-            }
-            else if (TXTProductoMarca.Text.Replace(" ", "") == "")
+            }*/
+            else if (TBDProductoMarca.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca la MARCA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoMarca.Focus();
+                TBDProductoMarca.Focus();
                 respuesta = false;
             }
-            else if (TXTProductoColor.Text.Replace(" ", "") == "")
+            else if (TBDProductoColor.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca la COLOR del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoColor.Focus();
+                TBDProductoColor.Focus();
                 respuesta = false;
             }
-            else if (TXTProductoTalla.Text.Replace(" ", "") == "")
+            else if (TBDProductoTalla.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca la TALLA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoTalla.Focus();
+                TBDProductoTalla.Focus();
                 respuesta = false;
             }
-            else if (TXTProductoMaterial.Text.Replace(" ", "") == "")
+            else if (TBDProductoMaterial.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el MATERIAL del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoMaterial.Focus();
+                TBDProductoMaterial.Focus();
                 respuesta = false;
             }
             else if (TXTProductoModelo.Text.Replace(" ", "") == "")
@@ -106,46 +108,46 @@ namespace SistemaDeGestion2026
                 TXTProductoModelo.Focus();
                 respuesta = false;
             }
-            else if (TXTProductoGenero.Text.Replace(" ", "") == "")
+            else if (TBDProductoGenero.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el GÉNERO del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoGenero.Focus();
+                TBDProductoGenero.Focus();
                 respuesta = false;
             }
-            else if (TXTProductoCodigoDeBarra.Text.Replace(" ", "") == "")
+            else if (LBLCodigoDeBarras.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el CÓDIGO DE BARRA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoCodigoDeBarra.Focus();
+                LBLCodigoDeBarras.Focus();
                 respuesta = false;
             }
             else if (producto2.ObtenerDatosCodBarra(modificar,producto.capdcodbar))
             {
                 MessageBox.Show("Ya existe un producto con ese código de barras", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoCodigoDeBarra.Focus();
+                LBLCodigoDeBarras.Focus();
                 respuesta = false;
             }
-            else if (TXTProductoStock.Text.Replace(" ", "") == "")
+            else if (NUDStockActual.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el STOCK del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoStock.Focus();
+                NUDStockActual.Focus();
                 respuesta = false;
             }
-            else if (TXTProductoPrecioVenta.Text.Replace(" ", "") == "")
+            else if (NUDPrecioVenta.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el PRECIO DE VENTA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoPrecioVenta.Focus();
+                NUDPrecioVenta.Focus();
                 respuesta = false;
             }
-            else if (TXTProductoPrecioMinimo.Text.Replace(" ", "") == "")
+            else if (NUDPrecioMinVenta.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el PRECIO MÍNIMO del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoPrecioMinimo.Focus();
+                NUDPrecioMinVenta.Focus();
                 respuesta = false;
             }
-            else if (TXTProductoCategoria.Text.Replace(" ", "") == "")
+            else if (TBDProductoCategoria.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca la CATEGORÍA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTProductoCategoria.Focus();
+                TBDProductoCategoria.Focus();
                 respuesta = false;
             }
             return respuesta;
@@ -153,7 +155,7 @@ namespace SistemaDeGestion2026
         private void LimpiarCasillas()
         {
             SWBProductoEstadoStock.Value = true;
-            TXTProductoCodigoDeBarra.Text = "";
+            LBLCodigoDeBarras.Text = "";
             /*
             TXTProductoNombre.Text = "";
             DTIProductoFechaCreacion.Text = "";
@@ -178,22 +180,22 @@ namespace SistemaDeGestion2026
             producto.papdcodpro = this.codProMod;
             producto.ObtenerDatos();
             SWBProductoEstadoStock.Value = producto.capdestpro;
-            TXTProductoCodigo.Text = producto.papdcodpro;
-            TXTProductoNombre.Text = producto.capdnompro;
-            DTIProductoFechaCreacion.Value = producto.capdfeccre;
-            DTIProductoFechaModificacion.Value = producto.capdfecmod;
-            TXTProductoMarca.Text = producto.capdmarpro;
-            TXTProductoColor.Text = producto.capdcolpro;
-            TXTProductoTalla.Text = producto.capdtalpro;
-            TXTProductoMaterial.Text = producto.capdmatpro;
+            //TXTProductoCodigo.Text = producto.papdcodpro;
+            TBDProductoNombre.Text = producto.capdnompro;
+            //DTIProductoFechaCreacion.Value = producto.capdfeccre;
+            //DTIProductoFechaModificacion.Value = producto.capdfecmod;
+            TBDProductoMarca.Text = producto.capdmarpro;
+            TBDProductoColor.Text = producto.capdcolpro;
+            TBDProductoTalla.Text = producto.capdtalpro;
+            TBDProductoMaterial.Text = producto.capdmatpro;
             TXTProductoModelo.Text = producto.capdmodpro;
-            TXTProductoGenero.Text = producto.capdgenpro;
-            TXTProductoCodigoDeBarra.Text = producto.capdcodbar;
+            TBDProductoGenero.Text = producto.capdgenpro;
+            LBLCodigoDeBarras.Text = producto.capdcodbar;
             // CORRECCIÓN: Asignar los valores del objeto producto a los TextBox
-            TXTProductoStock.Text = producto.capdstopro.ToString();
-            TXTProductoPrecioMinimo.Text = producto.capdpremin.ToString();
-            TXTProductoPrecioVenta.Text = producto.capdpreven.ToString();
-            TXTProductoCategoria.Text = producto.capdcatpro;
+            NUDStockActual.Text = producto.capdstopro.ToString();
+            NUDPrecioMinVenta.Text = producto.capdpremin.ToString();
+            NUDPrecioVenta.Text = producto.capdpreven.ToString();
+            TBDProductoCategoria.Text = producto.capdcatpro;
             TXTProductoDescripcion.Text = producto.capddespro;
 
             if (producto.capdfotpro == "")
@@ -246,7 +248,7 @@ namespace SistemaDeGestion2026
                 BTNGrabar.Text = "&Modificar";
                 this.Text = "Modificar Producto";
                 GPPanelPrincipal.Text = "Modificar Producto";
-                TXTProductoCodigoDeBarra.Focus();
+                LBLCodigoDeBarras.Focus();
             }
             else
             {
@@ -254,7 +256,7 @@ namespace SistemaDeGestion2026
                 BTNGrabar.Text = "&Guardar";
                 this.Text = "Registrar Producto";
                 GPPanelPrincipal.Text = "Registrar Producto";
-                TXTProductoCodigoDeBarra.Focus();
+                LBLCodigoDeBarras.Focus();
             }
         }
 
@@ -279,21 +281,21 @@ namespace SistemaDeGestion2026
                     producto.papdcodpro = this.codProMod;
                 }
                 producto.capdestpro = SWBProductoEstadoStock.Value;
-                producto.capdgenpro = TXTProductoGenero.Text;
-                producto.capdnompro = TXTProductoNombre.Text;
+                producto.capdgenpro = TBDProductoGenero.Text;
+                producto.capdnompro = TBDProductoNombre.Text;
                 producto.capddespro = TXTProductoDescripcion.Text;
-                producto.capdpreven = decimal.TryParse(TXTProductoPrecioVenta.Text, out decimal precioVenta) ? precioVenta : 0.0m;
-                producto.capdpremin = decimal.TryParse(TXTProductoPrecioMinimo.Text, out decimal precioMinimo) ? precioMinimo : 0.0m;
-                producto.capdstopro = int.TryParse(TXTProductoStock.Text, out int stock) ? stock : 0;
-                producto.capdfeccre = DTIProductoFechaCreacion.Value;
-                producto.capdfecmod = DTIProductoFechaModificacion.Value;
-                producto.capdmarpro = TXTProductoMarca.Text;
-                producto.capdcolpro = TXTProductoColor.Text;
-                producto.capdtalpro = TXTProductoTalla.Text;
-                producto.capdmatpro = TXTProductoMaterial.Text;
+                producto.capdpreven = decimal.TryParse(NUDPrecioVenta.Text, out decimal precioVenta) ? precioVenta : 0.0m;
+                producto.capdpremin = decimal.TryParse(NUDPrecioMinVenta.Text, out decimal precioMinimo) ? precioMinimo : 0.0m;
+                producto.capdstopro = int.TryParse(NUDStockActual.Text, out int stock) ? stock : 0;
+                //producto.capdfeccre = DTIProductoFechaCreacion.Value;
+                //producto.capdfecmod = DTIProductoFechaModificacion.Value;
+                producto.capdmarpro = TBDProductoMarca.Text;
+                producto.capdcolpro = TBDProductoColor.Text;
+                producto.capdtalpro = TBDProductoTalla.Text;
+                producto.capdmatpro = TBDProductoMaterial.Text;
                 producto.capdmodpro = TXTProductoModelo.Text;
-                producto.capdcodbar = TXTProductoCodigoDeBarra.Text;
-                producto.capdcatpro = TXTProductoCategoria.Text;
+                producto.capdcodbar = LBLCodigoDeBarras.Text;
+                producto.capdcatpro = TBDProductoCategoria.Text;
 
                 //Fotografia del producto
                 if (TieneFoto)
@@ -570,7 +572,7 @@ namespace SistemaDeGestion2026
 
         private void SWBProductoEstadoStock_ValueChanged(object sender, EventArgs e)
         {
-            if (TXTProductoStock.Text == "0") SWBProductoEstadoStock.Enabled = false; else SWBProductoEstadoStock.Enabled = true;
+            if (NUDStockActual.Text == "0") SWBProductoEstadoStock.Enabled = false; else SWBProductoEstadoStock.Enabled = true;
         }
 
         private void TXTProductoDescripcion_TextChanged(object sender, EventArgs e)
@@ -601,6 +603,11 @@ namespace SistemaDeGestion2026
         private void BTNLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarCasillas();
+        }
+
+        private void BTNCodigoDeBarras_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
