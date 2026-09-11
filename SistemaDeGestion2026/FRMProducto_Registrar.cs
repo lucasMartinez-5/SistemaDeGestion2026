@@ -108,10 +108,10 @@ namespace SistemaDeGestion2026
                 TXTProductoModelo.Focus();
                 respuesta = false;
             }
-            else if (TBDProductoGenero.Text.Replace(" ", "") == "")
+            else if (CMBGenero.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el GÉNERO del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TBDProductoGenero.Focus();
+                CMBGenero.Focus();
                 respuesta = false;
             }
             else if (LBLCodigoDeBarras.Text.Replace(" ", "") == "")
@@ -144,14 +144,39 @@ namespace SistemaDeGestion2026
                 NUDPrecioMinVenta.Focus();
                 respuesta = false;
             }
-            else if (TBDProductoCategoria.Text.Replace(" ", "") == "")
+            else if (CMBCategoria.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca la CATEGORÍA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TBDProductoCategoria.Focus();
+                CMBCategoria.Focus();
                 respuesta = false;
             }
             return respuesta;
         }
+        //Nuevo
+        private void CargarComboCategorias()
+        {
+            List<acatpro> ListaCategorias= new List<acatpro>();
+            acatpro categoria=new acatpro();
+            ListaCategorias= categoria.Lista("cacpestcat=true order by cacpnomcat");
+            CMBCategoria.Items.Clear();
+            CMBCategoria.DisplayMember = "cacpnomcat";
+            CMBCategoria.ValueMember = "pacpcodcat";
+            CMBCategoria.DataSource = ListaCategorias;
+            CMBCategoria.SelectedIndex = -1;
+        }
+        //Nuevo
+        private void CargarComboNombreProducto()
+        {
+            List<acatpro> ListaCategorias = new List<acatpro>();
+            acatpro categoria = new acatpro();
+            ListaCategorias = categoria.Lista("cacpestcat=true order by cacpnomcat");
+            CMBCategoria.Items.Clear();
+            CMBCategoria.DisplayMember = "cacpnomcat";
+            CMBCategoria.ValueMember = "pacpcodcat";
+            CMBCategoria.DataSource = ListaCategorias;
+            CMBCategoria.SelectedIndex = -1;
+        }
+
         private void LimpiarCasillas()
         {
             SWBProductoEstadoStock.Value = true;
@@ -606,6 +631,28 @@ namespace SistemaDeGestion2026
         }
 
         private void BTNCodigoDeBarras_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBDProductoGenero_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        //nuevo
+        private void BTNCodigoDeBarras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (LBLCodigoDeBarras.Text == "LECTOR ACTIVO")
+            {
+                LBLCodigoDeBarras.Text = "" + e.KeyChar;
+            }
+            else
+            {
+                LBLCodigoDeBarras.Text += e.KeyChar;
+            }
+        }
+
+        private void NUDStockActual_ValueChanged(object sender, EventArgs e)
         {
 
         }

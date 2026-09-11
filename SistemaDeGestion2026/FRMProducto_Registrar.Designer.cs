@@ -43,8 +43,6 @@
             this.TBDProductoMaterial = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
             this.TBDProductoMarca = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
             this.TBDProductoNombre = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
-            this.TBDProductoCategoria = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
-            this.TBDProductoGenero = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
             this.TXTProductoDescripcion = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTProductoModelo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GPFotografia = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -59,6 +57,9 @@
             this.SWBProductoEstadoStock = new DevComponents.DotNetBar.Controls.SwitchButton();
             this.OFDElegirImagen = new System.Windows.Forms.OpenFileDialog();
             this.BLTAyuda = new DevComponents.DotNetBar.BalloonTip();
+            this.CMBCategoria = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.CMBGenero = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.Hombre = new DevComponents.Editors.ComboItem();
             this.GPPanelPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDStockActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDPrecioVenta)).BeginInit();
@@ -73,6 +74,8 @@
             this.GPPanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GPPanelPrincipal.CanvasColor = System.Drawing.SystemColors.Control;
             this.GPPanelPrincipal.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.GPPanelPrincipal.Controls.Add(this.CMBGenero);
+            this.GPPanelPrincipal.Controls.Add(this.CMBCategoria);
             this.GPPanelPrincipal.Controls.Add(this.LBLCodigoDeBarras);
             this.GPPanelPrincipal.Controls.Add(this.LBLPrecioMinVenta);
             this.GPPanelPrincipal.Controls.Add(this.LBLPrecioVenta);
@@ -86,8 +89,6 @@
             this.GPPanelPrincipal.Controls.Add(this.TBDProductoMaterial);
             this.GPPanelPrincipal.Controls.Add(this.TBDProductoMarca);
             this.GPPanelPrincipal.Controls.Add(this.TBDProductoNombre);
-            this.GPPanelPrincipal.Controls.Add(this.TBDProductoCategoria);
-            this.GPPanelPrincipal.Controls.Add(this.TBDProductoGenero);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoDescripcion);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoModelo);
             this.GPPanelPrincipal.Controls.Add(this.GPFotografia);
@@ -190,6 +191,7 @@
             this.BTNCodigoDeBarras.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNCodigoDeBarras.TabIndex = 31;
             this.BTNCodigoDeBarras.Click += new System.EventHandler(this.BTNCodigoDeBarras_Click);
+            this.BTNCodigoDeBarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BTNCodigoDeBarras_KeyPress);
             // 
             // NUDStockActual
             // 
@@ -203,6 +205,7 @@
             0,
             0,
             0});
+            this.NUDStockActual.ValueChanged += new System.EventHandler(this.NUDStockActual_ValueChanged);
             // 
             // NUDPrecioVenta
             // 
@@ -319,42 +322,6 @@
             this.TBDProductoNombre.TabIndex = 23;
             this.TBDProductoNombre.Text = "";
             this.TBDProductoNombre.WatermarkText = "Nombre del Producto";
-            // 
-            // TBDProductoCategoria
-            // 
-            // 
-            // 
-            // 
-            this.TBDProductoCategoria.BackgroundStyle.Class = "TextBoxBorder";
-            this.TBDProductoCategoria.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.BLTAyuda.SetBalloonCaption(this.TBDProductoCategoria, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TBDProductoCategoria, "Tipo de Producto");
-            this.TBDProductoCategoria.ButtonDropDown.Visible = true;
-            this.TBDProductoCategoria.Location = new System.Drawing.Point(10, 72);
-            this.TBDProductoCategoria.Name = "TBDProductoCategoria";
-            this.TBDProductoCategoria.Size = new System.Drawing.Size(354, 22);
-            this.TBDProductoCategoria.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.TBDProductoCategoria.TabIndex = 22;
-            this.TBDProductoCategoria.Text = "";
-            this.TBDProductoCategoria.WatermarkText = "Categoría";
-            // 
-            // TBDProductoGenero
-            // 
-            // 
-            // 
-            // 
-            this.TBDProductoGenero.BackgroundStyle.Class = "TextBoxBorder";
-            this.TBDProductoGenero.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.BLTAyuda.SetBalloonCaption(this.TBDProductoGenero, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TBDProductoGenero, "Genero de Persona");
-            this.TBDProductoGenero.ButtonDropDown.Visible = true;
-            this.TBDProductoGenero.Location = new System.Drawing.Point(190, 44);
-            this.TBDProductoGenero.Name = "TBDProductoGenero";
-            this.TBDProductoGenero.Size = new System.Drawing.Size(174, 22);
-            this.TBDProductoGenero.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.TBDProductoGenero.TabIndex = 21;
-            this.TBDProductoGenero.Text = "";
-            this.TBDProductoGenero.WatermarkText = "Género";
             // 
             // TXTProductoDescripcion
             // 
@@ -576,6 +543,38 @@
             this.OFDElegirImagen.Filter = "Archivos de Imagen|*.jpg;*.jpeg;*.png";
             this.OFDElegirImagen.Title = "Elegir fotografía";
             // 
+            // CMBCategoria
+            // 
+            this.CMBCategoria.DisplayMember = "Text";
+            this.CMBCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CMBCategoria.FormattingEnabled = true;
+            this.CMBCategoria.ItemHeight = 17;
+            this.CMBCategoria.Location = new System.Drawing.Point(10, 71);
+            this.CMBCategoria.Name = "CMBCategoria";
+            this.CMBCategoria.Size = new System.Drawing.Size(354, 23);
+            this.CMBCategoria.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.CMBCategoria.TabIndex = 37;
+            this.CMBCategoria.WatermarkText = "Categoria";
+            // 
+            // CMBGenero
+            // 
+            this.CMBGenero.DisplayMember = "Text";
+            this.CMBGenero.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CMBGenero.FormattingEnabled = true;
+            this.CMBGenero.ItemHeight = 17;
+            this.CMBGenero.Items.AddRange(new object[] {
+            this.Hombre});
+            this.CMBGenero.Location = new System.Drawing.Point(190, 42);
+            this.CMBGenero.Name = "CMBGenero";
+            this.CMBGenero.Size = new System.Drawing.Size(174, 23);
+            this.CMBGenero.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.CMBGenero.TabIndex = 38;
+            this.CMBGenero.WatermarkText = "Genero";
+            // 
+            // Hombre
+            // 
+            this.Hombre.Text = "comboItem1";
+            // 
             // FRMProducto_Registrar
             // 
             this.AcceptButton = this.BTNGrabar;
@@ -620,9 +619,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX TXTProductoDescripcion;
         private System.Windows.Forms.OpenFileDialog OFDElegirImagen;
         private DevComponents.DotNetBar.BalloonTip BLTAyuda;
-        private DevComponents.DotNetBar.Controls.TextBoxDropDown TBDProductoGenero;
         private DevComponents.DotNetBar.Controls.TextBoxDropDown TBDProductoNombre;
-        private DevComponents.DotNetBar.Controls.TextBoxDropDown TBDProductoCategoria;
         private DevComponents.DotNetBar.Controls.TextBoxDropDown TBDProductoMarca;
         private DevComponents.DotNetBar.Controls.TextBoxDropDown TBDProductoTalla;
         private DevComponents.DotNetBar.Controls.TextBoxDropDown TBDProductoColor;
@@ -635,5 +632,8 @@
         private DevComponents.DotNetBar.LabelX LBLPrecioMinVenta;
         private DevComponents.DotNetBar.LabelX LBLPrecioVenta;
         private DevComponents.DotNetBar.LabelX LBLStockActual;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx CMBGenero;
+        private DevComponents.Editors.ComboItem Hombre;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx CMBCategoria;
     }
 }

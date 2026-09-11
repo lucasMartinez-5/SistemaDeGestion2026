@@ -522,9 +522,58 @@ namespace CapaRN
                 }
                 this.Conexion.Desconectar();
                 return ListaResultado;
-            } 
-        #endregion 
+            }
+        public List<string> Combo(string where)
+        {
+            List<string> ListaResultado = new List<string>();
+            this.Conexion.Conectar();
+            string sql = "select " +
+                                 "distinct capdnompro " +
+                                 "from aproduc " +
+                                 "where capdestpro=true" +
+                         "order by capdnompro ";
 
-	}
+            if (where.Replace(" ", "") != "")
+            {
+                sql += "where " + where;
+            }
+
+
+            this.Conexion.PrepararComando(sql);
+            DbDataReader ResultadoConsulta = Conexion.EjecutarConsulta();
+
+            if (ResultadoConsulta != null)
+            {
+                while (ResultadoConsulta.Read())
+                {
+                    string Auxiliar = ResultadoConsulta.GetString(16);
+                    Auxiliar.capdstopro = ResultadoConsulta.GetInt32(0);
+                    Auxiliar.capdpreven = ResultadoConsulta.GetDecimal(1);
+                    Auxiliar.capdpremin = ResultadoConsulta.GetDecimal(2);
+                    Auxiliar.capdestpro = ResultadoConsulta.GetBoolean(3);
+                    Auxiliar.capdfeccre = ResultadoConsulta.GetDateTime(4);
+                    Auxiliar.capdfecmod = ResultadoConsulta.GetDateTime(5);
+                    Auxiliar.capdmatpro = ResultadoConsulta.GetString(6);
+                    Auxiliar.capdcolpro = ResultadoConsulta.GetString(7);
+                    Auxiliar.papdcodpro = ResultadoConsulta.GetString(8);
+                    Auxiliar.capdtalpro = ResultadoConsulta.GetString(9);
+                    Auxiliar.capddespro = ResultadoConsulta.GetString(10);
+                    Auxiliar.capdfotpro = ResultadoConsulta.GetString(11);
+                    Auxiliar.capdgenpro = ResultadoConsulta.GetString(12);
+                    Auxiliar.capdcatpro = ResultadoConsulta.GetString(13);
+                    Auxiliar.capdcodbar = ResultadoConsulta.GetString(14);
+                    Auxiliar.capdmodpro = ResultadoConsulta.GetString(15);
+                    Auxiliar.capdnompro = ResultadoConsulta.GetString(16);
+                    Auxiliar.capdmarpro = ResultadoConsulta.GetString(17);
+                    ListaResultado.Add(Auxiliar);
+                }
+
+            }
+            this.Conexion.Desconectar();
+            return ListaResultado;
+        }
+        #endregion
+
+    }
 }
 
