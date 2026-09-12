@@ -32,7 +32,7 @@ namespace SistemaDeGestion2026
                                            "capdmodpro like '%" + TXTFiltrar.Text + "%' or " +
                                            "capdmatpro like '%" + TXTFiltrar.Text + "%' or " +
                                            
-                                           "capdcatpro like '%" + TXTFiltrar.Text + "%' or " +
+                                           "fapdcodcat like '%" + TXTFiltrar.Text + "%' or " +
                                            "capddespro like '%" + TXTFiltrar.Text + "%' or " +
                                            "capdnompro like '%" + TXTFiltrar.Text + "%' limit " +
                                            IINFilas.Value.ToString()
@@ -72,7 +72,8 @@ namespace SistemaDeGestion2026
                 */
 
                 DTGLista[8, DTGLista.Rows.Count - 1].Value = a.capdmatpro;
-                DTGLista[9, DTGLista.Rows.Count - 1].Value = a.capdcatpro;
+                //DTGLista[9, DTGLista.Rows.Count - 1].Value = a.fapdcodcat;
+                DTGLista[9, DTGLista.Rows.Count - 1].Value = a.cacpnomcat;
                 DTGLista[10, DTGLista.Rows.Count - 1].Value = a.capdpreven;
                 DTGLista[11, DTGLista.Rows.Count - 1].Value = a.capdpremin;
                 DTGLista[12, DTGLista.Rows.Count - 1].Value = a.capdfeccre;
