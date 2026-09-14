@@ -115,12 +115,12 @@ namespace SistemaDeGestion2026
                 CMBGenero.Focus();
                 respuesta = false;
             }
-            else if (LBLCodigoDeBarras.Text.Replace(" ", "") == "")
+            /*else if (LBLCodigoDeBarras.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el CÓDIGO DE BARRA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 LBLCodigoDeBarras.Focus();
                 respuesta = false;
-            }
+            }*/
             else if (producto2.ObtenerDatosCodBarra(modificar,producto.capdcodbar))
             {
                 MessageBox.Show("Ya existe un producto con ese código de barras", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -133,13 +133,27 @@ namespace SistemaDeGestion2026
                 NUDStockActual.Focus();
                 respuesta = false;
             }
+            /*
             else if (NUDPrecioVenta.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el PRECIO DE VENTA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 NUDPrecioVenta.Focus();
                 respuesta = false;
+            }*/
+            else if (NUDPrecioVenta.Value <= 0)
+            {
+                MessageBox.Show("Introduzca el PRECIO DE VENTA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                NUDPrecioVenta.Focus();
+                respuesta = false;
             }
+            /*
             else if (NUDPrecioMinVenta.Text.Replace(" ", "") == "")
+            {
+                MessageBox.Show("Introduzca el PRECIO MÍNIMO del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                NUDPrecioMinVenta.Focus();
+                respuesta = false;
+            }*/
+            else if ((NUDPrecioMinVenta.Value <= 0) && (NUDPrecioMinVenta.Value > NUDPrecioVenta.Value))
             {
                 MessageBox.Show("Introduzca el PRECIO MÍNIMO del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 NUDPrecioMinVenta.Focus();
@@ -194,24 +208,21 @@ namespace SistemaDeGestion2026
         private void LimpiarCasillas()
         {
             SWBProductoEstadoStock.Value = true;
-            LBLCodigoDeBarras.Text = "";
-            /*
-            TXTProductoNombre.Text = "";
-            DTIProductoFechaCreacion.Text = "";
-            DTIProductoFechaCreacion.Text = "";
-            DTIProductoFechaModificacion.Text = "";
-            TXTProductoMarca.Text = "";
-            TXTProductoColor.Text = "";
-            TXTProductoTalla.Text = "";
-            TXTProductoMaterial.Text = "";
+            
+            LBLCodigoDeBarras.Text = "SIN CODIGO";
+            CMBProductoNombre.Text = "";
+            CMBMarca.Text = "";
+            CMBColor.Text = "";
+            CMBTalla.Text = "";
+            CMBMaterial.Text = "";
             TXTProductoModelo.Text = "";
-            TXTProductoGenero.Text = "";
-            TXTProductoStock.Text = "";
-            TXTProductoPrecioVenta.Text = "";
-            TXTProductoPrecioMinimo.Text = "";
-            TXTProductoCategoria.Text = "";
+            CMBGenero.SelectedIndex = -1;
+            CMBCategoria.SelectedIndex = -1;
+            NUDStockActual.Text = "";
+            NUDPrecioVenta.Text = "";
+            NUDPrecioMinVenta.Text = "";
             TXTProductoDescripcion.Text = "";
-            */
+            PCBFotografia.Image = Resources.no_image;
         }
 
         private void JalarDatos()
@@ -237,7 +248,11 @@ namespace SistemaDeGestion2026
             //CMBCategoria.SelectedItem = producto.cacpnomcat;
             CMBCategoria.SelectedValue = producto.fapdcodcat;
             TXTProductoDescripcion.Text = producto.capddespro;
-
+            if (producto.capdcodbar!="")
+            {
+                LBLCodigoDeBarras.Text = "SIN CODIGO";
+                LBLCodigoDeBarras.BackColor = Color.Salmon;
+            }
             if (producto.capdfotpro == "")
             {
                 TieneFoto = false;
