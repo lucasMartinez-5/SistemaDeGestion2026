@@ -61,9 +61,16 @@ namespace SistemaDeGestion2026
                 TXTProductoCodigo.Focus();
                 respuesta = false;
             }*/
+            /*
             if (CMBProductoNombre.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca el NOMBRE del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CMBProductoNombre.Focus();
+                respuesta = false;
+            }*/
+            if (CMBProductoNombre.Text.Replace(" ", "") == "" && CMBProductoNombre.SelectedIndex == -1)
+            {
+                MessageBox.Show("Introduzca el nombre de la prenda", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 CMBProductoNombre.Focus();
                 respuesta = false;
             }
@@ -78,28 +85,34 @@ namespace SistemaDeGestion2026
                 MessageBox.Show("Introduzca FECHA DE MODIFICACION válido del prducto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 DTIProductoFechaModificacion.Focus();
                 respuesta = false;
-            }*/
+            }
             else if (CMBMarca.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Introduzca la MARCA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 CMBMarca.Focus();
                 respuesta = false;
-            }
-            else if (CMBColor.Text.Replace(" ", "") == "")
+            }*/
+            else if (CMBMarca.Text.Replace(" ", "") == "" && CMBMarca.SelectedIndex == -1)
             {
-                MessageBox.Show("Introduzca la COLOR del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Introduzca un marca para la prenda", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CMBMarca.Focus();
+                respuesta = false;
+            }
+            else if (CMBColor.Text.Replace(" ", "") == "" && CMBColor.SelectedIndex == -1)
+            {
+                MessageBox.Show("Introduzca el color de la prenda", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 CMBColor.Focus();
                 respuesta = false;
             }
-            else if (CMBTalla.Text.Replace(" ", "") == "")
+            else if (CMBTalla.Text.Replace(" ", "") == "" && CMBTalla.SelectedIndex == -1)
             {
-                MessageBox.Show("Introduzca la TALLA del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Introduzca la talla de la prenda", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 CMBTalla.Focus();
                 respuesta = false;
             }
-            else if (CMBMaterial.Text.Replace(" ", "") == "")
+            else if (CMBMaterial.Text.Replace(" ", "") == "" && CMBMaterial.SelectedIndex == -1)
             {
-                MessageBox.Show("Introduzca el MATERIAL del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Introduzca el material de la prenda", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 CMBMaterial.Focus();
                 respuesta = false;
             }
@@ -109,10 +122,16 @@ namespace SistemaDeGestion2026
                 TXTProductoModelo.Focus();
                 respuesta = false;
             }
-            else if (CMBGenero.Text.Replace(" ", "") == "")
+            else if (CMBGenero.SelectedIndex == -1)
             {
-                MessageBox.Show("Introduzca el GÉNERO del producto", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione un genero para la prenda", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 CMBGenero.Focus();
+                respuesta = false;
+            }
+            else if (CMBCategoria.SelectedIndex == -1)
+            {
+                MessageBox.Show("Introduzca una categoria de la prenda", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CMBCategoria.Focus();
                 respuesta = false;
             }
             /*else if (LBLCodigoDeBarras.Text.Replace(" ", "") == "")
@@ -124,7 +143,7 @@ namespace SistemaDeGestion2026
             else if (producto2.ObtenerDatosCodBarra(modificar,producto.capdcodbar))
             {
                 MessageBox.Show("Ya existe un producto con ese código de barras", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LBLCodigoDeBarras.Focus();
+                BTNCodigoDeBarras.Focus();
                 respuesta = false;
             }
             else if (NUDStockActual.Text.Replace(" ", "") == "")
@@ -241,6 +260,16 @@ namespace SistemaDeGestion2026
             TXTProductoModelo.Text = producto.capdmodpro;
             CMBGenero.Text = producto.capdgenpro;
             LBLCodigoDeBarras.Text = producto.capdcodbar;
+            if (producto.capdcodbar == "")
+            {
+                LBLCodigoDeBarras.Text = "SIN CODIGO";
+                LBLCodigoDeBarras.BackColor = Color.Salmon;
+            }
+            else
+            {
+                LBLCodigoDeBarras.Text = producto.capdcodbar;
+                LBLCodigoDeBarras.BackColor = Color.PaleGreen;
+            }
             // CORRECCIÓN: Asignar los valores del objeto producto a los TextBox
             NUDStockActual.Text = producto.capdstopro.ToString();
             NUDPrecioMinVenta.Text = producto.capdpremin.ToString();
@@ -248,11 +277,6 @@ namespace SistemaDeGestion2026
             //CMBCategoria.SelectedItem = producto.cacpnomcat;
             CMBCategoria.SelectedValue = producto.fapdcodcat;
             TXTProductoDescripcion.Text = producto.capddespro;
-            if (producto.capdcodbar!="")
-            {
-                LBLCodigoDeBarras.Text = "SIN CODIGO";
-                LBLCodigoDeBarras.BackColor = Color.Salmon;
-            }
             if (producto.capdfotpro == "")
             {
                 TieneFoto = false;
@@ -311,6 +335,10 @@ namespace SistemaDeGestion2026
                 this.Text = "Modificar Producto";
                 GPPanelPrincipal.Text = "Modificar Producto";
                 LBLCodigoDeBarras.Focus();
+                if (LBLCodigoDeBarras.Text == "SIN CÓDIGO")
+                {
+                    LBLCodigoDeBarras.BackColor = Color.Salmon;
+                }
             }
             else
             {
@@ -695,6 +723,10 @@ namespace SistemaDeGestion2026
                 }
                 else
                 {
+                    /*if (LBLCodigoDeBarras.Text == "SIN CÓDIGO")
+                    {
+                        LBLCodigoDeBarras.BackColor = Color.Salmon;
+                    }*/
                     LBLCodigoDeBarras.BackColor = Color.LightBlue;
                 }
                 lectorCBHabilitado = false;
@@ -722,6 +754,23 @@ namespace SistemaDeGestion2026
         private void NUDStockActual_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TXTProductoModelo_Enter(object sender, EventArgs e)
+        {
+            TextBoxX a = (TextBoxX)sender;
+            a.SelectAll();
+        }
+
+        private void CMBProductoNombre_Enter(object sender, EventArgs e)
+        {
+            ComboBoxEx a = (ComboBoxEx)sender;
+            a.SelectAll();
+        }
+
+        private void CMBProductoNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.ToUpper(e.KeyChar);
         }
     }
 }
