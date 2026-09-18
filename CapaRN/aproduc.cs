@@ -24,7 +24,7 @@ namespace CapaRN
         private string _capdfotpro;
         private string _papdcodpro;
         private string _fapdcodcat;
-        private string _cacpnomcat;
+        //private string _cacpnomcat;
         private string _capdcodbar;
         private string _capdmodpro;
         private string _capdnompro;
@@ -101,11 +101,11 @@ namespace CapaRN
             get { return this._fapdcodcat; }
             set { this._fapdcodcat = value; }
         }
-        public string cacpnomcat
+        /*public string cacpnomcat
         {
             get { return this._cacpnomcat; }
             set { this._cacpnomcat = value; }
-        }
+        }*/
         public string capdcodbar
         {
             get { return this._capdcodbar; }
@@ -467,7 +467,7 @@ namespace CapaRN
                 return true;
             }
         }
-        /*
+        
         public List<aproduc> Lista(string where)
         {
             List<aproduc> ListaResultado = new List<aproduc>();
@@ -531,7 +531,8 @@ namespace CapaRN
             }
             this.Conexion.Desconectar();
             return ListaResultado;
-        }*/
+        }
+        /*
         public List<aproduc> Lista(string where)
         {
             List<aproduc> ListaResultado = new List<aproduc>();
@@ -607,7 +608,7 @@ namespace CapaRN
             }
             this.Conexion.Desconectar();
             return ListaResultado;
-        }
+        }*/
 
         public List<String> Combo(String campo)
         {

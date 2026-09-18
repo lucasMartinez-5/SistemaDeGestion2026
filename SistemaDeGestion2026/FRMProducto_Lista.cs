@@ -14,30 +14,28 @@ namespace SistemaDeGestion2026
     public partial class FRMProducto_Lista : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
-        private aproduc producto = new aproduc();
-        private List<aproduc> lista_productos = new List<aproduc>();
+        private lproduc lproducto = new lproduc();
+        private aproduc aproducto = new aproduc();
+        private List<lproduc> lista_productos = new List<lproduc>();
         #endregion
+
+        #region Constructor
         public FRMProducto_Lista()
         {
             InitializeComponent();
         }
+        #endregion
+
         #region Métodos
         private void ActualizarGrid()
         {
             DTGLista.Rows.Clear();
             lista_productos.Clear();
-            lista_productos = producto.Lista("capdtalpro like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capdmarpro like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capdcolpro like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capdmodpro like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capdmatpro like '%" + TXTFiltrar.Text + "%' or " +
-                                           
-                                           "fapdcodcat like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capddespro like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capdnompro like '%" + TXTFiltrar.Text + "%' limit " +
+            lista_productos = lproducto.Lista("(papdcodpro like '%" + TXTFiltrar.Text + "%' or " +
+                                              "capdnompro like '%" + TXTFiltrar.Text + "%') limit " +
                                            IINFilas.Value.ToString()
                                            );
-            foreach (aproduc a in lista_productos)
+            foreach (lproduc a in lista_productos)
             {
                 DTGLista.Rows.Add();
 
@@ -61,16 +59,6 @@ namespace SistemaDeGestion2026
                 DTGLista[5, DTGLista.Rows.Count - 1].Value = a.capdmarpro;
                 DTGLista[6, DTGLista.Rows.Count - 1].Value = a.capdmodpro;
                 DTGLista[7, DTGLista.Rows.Count - 1].Value = a.capdgenpro;
-                /*if (a.capdgenpro)
-                {
-                    DTGLista[7, DTGLista.Rows.Count - 1].Value = "M";
-                }
-                else
-                {
-                    DTGLista[7, DTGLista.Rows.Count - 1].Value = "F";
-                }
-                */
-
                 DTGLista[8, DTGLista.Rows.Count - 1].Value = a.capdmatpro;
                 //DTGLista[9, DTGLista.Rows.Count - 1].Value = a.fapdcodcat;
                 DTGLista[9, DTGLista.Rows.Count - 1].Value = a.cacpnomcat;
@@ -80,9 +68,7 @@ namespace SistemaDeGestion2026
                 DTGLista[13, DTGLista.Rows.Count - 1].Value = a.capdfecmod;
                 DTGLista[14, DTGLista.Rows.Count - 1].Value = a.capdstopro;
                 DTGLista[15, DTGLista.Rows.Count - 1].Value = a.capddespro;
-
             }
-
         }
         #endregion
 
@@ -165,11 +151,11 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                producto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (producto.ObtenerDatos())
+                aproducto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (aproducto.ObtenerDatos())
                 {
-                    producto.capdestpro = false;
-                    if (producto.Modificar())
+                    aproducto.capdestpro = false;
+                    if (aproducto.Modificar())
                     {
                         MessageBox.Show("Producto Inhabilitado correctamente");
                         ActualizarGrid();
@@ -182,11 +168,11 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                producto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (producto.ObtenerDatos())
+                aproducto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (aproducto.ObtenerDatos())
                 {
-                    producto.capdestpro = true;
-                    if (producto.Modificar())
+                    aproducto.capdestpro = true;
+                    if (aproducto.Modificar())
                     {
                         MessageBox.Show("Producto Habilitado correctamente");
                         ActualizarGrid();
@@ -200,11 +186,11 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                producto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (producto.ObtenerDatos())
+                aproducto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (aproducto.ObtenerDatos())
                 {
 
-                    if (producto.capdestpro)
+                    if (aproducto.capdestpro)
                     {
                         CMSMenu.Items[2].Visible = false;
                         CMSMenu.Items[1].Visible = true;

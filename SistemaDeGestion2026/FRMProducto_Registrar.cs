@@ -19,7 +19,7 @@ namespace SistemaDeGestion2026
     {
         #region Variables
         private bool lectorCBHabilitado = false;
-
+        private lproduc lproducto = new lproduc();
         private aproduc producto = new aproduc();
         private xnumcor correlativo = new xnumcor();
         public bool modificar = false;
@@ -245,13 +245,15 @@ namespace SistemaDeGestion2026
         }
 
         private void JalarDatos()
-        {
+        {   
             producto.papdcodpro = this.codProMod;
             producto.ObtenerDatos();
+            //producto.papdcodpro = this.codProMod;
+            //producto.ObtenerDatos();
             SWBProductoEstadoStock.Value = producto.capdestpro;
             //TXTProductoCodigo.Text = producto.papdcodpro;
             CMBProductoNombre.Text = producto.capdnompro;
-            //DTIProductoFechaCreacion.Value = producto.capdfeccre;
+            //DTIProductoFechaCreacion.Value = producto.capdfeccre;s
             //DTIProductoFechaModificacion.Value = producto.capdfecmod;
             CMBMarca.Text = producto.capdmarpro;
             CMBColor.Text = producto.capdcolpro;

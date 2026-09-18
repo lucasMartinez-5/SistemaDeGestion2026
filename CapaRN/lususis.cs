@@ -246,7 +246,6 @@ namespace CapaRN
                 sql += "and " + where;
             }
 
-
             this.Conexion.PrepararComando(sql);
             DbDataReader ResultadoConsulta = Conexion.EjecutarConsulta();
 
