@@ -36,7 +36,7 @@ namespace SistemaDeGestion2026
                                            "and (capsnumcid like '%" + TXTFiltrar.Text + "%' or " +
                                            "capsapepat like '%" + TXTFiltrar.Text + "%' or " +
                                            "capsapemat like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capsnomper like '%" + TXTFiltrar.Text + "%') and capsestper=true " +
+                                           "capsnomper like '%" + TXTFiltrar.Text + "%') " +
                                            "limit " +
                                            IINFilas.Value.ToString()
                                            );

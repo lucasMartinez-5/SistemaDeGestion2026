@@ -35,6 +35,7 @@
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.BTNPersonas = new DevComponents.DotNetBar.ButtonItem();
             this.BTNProveedores = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNClientes = new DevComponents.DotNetBar.ButtonItem();
             this.RBPInventario = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.BTNCategorias = new DevComponents.DotNetBar.ButtonItem();
@@ -55,7 +56,6 @@
             this.RTBInventario = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.BTNClientes = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.RBPAdministracion.SuspendLayout();
             this.RBPInventario.SuspendLayout();
@@ -69,8 +69,8 @@
             // 
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
-            this.ribbonControl1.Controls.Add(this.RBPAdministracion);
             this.ribbonControl1.Controls.Add(this.RBPInventario);
+            this.ribbonControl1.Controls.Add(this.RBPAdministracion);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.ForeColor = System.Drawing.Color.Black;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -129,6 +129,7 @@
             // 
             this.RBPAdministracion.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.RBPAdministracion.TabIndex = 1;
+            this.RBPAdministracion.Visible = false;
             // 
             // BTNUsuarios
             // 
@@ -199,6 +200,16 @@
             this.BTNProveedores.Text = "Proveedores";
             this.BTNProveedores.Click += new System.EventHandler(this.BTNProveedores_Click);
             // 
+            // BTNClientes
+            // 
+            this.BTNClientes.Image = global::SistemaDeGestion2026.Properties.Resources.ic_persona;
+            this.BTNClientes.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.BTNClientes.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.BTNClientes.Name = "BTNClientes";
+            this.BTNClientes.SubItemsExpandWidth = 14;
+            this.BTNClientes.Text = "Clientes";
+            this.BTNClientes.Click += new System.EventHandler(this.BTNClientes_Click);
+            // 
             // RBPInventario
             // 
             this.RBPInventario.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -222,7 +233,6 @@
             // 
             this.RBPInventario.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.RBPInventario.TabIndex = 2;
-            this.RBPInventario.Visible = false;
             // 
             // ribbonBar2
             // 
@@ -423,7 +433,6 @@
             // 
             // RTBAdministracion
             // 
-            this.RTBAdministracion.Checked = true;
             this.RTBAdministracion.Name = "RTBAdministracion";
             this.RTBAdministracion.Panel = this.RBPAdministracion;
             this.RTBAdministracion.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -437,6 +446,7 @@
             // 
             // RTBInventario
             // 
+            this.RTBInventario.Checked = true;
             this.RTBInventario.Name = "RTBInventario";
             this.RTBInventario.Panel = this.RBPInventario;
             this.RTBInventario.Text = "Inventario";
@@ -451,21 +461,11 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.VisualStudio2012Light;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204))))));
             // 
-            // BTNClientes
-            // 
-            this.BTNClientes.Image = global::SistemaDeGestion2026.Properties.Resources.ic_persona;
-            this.BTNClientes.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.BTNClientes.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.BTNClientes.Name = "BTNClientes";
-            this.BTNClientes.SubItemsExpandWidth = 14;
-            this.BTNClientes.Text = "Clientes";
-            this.BTNClientes.Click += new System.EventHandler(this.BTNClientes_Click);
-            // 
             // FRMPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 497);
+            this.ClientSize = new System.Drawing.Size(670, 495);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);

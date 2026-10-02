@@ -40,7 +40,6 @@ namespace SistemaDeGestion2026
         #endregion
 
         #region Metodos
-        
         private bool VerificarIntegridad()
         {
             bool respuesta = true;

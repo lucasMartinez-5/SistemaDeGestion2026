@@ -173,7 +173,7 @@ namespace CapaRN
                                  "capsfotper," +
                                  "capsnumcid," +
                                  "capsapepat " +
-                         "from arpoved,aperson " +
+                         "from aproved,aperson " +
                          "where papscodper=faprcntpro ";
 
             if (where.Replace(" ", "") != "")

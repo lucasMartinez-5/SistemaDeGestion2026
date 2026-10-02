@@ -114,7 +114,6 @@ namespace SistemaDeGestion2026
                 PCBFotografia.Image = MetodosGenerales.ConvertBase64StringToImage(proveedor.caprfotpro);
             } */
         }
-
         #endregion
 
         #region Eventos
