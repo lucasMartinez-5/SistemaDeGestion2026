@@ -18,14 +18,14 @@ namespace SistemaDeGestion2026
         private aproduc aproducto = new aproduc();
         private List<lproduc> lista_productos = new List<lproduc>();
         #endregion
-
+        
         #region Constructor
         public FRMProducto_Lista()
         {
             InitializeComponent();
         }
         #endregion
-
+        //comentario solo para actualizar el repositorio nomas
         #region Métodos
         private void ActualizarGrid()
         {
