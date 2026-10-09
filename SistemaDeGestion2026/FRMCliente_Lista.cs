@@ -1,4 +1,5 @@
 ﻿using CapaRN;
+using DevComponents.DotNetBar.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,8 @@ namespace SistemaDeGestion2026
     public partial class FRMCliente_Lista : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
-        private lclient lcliente = new lclient();
-        private aclient acliente = new aclient();
-        private List<lclient> lista_clientes = new List<lclient>();
+        private aclient cliente = new aclient();
+        private List<aclient> lista_clientes = new List<aclient>();
         #endregion
 
         #region Constructor
@@ -31,13 +31,13 @@ namespace SistemaDeGestion2026
         {
             DTGLista.Rows.Clear();
             lista_clientes.Clear();
-            lista_clientes = lcliente.Lista("(capsnumcid like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capsapepat like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capsapemat like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capsnomper like '%" + TXTFiltrar.Text + "%') limit " +
+            lista_clientes = cliente.Lista("(caclsoccli like '%" + TXTFiltrar.Text + "%' or " +
+                                           "caclnitcli like '%" + TXTFiltrar.Text + "%' or " +
+                                           "cacldircli like '%" + TXTFiltrar.Text + "%' or " +
+                                           "caclnumcel like '%" + TXTFiltrar.Text + "%') limit " +
                                            IINFilas.Value.ToString()
                                            );
-            foreach (lclient a in lista_clientes)
+            foreach (aclient a in lista_clientes)
             {
                 DTGLista.Rows.Add();
 
@@ -53,14 +53,12 @@ namespace SistemaDeGestion2026
                     DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Salmon;
                 }
                 //
-                DTGLista[0, DTGLista.Rows.Count - 1].Value = a.paclcodcli;
+                DTGLista[0, DTGLista.Rows.Count - 1].Value = a.faclcntcli;
                 DTGLista[1, DTGLista.Rows.Count - 1].Value = a.caclestcli;
-                DTGLista[2, DTGLista.Rows.Count - 1].Value = a.caclnitcli;
-                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.capsapepat + " " +
-                                                             a.capsapemat + " " +
-                                                             a.capsnomper;
-                DTGLista[4, DTGLista.Rows.Count - 1].Value = a.capsnumcel;
-
+                DTGLista[2, DTGLista.Rows.Count - 1].Value = a.caclsoccli;
+                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.caclnitcli;
+                DTGLista[4, DTGLista.Rows.Count - 1].Value = a.cacldircli;
+                DTGLista[5, DTGLista.Rows.Count - 1].Value = a.caclnumcel;
             }
 
         }
@@ -124,11 +122,11 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                acliente.paclcodcli = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (acliente.ObtenerDatos())
+                cliente.paclcodcli = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (cliente.ObtenerDatos())
                 {
-                    acliente.caclestcli = false;
-                    if (acliente.Modificar())
+                    cliente.caclestcli = false;
+                    if (cliente.Modificar())
                     {
                         MessageBox.Show("Cliente inhabilitado correctamente");
                         ActualizarGrid();
@@ -141,11 +139,11 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                acliente.paclcodcli = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (acliente.ObtenerDatos())
+                cliente.paclcodcli = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (cliente.ObtenerDatos())
                 {
-                    acliente.caclestcli = true;
-                    if (acliente.Modificar())
+                    cliente.caclestcli = true;
+                    if (cliente.Modificar())
                     {
                         MessageBox.Show("Cliente habilitado correctamente");
                         ActualizarGrid();
@@ -158,10 +156,10 @@ namespace SistemaDeGestion2026
         {
             if (DTGLista.SelectedRows.Count > 0)
             {
-                acliente.paclcodcli = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
-                if (acliente.ObtenerDatos())
+                cliente.paclcodcli = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (cliente.ObtenerDatos())
                 {
-                    if (acliente.caclestcli)
+                    if (cliente.caclestcli)
                     {
                         CMSMenu.Items[2].Visible = false;
                         CMSMenu.Items[1].Visible = true;
