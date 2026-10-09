@@ -32,17 +32,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DTGLista = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.EPNFiltrar = new DevComponents.DotNetBar.ExpandablePanel();
-            this.BTNAceptar = new DevComponents.DotNetBar.ButtonX();
-            this.BTNAgregarCliente = new DevComponents.DotNetBar.ButtonX();
-            this.BTNFiltrar = new DevComponents.DotNetBar.ButtonX();
-            this.TXTFiltrar = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.IINFilas = new DevComponents.Editors.IntegerInput();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EPNFiltrar = new DevComponents.DotNetBar.ExpandablePanel();
+            this.BTNAceptar = new DevComponents.DotNetBar.ButtonX();
+            this.BTNAgregarPersona = new DevComponents.DotNetBar.ButtonX();
+            this.BTNFiltrar = new DevComponents.DotNetBar.ButtonX();
+            this.TXTFiltrar = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.IINFilas = new DevComponents.Editors.IntegerInput();
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).BeginInit();
             this.EPNFiltrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IINFilas)).BeginInit();
@@ -98,12 +98,53 @@
             this.DTGLista.TabIndex = 18;
             this.DTGLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DTGLista_CellDoubleClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            this.Column1.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Razon Social";
+            this.Column6.MinimumWidth = 180;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 180;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "NIT";
+            this.Column3.MinimumWidth = 100;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Celular";
+            this.Column9.MinimumWidth = 80;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 80;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Direccion";
+            this.Column4.MinimumWidth = 120;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 120;
+            // 
             // EPNFiltrar
             // 
             this.EPNFiltrar.CanvasColor = System.Drawing.SystemColors.Control;
             this.EPNFiltrar.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.EPNFiltrar.Controls.Add(this.BTNAceptar);
-            this.EPNFiltrar.Controls.Add(this.BTNAgregarCliente);
+            this.EPNFiltrar.Controls.Add(this.BTNAgregarPersona);
             this.EPNFiltrar.Controls.Add(this.BTNFiltrar);
             this.EPNFiltrar.Controls.Add(this.TXTFiltrar);
             this.EPNFiltrar.Controls.Add(this.IINFilas);
@@ -141,19 +182,19 @@
             this.BTNAceptar.TabIndex = 17;
             this.BTNAceptar.Click += new System.EventHandler(this.BTNAceptar_Click);
             // 
-            // BTNAgregarCliente
+            // BTNAgregarPersona
             // 
-            this.BTNAgregarCliente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNAgregarCliente.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNAgregarCliente.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTNAgregarCliente.Image = global::SistemaDeGestion2026.Properties.Resources.agregar;
-            this.BTNAgregarCliente.ImageFixedSize = new System.Drawing.Size(15, 15);
-            this.BTNAgregarCliente.Location = new System.Drawing.Point(328, 41);
-            this.BTNAgregarCliente.Name = "BTNAgregarCliente";
-            this.BTNAgregarCliente.Size = new System.Drawing.Size(27, 26);
-            this.BTNAgregarCliente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNAgregarCliente.TabIndex = 16;
-            this.BTNAgregarCliente.Click += new System.EventHandler(this.BTNAgregarCliente_Click);
+            this.BTNAgregarPersona.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNAgregarPersona.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNAgregarPersona.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BTNAgregarPersona.Image = global::SistemaDeGestion2026.Properties.Resources.agregar;
+            this.BTNAgregarPersona.ImageFixedSize = new System.Drawing.Size(15, 15);
+            this.BTNAgregarPersona.Location = new System.Drawing.Point(328, 41);
+            this.BTNAgregarPersona.Name = "BTNAgregarPersona";
+            this.BTNAgregarPersona.Size = new System.Drawing.Size(27, 26);
+            this.BTNAgregarPersona.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNAgregarPersona.TabIndex = 16;
+            this.BTNAgregarPersona.Click += new System.EventHandler(this.BTNAgregarPersona_Click);
             // 
             // BTNFiltrar
             // 
@@ -205,47 +246,6 @@
             this.IINFilas.TabIndex = 4;
             this.IINFilas.Value = 50;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            this.Column1.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Razon Social";
-            this.Column6.MinimumWidth = 180;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 180;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "NIT";
-            this.Column3.MinimumWidth = 100;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Celular";
-            this.Column9.MinimumWidth = 80;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 80;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Direccion";
-            this.Column4.MinimumWidth = 120;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 120;
-            // 
             // FRMCliente_Buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -270,7 +270,7 @@
         private DevComponents.DotNetBar.Controls.DataGridViewX DTGLista;
         private DevComponents.DotNetBar.ExpandablePanel EPNFiltrar;
         private DevComponents.DotNetBar.ButtonX BTNAceptar;
-        private DevComponents.DotNetBar.ButtonX BTNAgregarCliente;
+        private DevComponents.DotNetBar.ButtonX BTNAgregarPersona;
         private DevComponents.DotNetBar.ButtonX BTNFiltrar;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTFiltrar;
         private DevComponents.Editors.IntegerInput IINFilas;

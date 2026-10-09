@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMVenta_Registrar));
             this.GPPanelPrincipal = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.BTNBuscarCliente = new DevComponents.DotNetBar.ButtonX();
+            this.BTNBuscarUsuario = new DevComponents.DotNetBar.ButtonX();
             this.TXTProductoDescripcion = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -48,11 +48,11 @@
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TXTRazonSocial = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TXTNombreCliente = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.PCBFotografia = new System.Windows.Forms.PictureBox();
             this.LBLCodigoDeBarras = new DevComponents.DotNetBar.LabelX();
             this.BTNCodigoDeBarras = new DevComponents.DotNetBar.ButtonX();
-            this.TXTNIT = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TXTNITCliente = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
             this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
             this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
@@ -70,18 +70,18 @@
             this.GPPanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GPPanelPrincipal.CanvasColor = System.Drawing.SystemColors.Control;
             this.GPPanelPrincipal.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.GPPanelPrincipal.Controls.Add(this.BTNBuscarCliente);
+            this.GPPanelPrincipal.Controls.Add(this.BTNBuscarUsuario);
             this.GPPanelPrincipal.Controls.Add(this.TXTProductoDescripcion);
             this.GPPanelPrincipal.Controls.Add(this.labelX1);
             this.GPPanelPrincipal.Controls.Add(this.labelX2);
             this.GPPanelPrincipal.Controls.Add(this.numericUpDown1);
             this.GPPanelPrincipal.Controls.Add(this.numericUpDown2);
             this.GPPanelPrincipal.Controls.Add(this.groupPanel1);
-            this.GPPanelPrincipal.Controls.Add(this.TXTRazonSocial);
+            this.GPPanelPrincipal.Controls.Add(this.TXTNombreCliente);
             this.GPPanelPrincipal.Controls.Add(this.PCBFotografia);
             this.GPPanelPrincipal.Controls.Add(this.LBLCodigoDeBarras);
             this.GPPanelPrincipal.Controls.Add(this.BTNCodigoDeBarras);
-            this.GPPanelPrincipal.Controls.Add(this.TXTNIT);
+            this.GPPanelPrincipal.Controls.Add(this.TXTNITCliente);
             this.GPPanelPrincipal.Controls.Add(this.BTNSalir);
             this.GPPanelPrincipal.Controls.Add(this.BTNLimpiar);
             this.GPPanelPrincipal.Controls.Add(this.BTNGrabar);
@@ -122,17 +122,17 @@
             this.GPPanelPrincipal.TabIndex = 1;
             this.GPPanelPrincipal.Text = "Producto";
             // 
-            // BTNBuscarCliente
+            // BTNBuscarUsuario
             // 
-            this.BTNBuscarCliente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNBuscarCliente.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNBuscarCliente.Location = new System.Drawing.Point(710, 45);
-            this.BTNBuscarCliente.Name = "BTNBuscarCliente";
-            this.BTNBuscarCliente.Size = new System.Drawing.Size(69, 41);
-            this.BTNBuscarCliente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNBuscarCliente.TabIndex = 51;
-            this.BTNBuscarCliente.Text = "Buscar Cliente";
-            this.BTNBuscarCliente.Click += new System.EventHandler(this.BTNBuscarCliente_Click);
+            this.BTNBuscarUsuario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNBuscarUsuario.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNBuscarUsuario.Location = new System.Drawing.Point(710, 45);
+            this.BTNBuscarUsuario.Name = "BTNBuscarUsuario";
+            this.BTNBuscarUsuario.Size = new System.Drawing.Size(69, 41);
+            this.BTNBuscarUsuario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNBuscarUsuario.TabIndex = 51;
+            this.BTNBuscarUsuario.Text = "Buscar Cliente";
+            this.BTNBuscarUsuario.Click += new System.EventHandler(this.BTNBuscarUsuario_Click);
             // 
             // TXTProductoDescripcion
             // 
@@ -253,14 +253,14 @@
             this.DTGLista.AllowUserToAddRows = false;
             this.DTGLista.AllowUserToDeleteRows = false;
             this.DTGLista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DTGLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DTGLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.DTGLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DTGLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column7,
@@ -270,14 +270,14 @@
             this.Column15,
             this.Column12,
             this.Column16});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DTGLista.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DTGLista.DefaultCellStyle = dataGridViewCellStyle14;
             this.DTGLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGLista.EnableHeadersVisualStyles = false;
             this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
@@ -285,20 +285,19 @@
             this.DTGLista.MultiSelect = false;
             this.DTGLista.Name = "DTGLista";
             this.DTGLista.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DTGLista.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DTGLista.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.DTGLista.RowHeadersWidth = 51;
             this.DTGLista.RowTemplate.Height = 24;
             this.DTGLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DTGLista.Size = new System.Drawing.Size(766, 173);
             this.DTGLista.TabIndex = 18;
-            this.DTGLista.Leave += new System.EventHandler(this.DTGLista_Leave);
             // 
             // Column7
             // 
@@ -348,23 +347,23 @@
             this.Column16.ReadOnly = true;
             this.Column16.Visible = false;
             // 
-            // TXTRazonSocial
+            // TXTNombreCliente
             // 
-            this.TXTRazonSocial.BackColor = System.Drawing.Color.White;
+            this.TXTNombreCliente.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.TXTRazonSocial.Border.Class = "TextBoxBorder";
-            this.TXTRazonSocial.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTRazonSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTRazonSocial.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTRazonSocial.ForeColor = System.Drawing.Color.Black;
-            this.TXTRazonSocial.Location = new System.Drawing.Point(370, 14);
-            this.TXTRazonSocial.Name = "TXTRazonSocial";
-            this.TXTRazonSocial.PreventEnterBeep = true;
-            this.TXTRazonSocial.Size = new System.Drawing.Size(175, 20);
-            this.TXTRazonSocial.TabIndex = 44;
-            this.TXTRazonSocial.WatermarkText = "Nombre del Cliente";
+            this.TXTNombreCliente.Border.Class = "TextBoxBorder";
+            this.TXTNombreCliente.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTNombreCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTNombreCliente.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTNombreCliente.ForeColor = System.Drawing.Color.Black;
+            this.TXTNombreCliente.Location = new System.Drawing.Point(370, 14);
+            this.TXTNombreCliente.Name = "TXTNombreCliente";
+            this.TXTNombreCliente.PreventEnterBeep = true;
+            this.TXTNombreCliente.Size = new System.Drawing.Size(175, 20);
+            this.TXTNombreCliente.TabIndex = 44;
+            this.TXTNombreCliente.WatermarkText = "Nombre del Cliente";
             // 
             // PCBFotografia
             // 
@@ -399,24 +398,27 @@
             this.BTNCodigoDeBarras.Size = new System.Drawing.Size(25, 23);
             this.BTNCodigoDeBarras.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNCodigoDeBarras.TabIndex = 31;
+            this.BTNCodigoDeBarras.Click += new System.EventHandler(this.BTNCodigoDeBarras_Click);
+            this.BTNCodigoDeBarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BTNCodigoDeBarras_KeyPress);
             // 
-            // TXTNIT
+            // TXTNITCliente
             // 
-            this.TXTNIT.BackColor = System.Drawing.Color.White;
+            this.TXTNITCliente.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.TXTNIT.Border.Class = "TextBoxBorder";
-            this.TXTNIT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTNIT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTNIT.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTNIT.ForeColor = System.Drawing.Color.Black;
-            this.TXTNIT.Location = new System.Drawing.Point(189, 14);
-            this.TXTNIT.Name = "TXTNIT";
-            this.TXTNIT.PreventEnterBeep = true;
-            this.TXTNIT.Size = new System.Drawing.Size(175, 20);
-            this.TXTNIT.TabIndex = 7;
-            this.TXTNIT.WatermarkText = "NIT del Cliente";
+            this.TXTNITCliente.Border.Class = "TextBoxBorder";
+            this.TXTNITCliente.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTNITCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTNITCliente.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTNITCliente.ForeColor = System.Drawing.Color.Black;
+            this.TXTNITCliente.Location = new System.Drawing.Point(189, 14);
+            this.TXTNITCliente.Name = "TXTNITCliente";
+            this.TXTNITCliente.PreventEnterBeep = true;
+            this.TXTNITCliente.Size = new System.Drawing.Size(175, 20);
+            this.TXTNITCliente.TabIndex = 7;
+            this.TXTNITCliente.WatermarkText = "NIT del Cliente";
+            this.TXTNITCliente.Leave += new System.EventHandler(this.TXTNITCliente_Leave);
             // 
             // BTNSalir
             // 
@@ -502,12 +504,12 @@
         private DevComponents.DotNetBar.Controls.GroupPanel GPPanelPrincipal;
         private DevComponents.DotNetBar.LabelX LBLCodigoDeBarras;
         private DevComponents.DotNetBar.ButtonX BTNCodigoDeBarras;
-        private DevComponents.DotNetBar.Controls.TextBoxX TXTNIT;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTNITCliente;
         private DevComponents.DotNetBar.ButtonX BTNSalir;
         private DevComponents.DotNetBar.ButtonX BTNLimpiar;
         private DevComponents.DotNetBar.ButtonX BTNGrabar;
         private DevComponents.DotNetBar.Controls.SwitchButton SWBProductoEstadoStock;
-        private DevComponents.DotNetBar.Controls.TextBoxX TXTRazonSocial;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTNombreCliente;
         private System.Windows.Forms.PictureBox PCBFotografia;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private DevComponents.DotNetBar.LabelX labelX1;
@@ -523,6 +525,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private DevComponents.DotNetBar.ButtonX BTNBuscarCliente;
+        private DevComponents.DotNetBar.ButtonX BTNBuscarUsuario;
     }
 }

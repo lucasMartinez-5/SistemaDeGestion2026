@@ -36,9 +36,11 @@
             this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
             this.TXTNIT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTDireccion = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.TXTCelular = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TXTTelefono = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SWBEstado = new DevComponents.DotNetBar.Controls.SwitchButton();
             this.BLTAyuda = new DevComponents.DotNetBar.BalloonTip();
+            this.TXTNombre = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TXTCI = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GPPanelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +49,8 @@
             this.GPPanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.GPPanelPrincipal.CanvasColor = System.Drawing.SystemColors.Control;
             this.GPPanelPrincipal.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.GPPanelPrincipal.Controls.Add(this.TXTCI);
+            this.GPPanelPrincipal.Controls.Add(this.TXTNombre);
             this.GPPanelPrincipal.Controls.Add(this.BTNBuscarCliente);
             this.GPPanelPrincipal.Controls.Add(this.TXTRazonSocial);
             this.GPPanelPrincipal.Controls.Add(this.BTNSalir);
@@ -54,13 +58,13 @@
             this.GPPanelPrincipal.Controls.Add(this.BTNGrabar);
             this.GPPanelPrincipal.Controls.Add(this.TXTNIT);
             this.GPPanelPrincipal.Controls.Add(this.TXTDireccion);
-            this.GPPanelPrincipal.Controls.Add(this.TXTCelular);
+            this.GPPanelPrincipal.Controls.Add(this.TXTTelefono);
             this.GPPanelPrincipal.Controls.Add(this.SWBEstado);
             this.GPPanelPrincipal.DisabledBackColor = System.Drawing.Color.Empty;
             this.GPPanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GPPanelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.GPPanelPrincipal.Name = "GPPanelPrincipal";
-            this.GPPanelPrincipal.Size = new System.Drawing.Size(800, 165);
+            this.GPPanelPrincipal.Size = new System.Drawing.Size(800, 309);
             // 
             // 
             // 
@@ -90,7 +94,7 @@
             // 
             this.GPPanelPrincipal.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.GPPanelPrincipal.TabIndex = 3;
-            this.GPPanelPrincipal.Text = "Proveedor";
+            this.GPPanelPrincipal.Text = "Cliente";
             // 
             // BTNBuscarCliente
             // 
@@ -98,9 +102,9 @@
             this.BTNBuscarCliente.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNBuscarCliente.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
             this.BTNBuscarCliente.ImageFixedSize = new System.Drawing.Size(15, 15);
-            this.BTNBuscarCliente.Location = new System.Drawing.Point(472, 6);
+            this.BTNBuscarCliente.Location = new System.Drawing.Point(356, 3);
             this.BTNBuscarCliente.Name = "BTNBuscarCliente";
-            this.BTNBuscarCliente.Size = new System.Drawing.Size(23, 23);
+            this.BTNBuscarCliente.Size = new System.Drawing.Size(27, 25);
             this.BTNBuscarCliente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNBuscarCliente.TabIndex = 15;
             this.BTNBuscarCliente.Click += new System.EventHandler(this.BTNBuscarCliente_Click);
@@ -108,8 +112,6 @@
             // TXTRazonSocial
             // 
             this.TXTRazonSocial.BackColor = System.Drawing.Color.White;
-            this.BLTAyuda.SetBalloonCaption(this.TXTRazonSocial, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TXTRazonSocial, "Nombre Completo de la persona");
             // 
             // 
             // 
@@ -118,10 +120,10 @@
             this.TXTRazonSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTRazonSocial.DisabledBackColor = System.Drawing.Color.White;
             this.TXTRazonSocial.ForeColor = System.Drawing.Color.Black;
-            this.TXTRazonSocial.Location = new System.Drawing.Point(324, 35);
+            this.TXTRazonSocial.Location = new System.Drawing.Point(9, 63);
             this.TXTRazonSocial.Name = "TXTRazonSocial";
             this.TXTRazonSocial.PreventEnterBeep = true;
-            this.TXTRazonSocial.Size = new System.Drawing.Size(374, 20);
+            this.TXTRazonSocial.Size = new System.Drawing.Size(180, 20);
             this.TXTRazonSocial.TabIndex = 14;
             this.TXTRazonSocial.WatermarkText = "Razon Social";
             this.TXTRazonSocial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTRazonSocial_KeyDown);
@@ -133,7 +135,7 @@
             this.BTNSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTNSalir.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir;
             this.BTNSalir.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNSalir.Location = new System.Drawing.Point(578, 76);
+            this.BTNSalir.Location = new System.Drawing.Point(262, 115);
             this.BTNSalir.Name = "BTNSalir";
             this.BTNSalir.Size = new System.Drawing.Size(121, 51);
             this.BTNSalir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -147,7 +149,7 @@
             this.BTNLimpiar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNLimpiar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_limpiar;
             this.BTNLimpiar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNLimpiar.Location = new System.Drawing.Point(451, 76);
+            this.BTNLimpiar.Location = new System.Drawing.Point(135, 115);
             this.BTNLimpiar.Name = "BTNLimpiar";
             this.BTNLimpiar.Size = new System.Drawing.Size(121, 51);
             this.BTNLimpiar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -161,7 +163,7 @@
             this.BTNGrabar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.BTNGrabar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_guardar;
             this.BTNGrabar.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.BTNGrabar.Location = new System.Drawing.Point(324, 76);
+            this.BTNGrabar.Location = new System.Drawing.Point(8, 115);
             this.BTNGrabar.Name = "BTNGrabar";
             this.BTNGrabar.Size = new System.Drawing.Size(121, 51);
             this.BTNGrabar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -172,8 +174,6 @@
             // TXTNIT
             // 
             this.TXTNIT.BackColor = System.Drawing.Color.White;
-            this.BLTAyuda.SetBalloonCaption(this.TXTNIT, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TXTNIT, "Numero de Identificación Tributaria");
             // 
             // 
             // 
@@ -182,10 +182,10 @@
             this.TXTNIT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTNIT.DisabledBackColor = System.Drawing.Color.White;
             this.TXTNIT.ForeColor = System.Drawing.Color.Black;
-            this.TXTNIT.Location = new System.Drawing.Point(324, 6);
+            this.TXTNIT.Location = new System.Drawing.Point(195, 63);
             this.TXTNIT.Name = "TXTNIT";
             this.TXTNIT.PreventEnterBeep = true;
-            this.TXTNIT.Size = new System.Drawing.Size(142, 20);
+            this.TXTNIT.Size = new System.Drawing.Size(188, 20);
             this.TXTNIT.TabIndex = 0;
             this.TXTNIT.WatermarkText = "NIT";
             this.TXTNIT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTNIT_KeyDown);
@@ -193,8 +193,6 @@
             // TXTDireccion
             // 
             this.TXTDireccion.BackColor = System.Drawing.Color.White;
-            this.BLTAyuda.SetBalloonCaption(this.TXTDireccion, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TXTDireccion, "Direccion del lugar donde vive");
             // 
             // 
             // 
@@ -203,34 +201,32 @@
             this.TXTDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTDireccion.DisabledBackColor = System.Drawing.Color.White;
             this.TXTDireccion.ForeColor = System.Drawing.Color.Black;
-            this.TXTDireccion.Location = new System.Drawing.Point(9, 35);
+            this.TXTDireccion.Location = new System.Drawing.Point(8, 89);
             this.TXTDireccion.Multiline = true;
             this.TXTDireccion.Name = "TXTDireccion";
             this.TXTDireccion.PreventEnterBeep = true;
-            this.TXTDireccion.Size = new System.Drawing.Size(304, 92);
+            this.TXTDireccion.Size = new System.Drawing.Size(181, 20);
             this.TXTDireccion.TabIndex = 7;
             this.TXTDireccion.WatermarkText = "Dirección";
             // 
-            // TXTCelular
+            // TXTTelefono
             // 
-            this.TXTCelular.BackColor = System.Drawing.Color.White;
-            this.BLTAyuda.SetBalloonCaption(this.TXTCelular, "Ayuda");
-            this.BLTAyuda.SetBalloonText(this.TXTCelular, "Número de Celular");
+            this.TXTTelefono.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.TXTCelular.Border.Class = "TextBoxBorder";
-            this.TXTCelular.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.TXTCelular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTCelular.DisabledBackColor = System.Drawing.Color.White;
-            this.TXTCelular.ForeColor = System.Drawing.Color.Black;
-            this.TXTCelular.Location = new System.Drawing.Point(164, 6);
-            this.TXTCelular.Name = "TXTCelular";
-            this.TXTCelular.PreventEnterBeep = true;
-            this.TXTCelular.Size = new System.Drawing.Size(149, 20);
-            this.TXTCelular.TabIndex = 5;
-            this.TXTCelular.WatermarkText = "Celular";
-            this.TXTCelular.Enter += new System.EventHandler(this.TXTCelular_Enter);
+            this.TXTTelefono.Border.Class = "TextBoxBorder";
+            this.TXTTelefono.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTTelefono.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTTelefono.ForeColor = System.Drawing.Color.Black;
+            this.TXTTelefono.Location = new System.Drawing.Point(195, 89);
+            this.TXTTelefono.Name = "TXTTelefono";
+            this.TXTTelefono.PreventEnterBeep = true;
+            this.TXTTelefono.Size = new System.Drawing.Size(188, 20);
+            this.TXTTelefono.TabIndex = 5;
+            this.TXTTelefono.WatermarkText = "Celular";
+            this.TXTTelefono.Enter += new System.EventHandler(this.TXTCelular_Enter);
             // 
             // SWBEstado
             // 
@@ -246,11 +242,47 @@
             this.SWBEstado.OnBackColor = System.Drawing.Color.LimeGreen;
             this.SWBEstado.OnText = "Habilitado";
             this.SWBEstado.OnTextColor = System.Drawing.Color.White;
-            this.SWBEstado.Size = new System.Drawing.Size(149, 26);
+            this.SWBEstado.Size = new System.Drawing.Size(180, 26);
             this.SWBEstado.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.SWBEstado.TabIndex = 9;
             this.SWBEstado.Value = true;
             this.SWBEstado.ValueObject = "Y";
+            // 
+            // TXTNombre
+            // 
+            this.TXTNombre.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.TXTNombre.Border.Class = "TextBoxBorder";
+            this.TXTNombre.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTNombre.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTNombre.ForeColor = System.Drawing.Color.Black;
+            this.TXTNombre.Location = new System.Drawing.Point(9, 37);
+            this.TXTNombre.Name = "TXTNombre";
+            this.TXTNombre.PreventEnterBeep = true;
+            this.TXTNombre.Size = new System.Drawing.Size(374, 20);
+            this.TXTNombre.TabIndex = 16;
+            this.TXTNombre.WatermarkText = "Nombre Completo";
+            // 
+            // TXTCI
+            // 
+            this.TXTCI.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.TXTCI.Border.Class = "TextBoxBorder";
+            this.TXTCI.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.TXTCI.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTCI.DisabledBackColor = System.Drawing.Color.White;
+            this.TXTCI.ForeColor = System.Drawing.Color.Black;
+            this.TXTCI.Location = new System.Drawing.Point(195, 8);
+            this.TXTCI.Name = "TXTCI";
+            this.TXTCI.PreventEnterBeep = true;
+            this.TXTCI.Size = new System.Drawing.Size(155, 20);
+            this.TXTCI.TabIndex = 17;
+            this.TXTCI.WatermarkText = "CI";
             // 
             // FRMCliente_Registrar
             // 
@@ -258,7 +290,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTNSalir;
-            this.ClientSize = new System.Drawing.Size(800, 165);
+            this.ClientSize = new System.Drawing.Size(800, 309);
             this.Controls.Add(this.GPPanelPrincipal);
             this.DoubleBuffered = true;
             this.Name = "FRMCliente_Registrar";
@@ -280,8 +312,10 @@
         private DevComponents.DotNetBar.ButtonX BTNGrabar;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTNIT;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTDireccion;
-        private DevComponents.DotNetBar.Controls.TextBoxX TXTCelular;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTTelefono;
         private DevComponents.DotNetBar.Controls.SwitchButton SWBEstado;
         private DevComponents.DotNetBar.BalloonTip BLTAyuda;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTNombre;
+        private DevComponents.DotNetBar.Controls.TextBoxX TXTCI;
     }
 }

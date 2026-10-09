@@ -34,6 +34,7 @@
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.BTNCategorias = new DevComponents.DotNetBar.ButtonItem();
             this.BTNProductos = new DevComponents.DotNetBar.ButtonItem();
+            this.BTNVentas = new DevComponents.DotNetBar.ButtonItem();
             this.RBPAdministracion = new DevComponents.DotNetBar.RibbonPanel();
             this.BTNUsuarios = new DevComponents.DotNetBar.ButtonX();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
@@ -56,7 +57,6 @@
             this.RTBInventario = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.BTNVentas = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.RBPInventario.SuspendLayout();
             this.RBPAdministracion.SuspendLayout();
@@ -182,6 +182,16 @@
             this.BTNProductos.SubItemsExpandWidth = 16;
             this.BTNProductos.Text = "Productos";
             this.BTNProductos.Click += new System.EventHandler(this.BTNProductos_Click);
+            // 
+            // BTNVentas
+            // 
+            this.BTNVentas.Image = global::SistemaDeGestion2026.Properties.Resources.ic_categoria;
+            this.BTNVentas.ImageFixedSize = new System.Drawing.Size(50, 50);
+            this.BTNVentas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.BTNVentas.Name = "BTNVentas";
+            this.BTNVentas.SubItemsExpandWidth = 14;
+            this.BTNVentas.Text = "Ventas";
+            this.BTNVentas.Click += new System.EventHandler(this.BTNVentas_Click);
             // 
             // RBPAdministracion
             // 
@@ -463,20 +473,11 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.VisualStudio2012Light;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204))))));
             // 
-            // BTNVentas
-            // 
-            this.BTNVentas.Image = global::SistemaDeGestion2026.Properties.Resources.ic_categoria;
-            this.BTNVentas.ImageFixedSize = new System.Drawing.Size(50, 50);
-            this.BTNVentas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.BTNVentas.Name = "BTNVentas";
-            this.BTNVentas.SubItemsExpandWidth = 14;
-            this.BTNVentas.Text = "Ventas";
-            // 
             // FRMPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 493);
+            this.ClientSize = new System.Drawing.Size(670, 491);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);

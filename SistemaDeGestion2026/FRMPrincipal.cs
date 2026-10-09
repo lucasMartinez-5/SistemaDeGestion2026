@@ -201,5 +201,16 @@ namespace SistemaDeGestion2026
             a.MdiParent = this;
             a.Show();
         }
+
+        private void BTNVentas_Click(object sender, EventArgs e)
+        {
+            foreach (Form s in this.MdiChildren)
+            {
+                s.Close();
+            }
+            FRMVenta_Lista a = new FRMVenta_Lista();
+            a.MdiParent = this;
+            a.Show();
+        }
     }
 }

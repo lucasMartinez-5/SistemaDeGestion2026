@@ -221,7 +221,7 @@ namespace CapaRN
                 return false;
             }
         }
-        public bool ObtenerDatosCodBarra(bool modificar, string codbarr)
+        public bool ObtenerDatosCodigo(bool modificar, string codbarr)
         {
             this.Conexion.Conectar();
             string sql = "select " +

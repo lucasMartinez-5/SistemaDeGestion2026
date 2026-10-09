@@ -305,7 +305,7 @@
             this.TXTFiltrar.Location = new System.Drawing.Point(93, 41);
             this.TXTFiltrar.Name = "TXTFiltrar";
             this.TXTFiltrar.PreventEnterBeep = true;
-            this.TXTFiltrar.Size = new System.Drawing.Size(196, 23);
+            this.TXTFiltrar.Size = new System.Drawing.Size(196, 20);
             this.TXTFiltrar.TabIndex = 5;
             this.TXTFiltrar.WatermarkText = "Datos a buscar...";
             // 
@@ -401,6 +401,7 @@
             this.BTNRegistrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNRegistrar.TabIndex = 4;
             this.BTNRegistrar.Text = "&Registrar";
+            this.BTNRegistrar.Click += new System.EventHandler(this.BTNRegistrar_Click);
             // 
             // FRMVenta_Lista
             // 
@@ -410,6 +411,7 @@
             this.Controls.Add(this.DTGLista);
             this.Controls.Add(this.EPNFiltrar);
             this.Controls.Add(this.EPNOpciones);
+            this.DoubleBuffered = true;
             this.Name = "FRMVenta_Lista";
             this.Text = "FRMVenta_Lista";
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).EndInit();

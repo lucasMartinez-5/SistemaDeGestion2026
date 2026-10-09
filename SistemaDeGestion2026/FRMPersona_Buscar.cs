@@ -17,6 +17,8 @@ namespace SistemaDeGestion2026
         public aperson persona = new aperson();
         private List<aperson> lista_personas = new List<aperson>();
         public bool seleccionadoOk = false;
+
+        public String condicion = "";
         #endregion
 
         #region Constructor
@@ -31,32 +33,27 @@ namespace SistemaDeGestion2026
         {
             DTGLista.Rows.Clear();
             lista_personas.Clear();
-            String soloSinUsuariProveedorCliente= "papscodper not in (select papscodper from aperson, aususis where papscodper = fauscodper order by papscodper)";
-            lista_personas = persona.Lista(soloSinUsuariProveedorCliente + " AND papscodper not in (select papscodper from aperson, aproved where papscodper = faprcntpro order by papscodper) " + " AND papscodper not in (select papscodper from aperson, aclient where papscodper = faclcntcli order by papscodper) " +
-                                           "and (capsnumcid like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capsapepat like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capsapemat like '%" + TXTFiltrar.Text + "%' or " +
-                                           "capsnomper like '%" + TXTFiltrar.Text + "%') " +
-                                           "limit " +
+            lista_personas = persona.Lista(condicion + " and (capsnumcid like '%" + TXTFiltrar.Text + "%' or " +
+                                            "capsapepat like '%" + TXTFiltrar.Text + "%' or " +
+                                            "capsapemat like '%" + TXTFiltrar.Text + "%' or " +
+                                            "capsnomper like '%" + TXTFiltrar.Text + "%') and capsestper=true " +
+                                            "limit " +
                                            IINFilas.Value.ToString()
                                            );
-
             foreach (aperson a in lista_personas)
             {
                 DTGLista.Rows.Add();
-
                 if (a.capsestper)
                 {
                     if (DTGLista.Rows.Count % 2 == 0)
                     {
-                        DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightSkyBlue;
+                        DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.PaleGoldenrod;
                     }
                 }
                 else
                 {
                     DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Salmon;
                 }
-
                 DTGLista[0, DTGLista.Rows.Count - 1].Value = a.papscodper;
                 DTGLista[1, DTGLista.Rows.Count - 1].Value = a.capsestper;
                 DTGLista[2, DTGLista.Rows.Count - 1].Value = a.capsnumcid;
@@ -76,6 +73,7 @@ namespace SistemaDeGestion2026
                 DTGLista[8, DTGLista.Rows.Count - 1].Value = a.capsnumcel;
 
             }
+
         }
         #endregion
 

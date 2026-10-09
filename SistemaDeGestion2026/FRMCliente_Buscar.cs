@@ -15,8 +15,9 @@ namespace CapaRN
     {
         #region Variables
         public aclient cliente = new aclient();
-        private List<aclient> lista_clientes = new List<aclient>();
+        private List<aclient> lista = new List<aclient>();
         public bool seleccionadoOk = false;
+        public String condicion = "";
         #endregion
         public FRMCliente_Buscar()
         {
@@ -26,35 +27,35 @@ namespace CapaRN
         private void ActualizarGrid()
         {
             DTGLista.Rows.Clear();
-            lista_clientes.Clear();
-            lista_clientes = cliente.Lista("(caclnitcli like '%" + TXTFiltrar.Text + "%' or " +
-                                           "caclsoccli like '%" + TXTFiltrar.Text + "%') and caclestcli=true limit " +
-                                           IINFilas.Value.ToString()
-                                           );
-            foreach (aclient a in lista_clientes)
+            lista.Clear();
+            lista = cliente.Lista("(caclrazcli like '%" + TXTFiltrar.Text + "%' or " +
+                                    "caclnitcli like '%" + TXTFiltrar.Text + "%' or " +
+                                    "cacldircli like '%" + TXTFiltrar.Text + "%' or " +
+                                    "cacltelcli like '%" + TXTFiltrar.Text + "%') and caclestcli=true limit " +
+                                    IINFilas.Value.ToString()
+                                    );
+
+            foreach (aclient a in lista)
             {
                 DTGLista.Rows.Add();
 
-                if (a.caclestcli)
+                if (DTGLista.Rows.Count % 2 == 0)
                 {
-                    if (DTGLista.Rows.Count % 2 == 0)
-                    {
-                        DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightSkyBlue;
-                    }
+                    DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Gainsboro;
                 }
-                else
-                {
-                    DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Salmon;
-                }
-                //
+
                 DTGLista[0, DTGLista.Rows.Count - 1].Value = a.paclcodcli;
-                DTGLista[1, DTGLista.Rows.Count - 1].Value = a.caclsoccli;
+                DTGLista[1, DTGLista.Rows.Count - 1].Value = a.caclrazcli;
                 DTGLista[2, DTGLista.Rows.Count - 1].Value = a.caclnitcli;
-                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.caclnumcel;
+                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.cacltelcli;
                 DTGLista[4, DTGLista.Rows.Count - 1].Value = a.cacldircli;
+
             }
+
         }
         #endregion
+
+        #region Eventos
         private void FRMCliente_Buscar_Load(object sender, EventArgs e)
         {
             ActualizarGrid();
@@ -70,21 +71,11 @@ namespace CapaRN
             TXTFiltrar.SelectAll();
         }
 
-        private void BTNAgregarCliente_Click(object sender, EventArgs e)
-        {
-            FRMCliente_Registrar a = new FRMCliente_Registrar();
-            a.ShowDialog();
-            if (a.actualizar)
-            {
-                ActualizarGrid();
-            }
-        }
-
         private void BTNAceptar_Click(object sender, EventArgs e)
         {
             if (DTGLista.SelectedRows.Count == 1)
             {
-                cliente.paclcodcli = DTGLista[0, DTGLista.SelectedRows[0].Index].Value?.ToString();
+                cliente.paclcodcli = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
                 if (cliente.ObtenerDatos())
                 {
                     seleccionadoOk = true;
@@ -95,19 +86,25 @@ namespace CapaRN
 
         private void DTGLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (DTGLista.SelectedRows.Count == 1)
             {
-                if (DTGLista.SelectedRows.Count > 0)
+                cliente.paclcodcli = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (cliente.ObtenerDatos())
                 {
-                    FRMPersona_Registrar F1 = new FRMPersona_Registrar();
-                    F1.modificar = true;
-                    F1.codPerMod = DTGLista[0, e.RowIndex].Value.ToString();
-                    F1.ShowDialog();
-                    if (F1.actualizar)
-                    {
-                        ActualizarGrid();
-                    }
+                    seleccionadoOk = true;
+                    this.Close();
                 }
+            }
+        }
+        #endregion
+
+        private void BTNAgregarPersona_Click(object sender, EventArgs e)
+        {
+            FRMCliente_Registrar a = new FRMCliente_Registrar();
+            a.ShowDialog();
+            if (a.actualizar)
+            {
+                ActualizarGrid();
             }
         }
     }

@@ -15,37 +15,89 @@ namespace SistemaDeGestion2026
     {
         #region Variables
         private aclient cliente = new aclient();
-        private List<aclient> lista_clientes = new List<aclient>();
-        public bool seleccionadoOk = false;
-        private bool clienteOk = false;
+        private bool clienteok = false;
+        private bool lectorCBHabilitado = false;
+        public aproduc producto = new aproduc();
         #endregion
+
+        #region Constructor
         public FRMVenta_Registrar()
         {
             InitializeComponent();
         }
 
-        private void DTGLista_Leave(object sender, EventArgs e)
+        #endregion
+
+        private void TXTNITCliente_Leave(object sender, EventArgs e)
         {
-            
+            cliente.caclnitcli = TXTNITCliente.Text;
+            if (cliente.ObtenerDatosNIT())
+            {
+                TXTNombreCliente.Text = cliente.caclrazcli;
+                clienteok = true;
+            }
+            else
+            {
+                TXTNombreCliente.Text = "Nombre del cliente";
+                clienteok = false;
+            }
         }
 
-        private void BTNBuscarCliente_Click(object sender, EventArgs e)
+        private void BTNBuscarUsuario_Click(object sender, EventArgs e)
         {
             FRMCliente_Buscar a = new FRMCliente_Buscar();
             a.ShowDialog();
             if (a.seleccionadoOk)
             {
                 this.cliente = a.cliente;
-                this.clienteOk = true;
-                TXTNIT.Text = cliente.caclnitcli;
-                TXTRazonSocial.Text = cliente.caclsoccli;
+                this.clienteok = true;
+                TXTNITCliente.Text = cliente.caclnitcli;
+                TXTNombreCliente.Text = cliente.caclrazcli;
             }
             else
             {
-                this.clienteOk = false;
-                TXTNIT.Text = "";
-                TXTRazonSocial.Text = "";
-                
+                this.clienteok = false;
+                TXTNITCliente.Text = "";
+                TXTNombreCliente.Text = "Nombre del cliente";
+            }
+        }
+
+        private void BTNCodigoDeBarras_Click(object sender, EventArgs e)
+        {
+            if (!lectorCBHabilitado)
+            {
+                lectorCBHabilitado = true;
+                LBLCodigoDeBarras.Text = "LECTOR ACTIVO";
+                LBLCodigoDeBarras.BackColor = Color.PaleGreen;
+            }
+            else
+            {
+                if (LBLCodigoDeBarras.Text == "LECTOR ACTIVO")
+                {
+                    LBLCodigoDeBarras.Text = "SIN CÓDIGO";
+                    LBLCodigoDeBarras.BackColor = Color.Salmon;
+                }
+                else
+                {
+                    producto.capdcodbar = LBLCodigoDeBarras.Text;
+                    if (producto.ObtenerDatosCodigo(false, producto.capdcodbar))
+                    {
+                        MessageBox.Show("Producto encontrado " + producto.capddespro);
+                    }
+                }
+                lectorCBHabilitado = false;
+            }
+        }
+
+        private void BTNCodigoDeBarras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (LBLCodigoDeBarras.Text == "LECTOR ACTIVO")
+            {
+                LBLCodigoDeBarras.Text = "" + e.KeyChar;
+            }
+            else
+            {
+                LBLCodigoDeBarras.Text += e.KeyChar;
             }
         }
     }
