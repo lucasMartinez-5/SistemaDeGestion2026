@@ -18,6 +18,8 @@ namespace SistemaDeGestion2026
         private bool clienteok = false;
         private bool lectorCBHabilitado = false;
         public aproduc producto = new aproduc();
+
+        private List<liteven> listaItems = new List<liteven>();
         #endregion
 
         #region Constructor
@@ -28,6 +30,30 @@ namespace SistemaDeGestion2026
 
         #endregion
 
+        private void ActualizarGridItems()
+        {
+            DTGLista.Rows.Clear();
+            foreach (liteven item in listaItems)
+            {
+                DTGLista.Rows.Add();
+                DTGLista[0, DTGLista.Rows.Count - 1].Value = item.faivcodpro;
+                DTGLista[1, DTGLista.Rows.Count - 1].Value = item.capdmodpro;
+                DTGLista[2, DTGLista.Rows.Count - 1].Value = item.capdcodbar;
+                DTGLista[3, DTGLista.Rows.Count - 1].Value = item.capdnompro;
+                DTGLista[4, DTGLista.Rows.Count - 1].Value = item.capdtalpro;
+                DTGLista[5, DTGLista.Rows.Count - 1].Value = item.capddespro;
+                DTGLista[6, DTGLista.Rows.Count - 1].Value = item.caivcanite;
+                DTGLista[7, DTGLista.Rows.Count - 1].Value = item.caivpreuni;
+                DTGLista[8, DTGLista.Rows.Count - 1].Value = item.caivsubtot;
+            }
+        }
+
+        private void AgregarProductoLista()
+        {
+            liteven item = new liteven();
+            item.faivcodpro = producto.papdcodpro;
+
+        }
         private void TXTNITCliente_Leave(object sender, EventArgs e)
         {
             cliente.caclnitcli = TXTNITCliente.Text;
