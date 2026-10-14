@@ -203,12 +203,17 @@ namespace SistemaDeGestion2026
                 this.personaOK = true;
 
                 TXTNombre.Text = persona.capsapepat + " " + persona.capsapemat + " " + persona.capsnomper;
-
+                TXTDireccion.Text = persona.capsdirper;
+                TXTTelefono.Text = persona.capsnumcel;
+                TXTCI.Text = persona.capsnumcid;
             }
             else
             {
                 this.personaOK = false;
                 TXTNombre.Text = "Persona";
+                TXTDireccion.Text = "";
+                TXTTelefono.Text = "";
+                TXTCI.Text = "";
 
             }
         }

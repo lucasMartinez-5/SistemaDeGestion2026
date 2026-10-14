@@ -68,7 +68,7 @@ namespace SistemaDeGestion2026
 
         private void BTNRegistrar_Click(object sender, EventArgs e)
         {
-            FRMCliente_Registrar a = new FRMCliente_Registrar();
+            FRMVenta_Registrar a = new FRMVenta_Registrar();
             a.ShowDialog();
             if (a.actualizar)
             {
