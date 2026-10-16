@@ -18,6 +18,7 @@ namespace SistemaDeGestion2026
         private bool clienteok = false;
         private bool lectorCBHabilitado = false;
         public aproduc producto = new aproduc();
+        public bool productoOk = false;
         private List<liteven> listaItems = new List<liteven>();
         public bool actualizar = false;
         #endregion
@@ -128,7 +129,7 @@ namespace SistemaDeGestion2026
                 if (producto.ObtenerDatosCodigo(false, producto.capdcodbar))
                 {
                     AgregarProductoALista(producto);
-                    lectorCBHabilitado = true;
+                    //lectorCBHabilitado = true;
                     LBLCodigoDeBarras.Text = "LECTOR ACTIVO";
                     LBLCodigoDeBarras.BackColor = Color.PaleGreen;
                 }
@@ -138,7 +139,7 @@ namespace SistemaDeGestion2026
                         MessageBoxIcon.Warning);
                     LBLCodigoDeBarras.Text = "LECTOR ACTIVO";
                     LBLCodigoDeBarras.BackColor = Color.PaleGreen;
-                    BTNCodigoDeBarras.Focus();
+                    //BTNCodigoDeBarras.Focus();
                 }
             }
         }
@@ -168,6 +169,61 @@ namespace SistemaDeGestion2026
             lectorCBHabilitado = false;
             LBLCodigoDeBarras.Text = "LECTOR INACTIVO";
             LBLCodigoDeBarras.BackColor = Color.LightSalmon;
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(DTGLista.SelectedRows.Count > 0)
+            {
+                if(MessageBox.Show("¿Está seguro de eliminar el producto seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    EliminarItem(DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString());
+                    /*
+                    int selectedIndex = DTGLista.SelectedRows[0].Index;
+                    string codigoProducto = DTGLista[0, selectedIndex].Value.ToString();
+                    liteven itemToRemove = listaItems.Find(x => x.faivcodpro == codigoProducto);
+                    if (itemToRemove != null)
+                    {
+                        listaItems.Remove(itemToRemove);
+                        ActualizarGridItems();
+                    }
+                    */
+                }
+            }
+        }
+        private void EliminarItem(string codPro)
+        {
+            listaItems.RemoveAll(x => x.faivcodpro == codPro);
+            ActualizarGridItems();
+            /*
+            liteven itemToRemove = listaItems.Find(x => x.faivcodpro == codPro);
+            if (itemToRemove != null)
+            {
+                listaItems.Remove(itemToRemove);
+                ActualizarGridItems();
+            }
+            */
+        }
+
+        private void LBLCodigoDeBarras_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNBuscar_Producto_Click(object sender, EventArgs e)
+        {
+            FRMProducto_Buscar a = new FRMProducto_Buscar();
+            a.ShowDialog();
+            if (a.seleccionadoOk)
+            {
+                this.producto = a.producto;
+                this.productoOk = true;
+                AgregarProductoALista(producto);
+            }
+            else
+            {
+                this.productoOk = false;
+            }
         }
     }
 }
