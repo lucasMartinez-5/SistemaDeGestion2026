@@ -51,21 +51,35 @@ namespace SistemaDeGestion2026
         private void AgregarProductoALista(aproduc pro)
         {
             liteven item = new liteven();
-            item.faivcodpro = pro.papdcodpro;
-            item.capdmodpro = pro.capdmodpro;
-            item.capdcodbar = pro.capdcodbar;
-            item.capdnompro = pro.capdnompro;
-            item.capdtalpro = pro.capdtalpro;
-            item.capddespro = pro.capddespro;
-            item.caivcanite = 1; // Cantidad por defecto
-            item.caivpreuni = pro.capdpreven; // Precio por defecto
-            item.caivsubtot = item.caivcanite * item.caivpreuni;
-            item.caivestite = true; // Estado activo            
-            listaItems.Add(item);
+
+            item = listaItems.Find(x => x.faivcodpro == pro.papdcodpro);
+
+            if (item != null)
+            {
+                item.caivcanite += 1; // Incrementar la cantidad en 1
+                item.caivsubtot = item.caivcanite * item.caivpreuni; // Actualizar el subtotal
+            }
+            else
+            {
+                item = new liteven();
+                item.faivcodpro = pro.papdcodpro;
+                item.capdmodpro = pro.capdmodpro;
+                item.capdcodbar = pro.capdcodbar;
+                item.capdnompro = pro.capdnompro;
+                item.capdtalpro = pro.capdtalpro;
+                item.capddespro = pro.capddespro;
+                item.caivcanite = 1; // Cantidad por defecto
+                item.caivpreuni = pro.capdpreven; // Precio por defecto
+                item.caivsubtot = item.caivcanite * item.caivpreuni;
+                item.caivestite = true; // Estado activo            
+                listaItems.Add(item);
+            }
             ActualizarGridItems();
+
         }
         #endregion
 
+        #region Eventos
         private void TXTNITCliente_Leave(object sender, EventArgs e)
         {
             cliente.caclnitcli = TXTNITCliente.Text;
@@ -110,22 +124,22 @@ namespace SistemaDeGestion2026
             }
             else
             {
-                if (LBLCodigoDeBarras.Text == "LECTOR ACTIVO")
+                producto.capdcodbar = LBLCodigoDeBarras.Text;
+                if (producto.ObtenerDatosCodigo(false, producto.capdcodbar))
                 {
-                    LBLCodigoDeBarras.Text = "LECTOR INACTIVO";
-                    LBLCodigoDeBarras.BackColor = Color.Salmon;
+                    AgregarProductoALista(producto);
+                    lectorCBHabilitado = true;
+                    LBLCodigoDeBarras.Text = "LECTOR ACTIVO";
+                    LBLCodigoDeBarras.BackColor = Color.PaleGreen;
                 }
                 else
                 {
-                    producto.capdcodbar = LBLCodigoDeBarras.Text;
-                    if (producto.ObtenerDatosCodigo(false, producto.capdcodbar))
-                    {
-                        AgregarProductoALista(producto);
-                        LBLCodigoDeBarras.Text = "LECTOR ACTIVO";
-                        LBLCodigoDeBarras.BackColor = Color.PaleGreen;
-                    }
+                    MessageBox.Show("Producto no encontrado", "Mensaje", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    LBLCodigoDeBarras.Text = "LECTOR ACTIVO";
+                    LBLCodigoDeBarras.BackColor = Color.PaleGreen;
+                    BTNCodigoDeBarras.Focus();
                 }
-                lectorCBHabilitado = false;
             }
         }
 
@@ -139,6 +153,21 @@ namespace SistemaDeGestion2026
             {
                 LBLCodigoDeBarras.Text += e.KeyChar;
             }
+        }
+        #endregion
+
+        private void BTNCodigoDeBarras_Leave(object sender, EventArgs e)
+        {
+            lectorCBHabilitado = false;
+            LBLCodigoDeBarras.Text = "LECTOR INACTIVO";
+            LBLCodigoDeBarras.BackColor = Color.LightSalmon;
+        }
+
+        private void FRMVenta_Registrar_Load(object sender, EventArgs e)
+        {
+            lectorCBHabilitado = false;
+            LBLCodigoDeBarras.Text = "LECTOR INACTIVO";
+            LBLCodigoDeBarras.BackColor = Color.LightSalmon;
         }
     }
 }
