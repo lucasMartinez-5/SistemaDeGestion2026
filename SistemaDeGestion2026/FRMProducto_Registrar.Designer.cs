@@ -298,6 +298,7 @@
             // 
             this.BTNCodigoDeBarras.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BTNCodigoDeBarras.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNCodigoDeBarras.Image = global::SistemaDeGestion2026.Properties.Resources.ic_lectorBarras23;
             this.BTNCodigoDeBarras.Location = new System.Drawing.Point(339, 14);
             this.BTNCodigoDeBarras.Name = "BTNCodigoDeBarras";
             this.BTNCodigoDeBarras.Size = new System.Drawing.Size(25, 23);

@@ -245,7 +245,7 @@ namespace CapaRN
                                      "capdmatpro " +
                              "from aproduc " +
                              "where " +
-                                "capdcodbar = @capdcodbar";
+                                "capdcodbar = @capdcodbar and capdcodbar != '' ";
 
             if (modificar)
             {

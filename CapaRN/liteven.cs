@@ -25,6 +25,12 @@ namespace CapaRN
         private string _capddespro;
         private string _capdtalpro;
 
+
+
+
+
+
+
         //Instancia para conexion a PostgreSQL 8.2
         private CLConexionPGSQL Conexion;
         #endregion

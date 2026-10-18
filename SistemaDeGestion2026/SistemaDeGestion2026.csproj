@@ -474,5 +474,8 @@
   <ItemGroup>
     <None Include="Resources\ic_proveedor_reporte.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_lectorBarras23.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
