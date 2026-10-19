@@ -153,31 +153,46 @@ namespace SistemaDeGestion2026
         private void AgregarProducto(aproduc pro)
         {
             liteven item = new liteven();
-
             item = listaItems.Find(x => x.faivcodpro == pro.papdcodpro);
 
             if (item != null)
             {
-                item.caivcanite += 1;
-                item.caivsubtot = item.caivcanite * item.caivpreuni;
+                if ((pro.capdstopro - item.caivcanite) > 0)
+                {
+                    item.caivcanite += 1;
+                    item.caivsubtot = item.caivpreuni * item.caivcanite;
+                }
+                else
+                {
+                    MessageBox.Show("No hay suficiente stock para agregar", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                item = new liteven();
-                item.faivcodpro = pro.papdcodpro;
-                item.capdmodpro = pro.capdmodpro;
-                item.capdcodbar = pro.capdcodbar;
-                item.capdnompro = pro.capdnompro;
-                item.capdtalpro = pro.capdtalpro;
-                item.capddespro = pro.capddespro;
-                item.caivcanite = 1;
-                item.caivpreuni = pro.capdpreven;
-                item.caivsubtot = item.caivcanite * item.caivpreuni;
-                item.caivestite = true;
-                listaItems.Add(item);
+                if (pro.capdstopro > 0)
+                {
+                    item = new liteven();
+                    item.faivcodpro = pro.papdcodpro;
+                    item.capdmodpro = pro.capdmodpro;
+                    item.capdcodbar = pro.capdcodbar;
+                    item.capdnompro = pro.capdnompro;
+                    item.capdtalpro = pro.capdtalpro;
+                    item.capddespro = pro.capddespro;
+                    item.caivcanite = 1;
+                    item.caivpreuni = pro.capdpreven;
+                    item.caivsubtot = item.caivpreuni * item.caivcanite;
+                    item.caivestite = true;
+                    listaItems.Add(item);
+                }
+                else
+                {
+                    MessageBox.Show("No hay suficiente stock para agregar", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             ActualizarGridItems();
+            CalcularTotal();
         }
+
         private void ActualizarGridItems()
         {
             DTGLista.Rows.Clear();
