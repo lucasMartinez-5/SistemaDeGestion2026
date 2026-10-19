@@ -36,11 +36,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.EPNFiltrar = new DevComponents.DotNetBar.ExpandablePanel();
-            this.TXTFiltrar = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.IINFilas = new DevComponents.Editors.IntegerInput();
             this.BTNAceptar = new DevComponents.DotNetBar.ButtonX();
             this.BTNAgregarPersona = new DevComponents.DotNetBar.ButtonX();
             this.BTNFiltrar = new DevComponents.DotNetBar.ButtonX();
+            this.TXTFiltrar = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.IINFilas = new DevComponents.Editors.IntegerInput();
             this.DTGLista = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
@@ -48,13 +48,13 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EPNFiltrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IINFilas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).BeginInit();
@@ -88,6 +88,44 @@
             this.EPNFiltrar.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.EPNFiltrar.TitleStyle.GradientAngle = 90;
             this.EPNFiltrar.TitleText = "Filtrar";
+            // 
+            // BTNAceptar
+            // 
+            this.BTNAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNAceptar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BTNAceptar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_ok;
+            this.BTNAceptar.ImageFixedSize = new System.Drawing.Size(15, 15);
+            this.BTNAceptar.Location = new System.Drawing.Point(361, 35);
+            this.BTNAceptar.Name = "BTNAceptar";
+            this.BTNAceptar.Size = new System.Drawing.Size(27, 26);
+            this.BTNAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNAceptar.TabIndex = 20;
+            this.BTNAceptar.Click += new System.EventHandler(this.BTNAceptar_Click);
+            // 
+            // BTNAgregarPersona
+            // 
+            this.BTNAgregarPersona.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNAgregarPersona.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNAgregarPersona.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BTNAgregarPersona.ImageFixedSize = new System.Drawing.Size(15, 15);
+            this.BTNAgregarPersona.Location = new System.Drawing.Point(328, 35);
+            this.BTNAgregarPersona.Name = "BTNAgregarPersona";
+            this.BTNAgregarPersona.Size = new System.Drawing.Size(27, 26);
+            this.BTNAgregarPersona.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNAgregarPersona.TabIndex = 19;
+            // 
+            // BTNFiltrar
+            // 
+            this.BTNFiltrar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNFiltrar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNFiltrar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
+            this.BTNFiltrar.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNFiltrar.Location = new System.Drawing.Point(295, 35);
+            this.BTNFiltrar.Name = "BTNFiltrar";
+            this.BTNFiltrar.Size = new System.Drawing.Size(27, 26);
+            this.BTNFiltrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNFiltrar.TabIndex = 18;
             // 
             // TXTFiltrar
             // 
@@ -125,43 +163,6 @@
             this.IINFilas.TabIndex = 4;
             this.IINFilas.Value = 50;
             // 
-            // BTNAceptar
-            // 
-            this.BTNAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNAceptar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTNAceptar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_ok;
-            this.BTNAceptar.ImageFixedSize = new System.Drawing.Size(15, 15);
-            this.BTNAceptar.Location = new System.Drawing.Point(361, 35);
-            this.BTNAceptar.Name = "BTNAceptar";
-            this.BTNAceptar.Size = new System.Drawing.Size(27, 26);
-            this.BTNAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNAceptar.TabIndex = 20;
-            // 
-            // BTNAgregarPersona
-            // 
-            this.BTNAgregarPersona.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNAgregarPersona.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNAgregarPersona.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTNAgregarPersona.ImageFixedSize = new System.Drawing.Size(15, 15);
-            this.BTNAgregarPersona.Location = new System.Drawing.Point(328, 35);
-            this.BTNAgregarPersona.Name = "BTNAgregarPersona";
-            this.BTNAgregarPersona.Size = new System.Drawing.Size(27, 26);
-            this.BTNAgregarPersona.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNAgregarPersona.TabIndex = 19;
-            // 
-            // BTNFiltrar
-            // 
-            this.BTNFiltrar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNFiltrar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNFiltrar.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
-            this.BTNFiltrar.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNFiltrar.Location = new System.Drawing.Point(295, 35);
-            this.BTNFiltrar.Name = "BTNFiltrar";
-            this.BTNFiltrar.Size = new System.Drawing.Size(27, 26);
-            this.BTNFiltrar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNFiltrar.TabIndex = 18;
-            // 
             // DTGLista
             // 
             this.DTGLista.AllowUserToAddRows = false;
@@ -183,13 +184,13 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column13,
             this.Column7,
             this.Column8,
             this.Column9,
             this.Column10,
             this.Column11,
-            this.Column12});
+            this.Column12,
+            this.Column13});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -200,7 +201,7 @@
             this.DTGLista.DefaultCellStyle = dataGridViewCellStyle6;
             this.DTGLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGLista.EnableHeadersVisualStyles = false;
-            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DTGLista.Location = new System.Drawing.Point(0, 73);
             this.DTGLista.MultiSelect = false;
             this.DTGLista.Name = "DTGLista";
@@ -275,17 +276,9 @@
             this.Column6.ReadOnly = true;
             this.Column6.Width = 130;
             // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Género";
-            this.Column13.MinimumWidth = 130;
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 130;
-            // 
             // Column7
             // 
-            this.Column7.HeaderText = "Marca";
+            this.Column7.HeaderText = "Género";
             this.Column7.MinimumWidth = 130;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -293,7 +286,7 @@
             // 
             // Column8
             // 
-            this.Column8.HeaderText = "Color";
+            this.Column8.HeaderText = "Marca";
             this.Column8.MinimumWidth = 130;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -301,19 +294,15 @@
             // 
             // Column9
             // 
-            this.Column9.HeaderText = "Talla";
-            this.Column9.MinimumWidth = 80;
+            this.Column9.HeaderText = "Color";
+            this.Column9.MinimumWidth = 130;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
-            this.Column9.Width = 80;
+            this.Column9.Width = 130;
             // 
             // Column10
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column10.HeaderText = "Stock";
+            this.Column10.HeaderText = "Talla";
             this.Column10.MinimumWidth = 80;
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
@@ -321,11 +310,11 @@
             // 
             // Column11
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Column11.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column11.HeaderText = "Precio";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column11.HeaderText = "Stock";
             this.Column11.MinimumWidth = 80;
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
@@ -333,21 +322,34 @@
             // 
             // Column12
             // 
-            this.Column12.HeaderText = "Descripción";
-            this.Column12.MinimumWidth = 200;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column12.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column12.HeaderText = "Precio";
+            this.Column12.MinimumWidth = 80;
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
-            this.Column12.Width = 200;
+            this.Column12.Width = 80;
             // 
-            // FRMProducto_Bucar
+            // Column13
+            // 
+            this.Column13.HeaderText = "Descripción";
+            this.Column13.MinimumWidth = 200;
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Width = 200;
+            // 
+            // FRMProducto_Buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1323, 450);
             this.Controls.Add(this.DTGLista);
             this.Controls.Add(this.EPNFiltrar);
-            this.Name = "FRMProducto_Bucar";
+            this.Name = "FRMProducto_Buscar";
             this.Text = "FRMProducto_Bucar";
+            this.Load += new System.EventHandler(this.FRMProducto_Bucar_Load);
             this.EPNFiltrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IINFilas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).EndInit();
@@ -370,12 +372,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
     }
 }

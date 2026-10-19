@@ -201,6 +201,7 @@ namespace SistemaDeGestion2026
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
             if (DTGLista.SelectedRows.Count > 0)
             {
                 if (MessageBox.Show("¿Está seguro que desea borrar este producto?",
@@ -211,6 +212,23 @@ namespace SistemaDeGestion2026
                 {
                     EliminarItem(DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString());
                 }
+            }
+            */
+
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                producto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (MessageBox.Show("¿Está seguro que desea borrar este producto + " + producto.papdcodpro + "?",
+                            "Pregunta",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question,
+                            MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    EliminarItem(DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString());
+                    MessageBox.Show("Producto eliminado correctamente");
+                    ActualizarGridItems();
+                }
+                
             }
         }
         private void CalcularTotal()
@@ -235,6 +253,38 @@ namespace SistemaDeGestion2026
         private void BTNGrabar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DTGLista_KeyDown(object sender, KeyEventArgs e)
+        {
+            bool teclaValida = false;
+
+            if (e.KeyCode == Keys.Delete)
+            {
+                // Acción al presionar la tecla Suprimir
+                //MessageBox.Show("Has presionado la tecla Suprimir");
+
+                if (DTGLista.SelectedRows.Count > 0)
+                {
+                    producto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                    if (MessageBox.Show("¿Está seguro que desea borrar este producto + " + producto.papdcodpro + "?",
+                                "Pregunta",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question,
+                                MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    {
+                        EliminarItem(DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString());
+                        MessageBox.Show("Producto eliminado correctamente");
+                        ActualizarGridItems();
+                    }
+
+                }
+            }
+
+            if (!teclaValida)
+            {
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }
