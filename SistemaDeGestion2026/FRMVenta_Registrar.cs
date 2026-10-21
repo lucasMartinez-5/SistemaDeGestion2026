@@ -24,6 +24,9 @@ namespace SistemaDeGestion2026
 
         private double total = 0;
         public bool actualizar = false;
+
+        private liteven itemModificar = new liteven();
+        private bool modificarItem = false;
         #endregion
 
         #region Constructor
@@ -299,6 +302,24 @@ namespace SistemaDeGestion2026
             if (!teclaValida)
             {
                 e.SuppressKeyPress = true;
+            }
+        }
+
+        private void DTGLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            itemModificar = listaItems.Find(x => x.faivcodpro == DTGLista[0, e.RowIndex].Value.ToString()).caivcanite += 1;
+            modificarItem = true;
+            if (itemModificar != null)
+            {
+               
+            }
+        }
+
+        private void BTNModificarProducto_Click(object sender, EventArgs e)
+        {
+            if (true)
+            {
+                
             }
         }
     }
