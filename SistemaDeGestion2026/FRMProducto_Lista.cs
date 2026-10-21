@@ -25,6 +25,7 @@ namespace SistemaDeGestion2026
             InitializeComponent();
         }
         #endregion
+
         //comentario solo para actualizar el repositorio nomas
         #region Métodos
         private void ActualizarGrid()

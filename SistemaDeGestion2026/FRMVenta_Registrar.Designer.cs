@@ -52,36 +52,36 @@
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TXTNombreCliente = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTNitCliente = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GPFotografia = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.BTNBuscarProducto = new DevComponents.DotNetBar.ButtonX();
             this.TXTDescripcion = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.DINPrecioMinimo = new DevComponents.Editors.DoubleInput();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.IINStock = new DevComponents.Editors.IntegerInput();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.BTNCodigoDeBarras = new DevComponents.DotNetBar.ButtonX();
-            this.PCBCamara = new System.Windows.Forms.PictureBox();
             this.LBLCodigoDeBarras = new DevComponents.DotNetBar.LabelX();
             this.SWBEstado = new DevComponents.DotNetBar.Controls.SwitchButton();
-            this.BTNBuscarCliente = new DevComponents.DotNetBar.ButtonX();
-            this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
-            this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
-            this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
             this.LBLTotal = new DevComponents.DotNetBar.LabelX();
             this.LBLTotalALiteral = new DevComponents.DotNetBar.LabelX();
             this.LBLTotalNumero = new DevComponents.DotNetBar.LabelX();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BTNBuscarCliente = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.BTNBuscarProducto = new DevComponents.DotNetBar.ButtonX();
+            this.BTNCodigoDeBarras = new DevComponents.DotNetBar.ButtonX();
+            this.PCBCamara = new System.Windows.Forms.PictureBox();
+            this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
+            this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
+            this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).BeginInit();
             this.CMSMenu.SuspendLayout();
             this.groupPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.GPFotografia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DINPrecioMinimo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IINStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCBCamara)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,6 +181,7 @@
             this.DTGLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DTGLista.Size = new System.Drawing.Size(926, 242);
             this.DTGLista.TabIndex = 36;
+            this.DTGLista.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DTGLista_KeyDown);
             // 
             // Column1
             // 
@@ -350,17 +351,6 @@
             this.labelX2.TabIndex = 1;
             this.labelX2.Text = "SIN CÓDIGO";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(180, 147);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // TXTNombreCliente
             // 
             this.TXTNombreCliente.BackColor = System.Drawing.Color.White;
@@ -450,33 +440,6 @@
             this.GPFotografia.TabIndex = 38;
             this.GPFotografia.Text = "Producto";
             // 
-            // buttonX3
-            // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonX3.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir;
-            this.buttonX3.ImageFixedSize = new System.Drawing.Size(40, 40);
-            this.buttonX3.Location = new System.Drawing.Point(753, 10);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(121, 51);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX3.TabIndex = 37;
-            this.buttonX3.Text = "&Salir";
-            // 
-            // BTNBuscarProducto
-            // 
-            this.BTNBuscarProducto.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNBuscarProducto.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNBuscarProducto.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
-            this.BTNBuscarProducto.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNBuscarProducto.Location = new System.Drawing.Point(711, 9);
-            this.BTNBuscarProducto.Name = "BTNBuscarProducto";
-            this.BTNBuscarProducto.Size = new System.Drawing.Size(25, 26);
-            this.BTNBuscarProducto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNBuscarProducto.TabIndex = 43;
-            this.BTNBuscarProducto.Click += new System.EventHandler(this.BTNBuscarProducto_Click);
-            // 
             // TXTDescripcion
             // 
             this.TXTDescripcion.BackColor = System.Drawing.Color.White;
@@ -552,32 +515,6 @@
             this.labelX1.Text = "Cantidad:";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // BTNCodigoDeBarras
-            // 
-            this.BTNCodigoDeBarras.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNCodigoDeBarras.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNCodigoDeBarras.Image = global::SistemaDeGestion2026.Properties.Resources.ic_lectorBarras23;
-            this.BTNCodigoDeBarras.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNCodigoDeBarras.Location = new System.Drawing.Point(672, 9);
-            this.BTNCodigoDeBarras.Name = "BTNCodigoDeBarras";
-            this.BTNCodigoDeBarras.Size = new System.Drawing.Size(25, 26);
-            this.BTNCodigoDeBarras.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNCodigoDeBarras.TabIndex = 34;
-            this.BTNCodigoDeBarras.Click += new System.EventHandler(this.BTNCodigoDeBarras_Click);
-            this.BTNCodigoDeBarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BTNCodigoDeBarras_KeyPress);
-            this.BTNCodigoDeBarras.Leave += new System.EventHandler(this.BTNCodigoDeBarras_Leave);
-            // 
-            // PCBCamara
-            // 
-            this.PCBCamara.BackColor = System.Drawing.Color.White;
-            this.PCBCamara.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PCBCamara.Location = new System.Drawing.Point(3, 7);
-            this.PCBCamara.Name = "PCBCamara";
-            this.PCBCamara.Size = new System.Drawing.Size(77, 60);
-            this.PCBCamara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PCBCamara.TabIndex = 0;
-            this.PCBCamara.TabStop = false;
-            // 
             // LBLCodigoDeBarras
             // 
             this.LBLCodigoDeBarras.BackColor = System.Drawing.Color.LightGreen;
@@ -611,6 +548,53 @@
             this.SWBEstado.Value = true;
             this.SWBEstado.ValueObject = "Y";
             // 
+            // LBLTotal
+            // 
+            // 
+            // 
+            // 
+            this.LBLTotal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLTotal.Location = new System.Drawing.Point(819, 436);
+            this.LBLTotal.Name = "LBLTotal";
+            this.LBLTotal.Size = new System.Drawing.Size(43, 36);
+            this.LBLTotal.TabIndex = 47;
+            this.LBLTotal.Text = "TOTAL:";
+            // 
+            // LBLTotalALiteral
+            // 
+            // 
+            // 
+            // 
+            this.LBLTotalALiteral.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLTotalALiteral.Location = new System.Drawing.Point(16, 436);
+            this.LBLTotalALiteral.Name = "LBLTotalALiteral";
+            this.LBLTotalALiteral.Size = new System.Drawing.Size(579, 36);
+            this.LBLTotalALiteral.TabIndex = 49;
+            this.LBLTotalALiteral.Text = "SON: CERO 00/100";
+            // 
+            // LBLTotalNumero
+            // 
+            // 
+            // 
+            // 
+            this.LBLTotalNumero.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LBLTotalNumero.Location = new System.Drawing.Point(868, 436);
+            this.LBLTotalNumero.Name = "LBLTotalNumero";
+            this.LBLTotalNumero.Size = new System.Drawing.Size(52, 36);
+            this.LBLTotalNumero.TabIndex = 50;
+            this.LBLTotalNumero.Text = "0";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(180, 147);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // BTNBuscarCliente
             // 
             this.BTNBuscarCliente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -623,6 +607,59 @@
             this.BTNBuscarCliente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.BTNBuscarCliente.TabIndex = 43;
             this.BTNBuscarCliente.Click += new System.EventHandler(this.BTNBuscarCliente_Click);
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonX3.Image = global::SistemaDeGestion2026.Properties.Resources.ic_salir;
+            this.buttonX3.ImageFixedSize = new System.Drawing.Size(40, 40);
+            this.buttonX3.Location = new System.Drawing.Point(753, 10);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Size = new System.Drawing.Size(121, 51);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX3.TabIndex = 37;
+            this.buttonX3.Text = "&Salir";
+            // 
+            // BTNBuscarProducto
+            // 
+            this.BTNBuscarProducto.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNBuscarProducto.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNBuscarProducto.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
+            this.BTNBuscarProducto.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNBuscarProducto.Location = new System.Drawing.Point(711, 9);
+            this.BTNBuscarProducto.Name = "BTNBuscarProducto";
+            this.BTNBuscarProducto.Size = new System.Drawing.Size(25, 26);
+            this.BTNBuscarProducto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNBuscarProducto.TabIndex = 43;
+            this.BTNBuscarProducto.Click += new System.EventHandler(this.BTNBuscarProducto_Click);
+            // 
+            // BTNCodigoDeBarras
+            // 
+            this.BTNCodigoDeBarras.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNCodigoDeBarras.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNCodigoDeBarras.Image = global::SistemaDeGestion2026.Properties.Resources.ic_lectorBarras23;
+            this.BTNCodigoDeBarras.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNCodigoDeBarras.Location = new System.Drawing.Point(672, 9);
+            this.BTNCodigoDeBarras.Name = "BTNCodigoDeBarras";
+            this.BTNCodigoDeBarras.Size = new System.Drawing.Size(25, 26);
+            this.BTNCodigoDeBarras.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNCodigoDeBarras.TabIndex = 34;
+            this.BTNCodigoDeBarras.Click += new System.EventHandler(this.BTNCodigoDeBarras_Click);
+            this.BTNCodigoDeBarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BTNCodigoDeBarras_KeyPress);
+            this.BTNCodigoDeBarras.Leave += new System.EventHandler(this.BTNCodigoDeBarras_Leave);
+            // 
+            // PCBCamara
+            // 
+            this.PCBCamara.BackColor = System.Drawing.Color.White;
+            this.PCBCamara.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PCBCamara.Location = new System.Drawing.Point(3, 7);
+            this.PCBCamara.Name = "PCBCamara";
+            this.PCBCamara.Size = new System.Drawing.Size(77, 60);
+            this.PCBCamara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PCBCamara.TabIndex = 0;
+            this.PCBCamara.TabStop = false;
             // 
             // BTNSalir
             // 
@@ -665,42 +702,6 @@
             this.BTNGrabar.Text = "&Grabar";
             this.BTNGrabar.Click += new System.EventHandler(this.BTNGrabar_Click);
             // 
-            // LBLTotal
-            // 
-            // 
-            // 
-            // 
-            this.LBLTotal.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LBLTotal.Location = new System.Drawing.Point(819, 436);
-            this.LBLTotal.Name = "LBLTotal";
-            this.LBLTotal.Size = new System.Drawing.Size(43, 36);
-            this.LBLTotal.TabIndex = 47;
-            this.LBLTotal.Text = "TOTAL:";
-            // 
-            // LBLTotalALiteral
-            // 
-            // 
-            // 
-            // 
-            this.LBLTotalALiteral.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LBLTotalALiteral.Location = new System.Drawing.Point(16, 436);
-            this.LBLTotalALiteral.Name = "LBLTotalALiteral";
-            this.LBLTotalALiteral.Size = new System.Drawing.Size(579, 36);
-            this.LBLTotalALiteral.TabIndex = 49;
-            this.LBLTotalALiteral.Text = "SON: CERO 00/100";
-            // 
-            // LBLTotalNumero
-            // 
-            // 
-            // 
-            // 
-            this.LBLTotalNumero.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LBLTotalNumero.Location = new System.Drawing.Point(868, 436);
-            this.LBLTotalNumero.Name = "LBLTotalNumero";
-            this.LBLTotalNumero.Size = new System.Drawing.Size(52, 36);
-            this.LBLTotalNumero.TabIndex = 50;
-            this.LBLTotalNumero.Text = "0";
-            // 
             // FRMVenta_Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -727,10 +728,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).EndInit();
             this.CMSMenu.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.GPFotografia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DINPrecioMinimo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IINStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCBCamara)).EndInit();
             this.ResumeLayout(false);
 

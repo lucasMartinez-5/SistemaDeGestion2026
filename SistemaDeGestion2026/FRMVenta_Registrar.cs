@@ -153,31 +153,46 @@ namespace SistemaDeGestion2026
         private void AgregarProducto(aproduc pro)
         {
             liteven item = new liteven();
-
             item = listaItems.Find(x => x.faivcodpro == pro.papdcodpro);
 
             if (item != null)
             {
-                item.caivcanite += 1;
-                item.caivsubtot = item.caivcanite * item.caivpreuni;
+                if ((pro.capdstopro - item.caivcanite) > 0)
+                {
+                    item.caivcanite += 1;
+                    item.caivsubtot = item.caivpreuni * item.caivcanite;
+                }
+                else
+                {
+                    MessageBox.Show("No hay suficiente stock para agregar", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                item = new liteven();
-                item.faivcodpro = pro.papdcodpro;
-                item.capdmodpro = pro.capdmodpro;
-                item.capdcodbar = pro.capdcodbar;
-                item.capdnompro = pro.capdnompro;
-                item.capdtalpro = pro.capdtalpro;
-                item.capddespro = pro.capddespro;
-                item.caivcanite = 1;
-                item.caivpreuni = pro.capdpreven;
-                item.caivsubtot = item.caivcanite * item.caivpreuni;
-                item.caivestite = true;
-                listaItems.Add(item);
+                if (pro.capdstopro > 0)
+                {
+                    item = new liteven();
+                    item.faivcodpro = pro.papdcodpro;
+                    item.capdmodpro = pro.capdmodpro;
+                    item.capdcodbar = pro.capdcodbar;
+                    item.capdnompro = pro.capdnompro;
+                    item.capdtalpro = pro.capdtalpro;
+                    item.capddespro = pro.capddespro;
+                    item.caivcanite = 1;
+                    item.caivpreuni = pro.capdpreven;
+                    item.caivsubtot = item.caivpreuni * item.caivcanite;
+                    item.caivestite = true;
+                    listaItems.Add(item);
+                }
+                else
+                {
+                    MessageBox.Show("No hay suficiente stock para agregar", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             ActualizarGridItems();
+            CalcularTotal();
         }
+
         private void ActualizarGridItems()
         {
             DTGLista.Rows.Clear();
@@ -201,6 +216,7 @@ namespace SistemaDeGestion2026
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
             if (DTGLista.SelectedRows.Count > 0)
             {
                 if (MessageBox.Show("¿Está seguro que desea borrar este producto?",
@@ -211,6 +227,23 @@ namespace SistemaDeGestion2026
                 {
                     EliminarItem(DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString());
                 }
+            }
+            */
+
+            if (DTGLista.SelectedRows.Count > 0)
+            {
+                producto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                if (MessageBox.Show("¿Está seguro que desea borrar este producto + " + producto.papdcodpro + "?",
+                            "Pregunta",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question,
+                            MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    EliminarItem(DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString());
+                    MessageBox.Show("Producto eliminado correctamente");
+                    ActualizarGridItems();
+                }
+                
             }
         }
         private void CalcularTotal()
@@ -235,6 +268,38 @@ namespace SistemaDeGestion2026
         private void BTNGrabar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DTGLista_KeyDown(object sender, KeyEventArgs e)
+        {
+            bool teclaValida = false;
+
+            if (e.KeyCode == Keys.Delete)
+            {
+                // Acción al presionar la tecla Suprimir
+                //MessageBox.Show("Has presionado la tecla Suprimir");
+
+                if (DTGLista.SelectedRows.Count > 0)
+                {
+                    producto.papdcodpro = DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString();
+                    if (MessageBox.Show("¿Está seguro que desea borrar este producto + " + producto.papdcodpro + "?",
+                                "Pregunta",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question,
+                                MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    {
+                        EliminarItem(DTGLista[0, DTGLista.SelectedRows[0].Index].Value.ToString());
+                        MessageBox.Show("Producto eliminado correctamente");
+                        ActualizarGridItems();
+                    }
+
+                }
+            }
+
+            if (!teclaValida)
+            {
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }
