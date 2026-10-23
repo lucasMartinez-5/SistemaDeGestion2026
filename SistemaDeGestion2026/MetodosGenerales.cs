@@ -35,22 +35,22 @@ namespace SistemaDeGestion2026
         #region Numero a literal
         private static readonly string[] unidades = {
         "", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"
-    };
+        };
 
         private static readonly string[] especiales = {
         "diez", "once", "doce", "trece", "catorce", "quince",
         "dieciséis", "diecisiete", "dieciocho", "diecinueve"
-    };
+        };
 
         private static readonly string[] decenas = {
         "", "", "veinte", "treinta", "cuarenta", "cincuenta",
         "sesenta", "setenta", "ochenta", "noventa"
-    };
+        };
 
         private static readonly string[] centenas = {
         "", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos",
         "seiscientos", "setecientos", "ochocientos", "novecientos"
-    };
+        };
 
         public static string ConvertirNumeroALetras(double numero)
         {
