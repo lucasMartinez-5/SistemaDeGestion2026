@@ -388,5 +388,9 @@ namespace CapaAD
                 res += (char)b;
             return res;
         }
+        public string GetComandoSQL()
+        {
+            return this.Comando.CommandText;
+        }
     }
 }

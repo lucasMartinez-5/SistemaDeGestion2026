@@ -15,6 +15,11 @@ namespace SistemaDeGestion2026
     public partial class FRMVenta_Registrar : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
+        private avenpro venta = new avenpro();
+        private xnumcor correlativo = new xnumcor();
+        public bool modificar = false;
+        public String codVenMod = "";
+
         private aclient cliente = new aclient();
         private bool clienteOk = false;
         private List<liteven> listaItems = new List<liteven>();
@@ -148,6 +153,23 @@ namespace SistemaDeGestion2026
         #endregion
 
         #region Metodos
+        public bool Verificar_Integridad
+        {
+            get
+            {
+                if (!clienteOk)
+                {
+                    MessageBox.Show("Debe seleccionar un cliente válido", "Cliente inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                if (listaItems.Count == 0)
+                {
+                    MessageBox.Show("Debe agregar al menos un producto a la venta", "Venta sin productos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                return true;
+            }
+        }
         private void LimpiarProducto()
         {
             DINCantidad.Value = 0;
@@ -274,7 +296,7 @@ namespace SistemaDeGestion2026
 
         private void BTNGrabar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void DTGLista_KeyDown(object sender, KeyEventArgs e)
@@ -336,10 +358,19 @@ namespace SistemaDeGestion2026
 
         private void BTNModificarProducto_Click(object sender, EventArgs e)
         {
+            
             if (modificarItem)
             {
-
-                itemModificar.caivcanite = (int)DINCantidad.Value;
+                itemModificar.caivpreuni = (Decimal)DINPrecio.Value;
+                itemModificar.capddespro = TXTDescripcion.Text;
+                if ((int)DINCantidad.Value>producto.capdstopro)
+                {
+                    MessageBox.Show("La cantidad ingresada excede el stock disponible");
+                }
+                else
+                {
+                    itemModificar.caivcanite = (int)DINCantidad.Value;
+                }
                 //itemModificar.caivpreuni = (Decimal)DINPrecio.Value;
                 itemModificar.caivsubtot = itemModificar.caivcanite * itemModificar.caivpreuni;
                 ActualizarGridItems();

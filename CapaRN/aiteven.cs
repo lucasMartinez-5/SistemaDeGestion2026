@@ -193,6 +193,59 @@ namespace CapaRN
                 return true;
             }
         }
+
+        public bool GrabarItem(List<liteven> lista)
+        {
+            this.Conexion.Conectar();
+            string sql = "insert into aiteven (" +
+                                               "caivpreuni," +
+                                               "caivestite," +
+                                               "caivcanite," +
+                                               "caivsubtot," +
+                                               "faivcodpro," +
+                                               "faivcodven," +
+                                               "paivcodite" +
+                                               ") " +
+                                    "values ";
+            foreach (liteven item in lista)
+            {
+                sql += "(" +
+                                "@caivpreuni," +
+                                "@caivestite," +
+                                "@caivcanite," +
+                                "@caivsubtot," +
+                                "@faivcodpro," +
+                                "@faivcodven," +
+                                "@paivcodite" +
+                                             "),";
+
+                this.Conexion.PrepararComando(sql);
+
+                this.Conexion.AsignarParametroDecimal("@caivpreuni", this._caivpreuni);
+                this.Conexion.AsignarParametroLogico("@caivestite", this._caivestite);
+                this.Conexion.AsignarParametroEntero("@caivcanite", this._caivcanite);
+                this.Conexion.AsignarParametroDecimal("@caivsubtot", this._caivsubtot);
+                this.Conexion.AsignarParametroCadena("@faivcodpro", this._faivcodpro);
+                this.Conexion.AsignarParametroCadena("@faivcodven", this._faivcodven);
+                this.Conexion.AsignarParametroCadena("@paivcodite", this._paivcodite);
+
+                this.Conexion.EjecutarTransaccion();
+                this.Conexion.Desconectar();
+                sql = this.Conexion.GetComandoSQL();
+            }
+            sql = sql.Substring(0, sql.Length - 1)+";";
+            try
+            {
+                this.Conexion.EjecutarTransaccion();
+                this.Conexion.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al preparar el comando SQL: " + ex.Message);
+            } return true;
+        }
+
         public bool Modificar()
         {
             if (!this.VerificarExistencia())
