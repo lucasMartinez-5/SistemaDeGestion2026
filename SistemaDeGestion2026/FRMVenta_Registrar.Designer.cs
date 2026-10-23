@@ -29,23 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.DTGLista = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMSMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,15 +47,16 @@
             this.TXTNombreCliente = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.TXTNitCliente = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.GPFotografia = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.BTNLimpiarProducto = new DevComponents.DotNetBar.ButtonX();
             this.BTNModificarProducto = new DevComponents.DotNetBar.ButtonX();
-            this.BTNBuscarProducto = new DevComponents.DotNetBar.ButtonX();
             this.TXTDescripcion = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.DINPrecioMinimo = new DevComponents.Editors.DoubleInput();
+            this.DINPrecio = new DevComponents.Editors.DoubleInput();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.IINStock = new DevComponents.Editors.IntegerInput();
+            this.DINCantidad = new DevComponents.Editors.IntegerInput();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.PCBFotografia = new System.Windows.Forms.PictureBox();
+            this.BTNBuscarProducto = new DevComponents.DotNetBar.ButtonX();
             this.BTNCodigoDeBarras = new DevComponents.DotNetBar.ButtonX();
-            this.PCBCamara = new System.Windows.Forms.PictureBox();
             this.LBLCodigoDeBarras = new DevComponents.DotNetBar.LabelX();
             this.SWBEstado = new DevComponents.DotNetBar.Controls.SwitchButton();
             this.LBLTotal = new DevComponents.DotNetBar.LabelX();
@@ -74,16 +66,24 @@
             this.BTNSalir = new DevComponents.DotNetBar.ButtonX();
             this.BTNLimpiar = new DevComponents.DotNetBar.ButtonX();
             this.BTNGrabar = new DevComponents.DotNetBar.ButtonX();
-            this.BTNLimpiarProducto = new DevComponents.DotNetBar.ButtonX();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).BeginInit();
             this.CMSMenu.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.GPFotografia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DINPrecioMinimo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IINStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PCBCamara)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DINPrecio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DINCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PCBFotografia)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel2
@@ -94,9 +94,9 @@
             this.groupPanel2.Controls.Add(this.DTGLista);
             this.groupPanel2.Controls.Add(this.groupPanel3);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel2.Location = new System.Drawing.Point(16, 167);
+            this.groupPanel2.Location = new System.Drawing.Point(12, 167);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(932, 263);
+            this.groupPanel2.Size = new System.Drawing.Size(939, 263);
             // 
             // 
             // 
@@ -133,14 +133,14 @@
             this.DTGLista.AllowUserToAddRows = false;
             this.DTGLista.AllowUserToDeleteRows = false;
             this.DTGLista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DTGLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DTGLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DTGLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DTGLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -153,116 +153,38 @@
             this.Column11,
             this.Column2});
             this.DTGLista.ContextMenuStrip = this.CMSMenu;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.PaleGoldenrod;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DTGLista.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleGoldenrod;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DTGLista.DefaultCellStyle = dataGridViewCellStyle5;
             this.DTGLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DTGLista.EnableHeadersVisualStyles = false;
-            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.DTGLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
             this.DTGLista.Location = new System.Drawing.Point(0, 0);
             this.DTGLista.MultiSelect = false;
             this.DTGLista.Name = "DTGLista";
             this.DTGLista.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DTGLista.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DTGLista.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DTGLista.RowHeadersVisible = false;
             this.DTGLista.RowHeadersWidth = 51;
             this.DTGLista.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.DTGLista.RowTemplate.Height = 24;
             this.DTGLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DTGLista.Size = new System.Drawing.Size(926, 242);
+            this.DTGLista.Size = new System.Drawing.Size(933, 242);
             this.DTGLista.TabIndex = 36;
             this.DTGLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DTGLista_CellDoubleClick);
             this.DTGLista.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DTGLista_KeyDown);
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            this.Column1.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Modelo";
-            this.Column3.MinimumWidth = 100;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "CB";
-            this.Column4.MinimumWidth = 100;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Producto";
-            this.Column5.MinimumWidth = 130;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 130;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Talla";
-            this.Column9.MinimumWidth = 80;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 80;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Descripción";
-            this.Column12.MinimumWidth = 200;
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 200;
-            // 
-            // Column10
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Column10.HeaderText = "Cant";
-            this.Column10.MinimumWidth = 80;
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 80;
-            // 
-            // Column11
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Column11.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Column11.HeaderText = "Precio";
-            this.Column11.MinimumWidth = 80;
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 80;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Subtotal";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // CMSMenu
             // 
@@ -411,11 +333,11 @@
             this.GPFotografia.Controls.Add(this.BTNLimpiarProducto);
             this.GPFotografia.Controls.Add(this.BTNModificarProducto);
             this.GPFotografia.Controls.Add(this.TXTDescripcion);
-            this.GPFotografia.Controls.Add(this.DINPrecioMinimo);
+            this.GPFotografia.Controls.Add(this.DINPrecio);
             this.GPFotografia.Controls.Add(this.labelX3);
-            this.GPFotografia.Controls.Add(this.IINStock);
+            this.GPFotografia.Controls.Add(this.DINCantidad);
             this.GPFotografia.Controls.Add(this.labelX1);
-            this.GPFotografia.Controls.Add(this.PCBCamara);
+            this.GPFotografia.Controls.Add(this.PCBFotografia);
             this.GPFotografia.DisabledBackColor = System.Drawing.Color.Empty;
             this.GPFotografia.Location = new System.Drawing.Point(16, 46);
             this.GPFotografia.Name = "GPFotografia";
@@ -451,11 +373,24 @@
             this.GPFotografia.TabIndex = 38;
             this.GPFotografia.Text = "Producto";
             // 
+            // BTNLimpiarProducto
+            // 
+            this.BTNLimpiarProducto.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNLimpiarProducto.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNLimpiarProducto.Image = global::SistemaDeGestion2026.Properties.Resources.ic_limpiar;
+            this.BTNLimpiarProducto.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNLimpiarProducto.Location = new System.Drawing.Point(753, 10);
+            this.BTNLimpiarProducto.Name = "BTNLimpiarProducto";
+            this.BTNLimpiarProducto.Size = new System.Drawing.Size(109, 23);
+            this.BTNLimpiarProducto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNLimpiarProducto.TabIndex = 43;
+            this.BTNLimpiarProducto.Text = "&Limpiar";
+            this.BTNLimpiarProducto.Click += new System.EventHandler(this.BTNLimpiarProducto_Click);
+            // 
             // BTNModificarProducto
             // 
             this.BTNModificarProducto.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BTNModificarProducto.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNModificarProducto.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTNModificarProducto.Image = global::SistemaDeGestion2026.Properties.Resources.ic_producto_modificar;
             this.BTNModificarProducto.ImageFixedSize = new System.Drawing.Size(20, 20);
             this.BTNModificarProducto.Location = new System.Drawing.Point(753, 36);
@@ -465,19 +400,6 @@
             this.BTNModificarProducto.TabIndex = 37;
             this.BTNModificarProducto.Text = "&Modificar";
             this.BTNModificarProducto.Click += new System.EventHandler(this.BTNModificarProducto_Click);
-            // 
-            // BTNBuscarProducto
-            // 
-            this.BTNBuscarProducto.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNBuscarProducto.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNBuscarProducto.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
-            this.BTNBuscarProducto.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNBuscarProducto.Location = new System.Drawing.Point(926, 11);
-            this.BTNBuscarProducto.Name = "BTNBuscarProducto";
-            this.BTNBuscarProducto.Size = new System.Drawing.Size(25, 26);
-            this.BTNBuscarProducto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNBuscarProducto.TabIndex = 43;
-            this.BTNBuscarProducto.Click += new System.EventHandler(this.BTNBuscarProducto_Click);
             // 
             // TXTDescripcion
             // 
@@ -498,20 +420,21 @@
             this.TXTDescripcion.TabIndex = 42;
             this.TXTDescripcion.WatermarkText = "Descripción del producto";
             // 
-            // DINPrecioMinimo
+            // DINPrecio
             // 
             // 
             // 
             // 
-            this.DINPrecioMinimo.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.DINPrecioMinimo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.DINPrecioMinimo.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.DINPrecioMinimo.Increment = 1D;
-            this.DINPrecioMinimo.Location = new System.Drawing.Point(646, 36);
-            this.DINPrecioMinimo.Name = "DINPrecioMinimo";
-            this.DINPrecioMinimo.ShowUpDown = true;
-            this.DINPrecioMinimo.Size = new System.Drawing.Size(89, 20);
-            this.DINPrecioMinimo.TabIndex = 38;
+            this.DINPrecio.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.DINPrecio.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DINPrecio.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
+            this.DINPrecio.Enabled = false;
+            this.DINPrecio.Increment = 1D;
+            this.DINPrecio.Location = new System.Drawing.Point(646, 36);
+            this.DINPrecio.Name = "DINPrecio";
+            this.DINPrecio.ShowUpDown = true;
+            this.DINPrecio.Size = new System.Drawing.Size(89, 20);
+            this.DINPrecio.TabIndex = 38;
             // 
             // labelX3
             // 
@@ -527,20 +450,19 @@
             this.labelX3.Text = "Precio:";
             this.labelX3.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // IINStock
+            // DINCantidad
             // 
             // 
             // 
             // 
-            this.IINStock.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.IINStock.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.IINStock.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.IINStock.Enabled = false;
-            this.IINStock.Location = new System.Drawing.Point(646, 10);
-            this.IINStock.Name = "IINStock";
-            this.IINStock.ShowUpDown = true;
-            this.IINStock.Size = new System.Drawing.Size(89, 20);
-            this.IINStock.TabIndex = 39;
+            this.DINCantidad.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.DINCantidad.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DINCantidad.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
+            this.DINCantidad.Location = new System.Drawing.Point(646, 10);
+            this.DINCantidad.Name = "DINCantidad";
+            this.DINCantidad.ShowUpDown = true;
+            this.DINCantidad.Size = new System.Drawing.Size(89, 20);
+            this.DINCantidad.TabIndex = 39;
             // 
             // labelX1
             // 
@@ -556,6 +478,31 @@
             this.labelX1.Text = "Cantidad:";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
+            // PCBFotografia
+            // 
+            this.PCBFotografia.BackColor = System.Drawing.Color.White;
+            this.PCBFotografia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PCBFotografia.Image = global::SistemaDeGestion2026.Properties.Resources.no_image;
+            this.PCBFotografia.Location = new System.Drawing.Point(3, 7);
+            this.PCBFotografia.Name = "PCBFotografia";
+            this.PCBFotografia.Size = new System.Drawing.Size(77, 60);
+            this.PCBFotografia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PCBFotografia.TabIndex = 0;
+            this.PCBFotografia.TabStop = false;
+            // 
+            // BTNBuscarProducto
+            // 
+            this.BTNBuscarProducto.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BTNBuscarProducto.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BTNBuscarProducto.Image = global::SistemaDeGestion2026.Properties.Resources.ic_buscar;
+            this.BTNBuscarProducto.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.BTNBuscarProducto.Location = new System.Drawing.Point(926, 11);
+            this.BTNBuscarProducto.Name = "BTNBuscarProducto";
+            this.BTNBuscarProducto.Size = new System.Drawing.Size(25, 26);
+            this.BTNBuscarProducto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.BTNBuscarProducto.TabIndex = 43;
+            this.BTNBuscarProducto.Click += new System.EventHandler(this.BTNBuscarProducto_Click);
+            // 
             // BTNCodigoDeBarras
             // 
             this.BTNCodigoDeBarras.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -570,17 +517,6 @@
             this.BTNCodigoDeBarras.Click += new System.EventHandler(this.BTNCodigoDeBarras_Click);
             this.BTNCodigoDeBarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BTNCodigoDeBarras_KeyPress);
             this.BTNCodigoDeBarras.Leave += new System.EventHandler(this.BTNCodigoDeBarras_Leave);
-            // 
-            // PCBCamara
-            // 
-            this.PCBCamara.BackColor = System.Drawing.Color.White;
-            this.PCBCamara.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PCBCamara.Location = new System.Drawing.Point(3, 7);
-            this.PCBCamara.Name = "PCBCamara";
-            this.PCBCamara.Size = new System.Drawing.Size(77, 60);
-            this.PCBCamara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PCBCamara.TabIndex = 0;
-            this.PCBCamara.TabStop = false;
             // 
             // LBLCodigoDeBarras
             // 
@@ -705,19 +641,84 @@
             this.BTNGrabar.Text = "&Grabar";
             this.BTNGrabar.Click += new System.EventHandler(this.BTNGrabar_Click);
             // 
-            // BTNLimpiarProducto
+            // Column1
             // 
-            this.BTNLimpiarProducto.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BTNLimpiarProducto.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BTNLimpiarProducto.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTNLimpiarProducto.Image = global::SistemaDeGestion2026.Properties.Resources.ic_limpiar;
-            this.BTNLimpiarProducto.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.BTNLimpiarProducto.Location = new System.Drawing.Point(753, 10);
-            this.BTNLimpiarProducto.Name = "BTNLimpiarProducto";
-            this.BTNLimpiarProducto.Size = new System.Drawing.Size(109, 23);
-            this.BTNLimpiarProducto.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.BTNLimpiarProducto.TabIndex = 43;
-            this.BTNLimpiarProducto.Text = "&Limpiar";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            this.Column1.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Modelo";
+            this.Column3.MinimumWidth = 100;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "CB";
+            this.Column4.MinimumWidth = 100;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 120;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Producto";
+            this.Column5.MinimumWidth = 130;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 150;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Talla";
+            this.Column9.MinimumWidth = 80;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 80;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Descripción";
+            this.Column12.MinimumWidth = 200;
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Width = 200;
+            // 
+            // Column10
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column10.HeaderText = "Cant";
+            this.Column10.MinimumWidth = 80;
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 80;
+            // 
+            // Column11
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column11.HeaderText = "Precio";
+            this.Column11.MinimumWidth = 80;
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Subtotal";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // FRMVenta_Registrar
             // 
@@ -750,9 +751,9 @@
             this.groupPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.GPFotografia.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DINPrecioMinimo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IINStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PCBCamara)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DINPrecio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DINCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PCBFotografia)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -761,14 +762,6 @@
 
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.Controls.DataGridViewX DTGLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private DevComponents.DotNetBar.LabelX labelX2;
@@ -779,19 +772,18 @@
         private DevComponents.DotNetBar.Controls.GroupPanel GPFotografia;
         private DevComponents.DotNetBar.ButtonX BTNModificarProducto;
         private DevComponents.DotNetBar.Controls.TextBoxX TXTDescripcion;
-        private DevComponents.Editors.DoubleInput DINPrecioMinimo;
+        private DevComponents.Editors.DoubleInput DINPrecio;
         private DevComponents.DotNetBar.ButtonX BTNCodigoDeBarras;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX LBLCodigoDeBarras;
-        private DevComponents.Editors.IntegerInput IINStock;
+        private DevComponents.Editors.IntegerInput DINCantidad;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private System.Windows.Forms.PictureBox PCBCamara;
+        private System.Windows.Forms.PictureBox PCBFotografia;
         private DevComponents.DotNetBar.ButtonX BTNSalir;
         private DevComponents.DotNetBar.ButtonX BTNLimpiar;
         private DevComponents.DotNetBar.ButtonX BTNGrabar;
         private DevComponents.DotNetBar.Controls.SwitchButton SWBEstado;
         private DevComponents.DotNetBar.ButtonX BTNBuscarProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.ContextMenuStrip CMSMenu;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
@@ -799,5 +791,14 @@
         private DevComponents.DotNetBar.LabelX LBLTotalALiteral;
         private DevComponents.DotNetBar.LabelX LBLTotalNumero;
         private DevComponents.DotNetBar.ButtonX BTNLimpiarProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

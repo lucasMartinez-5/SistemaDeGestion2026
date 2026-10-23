@@ -1,4 +1,5 @@
 ﻿using CapaRN;
+using SistemaDeGestion2026.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -98,13 +99,7 @@ namespace SistemaDeGestion2026
                     MessageBox.Show("Producto no encontrado");
                     LBLCodigoDeBarras.Text = "LECTOR ACTIVO";
                     LBLCodigoDeBarras.BackColor = Color.PaleGreen;
-
-
                 }
-
-
-
-
             }
         }
 
@@ -153,6 +148,15 @@ namespace SistemaDeGestion2026
         #endregion
 
         #region Metodos
+        private void LimpiarProducto()
+        {
+            DINCantidad.Value = 0;
+            DINPrecio.Value = 0;
+            TXTDescripcion.WatermarkText = "";
+            TXTDescripcion.Text = "Descripción del producto";
+            //listaItems.Clear();
+            ActualizarGridItems();
+        }
         private void AgregarProducto(aproduc pro)
         {
             liteven item = new liteven();
@@ -307,20 +311,47 @@ namespace SistemaDeGestion2026
 
         private void DTGLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            itemModificar = listaItems.Find(x => x.faivcodpro == DTGLista[0, e.RowIndex].Value.ToString()).caivcanite += 1;
+            itemModificar = listaItems.Find(x => x.faivcodpro == DTGLista[0, e.RowIndex].Value.ToString());
             modificarItem = true;
             if (itemModificar != null)
             {
-               
+                TXTDescripcion.Text = itemModificar.capddespro;
+                DINCantidad.Value = itemModificar.caivcanite;
+                DINPrecio.Value = (Double)itemModificar.caivpreuni;
+                producto.papdcodpro = itemModificar.faivcodpro;
+                if (producto.ObtenerDatos())
+                {
+                    if (producto.capdfotpro == "")
+                    {
+
+                        PCBFotografia.Image = Resources.no_image;
+                    }
+                    else
+                    {
+                        PCBFotografia.Image = MetodosGenerales.ConvertBase64StringToImage(producto.capdfotpro);
+                    }
+                }
             }
         }
 
         private void BTNModificarProducto_Click(object sender, EventArgs e)
         {
-            if (true)
+            if (modificarItem)
             {
-                
+
+                itemModificar.caivcanite = (int)DINCantidad.Value;
+                //itemModificar.caivpreuni = (Decimal)DINPrecio.Value;
+                itemModificar.caivsubtot = itemModificar.caivcanite * itemModificar.caivpreuni;
+                ActualizarGridItems();
+                modificarItem = false;
+                //LimpiarProducto();
             }
+        }
+
+        private void BTNLimpiarProducto_Click(object sender, EventArgs e)
+        {
+            modificarItem = false;
+            LimpiarProducto();
         }
     }
 }
