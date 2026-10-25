@@ -16,6 +16,8 @@ namespace SistemaDeGestion2026
     {
         #region Variables
         private avenpro venta = new avenpro();
+        public aususis usuario = new aususis();
+        public aperson persona = new aperson();
         private xnumcor correlativo = new xnumcor();
         public bool modificar = false;
         public String codVenMod = "";
@@ -30,7 +32,7 @@ namespace SistemaDeGestion2026
 
         private double total = 0;
         public bool actualizar = false;
-
+        private aiteven item = new aiteven();
         private liteven itemModificar = new liteven();
         private bool modificarItem = false;
         #endregion
@@ -137,10 +139,15 @@ namespace SistemaDeGestion2026
 
         private void FRMVenta_Registrar_Load(object sender, EventArgs e)
         {
+            LBLUsuario.Text = "Usuario: " +
+                  persona.capsapepat + " " +
+                  persona.capsapemat + " " +
+                  persona.capsnomper;
             LBLTotalNumero.Text = "0";
             lectorCBHabilitado = false;
             LBLCodigoDeBarras.Text = "LECTOR INACTIVO";
             LBLCodigoDeBarras.BackColor = Color.LightSalmon;
+           
         }
 
         private void BTNCodigoDeBarras_Leave(object sender, EventArgs e)
@@ -153,22 +160,9 @@ namespace SistemaDeGestion2026
         #endregion
 
         #region Metodos
-        public bool Verificar_Integridad
+        private bool Verificar_Integridad()
         {
-            get
-            {
-                if (!clienteOk)
-                {
-                    MessageBox.Show("Debe seleccionar un cliente válido", "Cliente inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-                if (listaItems.Count == 0)
-                {
-                    MessageBox.Show("Debe agregar al menos un producto a la venta", "Venta sin productos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-                return true;
-            }
+            return true;
         }
         private void LimpiarProducto()
         {
@@ -296,7 +290,60 @@ namespace SistemaDeGestion2026
 
         private void BTNGrabar_Click(object sender, EventArgs e)
         {
-            
+            if (Verificar_Integridad())
+            {
+                venta = new avenpro();
+                correlativo.pxnctipcor = "avenpro";
+                if (correlativo.ObtenerSiguiente())
+                {
+                    venta.pavpcodven = correlativo.pxnctipcor + "-" +
+                                       correlativo.cxncnumcor.ToString("D12");
+                }
+                venta.cavpestven = true;
+                venta.cavpfeccre = DateTime.Now;
+                venta.cavpfechor = DateTime.Now;
+                venta.cavpfecmod = DateTime.Now;
+                venta.cavpmontot = listaItems.Sum(x => x.caivsubtot);
+                venta.cavpobsven = TXTObservaciones.Text;
+                venta.favpcodcli = cliente.paclcodcli;
+                venta.favpusucre = usuario.pauscodusu;
+                venta.favpusumod = usuario.pauscodusu;
+
+                //Grabado de los items de la venta
+                correlativo.pxnctipcor = "aiteven";
+                if (correlativo.ObtenerSiguiente(listaItems.Count))
+                {
+                    correlativo.cxncnumcor -= listaItems.Count - 1;
+                    foreach (liteven item in listaItems)
+                    {
+
+                        item.paivcodite = correlativo.pxnctipcor + "-" +
+                                          correlativo.cxncnumcor.ToString("D12");
+                        item.faivcodven = venta.pavpcodven;
+                        correlativo.cxncnumcor++;
+                    }
+
+                }
+
+                if (venta.Grabar() && item.Grabar(listaItems))
+                {
+                    MessageBox.Show("Venta guardada correctamente!!",
+                                    "Mensaje",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                    //LimpiarCasillas();
+                    this.actualizar = true;
+                    //this.FormClosing -= FRMVenta_Registrar_FormClosing;                    
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Venta no se pudo guardar!!",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void DTGLista_KeyDown(object sender, KeyEventArgs e)
@@ -358,25 +405,28 @@ namespace SistemaDeGestion2026
 
         private void BTNModificarProducto_Click(object sender, EventArgs e)
         {
-            
-            if (modificarItem)
+            if ((int)DINCantidad.Value > producto.capdstopro)
             {
-                itemModificar.caivpreuni = (Decimal)DINPrecio.Value;
-                itemModificar.capddespro = TXTDescripcion.Text;
-                if ((int)DINCantidad.Value>producto.capdstopro)
-                {
-                    MessageBox.Show("La cantidad ingresada excede el stock disponible");
-                }
-                else
-                {
-                    itemModificar.caivcanite = (int)DINCantidad.Value;
-                }
-                //itemModificar.caivpreuni = (Decimal)DINPrecio.Value;
-                itemModificar.caivsubtot = itemModificar.caivcanite * itemModificar.caivpreuni;
-                ActualizarGridItems();
-                modificarItem = false;
-                //LimpiarProducto();
+                MessageBox.Show("La cantidad ingresada excede el stock disponible");
             }
+            else
+            {
+                if (modificarItem)
+                {
+                    itemModificar.caivpreuni = (Decimal)DINPrecio.Value;
+                    itemModificar.capddespro = TXTDescripcion.Text;
+                    itemModificar.caivcanite = (int)DINCantidad.Value;
+
+                    //itemModificar.caivpreuni = (Decimal)DINPrecio.Value;
+                    itemModificar.caivsubtot = itemModificar.caivcanite * itemModificar.caivpreuni;
+                    ActualizarGridItems();
+                    modificarItem = false;
+                    //LimpiarProducto();
+                }
+
+            }
+
+            
         }
 
         private void BTNLimpiarProducto_Click(object sender, EventArgs e)

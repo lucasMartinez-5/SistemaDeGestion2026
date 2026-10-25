@@ -210,6 +210,8 @@ namespace SistemaDeGestion2026
             }
             FRMVenta_Lista a = new FRMVenta_Lista();
             a.MdiParent = this;
+            a.usuario = this.usuario;
+            a.persona = this.persona;
             a.Show();
         }
     }

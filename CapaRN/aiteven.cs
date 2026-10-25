@@ -194,56 +194,56 @@ namespace CapaRN
             }
         }
 
-        public bool GrabarItem(List<liteven> lista)
+        public bool Grabar(List<liteven> Lista)
         {
             this.Conexion.Conectar();
             string sql = "insert into aiteven (" +
-                                               "caivpreuni," +
-                                               "caivestite," +
-                                               "caivcanite," +
-                                               "caivsubtot," +
-                                               "faivcodpro," +
-                                               "faivcodven," +
-                                               "paivcodite" +
-                                               ") " +
-                                    "values ";
-            foreach (liteven item in lista)
+                                           "caivpreuni," +
+                                           "caivestite," +
+                                           "caivcanite," +
+                                           "caivsubtot," +
+                                           "faivcodpro," +
+                                           "faivcodven," +
+                                           "paivcodite" +
+                                           ") " +
+                          "values ";
+
+            foreach (liteven item in Lista)
             {
                 sql += "(" +
-                                "@caivpreuni," +
-                                "@caivestite," +
-                                "@caivcanite," +
-                                "@caivsubtot," +
-                                "@faivcodpro," +
-                                "@faivcodven," +
-                                "@paivcodite" +
-                                             "),";
-
+                        "@caivpreuni," +
+                        "@caivestite," +
+                        "@caivcanite," +
+                        "@caivsubtot," +
+                        "@faivcodpro," +
+                        "@faivcodven," +
+                        "@paivcodite" +
+                        "),";
                 this.Conexion.PrepararComando(sql);
-
-                this.Conexion.AsignarParametroDecimal("@caivpreuni", this._caivpreuni);
-                this.Conexion.AsignarParametroLogico("@caivestite", this._caivestite);
-                this.Conexion.AsignarParametroEntero("@caivcanite", this._caivcanite);
-                this.Conexion.AsignarParametroDecimal("@caivsubtot", this._caivsubtot);
-                this.Conexion.AsignarParametroCadena("@faivcodpro", this._faivcodpro);
-                this.Conexion.AsignarParametroCadena("@faivcodven", this._faivcodven);
-                this.Conexion.AsignarParametroCadena("@paivcodite", this._paivcodite);
-
-                this.Conexion.EjecutarTransaccion();
-                this.Conexion.Desconectar();
+                this.Conexion.AsignarParametroDecimal("@caivpreuni", item.caivpreuni);
+                this.Conexion.AsignarParametroLogico("@caivestite", item.caivestite);
+                this.Conexion.AsignarParametroEntero("@caivcanite", item.caivcanite);
+                this.Conexion.AsignarParametroDecimal("@caivsubtot", item.caivsubtot);
+                this.Conexion.AsignarParametroCadena("@faivcodpro", item.faivcodpro);
+                this.Conexion.AsignarParametroCadena("@faivcodven", item.faivcodven);
+                this.Conexion.AsignarParametroCadena("@paivcodite", item.paivcodite);
                 sql = this.Conexion.GetComandoSQL();
             }
-            sql = sql.Substring(0, sql.Length - 1)+";";
+
+            sql = sql.Substring(0, sql.Length - 1) + ";";
+            this.Conexion.PrepararComando(sql);
+
             try
             {
                 this.Conexion.EjecutarTransaccion();
                 this.Conexion.Desconectar();
-
+                return true;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al preparar el comando SQL: " + ex.Message);
-            } return true;
+                this.Conexion.Desconectar();
+                return false;
+            }
         }
 
         public bool Modificar()

@@ -414,6 +414,7 @@
             this.DoubleBuffered = true;
             this.Name = "FRMVenta_Lista";
             this.Text = "FRMVenta_Lista";
+            this.Load += new System.EventHandler(this.FRMVenta_Lista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTGLista)).EndInit();
             this.EPNFiltrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IINFilas)).EndInit();

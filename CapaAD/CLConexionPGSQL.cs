@@ -19,6 +19,12 @@ namespace CapaAD
         private string CadenaDeConexion;
         private NpgsqlConnection Conexion;
         private NpgsqlCommand Comando;
+        private NpgsqlTransaction Transaccion;
+
+        public String GetComandoSQL()
+        {
+            return this.Comando.CommandText;
+        }
 
         /// <summary>
         /// Crea una instancia de la clase CLConexionPGSQL con parametros de conexión
@@ -164,15 +170,17 @@ namespace CapaAD
         /// Ejecuta un transacción SQL sin retornar resultado alguno.
         /// Ej: insert, update, delete.
         /// </summary>
-        public void EjecutarTransaccion()
+        public bool EjecutarTransaccion()
         {
             try
             {
                 this.Comando.ExecuteNonQuery();
+                return true;
             }
             catch (Exception Ex)
             {
                 Log(Ex.Message);
+                return false;
             }
         }
 
@@ -337,7 +345,7 @@ namespace CapaAD
         public void AsignarParametroFechaMes(string nombre, DateTime valor)
         {
             //AsignarParametro(nombre, "'", valor.ToString("MM/dd/yy HH:mm:ss"));
-            AsignarParametro(nombre, "'", valor.ToString("yyyy/MM/")+"01");
+            AsignarParametro(nombre, "'", valor.ToString("yyyy/MM/") + "01");
         }
 
         /// <summary>
@@ -388,9 +396,27 @@ namespace CapaAD
                 res += (char)b;
             return res;
         }
-        public string GetComandoSQL()
+        public void IniciarTransaccion()
         {
-            return this.Comando.CommandText;
+            this.Transaccion = this.Conexion.BeginTransaction();
+        }
+
+        public void ConfirmarTransaccion()
+        {
+            if (this.Transaccion != null)
+            {
+                this.Transaccion.Commit();
+                this.Transaccion = null;
+            }
+        }
+
+        public void RevertirTransaccion()
+        {
+            if (this.Transaccion != null)
+            {
+                this.Transaccion.Rollback();
+                this.Transaccion = null;
+            }
         }
     }
 }

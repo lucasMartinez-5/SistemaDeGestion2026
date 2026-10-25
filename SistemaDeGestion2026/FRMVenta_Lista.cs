@@ -14,7 +14,8 @@ namespace SistemaDeGestion2026
     public partial class FRMVenta_Lista : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
-
+        public aususis usuario = new aususis();
+        public aperson persona = new aperson();
         private aclient cliente = new aclient();
         private List<aclient> lista = new List<aclient>();
 
@@ -24,6 +25,19 @@ namespace SistemaDeGestion2026
             InitializeComponent();
         }
         #region Metodos
+        private void Estado_2()
+        {
+            foreach (Form s in MdiChildren)
+            {
+                s.Close();
+            }
+            FRMFondo2 a = new FRMFondo2();
+            a.MdiParent = this;
+            a.persona = this.persona;
+            a.usuario = this.usuario;
+            a.Show();
+            
+        }
         private void ActualizarGrid()
         {
             DTGLista.Rows.Clear();
@@ -69,11 +83,21 @@ namespace SistemaDeGestion2026
         private void BTNRegistrar_Click(object sender, EventArgs e)
         {
             FRMVenta_Registrar a = new FRMVenta_Registrar();
+
+            a.usuario = this.usuario;
+            a.persona = this.persona;
+
             a.ShowDialog();
+
             if (a.actualizar)
             {
                 ActualizarGrid();
             }
+        }
+
+        private void FRMVenta_Lista_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
