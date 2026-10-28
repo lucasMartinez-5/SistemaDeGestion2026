@@ -27,7 +27,7 @@ namespace CapaRN
 
 
 
-
+        private int _capdstopro;
 
 
 
@@ -97,6 +97,13 @@ namespace CapaRN
             get { return this._paivcodite; }
             set { this._paivcodite = value; }
         }
+
+
+        public int capdstopro
+        {
+            get { return this._capdstopro; }
+            set { this._capdstopro = value; }
+        }
         #endregion
 
         #region Constructor
@@ -115,6 +122,8 @@ namespace CapaRN
             this._capdtalpro = "";
             this._capddespro = "";
             this._capdmodpro = "";
+
+            this._capdstopro = 0;
 
             this.Conexion = new CLConexionPGSQL();
         }

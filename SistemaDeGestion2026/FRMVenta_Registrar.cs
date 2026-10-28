@@ -203,6 +203,9 @@ namespace SistemaDeGestion2026
                     item.capddespro = pro.capddespro;
                     item.caivcanite = 1;
                     item.caivpreuni = pro.capdpreven;
+
+                    item.capdstopro = pro.capdstopro;//stock por defecto
+
                     item.caivsubtot = item.caivpreuni * item.caivcanite;
                     item.caivestite = true;
                     listaItems.Add(item);
@@ -290,6 +293,19 @@ namespace SistemaDeGestion2026
 
         private void BTNGrabar_Click(object sender, EventArgs e)
         {
+            List<aproduc> ListaProductos = new List<aproduc>();
+            ListaProductos = listaItems.Select(x => new aproduc
+            {
+                papdcodpro = x.faivcodpro,
+                capdmodpro = x.capdmodpro,
+                capdcodbar = x.capdcodbar,
+                capdnompro = x.capdnompro,
+                capdtalpro = x.capdtalpro,
+                capddespro = x.capddespro,
+                capdstopro = x.capdstopro - x.caivcanite,
+                capdpreven = x.caivpreuni
+            }).ToList();
+            
             if (Verificar_Integridad())
             {
                 venta = new avenpro();
@@ -325,14 +341,17 @@ namespace SistemaDeGestion2026
 
                 }
 
-                if (venta.Grabar() && item.Grabar(listaItems))
+                if (venta.Grabar() && item.Grabar(listaItems) && producto.ActualizarStock(ListaProductos))
                 {
                     MessageBox.Show("Venta guardada correctamente!!",
                                     "Mensaje",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
                     //LimpiarCasillas();
-                    this.actualizar = true;
+                    if(PDGDialogo.ShowDialog() == DialogResult.OK)
+                    {
+                        this.actualizar = true;
+                    }
                     //this.FormClosing -= FRMVenta_Registrar_FormClosing;                    
                     this.Close();
                 }
@@ -433,6 +452,12 @@ namespace SistemaDeGestion2026
         {
             modificarItem = false;
             LimpiarProducto();
+        }
+
+        private void PDDRecibo_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("Recibo de Venta", new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
+            e.Graphics.DrawString("Fecha: " + venta.cavpfechor.ToString("dd/MM/yyyy HH:mm:ss"), new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new PointF(100, 100));
         }
     }
 }
