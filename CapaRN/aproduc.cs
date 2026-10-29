@@ -637,6 +637,27 @@ namespace CapaRN
             this.Conexion.Desconectar();
             return ListaResultado;
         }
+
+        public bool ActualizarStock(List<aproduc> ListaProductos)
+        {
+            this.Conexion.Conectar();
+            string sql = "";
+            foreach (aproduc producto in ListaProductos)
+            {
+                sql += "update aproduc set " +
+                                    "capdstopro = @capdstopro " +
+                             "where " +
+                                    "papdcodpro = @papdcodpro";
+                this.Conexion.PrepararComando(sql);
+                this.Conexion.AsignarParametroEntero("@capdstopro", producto._capdstopro);
+                this.Conexion.AsignarParametroCadena("@papdcodpro", producto._papdcodpro); 
+                sql=this.Conexion.ObtenerSQL();
+            }            
+            
+            this.Conexion.EjecutarTransaccion();
+            this.Conexion.Desconectar();
+            return true;
+        }
         #endregion
 
     }
