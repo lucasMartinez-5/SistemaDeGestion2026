@@ -16,9 +16,10 @@ namespace SistemaDeGestion2026
         #region Variables
         public aususis usuario = new aususis();
         public aperson persona = new aperson();
-        private aclient cliente = new aclient();
-        private List<aclient> lista = new List<aclient>();
-
+        //private aclient cliente = new aclient();
+        //private List<aclient> lista = new List<aclient>();
+        private avenpro venta = new avenpro();
+        private List<avenpro> lista = new List<avenpro>();
         #endregion
         public FRMVenta_Lista()
         {
@@ -42,18 +43,18 @@ namespace SistemaDeGestion2026
         {
             DTGLista.Rows.Clear();
             lista.Clear();
-            lista = cliente.Lista("(caclrazcli like '%" + TXTFiltrar.Text + "%' or " +
-                                            "caclnitcli like '%" + TXTFiltrar.Text + "%' or " +
-                                            "cacldircli like '%" + TXTFiltrar.Text + "%' or " +
-                                            "cacltelcli like '%" + TXTFiltrar.Text + "%') limit " +
+            lista = venta.Lista("(pavpcodven like '%" + TXTFiltrar.Text + "%' or " +
+                                            "cavpestven like '%" + TXTFiltrar.Text + "%' or " +
+                                            "cavpfeccre like '%" + TXTFiltrar.Text + "%' or " +
+                                            "cavpfechor like '%" + TXTFiltrar.Text + "%') limit " +
                                            IINFilas.Value.ToString()
                                            );
 
-            foreach (aclient a in lista)
+            foreach (avenpro a in lista)
             {
                 DTGLista.Rows.Add();
 
-                if (a.caclestcli)
+                if (a.cavpestven)
                 {
                     if (DTGLista.Rows.Count % 2 == 0)
                     {
@@ -65,14 +66,16 @@ namespace SistemaDeGestion2026
                     DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Tomato;
                     DTGLista.Rows[DTGLista.Rows.Count - 1].DefaultCellStyle.ForeColor = Color.White;
                 }
-                DTGLista[0, DTGLista.Rows.Count - 1].Value = a.faclcodper;
-                DTGLista[1, DTGLista.Rows.Count - 1].Value = a.caclestcli;
-                DTGLista[2, DTGLista.Rows.Count - 1].Value = a.caclrazcli;
-                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.caclnitcli;
-
-                DTGLista[4, DTGLista.Rows.Count - 1].Value = a.cacldircli;
-                DTGLista[5, DTGLista.Rows.Count - 1].Value = a.cacltelcli;
-
+                DTGLista[0, DTGLista.Rows.Count - 1].Value = a.pavpcodven;
+                DTGLista[1, DTGLista.Rows.Count - 1].Value = a.cavpestven;
+                DTGLista[2, DTGLista.Rows.Count - 1].Value = a.cavpfechor;
+                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.cavpfeccre;
+                DTGLista[4, DTGLista.Rows.Count - 1].Value = a.cavpfecmod;
+                DTGLista[5, DTGLista.Rows.Count - 1].Value = a.cavpmontot;
+                DTGLista[6, DTGLista.Rows.Count - 1].Value = a.cavpobsven;
+                DTGLista[7, DTGLista.Rows.Count - 1].Value = a.favpusucre;
+                DTGLista[8, DTGLista.Rows.Count - 1].Value = a.favpusumod;
+                DTGLista[9, DTGLista.Rows.Count - 1].Value = a.favpcodcli;
 
             }
 
