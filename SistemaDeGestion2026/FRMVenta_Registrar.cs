@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QRCoder;
 
 namespace SistemaDeGestion2026
 {
@@ -841,42 +842,37 @@ namespace SistemaDeGestion2026
                     string codigo = itemVenta.faivcodpro ?? "";
                     string modelo = itemVenta.capdmodpro ?? "";
                     string talla = itemVenta.capdtalpro ?? "";
-
-                    string datosProducto = "P. unitario: Bs " +
-                        itemVenta.caivpreuni.ToString("N2");
-
-                    if (!String.IsNullOrWhiteSpace(modelo))
-                        datosProducto += " | Modelo: " + modelo;
-
-                    if (!String.IsNullOrWhiteSpace(talla))
-                        datosProducto += " | Talla: " + talla;
-
-                    if (!String.IsNullOrWhiteSpace(codigo))
-                        datosProducto += " | Código: " + codigo;
-
-                    SizeF tamDatos = g.MeasureString(
-                                        datosProducto,
-                                        pequena,
-                                        new SizeF(anchoTexto, 1000f));
-
-                    g.DrawString(datosProducto, pequena, Brushes.Black,
-                        new RectangleF(xTicket + margen, y, anchoTexto,
-                            Math.Max(12f, tamDatos.Height)), izquierda);
-                    y += Math.Max(13f, tamDatos.Height);
-
                     string descripcion = itemVenta.capddespro ?? "";
 
-                    if (!String.IsNullOrWhiteSpace(descripcion))
+                    string[] detallesProducto =
                     {
-                        SizeF tamDescripcion = g.MeasureString(
-                                                descripcion,
-                                                pequena,
-                                                new SizeF(anchoTexto, 1000f));
+                        "- Precio unitario: Bs " + itemVenta.caivpreuni.ToString("N2"),
+                        string.IsNullOrWhiteSpace(modelo) ? null : "- Modelo: " + modelo,
+                        string.IsNullOrWhiteSpace(talla) ? null : "- Talla: " + talla,
+                        string.IsNullOrWhiteSpace(codigo) ? null : "- Código: " + codigo,
+                        string.IsNullOrWhiteSpace(descripcion) ? null : "- Descripción: " + descripcion.Trim()
+                    };
 
-                        g.DrawString(descripcion, pequena, Brushes.Gray,
-                            new RectangleF(xTicket + margen, y, anchoTexto,
-                                tamDescripcion.Height), izquierda);
-                        y += tamDescripcion.Height + 2f;
+
+                    foreach (string detalle in detallesProducto)
+                    {
+                        if (string.IsNullOrWhiteSpace(detalle))
+                            continue;
+
+                        SizeF tamDetalle = g.MeasureString(
+                            detalle,
+                            pequena,
+                            new SizeF(anchoTexto, 1000f));
+
+                        float altoDetalle = Math.Max(14f, tamDetalle.Height);                                           
+                           
+                        g.DrawString(detalle, 
+                                     pequena, 
+                                     Brushes.Gray,
+                                     new RectangleF(xTicket + margen, y, anchoTexto, altoDetalle), 
+                                     izquierda);
+
+                        y += altoDetalle + 2f; // Espacio entre líneas de detalle
                     }
 
                     y += 5f;
@@ -912,6 +908,29 @@ namespace SistemaDeGestion2026
                 g.DrawString("¡Gracias por su compra!", negrita,
                     Brushes.Black,
                     new RectangleF(xTicket, y, anchoTicket, 18), centro);
+
+                y += 25f;
+
+                string textoQR =
+                    "COMPROBANTE DE VENTA" + Environment.NewLine + 
+                    "Venta: " + (venta == null ? "" : venta.pavpcodven) +Environment.NewLine +
+                    "Fecha: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm") + Environment.NewLine +
+                    "Cliente: " + (cliente == null ? "Consumidor final" : cliente.caclrazcli) +
+                Environment.NewLine +
+                    "Total: Bs " + total.ToString("N2");
+
+                using (QRCodeGenerator generator = new QRCodeGenerator())
+                using (QRCodeData datosQR = generator.CreateQrCode(textoQR, QRCodeGenerator.ECCLevel.Q))
+                using (QRCode codigoQR =new QRCode(datosQR))
+                using (Bitmap imagenQR = codigoQR.GetGraphic(4))
+                {
+                    float tamanoQR = Math.Min(90f, anchoTexto);
+                    float xQR = xTicket + margen + (anchoTexto - tamanoQR) / 2f;
+
+                    g.DrawImage(
+                        imagenQR,
+                        new RectangleF(xQR, y, tamanoQR, tamanoQR));
+                }
             }
 
             e.HasMorePages = false;
