@@ -94,7 +94,16 @@ namespace SistemaDeGestion2026
 
         private void BTNReporte_Click(object sender, EventArgs e)
         {
-
+            xreport reporte = new xreport();
+            reporte.titulo = "Reporte de Personas";
+            reporte.descripcion = "Listado de Personas registradas en el sistema surmarket";
+            reporte.hoja = false;
+            reporte.orientacion = true;
+            reporte.letra = 12;
+            int col = 8;
+            float[] anchoColumnas = { 10, 10, 20, 20, 20, 20, 20, 10 };
+            List<string> titulosColumnas = new List<string>() { "Código", "Estado", "Cédula", "Apellido Paterno", "Apellido Materno", "Nombres", "Fecha de Nacimiento", "Sexo" };
+            reporte.GenerarReporte(col, anchoColumnas, titulosColumnas);
         }
 
         private void BTNModificar_Click(object sender, EventArgs e)
