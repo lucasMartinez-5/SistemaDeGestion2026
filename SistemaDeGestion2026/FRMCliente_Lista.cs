@@ -194,5 +194,19 @@ namespace SistemaDeGestion2026
         {
             ActualizarGrid();
         }
+
+        private void BTNReporte_Click(object sender, EventArgs e)
+        {
+            xreport reporte = new xreport();
+            reporte.titulo = "Reporte de Clientes";
+            reporte.descripcion = "Listado de Clientes registrados en el sistema surmarket";
+            reporte.hoja = false;
+            reporte.orientacion = true;
+            reporte.letra = 12;
+            int col = 6;
+            float[] anchoColumnas = { 15, 15, 20, 25, 17, 25 };
+            List<string> titulosColumnas = new List<string>() { "Código", "Estado", "NIT", "Razón Social", "Celular", "Dirección" };
+            reporte.GenerarReporte(col, anchoColumnas, titulosColumnas, lista);
+        }
     }
 }
