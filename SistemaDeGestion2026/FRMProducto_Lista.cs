@@ -1,4 +1,5 @@
 ﻿using CapaRN;
+using DevComponents.DotNetBar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -209,6 +210,21 @@ namespace SistemaDeGestion2026
         private void BTNFiltrar_Click(object sender, EventArgs e)
         {
             ActualizarGrid();
+        }
+
+        private void BTNReporte_Click(object sender, EventArgs e)
+        {
+            xreport reporte = new xreport();
+            reporte.titulo = "Reporte de Productos";
+            reporte.descripcion = "Listado de Productos registrados en el sistema surmarket";
+            reporte.hoja = false;
+            reporte.orientacion = true;
+            reporte.letra = 12;
+            int col = 16;
+            float[] anchoColumnas = { 15, 15, 18, 13, 20, 22, 18, 15, 15, 18, 15, 15, 19, 19, 12, 15 };
+            List<string> titulosColumnas = new List<string>() { "Código", "Estado", "Nombre", "Talla", "Color", "Marca", "Modelo", 
+                                                                "Género", "Material" ,"Categoría", "Pre. Min", "Pre. Venta","Fec. Cre", "Fec. Mod", "Stock", "Cod. Bar" };
+            reporte.GenerarReporte(col, anchoColumnas, titulosColumnas, lista_productos);
         }
     }
 }

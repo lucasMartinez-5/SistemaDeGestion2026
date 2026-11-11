@@ -101,9 +101,9 @@ namespace SistemaDeGestion2026
             reporte.orientacion = true;
             reporte.letra = 12;
             int col = 8;
-            float[] anchoColumnas = { 10, 10, 20, 20, 20, 20, 20, 10 };
-            List<string> titulosColumnas = new List<string>() { "Código", "Estado", "Cédula", "Apellido Paterno", "Apellido Materno", "Nombres", "Fecha de Nacimiento", "Sexo" };
-            reporte.GenerarReporte(col, anchoColumnas, titulosColumnas);
+            float[] anchoColumnas = { 15, 15, 10, 20, 20, 28, 12, 10 };
+            List<string> titulosColumnas = new List<string>() { "Código", "Estado", "Cédula", "Apellido Paterno", "Apellido Materno", "Nombres", "Nacimiento", "Sexo" };
+            reporte.GenerarReporte(col, anchoColumnas, titulosColumnas, lista_personas);
         }
 
         private void BTNModificar_Click(object sender, EventArgs e)
