@@ -58,8 +58,9 @@ namespace SistemaDeGestion2026
                 }
                 DTGLista[0, DTGLista.Rows.Count - 1].Value = a.faclcodper;
                 DTGLista[1, DTGLista.Rows.Count - 1].Value = a.caclestcli;
-                DTGLista[2, DTGLista.Rows.Count - 1].Value = a.caclrazcli;
-                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.caclnitcli;
+                DTGLista[2, DTGLista.Rows.Count - 1].Value = a.caclnitcli;
+                DTGLista[3, DTGLista.Rows.Count - 1].Value = a.caclrazcli;
+                
 
                 DTGLista[4, DTGLista.Rows.Count - 1].Value = a.cacldircli;
                 DTGLista[5, DTGLista.Rows.Count - 1].Value = a.cacltelcli;
